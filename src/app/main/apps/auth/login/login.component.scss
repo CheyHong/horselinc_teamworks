@@ -81,7 +81,11 @@
                         font-weight:300;
                     
                         color:white;
-                        background-color: rgba(93, 189, 194, 0.2);
+
+                        background-color: #ec7185;
+                        &:disabled{
+                            background-color: rgba(93, 189, 194, 0.2);
+                        }
                     }
                 }
             }

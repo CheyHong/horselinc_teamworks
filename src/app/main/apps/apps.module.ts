@@ -11,6 +11,10 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import {WelcomeComponent } from './welcome/welcome.component';
 
 const routes = [
+    // {
+    //     path        : 'dashboard',
+    //     component   :  ProjectDashboardComponent,
+    // },
     {
         path        : 'welcome',
         component   :  WelcomeComponent,

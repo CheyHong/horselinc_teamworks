@@ -2,11 +2,10 @@ export const locale = {
     lang: 'tr',
     data: {
         'NAV': {
-            'APPLICATIONS': 'Programlar',
-            'SAMPLE'        : {
-                'TITLE': 'Örnek',
-                'BADGE': '15'
-            }
+            'HORSES': 'Horses',
+            'PAYMENT': 'Payment',
+            'PROFILE': 'Profile',
+            
         }
     }
 };

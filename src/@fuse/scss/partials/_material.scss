@@ -169,10 +169,10 @@
     min-width: 40px;
     height: 40px;
     line-height: 40px;
-    margin: 0 8px 0 0;
+    margin: 0 14px 0 0;
     border-radius: 50%;
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: normal;
     text-align: center;
 
     &.square {
@@ -180,10 +180,10 @@
     }
 
     &.small {
-        width: 20px;
-        min-width: 20px;
-        height: 20px;
-        line-height: 20px;
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        line-height: 24px;
     }
 
     &.big {

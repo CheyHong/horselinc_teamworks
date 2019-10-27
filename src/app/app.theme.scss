@@ -23,9 +23,9 @@ $fuse-navy: (
     400: #5C616F,
     500: #3C4252,
     600: #353A48,
-    700: #2D323E,
+    700: #4f748c,        //#2D323E,
     800: #262933,
-    900: #1E2129,
+    900: #335c77,        //#1E2129,
     A100: #C5C6CB,
     A200: #9EA1A9,
     A400: #5C616F,
@@ -61,9 +61,9 @@ $custom_palettes: (
 // @ Typography
 // -----------------------------------------------------------------------------------------------------
 
-// Angular Material typography
+// Angular Material typography      'Muli, Helvetica Neue, Arial, sans-serif',
 $typography: mat-typography-config(
-    $font-family: 'Roboto, Muli, Helvetica Neue, Arial, sans-serif',
+    $font-family: 'Roboto',
     $title: mat-typography-level(20px, 32px, 600),
     $body-2: mat-typography-level(14px, 24px, 600),
     $button: mat-typography-level(14px, 14px, 600),
@@ -95,7 +95,7 @@ $typography: mat-typography-config(
 
 // Define the primary, accent and warn palettes
 $default-primary-palette: mat-palette($fuse-navy);
-$default-accent-palette: mat-palette($mat-light-blue, 600, 400, 700);
+$default-accent-palette:  mat-palette($mat-cyan, 600, 400, 700);
 $default-warn-palette: mat-palette($mat-red);
 
 // Create the Material theme object

@@ -1,26 +1,30 @@
 import { FuseNavigation } from '@fuse/types';
+import { url } from 'inspector';
 
 export const navigation: FuseNavigation[] = [
     {
-        id       : 'applications',
-        title    : 'Applications',
-        translate: 'NAV.APPLICATIONS',
-        type     : 'group',
-        children : [
-            {
-                id       : 'sample',
-                title    : 'Sample',
-                translate: 'NAV.SAMPLE.TITLE',
-                type     : 'item',
-                icon     : 'email',
-                url      : '/sample',
-                badge    : {
-                    title    : '25',
-                    translate: 'NAV.SAMPLE.BADGE',
-                    bg       : '#F44336',
-                    fg       : '#FFFFFF'
-                }
-            }
-        ]
+        id       : 'horses',
+        title    : 'Horses',
+        translate: 'NAV.HORSES',
+        type     : 'item',       
+        iconsrc  : 'assets/images/welcome/ic-manager-black.svg',
+        url      : '/apps/auth',          
+    },
+    {
+        id       : 'payment',
+        title    : 'Payment',
+        translate: 'NAV.PAYMENT',
+        type     : 'item',       
+        iconsrc  : 'assets/images/welcome/ic-payment-green.svg',
+        url      : '/apps/welcome',          
+    },
+    {
+        id       : 'profile',
+        title    : 'Profile',
+        translate: 'NAV.PROFILE',
+        type     : 'item',       
+        iconsrc  : 'assets/images/welcome/ic-profile-green.svg',
+        url      : '/apps/dashboards/project',          
     }
 ];
+

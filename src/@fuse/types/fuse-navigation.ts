@@ -5,6 +5,7 @@ export interface FuseNavigationItem
     type: 'item' | 'group' | 'collapsable';
     translate?: string;
     icon?: string;
+    iconsrc?:string;
     hidden?: boolean;
     url?: string;
     classes?: string;
