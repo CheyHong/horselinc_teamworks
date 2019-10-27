@@ -1,0 +1,76 @@
+.d-block {
+  width: 100%;
+}
+.page-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../../../assets/images/backgrounds/horse-material-bg.svg);
+//  background-image: url('http://localhost:4200/assets/img/background.svg');
+  background-repeat: repeat;
+}
+
+.page-title {
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.page-content {
+  width:280px;
+
+  p{
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    color:white;
+  }
+  .input-control{
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+
+    color:white;
+    text-align:center;
+    border-width:0;
+    border-radius: 100px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    background-color: rgba(203, 203, 203, 0.2);
+  }
+  .submit-button{
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+
+    text-align:center;
+
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    background-color: rgba(93, 189, 194, 0.2);
+    border-width:0;
+  }
+  .forget-password{
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+
+    text-align:center;
+    color:#27c5c8;
+  }
+  .signup{
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+
+    text-align:center;
+    color:#27c5c8;
+  }
+}

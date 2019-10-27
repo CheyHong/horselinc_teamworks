@@ -1,0 +1,67 @@
+@import "src/@fuse/scss/fuse";
+
+:host{
+    #welcome {
+        background-image: url('assets/images/backgrounds/horse-material-bg.svg');
+        font-family: Roboto;
+        font-size: 20px;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+
+        .title {
+            text-align: center;
+            justify-content: center;
+            padding-top: 10px;
+            padding-bottom: 10px;      
+        }
+        .content {
+            .cards {
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                align-items: stretch;
+                
+                .card {
+                    flex: 0 1 calc(33.3% -32px);
+
+                    display:block;
+                    height:450px;
+                    padding: 30px 20px;
+                    margin: 50px 50px;
+
+                    color: #ffffff;
+                    background: #335c77;
+                    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    
+                    .card-title {
+                        display: flex;
+
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 1.4;
+                
+                    }
+ 
+                    .card-data {
+                        font-size: 16px;
+                        font-weight: normal;
+                        line-height: 1.25;
+
+                        .card-data-item{
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                            img{
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
