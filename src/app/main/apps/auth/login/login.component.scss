@@ -2,7 +2,7 @@
 
 :host{
 
-    #auth {
+    #auth-login {
         background-image: url('assets/images/backgrounds/horse-material-bg.svg');
         font-family: Roboto;
         font-size: 14px;
@@ -78,6 +78,7 @@
         
                         font-family: "Roboto";
                         font-size: 16px;
+                        font-weight:300;
                     
                         color:white;
                         background-color: rgba(93, 189, 194, 0.2);

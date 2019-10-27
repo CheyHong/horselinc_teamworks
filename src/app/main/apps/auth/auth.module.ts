@@ -8,22 +8,27 @@ import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 
-import {WelcomeComponent } from './welcome/welcome.component';
+import {LoginComponent } from './login/login.component';
+import {RegisterComponent } from './register/register.component';
+import {ResetPasswordComponent} from './reset-password/reset-password.component';
 
 const routes = [
-    {
-        path        : 'welcome',
-        component   :  WelcomeComponent,
-    },
-    {
-        path        : 'auth',
-        loadChildren: 'app/main/apps/auth/auth.module#AuthModule'
-    },
 
     {
-        path        : '',
-        redirectTo  : 'welcome',
-        pathMatch   : 'full'
+        path        : 'login',
+        component   :  LoginComponent,
+    },
+    {
+        path        : 'register',
+        component   :  RegisterComponent,
+    },
+    {
+        path        : 'reset-password',
+        component   :  ResetPasswordComponent,
+    },
+       {
+        path      : '**',
+        redirectTo: 'login'
     }
 ];
 
@@ -37,13 +42,17 @@ const routes = [
         MatInputModule
     ],
     declarations: [
-        WelcomeComponent, 
+        LoginComponent, 
+        RegisterComponent,
+        ResetPasswordComponent
     ],
 
     exports     : [
-        WelcomeComponent,
+        LoginComponent,
+        RegisterComponent,
+        ResetPasswordComponent
     ]
 })
-export class AppsModule
+export class AuthModule
 {
 }

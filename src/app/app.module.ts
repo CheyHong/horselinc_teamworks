@@ -17,7 +17,6 @@ import { fuseConfig } from 'app/fuse-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-import { AppsModule } from 'app/main/apps/apps.module';
 
 const appRoutes: Routes = [
     {
