@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 
@@ -22,7 +26,10 @@ const routes = [
     imports     : [
         RouterModule.forChild(routes),
         FuseSharedModule,
-        MatButtonModule
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule
     ],
     declarations: [
         WelcomeComponent, 
