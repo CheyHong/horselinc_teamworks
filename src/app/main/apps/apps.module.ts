@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 
@@ -20,7 +21,8 @@ const routes = [
 @NgModule({
     imports     : [
         RouterModule.forChild(routes),
-        FuseSharedModule
+        FuseSharedModule,
+        MatButtonModule
     ],
     declarations: [
         WelcomeComponent, 
