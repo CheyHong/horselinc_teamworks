@@ -25,8 +25,8 @@ const appRoutes: Routes = [
         loadChildren: './main/apps/apps.module#AppsModule'
     },
     {
-        path      : '',
-        redirectTo: 'auth',
+        path      : '**',
+        redirectTo: 'apps',
         pathMatch: 'full'
     }
 ];
@@ -59,7 +59,6 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        AppsModule
     ],
     bootstrap   : [
         AppComponent

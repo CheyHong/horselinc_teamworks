@@ -57,6 +57,7 @@
                         font-size: 16px;
                         font-weight: normal;
                         line-height: 1.25;
+                        margin-right: 15px;
 
                         display:flex;
                         flex-direction: column;
@@ -66,7 +67,7 @@
                         position: absolute;
                         top: 120px;
                         bottom: 20px;
-                        
+
                         .card-data-item{
                             display:flex;
                             flex-direction: row;
@@ -89,9 +90,13 @@
                 justify-content: center;
                 display:flex;
                 .continue{
+
+                    color:white;
+                    background-color: #ec7185;
                     width:360px;
                     height:44px;
                     margin:auto;
+                    font-size: 18px;
 //                    text-align:center;
                 }
             }

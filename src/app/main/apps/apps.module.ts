@@ -20,6 +20,11 @@ const routes = [
         path        : 'auth',
         component   : AuthComponent
     },
+    {
+        path      : '',
+        redirectTo: 'welcome',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({

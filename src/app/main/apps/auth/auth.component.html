@@ -10,17 +10,22 @@
     <div class="content">
         <div class="login">
             <form id="loginForm" name="loginForm" [formGroup]="loginForm" novalidate>
+                <input  matInput formControlName="email" type="email" placeholder="Enter email" autocomplete="off"/>
+                <!-- <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                        Email is required
+                    </mat-error> -->
 
-                <mat-form-field appearance="outline">
-                        <input class="input-control form-control" type="email" placeholder="Enter email" autocomplete="off"/>
-                </mat-form-field>
-                       
-                <mat-form-field appearance="outline">
-                        <input class="input-control form-control" type="password" placeholder="Password"  autocomplete="off"/>
-                </mat-form-field>
+                <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="off"/>
 
-                <button class="submit-button btn btn-primary d-block" type="submit">LOG IN</button>
-                <p style="text-align:center; margin-bottom:40px"><a class="forget-password" href="https://www.w3school.com">Forget password?</a></p>
+                <!-- <mat-error
+                *ngIf="!loginForm.get('email').hasError('required') &&
+                        loginForm.get('email').hasError('email')">
+                    Please enter a valid email address
+                </mat-error> -->
+
+                <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid">LOG IN</button>
+
+                <p style="text-align:center; margin-bottom:40px"><a class="forget-password">Forget password?</a></p>
                 <p style="text-align:center; margin-bottom:30px">Don't have an account? <a class="signup">Sign Up</a></p>
     
             </form>
