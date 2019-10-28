@@ -11,10 +11,6 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import {WelcomeComponent } from './welcome/welcome.component';
 
 const routes = [
-    // {
-    //     path        : 'dashboard',
-    //     component   :  ProjectDashboardComponent,
-    // },
     {
         path        : 'welcome',
         component   :  WelcomeComponent,
@@ -22,6 +18,10 @@ const routes = [
     {
         path        : 'auth',
         loadChildren: 'app/main/apps/auth/auth.module#AuthModule'
+    },
+    {
+        path        : 'todo',
+        loadChildren: 'app/main/apps/todo/todo.module#TodoModule'
     },
 
     {

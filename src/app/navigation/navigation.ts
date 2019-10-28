@@ -8,7 +8,7 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.HORSES',
         type     : 'item',       
         iconsrc  : 'assets/images/welcome/ic-manager-black.svg',
-        url      : '/apps/auth',          
+        url      : '/apps/todo',          
     },
     {
         id       : 'payment',

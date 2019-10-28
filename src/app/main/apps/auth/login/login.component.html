@@ -23,7 +23,7 @@
                     Please enter a valid email address
                 </mat-error> -->
 
-                <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid">LOG IN</button>
+                <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid" routerLink="/apps/todo">LOG IN</button>
 
                 <p style="text-align:center; margin-bottom:40px"><a class="forget-password" routerLink="/apps/auth/reset-password">Forget password?</a></p>
                 <p style="text-align:center; margin-bottom:30px">Don't have an account? <a class="signup" routerLink="/apps/auth/register">Sign Up</a></p>

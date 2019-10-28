@@ -26,16 +26,16 @@ export class LoginComponent implements OnInit {
         this._fuseConfigService.config = {
             layout: {
                 navbar   : {
-                    hidden: false
+                    hidden: true
                 },
                 toolbar  : {
-                    hidden: false
+                    hidden: true
                 },
                 footer   : {
                     hidden: true
                 },
                 sidepanel: {
-                    hidden: false
+                    hidden: true
                 }
             }
         };
