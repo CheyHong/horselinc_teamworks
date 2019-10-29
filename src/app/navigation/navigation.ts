@@ -7,7 +7,7 @@ export const navigation: FuseNavigation[] = [
         title    : 'Horses',
         translate: 'NAV.HORSES',
         type     : 'item',       
-        iconsrc  : 'assets/images/welcome/ic-manager-black.svg',
+        iconsrc  : 'assets/icons/horselinc/ic-manager-black.svg',
         url      : '/apps/todo',          
     },
     {
@@ -15,7 +15,7 @@ export const navigation: FuseNavigation[] = [
         title    : 'Payment',
         translate: 'NAV.PAYMENT',
         type     : 'item',       
-        iconsrc  : 'assets/images/welcome/ic-payment-green.svg',
+        iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',
         url      : '/apps/welcome',          
     },
     {
@@ -23,7 +23,7 @@ export const navigation: FuseNavigation[] = [
         title    : 'Profile',
         translate: 'NAV.PROFILE',
         type     : 'item',       
-        iconsrc  : 'assets/images/welcome/ic-profile-green.svg',
+        iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
         url      : '/apps/dashboards/project',          
     }
 ];
