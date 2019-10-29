@@ -8,26 +8,22 @@ import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 
-import {WelcomeComponent } from './welcome/welcome.component';
+import {PaymentAccountComponent } from './payment-account/payment-account.component';
+import {PaymentInfoComponent } from './payment-info/payment-info.component';
 
 const routes = [
-    {
-        path        : 'welcome',
-        component   :  WelcomeComponent,
-    },
-    {
-        path        : 'auth',
-        loadChildren: 'app/main/apps/auth/auth.module#AuthModule'
-    },
-    {
-        path        : 'todo',
-        loadChildren: 'app/main/apps/todo/todo.module#TodoModule'
-    },
 
     {
-        path        : '',
-        redirectTo  : 'auth/payment',
-        pathMatch   : 'full'
+        path        : 'account',
+        component   :  PaymentAccountComponent,
+    },
+    {
+        path        : 'info',
+        component   :  PaymentInfoComponent,
+    },
+    {
+        path      : '**',
+        redirectTo: 'account'
     }
 ];
 
@@ -41,13 +37,15 @@ const routes = [
         MatInputModule
     ],
     declarations: [
-        WelcomeComponent, 
+        PaymentAccountComponent, 
+        PaymentInfoComponent,
     ],
 
     exports     : [
-        WelcomeComponent,
+        PaymentAccountComponent,
+        PaymentInfoComponent,
     ]
 })
-export class AppsModule
+export class AuthPaymentModule
 {
 }

@@ -7,7 +7,7 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
 
 @Component({
-    selector     : 'app-register',
+    selector     : 'apps-auth-register',
     templateUrl  : './register.component.html',
     styleUrls    : ['./register.component.scss'],
 //    encapsulation: ViewEncapsulation.None,

@@ -1,0 +1,44 @@
+@import "src/@fuse/scss/fuse";
+
+:host{
+
+    #auth-payment-account {
+        background-color: #4f748c;
+        font-family: Roboto;
+        font-size: 14px;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: #ffffff;  
+        text-align:center;
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+ 
+        .content {
+            margin:240px;
+             width: 688px;
+             display:flex;
+             flex-direction: column;
+             align-items: center;
+
+            .photo{
+                width : 112px;
+                height : 112px;
+                border-radius: 112px;
+                background-color: #27c5c8;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                flex: 0 1 auto;
+
+                &:hover{
+                    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
+                }
+            }
+            .
+        }
+    }
+}

@@ -4,12 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-  selector: 'apps-auth-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'apps-payment',
+  templateUrl: './payment-info.component.html',
+  styleUrls: ['./payment-info.component.scss']
 })
-export class LoginComponent implements OnInit {
-    loginForm: FormGroup;
+export class PaymentInfoComponent implements OnInit {
+    infoForm: FormGroup;
 
     /**
      * Constructor
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
      */
     ngOnInit(): void
     {
-        this.loginForm = this._formBuilder.group({
+        this.infoForm = this._formBuilder.group({
             email   : ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
