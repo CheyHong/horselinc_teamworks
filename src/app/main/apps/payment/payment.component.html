@@ -1,0 +1,37 @@
+<div class="page-layout carded left-sidebar">
+
+    <div class="center">
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" [ngClass]="{'current-todo-selected':currentTodo}">
+
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar_1 px-24 py-8" fxHide.gt-md>
+
+                <div *ngIf="currentTodo">
+                    <button mat-icon-button (click)="deselectCurrentTodo()">
+                        <mat-icon class="secondary-text">arrow_back</mat-icon>
+                    </button>
+                </div>
+
+                <div class="Schedule-Service">
+                        Schedule Service
+                </div>
+
+            </div>
+            <!-- / CONTENT TOOLBAR -->
+
+            <!-- CONTENT -->
+            <div class="content" fxFlexAlign="row">
+                <payment-list ></payment-list>
+                <payment-details fusePerfectScrollbar fxFlex></payment-details>
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>

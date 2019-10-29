@@ -19,14 +19,15 @@ const routes = [
         path        : 'auth',
         loadChildren: 'app/main/apps/auth/auth.module#AuthModule'
     },
+
     {
-        path        : 'todo',
-        loadChildren: 'app/main/apps/todo/todo.module#TodoModule'
+        path        : 'payment',
+        loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
     },
 
     {
         path        : '',
-        redirectTo  : 'auth/payment',
+        redirectTo  : 'payment',
         pathMatch   : 'full'
     }
 ];

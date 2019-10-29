@@ -7,24 +7,24 @@ import { fuseAnimations } from '@fuse/animations';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
+import { Payment } from 'app/main/apps/payment/payment.model';
+import { PaymentService } from 'app/main/apps/payment/payment.service';
 
 @Component({
-    selector     : 'todo',
-    templateUrl  : './todo.component.html',
-    styleUrls    : ['./todo.component.scss'],
+    selector     : 'payment',
+    templateUrl  : './payment.component.html',
+    styleUrls    : ['./payment.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class TodoComponent implements OnInit, OnDestroy
+export class PaymentComponent implements OnInit, OnDestroy
 {
     hasSelectedTodos: boolean;
     isIndeterminate: boolean;
     filters: any[];
     tags: any[];
     searchInput: FormControl;
-    currentTodo: Todo;
+    currentTodo: Payment;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -33,11 +33,11 @@ export class TodoComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {FuseSidebarService} _fuseSidebarService
-     * @param {TodoService} _todoService
+     * @param {PaymentService} _todoService
      */
     constructor(
         private _fuseSidebarService: FuseSidebarService,
-        private _todoService: TodoService,
+        private _todoService: PaymentService,
         private _fuseConfigService: FuseConfigService,
 
     )

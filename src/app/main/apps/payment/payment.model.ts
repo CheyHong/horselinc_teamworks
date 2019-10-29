@@ -1,4 +1,4 @@
-export class Todo
+export class Payment
 {
     id: string;
     title: string;

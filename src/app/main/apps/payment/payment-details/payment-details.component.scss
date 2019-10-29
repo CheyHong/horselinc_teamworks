@@ -1,6 +1,6 @@
 @import 'src/@fuse/scss/fuse';
 
-todo-details {
+payment-details {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
@@ -8,16 +8,32 @@ todo-details {
     -webkit-overflow-scrolling: touch;
 
     .todo-header {
+        height: 70px;
         padding: 24px;
-        border-bottom: 1px solid;
+        border-bottom: 0px solid;
+        background-color: #efefef;
 
-        .actions {
-            min-width: 88px;
+        .invoce {
+            width: 78px;
+            height: 24px;
+            font-family: Roboto;
+            font-size: 26px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 0.92;
+            letter-spacing: normal;
+            color: #4f748c;
         }
     }
 
     .todo-content {
-        padding: 24px;
+
+        .Rectangle {
+            width: 855px;
+            height: 92px;
+            background-color: #fff000;
+          }
 
         .title {
             font-size: 17px;

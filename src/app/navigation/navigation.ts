@@ -16,7 +16,7 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.PAYMENT',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',
-        url      : '/apps/welcome',          
+        url      : '/apps/payment',          
     },
     {
         id       : 'profile',

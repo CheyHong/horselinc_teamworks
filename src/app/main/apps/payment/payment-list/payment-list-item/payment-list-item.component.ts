@@ -1,22 +1,22 @@
 import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
+import { Payment } from 'app/main/apps/payment/payment.model';
+import { PaymentService } from 'app/main/apps/payment/payment.service';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    selector     : 'todo-list-item',
-    templateUrl  : './todo-list-item.component.html',
-    styleUrls    : ['./todo-list-item.component.scss'],
+    selector     : 'payment-list-item',
+    templateUrl  : './payment-list-item.component.html',
+    styleUrls    : ['./payment-list-item.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class TodoListItemComponent implements OnInit, OnDestroy
+export class PaymentListItemComponent implements OnInit, OnDestroy
 {
     tags: any[];
 
     @Input()
-    todo: Todo;
+    todo: Payment;
 
     @HostBinding('class.selected')
     selected: boolean;
@@ -33,11 +33,11 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {TodoService} _todoService
+     * @param {PaymentService} _todoService
      * @param {ActivatedRoute} _activatedRoute
      */
     constructor(
-        private _todoService: TodoService,
+        private _todoService: PaymentService,
         private _activatedRoute: ActivatedRoute
     )
     {
@@ -61,7 +61,7 @@ export class TodoListItemComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Set the initial values
-        this.todo = new Todo(this.todo);
+        this.todo = new Payment(this.todo);
         this.completed = this.todo.completed;
 
         // Subscribe to update on selected todo change
