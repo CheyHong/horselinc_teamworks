@@ -11,6 +11,7 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import {LoginComponent } from './login/login.component';
 import {RegisterComponent } from './register/register.component';
 import {ResetPasswordComponent} from './reset-password/reset-password.component';
+import {RoleComponent} from './role/role.component';
 
 const routes = [
 
@@ -26,7 +27,11 @@ const routes = [
         path        : 'reset-password',
         component   :  ResetPasswordComponent,
     },
-       {
+    {
+        path        :  'role',
+        component   :   RoleComponent,
+    },
+    {
         path      : '**',
         redirectTo: 'login'
     }
@@ -44,13 +49,15 @@ const routes = [
     declarations: [
         LoginComponent, 
         RegisterComponent,
-        ResetPasswordComponent
+        ResetPasswordComponent,
+        RoleComponent
     ],
 
     exports     : [
         LoginComponent,
         RegisterComponent,
-        ResetPasswordComponent
+        ResetPasswordComponent,
+        RoleComponent
     ]
 })
 export class AuthModule

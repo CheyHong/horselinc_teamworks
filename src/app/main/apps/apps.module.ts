@@ -26,7 +26,7 @@ const routes = [
 
     {
         path        : '',
-        redirectTo  : 'welcome',
+        redirectTo  : 'auth/role',
         pathMatch   : 'full'
     }
 ];
