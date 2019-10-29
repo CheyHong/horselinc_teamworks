@@ -4,7 +4,8 @@ todo {
     width: 100%;
 
     .center {
-
+        margin-left: 0px !important;
+        margin-right: 0px !important;
         .header {
 
             .search-wrapper {
@@ -40,6 +41,11 @@ todo {
 
         .content-card {
 
+            todo-list,
+            todo-details {
+                flex: 0 0 27%;
+            }
+
             .Schedule-Service {
                 width: 203px;
                 height: 24px;
@@ -72,7 +78,9 @@ todo {
                 }
             }
 
-            @include media-breakpoint('lt-sm') {
+            
+
+            @include media-breakpoint('lt-lg') {
 
                 todo-list {
                     border-right: 0;
@@ -98,7 +106,6 @@ todo {
                     }
 
                     .content {
-
                         todo-list {
                             display: none !important;
                         }

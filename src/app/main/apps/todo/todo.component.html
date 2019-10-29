@@ -37,7 +37,7 @@
         <div class="content-card" [ngClass]="{'current-todo-selected':currentTodo}">
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar_1 px-24 py-8" fxHide.gt-xs>
+            <div class="toolbar_1 px-24 py-8" fxHide.gt-md>
 
                 <!-- <div class="todo-selection" fxFlex="row" fxLayoutAlign="start center"> -->
                     <!-- <mat-checkbox (click)="toggleSelectAll()" [checked]="hasSelectedTodos"
@@ -69,13 +69,13 @@
                     </mat-menu> -->
                 <!-- </div> -->
 
-                <div *ngIf="currentTodo" fxHide.gt-xs>
+                <div *ngIf="currentTodo">
                     <button mat-icon-button (click)="deselectCurrentTodo()">
                         <mat-icon class="secondary-text">arrow_back</mat-icon>
                     </button>
                 </div>
 
-                <div class="Schedule-Service" fxHide.gt-xs>
+                <div class="Schedule-Service">
                         Schedule Service
                 </div>
 
@@ -84,7 +84,7 @@
 
             <!-- CONTENT -->
             <div class="content" fxFlexAlign="row">
-                <todo-list fxFlex></todo-list>
+                <todo-list ></todo-list>
                 <todo-details fusePerfectScrollbar fxFlex></todo-details>
             </div>
             <!-- / CONTENT -->
