@@ -1,0 +1,10 @@
+<div *ngIf="horses.length === 0" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+    <span class="no-messages-text hint-text">{{ 'horse.NO_MESSAGES' | translate }}</span>
+</div>
+
+<div class="horse-list" [@animateStagger]="{value:'50'}">
+    <horse-list-item matRipple *ngFor="let horse of horses" [horse]="horse" (click)="readhorse(horse.id)"
+                    [ngClass]="{'current-horse':horse?.id == currentHorse?.id}"
+                    [@animate]="{value:'*',params:{y:'100%'}}">
+    </horse-list-item>
+</div>

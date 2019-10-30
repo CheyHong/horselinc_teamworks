@@ -23,10 +23,13 @@ const routes = [
         path        : 'todo',
         loadChildren: 'app/main/apps/todo/todo.module#TodoModule'
     },
-
+    {
+        path        : 'horse',
+        loadChildren: 'app/main/apps/horse/horse.module#HorseModule'
+    },
     {
         path        : '',
-        redirectTo  : 'auth/role',
+        redirectTo  : 'horse',
         pathMatch   : 'full'
     }
 ];
