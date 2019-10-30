@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FuseConfigService } from '@fuse/services/config.service';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+
 
 @Component({
   selector: 'apps-auth-payment-account',
@@ -19,7 +21,8 @@ export class PaymentAccountComponent implements OnInit {
      */
     constructor(
         private _fuseConfigService: FuseConfigService,
-        private _formBuilder: FormBuilder
+        private _formBuilder: FormBuilder,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Configure the layout
@@ -55,5 +58,9 @@ export class PaymentAccountComponent implements OnInit {
             email   : ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
+    }
+    toggleSidebarOpen(key): void
+    {
+        this._fuseSidebarService.getSidebar(key).toggleOpen();
     }
 }

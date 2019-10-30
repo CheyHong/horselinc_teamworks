@@ -64,7 +64,7 @@
             background: map-get($background, hover);
         }
 
-        &.selected {
+        &.selected,&.current-horse {
             @if ($is-dark) {
                 background: map-get($background, background);
             } @else {
