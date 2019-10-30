@@ -8,17 +8,113 @@
 </div>
 
 <div *ngIf="todo">
-    <div class="todo-header" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="todo-header">
         <div class="invoce"> Invoce </div>
     </div>
 
-    <div class="todo-content">
+    <div class="todo-content" fxLayout="column" fxLayoutAlign="space-between center">
 
         <div class="Rectangle">
-
+            <div>
+                <div class="trainer" fxLayout="row wrap" fxLayoutAlign="start center">
+                    <img class="Oval" src="assets/images/avatars/Reyna.jpg" />
+                    <div class="Huckleberry"> Huckleberry </div>
+                </div>
+                <div class="invoice-submitted-1"> INVOICE-SUBMITTED% 1/22/2018 </div>
+            </div>
+            
         </div>
 
-        <form [formGroup]="todoForm" (submit)="addTodo()">
+        <div class="detailShow">
+            <div style="width: 100%;">
+                <div class="trainer" fxLayout="row wrap" fxLayoutAlign="start center">
+                    <img class="Oval" src="assets/images/avatars/Reyna.jpg" />
+                    <div fxLayout="column wrap" fxLayoutAlign="start center">
+                        <div class="Coal"> Coal </div>
+                        <div class="Chocolate-Chip-Sup"> Chocolate Chip Suprise </div>
+                    </div>
+                </div>
+    
+                <div class="item1"> 
+                    <div class="date"> 1/10/2018 </div>
+                    <div class="winter-equstrian-fes"> winter equstrian fes </div>
+                </div>
+                <div class="item2"> 
+                    <div class="mane"> 
+                        <div> Mane - Hunter (x1) </div>
+                        <div class="money"> $57.75 </div>
+                    </div>
+                    <div class="mane"> 
+                        <div> Mane - Hunter (x1) </div>
+                        <div class="money"> $57.75 </div>
+                    </div>
+                </div>
+
+                <div class="item1"> 
+                    <div class="date"> 1/10/2018 </div>
+                    <div class="winter-equstrian-fes"> winter equstrian fes </div>
+                </div>
+                <div class="item2"> 
+                    <div class="mane"> 
+                        <div> Mane - Hunter (x1) </div>
+                        <div class="money"> $57.75 </div>
+                    </div>
+                    <div class="mane"> 
+                        <div> Mane - Hunter (x1) </div>
+                        <div class="money"> $57.75 </div>
+                    </div>
+                </div>
+                <div class="Subtotal">
+                    <div> SubTotal </div>
+                    <div > $157.50 </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <div class="requireAction">
+            <div class="inVal">
+                <div> Add Tip </div>
+                <div> $0 </div>
+            </div>
+            <div class="seperator"></div>
+            <div class="inVal">
+                <div> Add Tip </div>
+                <div> $0 </div>
+            </div>
+            <div class="seperator"></div>
+            <div class="inVal">
+                <div> Add Tip </div>
+                <div> $0 </div>
+            </div>
+
+            <div class="You-are-approving-a">
+                sssssssssssssssssssssssss aaasdsd sssssssssssssssssssssss ssssssssssssssssssssssssss
+            </div>
+
+            <div class="button1">
+                <button>Submit Payment</button>
+            </div>
+
+            <div class="seperator"></div>
+
+            <div class="inVal">
+                <div> Cris Hemstreet </div>
+                <div> $62.80 </div>
+            </div>
+
+            <div class="You-are-approving-a">
+                sdjksndkj sdnlksdns sdlkjlsdkwoehown ''' p j;j;l j;'''''lk;lnhuhugyftf guguyf yfuyo g
+            </div>
+
+            <div class="button2">
+                <button>Request Approval</button>
+            </div>
+          
+        </div>
+
+        <!-- <form [formGroup]="todoForm" (submit)="addTodo()"> -->
 
             <!-- <mat-form-field appearance="outline" class="title mt-8" fxFill>
                 <mat-label>Title</mat-label>
@@ -63,7 +159,7 @@
                     [disabled]="todoForm.invalid">
                 SAVE
             </button> -->
-        </form>
+        <!-- </form> -->
 
     </div>
 </div>
