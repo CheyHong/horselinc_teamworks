@@ -19,9 +19,10 @@ const routes = [
         path        : 'auth',
         loadChildren: 'app/main/apps/auth/auth.module#AuthModule'
     },
+
     {
-        path        : 'todo',
-        loadChildren: 'app/main/apps/todo/todo.module#TodoModule'
+        path        : 'payment',
+        loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
     },
     {
         path        : 'horse',
@@ -29,7 +30,11 @@ const routes = [
     },
     {
         path        : '',
+<<<<<<< HEAD
         redirectTo  : 'horse',
+=======
+        redirectTo  : 'payment',
+>>>>>>> dbb028aff1f3576d5fb562bb26f70982f9902071
         pathMatch   : 'full'
     }
 ];

@@ -6,14 +6,14 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import { FuseUtils } from '@fuse/utils';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
+import { Payment } from 'app/main/apps/payment/payment.model';
 
 @Injectable()
-export class TodoService implements Resolve<any>
+export class PaymentService implements Resolve<any>
 {
-    todos: Todo[];
-    selectedTodos: Todo[];
-    currentTodo: Todo;
+    todos: Payment[];
+    selectedTodos: Payment[];
+    currentTodo: Payment;
     searchText: string;
     filters: any[];
     tags: any[];
@@ -136,7 +136,7 @@ export class TodoService implements Resolve<any>
      *
      * @returns {Promise<Todo[]>}
      */
-    getTodos(): Promise<Todo[]>
+    getTodos(): Promise<Payment[]>
     {
         if ( this.routeParams.tagHandle )
         {
@@ -157,14 +157,14 @@ export class TodoService implements Resolve<any>
      * @param handle
      * @returns {Promise<Todo[]>}
      */
-    getTodosByParams(handle): Promise<Todo[]>
+    getTodosByParams(handle): Promise<Payment[]>
     {
         return new Promise((resolve, reject) => {
 
             this._httpClient.get('api/todo-todos')
                 .subscribe((todos: any) => {
                     this.todos = todos.map(todo => {
-                        return new Todo(todo);
+                        return new Payment(todo);
                     });
 
                     this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);
@@ -182,7 +182,7 @@ export class TodoService implements Resolve<any>
      * @param handle
      * @returns {Promise<Todo[]>}
      */
-    getTodosByFilter(handle): Promise<Todo[]>
+    getTodosByFilter(handle): Promise<Payment[]>
     {
 
         let param = handle + '=true';
@@ -198,7 +198,7 @@ export class TodoService implements Resolve<any>
                 .subscribe((todos: any) => {
 
                     this.todos = todos.map(todo => {
-                        return new Todo(todo);
+                        return new Payment(todo);
                     });
 
                     this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);
@@ -217,7 +217,7 @@ export class TodoService implements Resolve<any>
      * @param handle
      * @returns {Promise<Todo[]>}
      */
-    getTodosByTag(handle): Promise<Todo[]>
+    getTodosByTag(handle): Promise<Payment[]>
     {
         return new Promise((resolve, reject) => {
             this._httpClient.get('api/todo-tags?handle=' + handle)
@@ -229,7 +229,7 @@ export class TodoService implements Resolve<any>
                         .subscribe((todos: any) => {
 
                             this.todos = todos.map(todo => {
-                                return new Todo(todo);
+                                return new Payment(todo);
                             });
 
                             this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);

@@ -7,7 +7,7 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
 
 @Component({
-    selector     : 'app-reset-password',
+    selector     : 'apps-auth-reset-password',
     templateUrl  : './reset-password.component.html',
     styleUrls    : ['./reset-password.component.scss'],
 //    encapsulation: ViewEncapsulation.None,

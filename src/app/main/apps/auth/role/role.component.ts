@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-    selector   : 'apps-role',
+    selector   : 'apps-auth-role',
     templateUrl: './role.component.html',
     styleUrls  : ['./role.component.scss']
 })

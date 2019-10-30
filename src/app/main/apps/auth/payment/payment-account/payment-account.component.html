@@ -1,0 +1,34 @@
+<div id="auth-payment-account" class="page-layout simple fullwidth">
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="photo">
+                <img src="assets/icons/horselinc/ic-camera-alt.svg"/>
+        </div>
+
+        <form id="accountForm" name="accountForm" [formGroup]="accountForm" novalidate>
+            <div>
+                <input  matInput formControlName="firstName" type="firstName" placeholder="First Name" autocomplete="off"/>
+                <div style="width:5%"></div>
+                <input  matInput formControlName="lastName" type="lastName" placeholder="Last Name" autocomplete="off"/>
+            </div>
+            <div>
+                <input  matInput formControlName="firstName" type="firstName" placeholder="Phone number" autocomplete="off"/>
+                <div style="width:5%"></div>
+                <input  matInput formControlName="lastName" type="lastName" placeholder="Search your location" autocomplete="off"/>
+            </div>
+            <div>
+                <input  matInput formControlName="addr" type="addr" placeholder="Or enter your address here" autocomplete="off"/>
+            </div>
+            <div>
+                <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid" routerLink="/apps/auth/payment/info">ADD PAYMENT INFORMATION</button>
+            </div>
+            <div>
+                <p>
+                    By creating an account, you agree to the <a class="link" >Terms & Conditions</a> and <a class="link" >Privacy Policy</a> of HorseLinc.
+                </p>
+            </div>
+        </form>
+    </div>
+    <!-- /CONTENT -->
+</div>

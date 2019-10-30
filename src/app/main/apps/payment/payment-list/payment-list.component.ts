@@ -5,21 +5,21 @@ import { Subject } from 'rxjs';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
+import { Payment } from 'app/main/apps/payment/payment.model';
+import { PaymentService } from 'app/main/apps/payment/payment.service';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    selector     : 'todo-list',
-    templateUrl  : './todo-list.component.html',
-    styleUrls    : ['./todo-list.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    animations   : fuseAnimations
+  selector: 'payment-list',
+  templateUrl: './payment-list.component.html',
+  styleUrls: ['./payment-list.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  animations   : fuseAnimations
 })
-export class TodoListComponent implements OnInit, OnDestroy
-{
-    todos: Todo[];
-    currentTodo: Todo;
+export class PaymentListComponent implements OnInit, OnDestroy {
+
+    todos: Payment[];
+    currentTodo: Payment;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -28,12 +28,12 @@ export class TodoListComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {ActivatedRoute} _activatedRoute
-     * @param {TodoService} _todoService
+     * @param {PaymentService} _todoService
      * @param {Location} _location
      */
     constructor(
         private _activatedRoute: ActivatedRoute,
-        private _todoService: TodoService,
+        private _todoService: PaymentService,
         private _location: Location
     )
     {
@@ -124,4 +124,5 @@ export class TodoListComponent implements OnInit, OnDestroy
     {
 
     }
+
 }

@@ -6,7 +6,7 @@
     <mat-tab label="OUTSTAND"> 
         <!-- <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" [@animateStagger]="{value:'50'}"> -->
         <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" [@animateStagger]="{value:'50'}">
-            <todo-list-item class="todo-list-item has-handle"
+            <payment-list-item class="todo-list-item has-handle"
                 *ngFor="let todo of todos" [todo]="todo"
                 ngxDraggable
                 [model]="todo"
@@ -14,7 +14,7 @@
                 [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
                 matRipple
                 [@animate]="{value:'*',params:{y:'100%'}}">
-            </todo-list-item>
+            </payment-list-item>
         </div>
     </mat-tab>
     <mat-tab label="COMPLETED"> Content </mat-tab>

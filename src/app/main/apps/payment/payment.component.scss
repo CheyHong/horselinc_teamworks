@@ -1,10 +1,11 @@
 @import "src/@fuse/scss/fuse";
 
-todo {
+payment {
     width: 100%;
 
     .center {
-
+        margin-left: 0px !important;
+        margin-right: 0px !important;
         .header {
 
             .search-wrapper {
@@ -40,8 +41,13 @@ todo {
 
         .content-card {
 
+            payment-list,
+            payment-details {
+                flex: 0 0 27%;
+            }
+
             .Schedule-Service {
-                width: 203px;
+                width: 100%;
                 height: 24px;
                 font-family: Roboto;
                 font-size: 26px;
@@ -72,18 +78,20 @@ todo {
                 }
             }
 
-            @include media-breakpoint('lt-sm') {
+            
 
-                todo-list {
+            @include media-breakpoint('lt-lg') {
+
+                payment-list {
                     border-right: 0;
                 }
 
-                todo-list,
-                todo-details {
+                payment-list,
+                payment-details {
                     flex: 1 0 100%;
                 }
 
-                todo-details {
+                payment-details {
                     display: none !important;
                 }
 
@@ -98,12 +106,11 @@ todo {
                     }
 
                     .content {
-
-                        todo-list {
+                        payment-list {
                             display: none !important;
                         }
 
-                        todo-details {
+                        payment-details {
                             display: flex !important;
                         }
                     }

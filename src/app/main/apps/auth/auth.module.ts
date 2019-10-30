@@ -32,6 +32,10 @@ const routes = [
         component   :   RoleComponent,
     },
     {
+        path        : 'payment',
+        loadChildren: 'app/main/apps/auth/payment/payment.module#AuthPaymentModule'
+    },
+    {
         path      : '**',
         redirectTo: 'login'
     }

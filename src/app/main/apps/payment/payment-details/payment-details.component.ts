@@ -6,19 +6,19 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { FuseUtils } from '@fuse/utils';
 import { fuseAnimations } from '@fuse/animations';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
-import { TodoService } from 'app/main/apps/todo/todo.service';
+import { Payment } from 'app/main/apps/payment/payment.model';
+import { PaymentService } from 'app/main/apps/payment/payment.service';
 
 @Component({
-    selector     : 'todo-details',
-    templateUrl  : './todo-details.component.html',
-    styleUrls    : ['./todo-details.component.scss'],
+    selector     : 'payment-details',
+    templateUrl  : './payment-details.component.html',
+    styleUrls    : ['./payment-details.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class TodoDetailsComponent implements OnInit, OnDestroy
+export class PaymentDetailsComponent implements OnInit, OnDestroy
 {
-    todo: Todo;
+    todo: Payment;
     tags: any[];
     formType: string;
     todoForm: FormGroup;
@@ -32,11 +32,11 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {TodoService} _todoService
+     * @param {Payment} _todoService
      * @param {FormBuilder} _formBuilder
      */
     constructor(
-        private _todoService: TodoService,
+        private _todoService: PaymentService,
         private _formBuilder: FormBuilder
     )
     {
@@ -87,7 +87,7 @@ export class TodoDetailsComponent implements OnInit, OnDestroy
         this._todoService.onNewTodoClicked
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(() => {
-                this.todo = new Todo({});
+                this.todo = new Payment({});
                 this.todo.id = FuseUtils.generateGUID();
                 this.formType = 'new';
                 this.todoForm = this.createTodoForm();
