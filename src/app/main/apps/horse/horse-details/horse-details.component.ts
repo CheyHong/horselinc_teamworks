@@ -7,6 +7,8 @@ import { fuseAnimations } from '@fuse/animations';
 import { Horse } from 'app/main/apps/horse/horse.model';
 import { HorseService } from 'app/main/apps/horse/horse.service';
 
+
+
 @Component({
     selector     : 'horse-details',
     templateUrl  : './horse-details.component.html',
@@ -19,7 +21,7 @@ export class HorseDetailsComponent implements OnInit, OnDestroy
     horse: Horse;
     labels: any[];
     showDetails: boolean;
-
+    selectedDate: any;
     // Private
     private _unsubscribeAll: Subject<any>;
 
@@ -63,6 +65,10 @@ export class HorseDetailsComponent implements OnInit, OnDestroy
             });
     }
 
+    onSelect(event){
+        console.log(event);
+        this.selectedDate = event;
+      }
     /**
      * On destroy
      */
@@ -104,4 +110,5 @@ export class HorseDetailsComponent implements OnInit, OnDestroy
 
         this._horseService.updateHorse(this.horse);
     }
+    
 }

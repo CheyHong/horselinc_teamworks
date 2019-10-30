@@ -1,5 +1,4 @@
 @import 'src/@fuse/scss/fuse';
-
 horse-details {
     display: flex;
     flex-direction: column;
@@ -7,31 +6,24 @@ horse-details {
     padding: 24px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-
     .select-message-text {
         font-size: 24px;
         font-weight: 300;
     }
-
     .horse-header {
         padding-bottom: 16px;
-        border-bottom: 1px solid;
-
         .actions {
             min-width: 88px;
         }
-
         .subject {
             font-size: 17px;
             font-weight: 600;
         }
-
         .label {
             font-size: 11px;
             border-radius: 4px;
             margin: 4px 4px 4px 0;
             padding: 3px 8px;
-
             .label-color {
                 width: 8px;
                 height: 8px;
@@ -39,31 +31,40 @@ horse-details {
                 border-radius: 50%;
             }
         }
+        .card {
+            margin: 15px 8px 15px 8px;
+            width: 200px;
+            height: 72px;
+        }
+        .name {
+            margin-right: 8px;
+            font-weight: 600;
+            font-size: 24px;
+        }
+        .text1 {
+            margin-right: 4px;
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: lowercase;
+        }
+        .text2 {
+            margin-right: 4px;
+            font-size: 14px;
+            font-weight: normal;
+            text-transform: lowercase;
+        }
     }
-
     .horse-content {
         padding: 24px 0;
-
-        .to {
-
-            .to-text {
-                margin-right: 4px;
-                text-transform: lowercase;
-            }
-        }
-
         .info {
             padding-bottom: 16px;
-
             .avatar {
-                margin-right: 16px;
+                margin-right: 8px;
             }
-
             .name {
                 margin-right: 8px;
-                font-weight: 600;
+                font-size: 20px;
             }
-
             .toggle-details {
                 user-select: none;
                 text-decoration: underline;
@@ -71,40 +72,31 @@ horse-details {
                 cursor: pointer;
                 font-weight: 600;
             }
-
             .details {
                 padding-top: 8px;
-
                 .title {
                     font-weight: 600;
                     margin-right: 6px;
                 }
             }
-
         }
     }
-
     .horse-attachments {
         padding: 24px 0;
         border-top: 1px solid;
-
         .title {
             margin-bottom: 16px;
             font-weight: 600;
         }
-
         .attachment {
-
             .preview {
                 width: 100px;
                 margin: 0 16px 8px 0;
                 border-radius: 4px;
             }
-
             .link {
                 margin-bottom: 2px;
             }
-
             .size {
                 font-size: 11px;
             }

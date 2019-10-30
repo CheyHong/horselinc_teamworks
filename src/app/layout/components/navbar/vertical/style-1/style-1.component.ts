@@ -151,4 +151,10 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
     {
         this._fuseSidebarService.getSidebar('navbar').toggleFold();
     }
+    toggleSidebarOpen(key): void
+    {
+        this._fuseSidebarService.getSidebar(key).toggleOpen();
+    }
+
 }
+  
