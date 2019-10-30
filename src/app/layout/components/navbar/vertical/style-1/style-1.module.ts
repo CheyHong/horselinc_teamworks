@@ -7,6 +7,8 @@ import { FuseSharedModule } from '@fuse/shared.module';
 
 import { NavbarVerticalStyle1Component } from 'app/layout/components/navbar/vertical/style-1/style-1.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
+
 
 @NgModule({
     declarations: [
@@ -18,7 +20,9 @@ import { MatMenuModule } from '@angular/material/menu';
         MatMenuModule,
         FuseSharedModule,
         FuseNavigationModule,
-        
+        FuseSearchBarModule,
+        FuseShortcutsModule,
+ 
     ],
     exports     : [
         NavbarVerticalStyle1Component

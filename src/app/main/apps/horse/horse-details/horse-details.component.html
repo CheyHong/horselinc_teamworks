@@ -1,43 +1,55 @@
 <div *ngIf="!horse" fxLayout="column" fxLayoutAlign="center center" fxFlex>
     <mat-icon class="s-128 mb-16 select-message-icon hint-text"
               [@animate]="{value:'*',params:{delay:'300ms',scale:'0.2'}}">
-        ehorse
+        horse
     </mat-icon>
     <span class="select-message-text hint-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
         <span>{{ 'horse.SELECT_A_MESSAGE_TO_READ' | translate }}</span>
     </span>
 </div>
 
-<div *ngIf="horse">
+<div *ngIf="horse" fxLayout="column">
 
-    <div class="horse-header" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="horse-header" fxLayout="row" fxLayoutAlign="space-between start">
 
-        <div>
-            <div class="subject">{{horse.subject}}</div>
+            <div fxLayout = "column"  fxFlex = "70" fxLayoutAlign="start start" >
+                <div fxLayout="row" fxLayoutAlign="start start">
+                        <div>
+                            <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar big"/>                         
+                        </div>
 
-            <div class="labels mt-8" fxLayout="row wrap">
-                <div class="label" *ngFor="let labelId of horse.labels"
-                     fxLayout="row" fxLayoutAlign="start center">
-                    <div class="label-color" [ngStyle]="{'background-color': labels | getById:labelId:'color'}"></div>
-                    <div class="label-title">{{labels | getById:labelId:'title'}}</div>
+                        <div fxLayout="column" fxLayoutAlign="start start">
+                            <div class="name">
+                                {{horse.from.name}}
+                            </div>
+                            <div class="text1" fxLayout="row" fxLayoutAlign="start start">  
+                                <div>{{horse.to[0].name}}</div>
+                            </div>
+                            <div class="text2" fxLayout="row" fxLayoutAlign="start start">  
+                                <div>{{horse.to[0].name}}</div>
+                            </div>
+                        </div>
+
                 </div>
+                <div class="pt-12" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center"  fxFlex>
+                     
+                    <mat-card   fxFlex class="card">
+                            dsfsdsdfsd
+                    </mat-card>
+                   
+                    <mat-card  fxFlex class="card">
+                            dsfsdsdfsd
+                    </mat-card>
+                   
+                </div>
+
+            </div>
+            <div fxFlex = "30">
+                <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
             </div>
 
-        </div>
-
-        <div class="actions" fxLayout="row" fxLayoutAlign="start center">
-            <button mat-icon-button (click)="toggleStar($event)" aria-label="Toggle star">
-                <mat-icon class="amber-fg" *ngIf="horse.starred">star</mat-icon>
-                <mat-icon class="secondary-text" *ngIf="!horse.starred">star_border</mat-icon>
-            </button>
-
-            <button mat-icon-button (click)="toggleImportant($event)" aria-label="Toggle important">
-                <mat-icon class="red-fg" *ngIf="horse.important">label</mat-icon>
-                <mat-icon class="secondary-text" *ngIf="!horse.important">label_outline</mat-icon>
-            </button>
-        </div>
+      
     </div>
-
     <div class="horse-content">
 
         <div class="info" fxLayout="row" fxLayoutAlign="space-between start">
