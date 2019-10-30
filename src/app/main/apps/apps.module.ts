@@ -24,7 +24,10 @@ const routes = [
         path        : 'payment',
         loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
     },
-
+    {
+        path        : 'horse',
+        loadChildren: 'app/main/apps/horse/horse.module#HorseModule'
+    },
     {
         path        : '',
         redirectTo  : 'payment',

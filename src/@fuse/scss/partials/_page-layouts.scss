@@ -18,7 +18,7 @@
 
                     > .content-card {
                         background: map-get($background, card);
-                        border-radius: 8px 8px 0 0;
+                       // border-radius: 8px 8px 0 0;
 
                         > .toolbar {
                             border-bottom-color: map-get($foreground, divider);

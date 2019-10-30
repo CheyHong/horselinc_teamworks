@@ -1,6 +1,6 @@
-export class MailFakeDb
+export class HorseFakeDb
 {
-    public static mails = [
+    public static horses = [
         {
             'id'            : '15459251a6d6b397565',
             'from'          : {

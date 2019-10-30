@@ -92,8 +92,8 @@ export class ScrumboardFakeDb
                     'attachments'      : [
                         {
                             'id'  : '67027cahbe3b52ecf2dc631c',
-                            'name': 'mail.jpg',
-                            'src' : 'assets/images/scrumboard/mail.jpg',
+                            'name': 'horse.jpg',
+                            'src' : 'assets/images/scrumboard/horse.jpg',
                             'time': 'Nov 3 at 15:22AM',
                             'type': 'image'
                         },
@@ -455,7 +455,7 @@ export class ScrumboardFakeDb
                 },
                 {
                     'id'               : '44d1.2b51ea6cc2b5d.21f4a3412e857.8ffa2d8b44ad9.ac87215ed53a1.67d4921ad8f8d.9f318bcb2',
-                    'name'             : 'Mail app new layout',
+                    'name'             : 'Horse app new layout',
                     'description'      : 'Current layout has lots of flaws in mobile. Outlook view should help with that.',
                     'idAttachmentCover': '',
                     'idMembers'        : [
@@ -728,8 +728,8 @@ export class ScrumboardFakeDb
                     'attachments'      : [
                         {
                             'id'  : '5603a2ae2bbd55bb2db57478',
-                            'name': 'mail-app-design.jpg',
-                            'src' : 'assets/images/scrumboard/mail.jpg',
+                            'name': 'Horse-app-design.jpg',
+                            'src' : 'assets/images/scrumboard/horse.jpg',
                             'time': 'Nov 1 at 12:34PM',
                             'type': 'image'
                         }

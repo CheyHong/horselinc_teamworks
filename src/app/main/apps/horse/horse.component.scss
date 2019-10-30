@@ -1,11 +1,10 @@
 @import "src/@fuse/scss/fuse";
 
-payment {
+horse {
     width: 100%;
 
     .center {
-        margin-left: 0px !important;
-        margin-right: 0px !important;
+
         .header {
 
             .search-wrapper {
@@ -41,35 +40,7 @@ payment {
 
         .content-card {
 
-            payment-list,
-            payment-details {
-                flex: 0 0 27%;
-            }
-
-            .Schedule-Service {
-                width: 100%;
-                height: 24px;
-                font-family: Roboto;
-                font-size: 26px;
-                font-weight: bold;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 0.92;
-                letter-spacing: normal;
-                color: #4f748c;
-            }
-
-            .toolbar_1 {
-                display: flex;
-                -webkit-box-pack: start;
-                justify-content: flex-start;
-                -webkit-box-align: center;
-                align-items: center;
-                -webkit-box-flex: 1;
-                flex: 1 1 auto;
-                height: 80px;
-                min-height: 80px;
-                max-height: 80px;
+            .toolbar {
 
                 .toolbar-separator {
                     height: 32px;
@@ -78,39 +49,38 @@ payment {
                 }
             }
 
-            
+            @include media-breakpoint(xs) {
 
-            @include media-breakpoint('lt-lg') {
-
-                payment-list {
-                    border-right: 0;
+                horse-list {
+                    border-right: none;
                 }
 
-                payment-list,
-                payment-details {
+                horse-list,
+                horse-details {
                     flex: 1 0 100%;
                 }
 
-                payment-details {
+                horse-details {
                     display: none !important;
                 }
 
-                &.current-todo-selected {
+                &.current-horse-selected {
 
                     .toolbar {
                         padding-left: 16px !important;
 
-                        .todo-selection {
+                        .horse-selection {
                             display: none !important;
                         }
                     }
 
                     .content {
-                        payment-list {
+
+                        horse-list {
                             display: none !important;
                         }
 
-                        payment-details {
+                        horse-details {
                             display: flex !important;
                         }
                     }

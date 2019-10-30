@@ -1,3 +1,21 @@
-<p>
-  horse works!sdfsdfsadfsdafdsafsadfsadfsadsdasdafasdsdfsdfsdfsdfa
-</p>
+ <div id="horse" class="page-layout carded left-sidebar inner-scroll">
+ 
+     <div class="m-0 center">  
+       
+         <div class="content-card" [ngClass]="{'current-horse-selected':currentHorse}">
+            
+            <div class="content" fxLayout="row">
+
+                <horse-list fusePerfectScrollbar fxFlex.gt-md="30"></horse-list>
+                <horse-details fusePerfectScrollbar fxFlex></horse-details>
+
+            </div>
+          
+
+        </div> 
+       
+
+      </div>  
+    
+
+ </div> 
