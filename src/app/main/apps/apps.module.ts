@@ -30,11 +30,7 @@ const routes = [
     },
     {
         path        : '',
-<<<<<<< HEAD
-        redirectTo  : 'horse',
-=======
         redirectTo  : 'payment',
->>>>>>> dbb028aff1f3576d5fb562bb26f70982f9902071
         pathMatch   : 'full'
     }
 ];
