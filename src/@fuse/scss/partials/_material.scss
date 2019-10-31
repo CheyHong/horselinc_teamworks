@@ -149,6 +149,12 @@
         height: 24px;
         line-height: 24px;
     }
+    &.small32 {
+        width: 32px;
+        min-width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
     &.medium {
         width: 56px;
         min-width: 56px;
@@ -162,10 +168,11 @@
         line-height: 80px;
     }
     &.huge {
-        width: 96px;
-        min-width: 96px;
-        height: 96px;
-        line-height: 96px;
+        border-radius: 0%;
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        line-height: 100px;
     }
 }
 

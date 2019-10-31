@@ -13,6 +13,7 @@ import { HorseService } from 'app/main/apps/horse/horse.service';
     selector     : 'horse-details',
     templateUrl  : './horse-details.component.html',
     styleUrls    : ['./horse-details.component.scss'],
+    
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
