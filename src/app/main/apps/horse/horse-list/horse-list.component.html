@@ -3,30 +3,23 @@
 </div>
 
 <div fxLayout = "column" fxFlexFill>
-    <div class="horse-list" fxFlex="90" [@animateStagger]="{value:'50'}">
+    <div class="horse-list" fxFlex="92" [@animateStagger]="{value:'50'}">
         <horse-list-item matRipple *ngFor="let horse of horses" [horse]="horse" (click)="readhorse(horse.id)"
                         [ngClass]="{'current-horse':horse?.id == currentHorse?.id}"
                         [@animate]="{value:'*',params:{y:'100%'}}">
         </horse-list-item>
     </div>
 
-    <div fxFlex fxLayout="row">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+         <button mat-raised-button color="#ffffff" class="button small">
+                Filter
+         </button>
 
-           <div class="buttons">
-            <button class="continue" mat-raised-button routerLink="/apps/auth/login">Continue</button>
-        </div> 
-     
-        <div class="px-24 pt-32 pb-12">
-            <button mat-raised-button class="mat-accent compose-dialog-button w-100-p"
-                    aria-label="Compose" fxFlex>
-                Compose
-            </button>
-        </div>
-        <div class="px-24 pt-32 pb-12">
-            <button mat-raised-button class="quick-panel-toggle-button"
-                        aria-label="Toggle quick panel" fxFlex>
-                    format_list_bulleted
-            </button>
-        </div>
+        <button mat-raised-button class="button big">
+                New Horse Profile
+         </button>
+
+   
+       
     </div>
 </div>
