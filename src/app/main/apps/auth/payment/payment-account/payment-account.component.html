@@ -21,7 +21,7 @@
                 <input  matInput formControlName="addr" type="addr" placeholder="Or enter your address here" autocomplete="off"/>
             </div>
             <div>
-                <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid" routerLink="/apps/auth/payment/info">ADD PAYMENT INFORMATION</button>
+                <button mat-raised-button color="warn" type="" (click)="toggleSidebarOpen('authPaymentInfoPanel')">ADD PAYMENT INFORMATION</button>
             </div>
             <div>
                 <p>

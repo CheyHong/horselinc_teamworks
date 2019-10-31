@@ -93,6 +93,7 @@ export class HorseListItemComponent implements OnInit, OnDestroy
      */
     onSelectedChange(): void
     {
+        console.log("Selected");
         this._horseService.toggleSelectedhorse(this.horse.id);
     }
 

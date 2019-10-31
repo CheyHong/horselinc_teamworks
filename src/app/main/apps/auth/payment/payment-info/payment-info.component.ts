@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-  selector: 'apps-payment',
+  selector: 'apps-auth-payment-info',
   templateUrl: './payment-info.component.html',
   styleUrls: ['./payment-info.component.scss']
 })
