@@ -16,21 +16,24 @@ const routes = [
         component   :  WelcomeComponent,
     },
     {
-        path        : 'auth',
-        loadChildren: 'app/main/apps/auth/auth.module#AuthModule'
+        path        : 'user',
+        loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
-
     {
-        path        : 'payment',
-        loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
+        path        : 'profile',
+        loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
     },
     {
         path        : 'horse',
         loadChildren: 'app/main/apps/horse/horse.module#HorseModule'
     },
     {
+        path        : 'payment',
+        loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
+    },
+    {
         path        : '',
-        redirectTo  : 'horse',
+        redirectTo  : 'profile',
         pathMatch   : 'full'
     }
 ];

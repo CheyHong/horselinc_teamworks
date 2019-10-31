@@ -1,0 +1,79 @@
+@import "src/@fuse/scss/fuse";
+
+apps-profile {
+    width: 100%;
+
+    .profileSidebar{
+        background-color: white;
+        border-right: #efefef 1px solid;
+
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-flex: 1;
+        flex: 1 0 auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 240px;
+        min-width: 240px;
+        max-width: 240px;
+        z-index: 1000;
+        //box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.35);
+    
+    }
+    .center {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+        .content-card {
+
+            profile-sidebar,
+            profile-details {
+                flex: 0 0 27%;
+            }
+
+            @include media-breakpoint('lt-lg') {
+
+                profile-sidebar {
+                    border-right: 0;
+                }
+
+                profile-sidebar,
+                profile-details {
+                    flex: 1 0 100%;
+                }
+
+                profile-details {
+                    display: none !important;
+                }
+
+                &.current-todo-selected {
+
+                    .toolbar {
+                        padding-left: 16px !important;
+
+                        .todo-selection {
+                            display: none !important;
+                        }
+                    }
+
+                    .content {
+                        profile-sidebar {
+                            display: none !important;
+                        }
+
+                        profile-details {
+                            display: flex !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

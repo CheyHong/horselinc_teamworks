@@ -1,3 +1,4 @@
+import { MatListModule } from '@angular/material/list';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,24 +18,24 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import { PaymentComponent } from './payment.component';
-import { PaymentService } from 'app/main/apps/payment/payment.service';
-import { PaymentDetailsComponent } from './payment-details/payment-details.component';
-import { PaymentListComponent } from 'app/main/apps/payment/payment-list/payment-list.component';
-import { PaymentListItemComponent } from './payment-list/payment-list-item/payment-list-item.component';
+import { ProfileComponent } from './profile.component';
+import { ProfileService } from 'app/main/apps/profile/profile.service';
+
+import { ProfileSidebarComponent } from 'app/main/apps/profile/profile-sidebar/profile-sidebar.component';
+import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
 
 const routes: Routes = [
     {
-        path     : 'all',
-        component: PaymentComponent,
+        path     : 'index',
+        component: ProfileComponent,
         resolve  : {
-            todo: PaymentService
+            todo: ProfileService
         }
     },
 
     {
         path      : '**',
-        redirectTo: 'all',
+        redirectTo: 'index',
         pathMatch: 'full'
     }
    
@@ -44,6 +45,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
 
+    MatListModule,
     MatButtonModule,
     MatCheckboxModule,
     MatDatepickerModule,
@@ -62,14 +64,13 @@ const routes: Routes = [
     
   ],
   declarations: [
-      PaymentComponent,
-      PaymentDetailsComponent,
-      PaymentListComponent,
-      PaymentListItemComponent
+      ProfileComponent,
+      ProfileSidebarComponent,
+      ProfileDetailsComponent,
   ],
   providers   : [
-    PaymentService
+    ProfileService
   ]
 })
 
-export class PaymentModule { }
+export class ProfileModule { }

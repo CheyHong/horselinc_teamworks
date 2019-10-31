@@ -1,0 +1,21 @@
+<div class="page-layout carded left-sidebar">
+
+    <div class="center">
+
+        <!-- CONTENT CARD -->
+        <div class="content-card" [ngClass]="{'current-todo-selected':currentTodo}">
+        
+            <!-- CONTENT -->
+            <div class="content" fxFlexAlign="row">
+                 <profile-sidebar class="profileSidebar"></profile-sidebar>
+                <profile-details fusePerfectScrollbar fxFlex></profile-details>
+            </div>
+            <!-- / CONTENT -->
+
+        </div>
+        <!-- / CONTENT CARD -->
+
+    </div>
+    <!-- / CENTER -->
+
+</div>
