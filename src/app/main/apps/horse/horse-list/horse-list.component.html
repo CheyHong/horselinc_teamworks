@@ -2,9 +2,24 @@
     <span class="no-messages-text hint-text">{{ 'horse.NO_MESSAGES' | translate }}</span>
 </div>
 
-<div class="horse-list" [@animateStagger]="{value:'50'}">
-    <horse-list-item matRipple *ngFor="let horse of horses" [horse]="horse" (click)="readhorse(horse.id)"
-                    [ngClass]="{'current-horse':horse?.id == currentHorse?.id}"
-                    [@animate]="{value:'*',params:{y:'100%'}}">
-    </horse-list-item>
+<div fxLayout = "column" fxFlexFill>
+    <div class="horse-list" fxFlex="92" [@animateStagger]="{value:'50'}">
+        <horse-list-item matRipple *ngFor="let horse of horses" [horse]="horse" (click)="readhorse(horse.id)"
+                        [ngClass]="{'current-horse':horse?.id == currentHorse?.id}"
+                        [@animate]="{value:'*',params:{y:'100%'}}">
+        </horse-list-item>
+    </div>
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+         <button mat-raised-button color="#ffffff" class="button small">
+                Filter
+         </button>
+
+        <button mat-raised-button class="button big">
+                New Horse Profile
+         </button>
+
+   
+       
+    </div>
 </div>

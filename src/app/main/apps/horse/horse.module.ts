@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
+import {  MatSidenavModule, MatListModule,  MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule} from '@angular/material';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
@@ -22,6 +23,10 @@ import { HorseListItemComponent } from 'app/main/apps/horse/horse-list/horse-lis
 import { HorseDetailsComponent } from 'app/main/apps/horse/horse-details/horse-details.component';
 import { HorseMainSidebarComponent } from 'app/main/apps/horse/sidebars/main/main-sidebar.component';
 import { HorseComposeDialogComponent } from 'app/main/apps/horse/dialogs/compose/compose.component';
+
+import { CommonModule }   from '@angular/common';
+import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
+
 
 const routes: Routes = [
     {
@@ -68,7 +73,8 @@ const routes: Routes = [
     },
     {
         path      : '**',
-        redirectTo: 'inbox'
+        redirectTo: 'inbox',
+        pathMatch: 'full'
     }
 ];
 
@@ -94,11 +100,20 @@ const routes: Routes = [
         MatRippleModule,
         MatSelectModule,
         MatToolbarModule,
-
+        MatSidenavModule,
+        MatListModule,  
+        MatRadioModule, 
+        MatGridListModule, 
+        MatDatepickerModule, 
+        MatNativeDateModule, 
+        MatCardModule,
         TranslateModule,
 
         FuseSharedModule,
-        FuseSidebarModule
+        FuseSidebarModule,
+        CommonModule,
+        jqxCalendarModule,
+       
     ],
     providers      : [
         HorseService

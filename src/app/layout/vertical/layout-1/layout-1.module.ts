@@ -9,7 +9,6 @@ import { FooterModule } from 'app/layout/components/footer/footer.module';
 import { NavbarModule } from 'app/layout/components/navbar/navbar.module';
 import { QuickPanelModule } from 'app/layout/components/quick-panel/quick-panel.module';
 import { ToolbarModule } from 'app/layout/components/toolbar/toolbar.module';
-
 import { VerticalLayout1Component } from 'app/layout/vertical/layout-1/layout-1.component';
 
 @NgModule({
@@ -26,7 +25,7 @@ import { VerticalLayout1Component } from 'app/layout/vertical/layout-1/layout-1.
         FooterModule,
         NavbarModule,
         QuickPanelModule,
-        ToolbarModule
+        ToolbarModule,
     ],
     exports     : [
         VerticalLayout1Component

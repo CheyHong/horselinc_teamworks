@@ -1,141 +1,173 @@
 <div *ngIf="!horse" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <mat-icon class="s-128 mb-16 select-message-icon hint-text"
-              [@animate]="{value:'*',params:{delay:'300ms',scale:'0.2'}}">
-        ehorse
-    </mat-icon>
-    <span class="select-message-text hint-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
-        <span>{{ 'horse.SELECT_A_MESSAGE_TO_READ' | translate }}</span>
-    </span>
+    <img src="assets/icons/horselinc/ic-manager.svg" class="avatar huge"/>  
+    <div class="text">
+        No horses available at this time
+    </div> 
 </div>
 
-<div *ngIf="horse">
+<div *ngIf="horse" fxLayout="column">
 
-    <div class="horse-header" fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="horse-header" fxFlex fxLayout="row" fxLayoutAlign="start center">
 
-        <div>
-            <div class="subject">{{horse.subject}}</div>
-
-            <div class="labels mt-8" fxLayout="row wrap">
-                <div class="label" *ngFor="let labelId of horse.labels"
-                     fxLayout="row" fxLayoutAlign="start center">
-                    <div class="label-color" [ngStyle]="{'background-color': labels | getById:labelId:'color'}"></div>
-                    <div class="label-title">{{labels | getById:labelId:'title'}}</div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="actions" fxLayout="row" fxLayoutAlign="start center">
-            <button mat-icon-button (click)="toggleStar($event)" aria-label="Toggle star">
-                <mat-icon class="amber-fg" *ngIf="horse.starred">star</mat-icon>
-                <mat-icon class="secondary-text" *ngIf="!horse.starred">star_border</mat-icon>
-            </button>
-
-            <button mat-icon-button (click)="toggleImportant($event)" aria-label="Toggle important">
-                <mat-icon class="red-fg" *ngIf="horse.important">label</mat-icon>
-                <mat-icon class="secondary-text" *ngIf="!horse.important">label_outline</mat-icon>
-            </button>
-        </div>
-    </div>
-
-    <div class="horse-content">
-
-        <div class="info" fxLayout="row" fxLayoutAlign="space-between start">
-
-            <div fxFlex fxLayout="column" fxLayoutAlign="start start">
-
+            <div fxLayout = "column"  fxLayoutAlign="start start" >
                 <div fxLayout="row" fxLayoutAlign="start start">
-
-                    <div>
-                        <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}"
-                             src="{{horse.from.avatar}}" class="avatar"/>
-
-                        <div *ngIf="!horse.from.avatar" class="avatar" ms-random-class="vm.colors">
-                            {{horse.from.name[0]}}
+                        <div>
+                            <img src="assets/images/avatars/Helen.jpg" class="avatar big"/>                         
                         </div>
+
+                        <div fxLayout="column" fxLayoutAlign="start start">
+                            <div class="name">
+                                {{horse.from.name}}
+                            </div>
+                            <div class="text1" fxLayout="row" fxLayoutAlign="start start">  
+                                <div>{{horse.to[0].name}}</div>
+                            </div>
+                            <div class="text2" fxLayout="row" fxLayoutAlign="start start">  
+                                <div>{{horse.to[0].name}}</div>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="pt-12" fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start center"  fxFlex>
+                     
+                    <div   fxLayout="column" fxFlex class="card">
+                            <span class="text">Trainer</span>
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar small32"/> 
+                                <div fxLayout="column">
+                                    <span class="name">Kate tretina</span>
+                                    <span class="details">(River Wind Farm)</span> 
+                                </div>
+                            </div>
                     </div>
+                   
+                    <div  fxLayout="column" fxFlex class="card">
+                            <span class="text">Owner</span>
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar small32"/> 
+                                <div fxLayout="column">
+                                    <span class="name">Kate tretina</span>
+                                </div>
+                            </div>
+                    </div>
+                   
+                </div>
 
-                    <div fxLayout="column" fxLayoutAlign="start start">
+            </div>
+            <div  fxHide fxShow.gt-md class="calendar">
+                 <jqxCalendar [width]="365" [height]="195"  [enableTooltips]="true" [disabled]="false" class="borderline" ></jqxCalendar>
+            </div>    
+        
+            <!--</div>  -->
+           
+             
+    </div>
+    <div class="horse-content" fxFlex>
 
-                        <div class="name">
-                            {{horse.from.name}}
+        <div class="info" fxLayout="column" fxLayoutAlign="space-between start">
+
+            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start start">
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horse.time}}</span>
+                     <div fxLayout="column" class="p-0 card">
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar small32"/> 
+                                <span>Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
                         </div>
 
-                        <div class="to" fxLayout="row" fxLayoutAlign="start center">
-                            <div class="to-text">to</div>
-                            <div>{{horse.to[0].name}}</div>
+                        <div fxFlex = "25" class="details1" fxLayoutAlign="start center">
+                                Completed-awating-payment request
                         </div>
                     </div>
                 </div>
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horse.time}}</span>
+                    <div fxLayout="column" class="p-0 card">
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar small32"/> 
+                                <span>Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
 
-                <a class="toggle-details" (click)="showDetails = !showDetails">
-                    <span *ngIf="!showDetails">Show Details</span>
-                    <span *ngIf="showDetails">Hide Details</span>
-                </a>
+                        </div>
 
-                <div *ngIf="showDetails" class="details" fxLayout="row" fxLayoutAlign="start start">
-
-                    <div fxLayout="column">
-                        <span class="title">From:</span>
-                        <span class="title">To:</span>
-                        <span class="title">Date:</span>
-                    </div>
-
-                    <div fxLayout="column">
-                        <span class="detail">{{horse.from.ehorse}}</span>
-                        <span class="detail">{{horse.to[0].ehorse}}</span>
-                        <span class="detail">{{horse.time}}</span>
+                        <div fxFlex = "25" class="details2" fxLayoutAlign="start center">
+                                Pending
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <button mat-icon-button [matMenuTriggerFor]="moreMenu" aria-label="More" (click)="$event.stopPropagation()">
-                <mat-icon>more_vert</mat-icon>
+            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start start">
+
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horse.time}}</span>
+                    <div fxLayout="column" class="p-0 card">
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar small32"/> 
+                                <span>Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
+                        </div>
+
+                        <div fxFlex = "25" class="details3" fxLayoutAlign="start center">
+                               Accepted   
+                        </div>
+                    </div>
+                </div>
+
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horse.time}}</span>
+                     <div fxLayout="column" class="p-0 card" >
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horse.from.avatar" alt="{{horse.from.name}}" src="{{horse.from.avatar}}" class="avatar small32"/> 
+                                <span >Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
+                        </div>
+
+                        <div fxFlex = "25" fxLayout = "row" class="details4" fxLayoutAlign="center center">
+
+                            <button mat-raised-button fxFlex="50" class="tab_button1"> DECLIND</button>
+                                                        
+                            <button mat-raised-button fxFlex class="p-0 tab_button2"> Choose Service Provider</button>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div fxfxLayoutAlign="space-evenly center" fxLayout="row">
+            <button mat-raised-button class="button big" fxFlexOffset="50">
+                Schedule a Service
             </button>
-
-            <mat-menu #moreMenu="matMenu">
-                <button mat-menu-item aria-label="Reply">
-                    <mat-icon>reply</mat-icon>
-                    <span>Reply</span>
-                </button>
-
-                <button mat-menu-item aria-label="Forward">
-                    <mat-icon>forward</mat-icon>
-                    <span>Forward</span>
-                </button>
-
-                <button mat-menu-item aria-label="Print">
-                    <mat-icon>print</mat-icon>
-                    <span>Print</span>
-                </button>
-            </mat-menu>
         </div>
-
-        <div [innerHTML]="horse.message"></div>
 
     </div>
 
-    <div *ngIf="horse.attachments" class="horse-attachments">
 
-        <div class="title">
-            <span>Attachments</span>
-            ({{horse.attachments.length}})
-        </div>
 
-        <div class="attachment-list" fxLayout="row wrap">
-
-            <div class="attachment" fxLayout="column"
-                 *ngFor="let attachment of horse.attachments">
-
-                <img class="preview" src="{{attachment.preview}}">
-
-                <div fxLayout="column">
-                    <a href="#" onclick="event.preventDefault()">View</a>
-                    <a href="#" onclick="event.preventDefault()">Download</a>
-                    <div class="size">({{attachment.size}})</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </div>

@@ -39,6 +39,7 @@ export class PaymentComponent implements OnInit, OnDestroy
         private _fuseSidebarService: FuseSidebarService,
         private _todoService: PaymentService,
         private _fuseConfigService: FuseConfigService,
+        
 
     )
     {
