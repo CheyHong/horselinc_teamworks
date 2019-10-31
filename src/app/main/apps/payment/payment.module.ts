@@ -46,7 +46,7 @@ const routes: Routes = [
 
     {
         path      : '**',
-        redirectTo: 'all',
+        redirectTo: 'provider',
         pathMatch: 'full'
     }
    
