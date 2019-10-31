@@ -13,19 +13,23 @@ import { NgxDnDModule } from '@swimlane/ngx-dnd';
 
 import {MatTabsModule} from '@angular/material/tabs';
 
-
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
 import { PaymentComponent } from './payment.component';
 import { PaymentService } from 'app/main/apps/payment/payment.service';
+import { ProviderPaymentService } from 'app/main/apps/payment/provider-payment.service';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { PaymentListComponent } from 'app/main/apps/payment/payment-list/payment-list.component';
 import { PaymentListItemComponent } from './payment-list/payment-list-item/payment-list-item.component';
 
+import { ProviderPaymentListComponent } from './provider-payment-list/provider-payment-list.component';
+import { ProviderPaymentDetailsComponent } from './provider-payment-details/provider-payment-details.component';
+import { ProviderPaymentListItemComponent } from './provider-payment-list/provider-payment-list-item/provider-payment-list-item.component';
+
 const routes: Routes = [
     {
-        path     : 'all',
+        path     : 'manager',
         component: PaymentComponent,
         resolve  : {
             todo: PaymentService
@@ -33,8 +37,16 @@ const routes: Routes = [
     },
 
     {
+        path     : 'provider',
+        component: PaymentComponent,
+        resolve  : {
+            provider: ProviderPaymentService
+        }
+    },
+
+    {
         path      : '**',
-        redirectTo: 'all'
+        redirectTo: 'provider'
     }
    
 ];
@@ -64,10 +76,14 @@ const routes: Routes = [
       PaymentComponent,
       PaymentDetailsComponent,
       PaymentListComponent,
-      PaymentListItemComponent
+      PaymentListItemComponent,
+      ProviderPaymentListComponent,
+      ProviderPaymentDetailsComponent,
+      ProviderPaymentListItemComponent,
   ],
   providers   : [
-    PaymentService
+    PaymentService,
+    ProviderPaymentService
   ]
 })
 

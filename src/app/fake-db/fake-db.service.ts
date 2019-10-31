@@ -19,6 +19,7 @@ import { KnowledgeBaseFakeDb } from 'app/fake-db/knowledge-base';
 import { IconsFakeDb } from 'app/fake-db/icons';
 import { ChatPanelFakeDb } from 'app/fake-db/chat-panel';
 import { QuickPanelFakeDb } from 'app/fake-db/quick-panel';
+import { ProvidersFakeDb } from 'app/fake-db/provider';
 
 export class FakeDbService implements InMemoryDbService
 {
@@ -64,6 +65,9 @@ export class FakeDbService implements InMemoryDbService
             'todo-todos'  : TodoFakeDb.todos,
             'todo-filters': TodoFakeDb.filters,
             'todo-tags'   : TodoFakeDb.tags,
+
+            // Provider
+            'provider-providers'  : ProvidersFakeDb.providers,
 
             // Scrumboard
             'scrumboard-boards': ScrumboardFakeDb.boards,

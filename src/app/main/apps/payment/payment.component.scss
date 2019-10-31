@@ -13,14 +13,6 @@ payment {
                 overflow: hidden;
                 @include mat-elevation(1);
 
-                .sidebar-toggle {
-                    margin: 0 0 0 6px;
-                    width: 56px;
-                    height: 56px;
-                    border-radius: 0;
-                    border-right: 1px solid;
-                }
-
                 .search {
                     width: 100%;
                     height: 56px;
@@ -43,7 +35,14 @@ payment {
 
             payment-list,
             payment-details {
-                flex: 0 0 27%;
+                flex: 0 0 28%;
+                border-right: #efefef 1px solid;
+            }
+
+            provider-payment-list,
+            provider-payment-details {
+                flex: 0 0 28%;
+                border-right: #efefef 1px solid;
             }
 
             .Schedule-Service {
@@ -82,11 +81,12 @@ payment {
 
             @include media-breakpoint('lt-lg') {
 
-                payment-list {
+                payment-list, provider-payment-list {
                     border-right: 0;
                 }
 
                 payment-list,
+                provider-payment-list,
                 payment-details {
                     flex: 1 0 100%;
                 }
