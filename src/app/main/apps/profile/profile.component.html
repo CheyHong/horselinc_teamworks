@@ -1,21 +1,21 @@
-<div class="page-layout carded left-sidebar">
+ <div id="profile" class="page-layout carded left-sidebar inner-scroll">
+ 
+     <div class="m-0 center">  
+       
+         <div class="content-card">
+            
+            <div class="content" fxLayout="row">
 
-    <div class="center">
-
-        <!-- CONTENT CARD -->
-        <div class="content-card" [ngClass]="{'current-todo-selected':currentTodo}">
-        
-            <!-- CONTENT -->
-            <div class="content" fxFlexAlign="row">
-                 <profile-sidebar class="profileSidebar"></profile-sidebar>
+                <profile-list fusePerfectScrollbar fxFlex.gt-md="27"></profile-list>
                 <profile-details fusePerfectScrollbar fxFlex></profile-details>
+
             </div>
-            <!-- / CONTENT -->
+          
 
-        </div>
-        <!-- / CONTENT CARD -->
+        </div> 
+       
 
-    </div>
-    <!-- / CENTER -->
+      </div>  
+    
 
-</div>
+ </div> 

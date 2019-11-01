@@ -2,33 +2,33 @@ import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } f
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { Horse } from 'app/main/apps/horse/horse.model';
-import { HorseService } from 'app/main/apps/horse/horse.service';
+import { Profile } from 'app/main/apps/profile/profile.model';
+import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
-    selector     : 'horse-list-item',
-    templateUrl  : './horse-list-item.component.html',
-    styleUrls    : ['./horse-list-item.component.scss'],
+    selector     : 'profile-list-item',
+    templateUrl  : './profile-list-item.component.html',
+    styleUrls    : ['./profile-list-item.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class HorseListItemComponent implements OnInit, OnDestroy
+export class ProfileListItemComponent implements OnInit, OnDestroy
 {
-    @Input() horse: Horse;
-    labels: any[];
+      @Input() profile: Profile;
+      labels: any[];
 
     @HostBinding('class.selected')
     selected: boolean;
 
-    // Private
-    private _unsubscribeAll: Subject<any>;
+    // // Private
+     private _unsubscribeAll: Subject<any>;
 
     /**
      * Constructor
      *
-     * @param {horseService} _horseService
+     * @param {ProfileService} _profileService
      */
     constructor(
-        private _horseService: HorseService
+         private _profileService: ProfileService
     )
     {
         // Set the private defaults
@@ -45,10 +45,10 @@ export class HorseListItemComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Set the initial values
-        this.horse = new Horse(this.horse);
+        this.profile = new Profile(this.profile);
 
         // Subscribe to update on selected horse change
-        this._horseService.onSelectedHorsesChanged
+        this._profileService.onSelectedProfilesChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(selectedhorses => {
                 this.selected = false;
@@ -57,7 +57,7 @@ export class HorseListItemComponent implements OnInit, OnDestroy
                 {
                     for ( const horse of selectedhorses )
                     {
-                        if ( horse.id === this.horse.id )
+                        if ( horse.id === this.profile.id )
                         {
                             this.selected = true;
                             break;
@@ -67,7 +67,7 @@ export class HorseListItemComponent implements OnInit, OnDestroy
             });
 
         // Subscribe to update on label change
-        this._horseService.onLabelsChanged
+        this._profileService.onLabelsChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(labels => {
                 this.labels = labels;
@@ -80,8 +80,8 @@ export class HorseListItemComponent implements OnInit, OnDestroy
     ngOnDestroy(): void
     {
         // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
+         this._unsubscribeAll.next();
+         this._unsubscribeAll.complete();
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -91,8 +91,6 @@ export class HorseListItemComponent implements OnInit, OnDestroy
     /**
      * On selected change
      */
-    
-
     /**
      * Toggle star
      *
@@ -102,9 +100,9 @@ export class HorseListItemComponent implements OnInit, OnDestroy
     {
         event.stopPropagation();
 
-        this.horse.toggleStar();
+        this.profile.toggleStar();
 
-        this._horseService.updateHorse(this.horse);
+        this._profileService.updateProfile(this.profile);
     }
 
     /**
@@ -116,8 +114,8 @@ export class HorseListItemComponent implements OnInit, OnDestroy
     {
         event.stopPropagation();
 
-        this.horse.toggleImportant();
+        this.profile.toggleImportant();
 
-        this._horseService.updateHorse(this.horse);
+        this._profileService.updateProfile(this.profile);
     }
 }

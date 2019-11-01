@@ -76,9 +76,11 @@ export class FakeDbService implements InMemoryDbService
             'invoice': InvoiceFakeDb.invoice,
 
             // Profile
-            'profile-timeline'     : ProfileFakeDb.timeline,
-            'profile-photos-videos': ProfileFakeDb.photosVideos,
-            'profile-about'        : ProfileFakeDb.about,
+            'profile-profiles': ProfileFakeDb.profiles,
+            'profile-folders': ProfileFakeDb.folders,
+            'profile-filters': ProfileFakeDb.filters,
+            'profile-labels' : ProfileFakeDb.labels,
+
 
             // Search
             'search': SearchFakeDb.search,

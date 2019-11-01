@@ -24,8 +24,8 @@
                 </mat-error> -->
 
                 <!-- [disabled]="registerForm.invalid" -->
-                <button mat-raised-button color="warn" type="" routerLink="/apps/user/role">SIGNUP</button>
-                <button class="logInInstead" mat-raised-button color="warn" type="" [disabled]="registerForm.invalid">LOG IN INSTEAD</button>
+                <button mat-raised-button color="warn" type="" routerLink="/apps/user/role" [disabled]="registerForm.invalid" >SIGNUP</button>
+                <button mat-raised-button class="logInInstead" type="" routerLink="/apps/user/login">LOG IN INSTEAD</button>
     
             </form>
         </div>

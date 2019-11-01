@@ -8,13 +8,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
 import { FuseSharedModule } from '@fuse/shared.module';
+import { FuseSidebarModule } from '@fuse/components';
 
 import {UserLoginComponent } from './user-login/user-login.component';
 import {UserRegisterComponent } from './user-register/user-register.component';
 import {UserResetPasswordComponent} from './user-reset-password/user-reset-password.component';
 import {UserRoleComponent} from './user-role/user-role.component';
-import {UserPaymentAccountComponent} from './user-payment-account/user-payment-account.component';
-import {UserPaymentInfoComponent} from './user-payment-info/user-payment-info.component';
+import {UserPaymentComponent} from './user-payment/user-payment.component';
+import {UserPaymentInfoComponent} from './user-payment/user-payment-info/user-payment-info.component';
 
 const routes = [
 
@@ -35,11 +36,11 @@ const routes = [
         component   :   UserRoleComponent,
     },
     {
-        path        : 'payment-account',
-        component   :   UserPaymentAccountComponent,        
+        path        : 'payment',
+        component   :   UserPaymentComponent,        
     },
     {
-        path        : 'payment-info',
+        path        : 'payment/info',
         component   :   UserPaymentInfoComponent,        
     },
     {
@@ -53,6 +54,7 @@ const routes = [
     imports     : [
         RouterModule.forChild(routes),
         FuseSharedModule,
+        FuseSidebarModule,
         MatButtonModule,
         MatFormFieldModule,
         MatIconModule,
@@ -64,7 +66,7 @@ const routes = [
         UserRegisterComponent,
         UserResetPasswordComponent,
         UserRoleComponent,
-        UserPaymentAccountComponent,
+        UserPaymentComponent,
         UserPaymentInfoComponent
     ],
 
@@ -73,7 +75,7 @@ const routes = [
         UserRegisterComponent,
         UserResetPasswordComponent,
         UserRoleComponent,
-        UserPaymentAccountComponent,
+        UserPaymentComponent,
         UserPaymentInfoComponent
     ]
 })

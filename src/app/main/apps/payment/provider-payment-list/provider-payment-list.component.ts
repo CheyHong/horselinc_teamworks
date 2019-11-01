@@ -63,5 +63,8 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
-
+    onShowDialog()
+    {
+        console.log("Click");
+    }
 }

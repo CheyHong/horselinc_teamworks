@@ -22,7 +22,6 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-
                 align-items: stretch;
                 
                 .card {
@@ -33,12 +32,16 @@
                     height:392px;
                     width:360px;
                     padding: 24px 20px;
-                    margin: 50px 50px;
+                    margin: 20px 50px;
                     position: relative;
 
                     color: #ffffff;
                     background: #335c77;
                     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    
+                    @include media-breakpoint(xs) {
+                        margin: 10px 10px;
+                    }
     
                     .card-title {
                         height:100px;
@@ -89,7 +92,9 @@
             .buttons{
                 justify-content: center;
                 display:flex;
-                
+                @include media-breakpoint(xs) {
+                    margin-bottom: 30px;
+                }
                 .continue{
                     font-weight:300;
 

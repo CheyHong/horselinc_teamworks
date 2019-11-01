@@ -7,7 +7,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
-import { WelcomeComponent } from './welcome/welcome.component';
+
+import {
+    MatToolbarModule, MatSidenavModule, 
+    MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
+} from '@angular/material';
+
+
+import {WelcomeComponent } from './welcome/welcome.component';
+import { CalendarComponent } from './calendar/calendar.component';
+
+
 
 const routes = [
     {
@@ -36,7 +46,7 @@ const routes = [
     },
     {
         path        : '',
-        redirectTo  : 'welcome',
+        redirectTo  : 'profile',
         pathMatch   : 'full'
     }
 ];
@@ -48,14 +58,19 @@ const routes = [
         MatButtonModule,
         MatFormFieldModule,
         MatIconModule,
-        MatInputModule
+        MatInputModule,
+
+        MatToolbarModule, MatSidenavModule, 
+        MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
     ],
     declarations: [
         WelcomeComponent, 
+        CalendarComponent
     ],
 
     exports     : [
         WelcomeComponent,
+        CalendarComponent
     ]
 })
 export class AppsModule
