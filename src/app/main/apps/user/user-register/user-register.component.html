@@ -23,7 +23,8 @@
                     Please enter a valid email address
                 </mat-error> -->
 
-                <button mat-raised-button color="warn" type="" [disabled]="registerForm.invalid">SIGNUP</button>
+                <!-- [disabled]="registerForm.invalid" -->
+                <button mat-raised-button color="warn" type="" routerLink="/apps/user/role">SIGNUP</button>
                 <button class="logInInstead" mat-raised-button color="warn" type="" [disabled]="registerForm.invalid">LOG IN INSTEAD</button>
     
             </form>
