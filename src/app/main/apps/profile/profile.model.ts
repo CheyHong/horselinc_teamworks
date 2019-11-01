@@ -1,42 +1,52 @@
 export class Profile
 {
     id: string;
-    title: string;
-    notes: string;
-    startDate: string;
-    dueDate: boolean;
-    completed: boolean;
+    from: {
+        name: string,
+        avatar: string,
+        email: string
+    };
+    to: {
+        name: string,
+        email: string
+    }[];
+    subject: string;
+    message: string;
+    time: string;
+    read: boolean;
     starred: boolean;
     important: boolean;
-    deleted: boolean;
-    tags: [
-        {
-            'id': number,
-            'name': string,
-            'label': string,
-            'color': string
-        }
-        ];
+    hasAttachments: boolean;
+    attachments: {
+        type: string,
+        fileName: string,
+        preview: string,
+        url: string,
+        size: string
+    }[];
+    labels: string[];
+    folder: string;
 
     /**
      * Constructor
      *
-     * @param todo
+     * @param profile
      */
-    constructor(todo)
+    constructor(profile)
     {
-        {
-            this.id = todo.id;
-            this.title = todo.title;
-            this.notes = todo.notes;
-            this.startDate = todo.startDate;
-            this.dueDate = todo.dueDate;
-            this.completed = todo.completed;
-            this.starred = todo.starred;
-            this.important = todo.important;
-            this.deleted = todo.deleted;
-            this.tags = todo.tags || [];
-        }
+        this.id = profile.id;
+        this.from = profile.from;
+        this.to = profile.to;
+        this.subject = profile.subject;
+        this.message = profile.message;
+        this.time = profile.time;
+        this.read = profile.read;
+        this.starred = profile.starred;
+        this.important = profile.important;
+        this.hasAttachments = profile.hasAttachments;
+        this.attachments = profile.attachments;
+        this.labels = profile.labels;
+        this.folder = profile.folder;
     }
 
     /**
@@ -53,21 +63,5 @@ export class Profile
     toggleImportant(): void
     {
         this.important = !this.important;
-    }
-
-    /**
-     * Toggle completed
-     */
-    toggleCompleted(): void
-    {
-        this.completed = !this.completed;
-    }
-
-    /**
-     * Toggle deleted
-     */
-    toggleDeleted(): void
-    {
-        this.deleted = !this.deleted;
     }
 }

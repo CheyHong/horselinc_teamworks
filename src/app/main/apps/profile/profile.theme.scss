@@ -1,0 +1,126 @@
+@mixin profile-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $accent: map-get($theme, accent);
+    $is-dark: map-get($theme, is-dark);
+    // profile
+    profile {
+        .center {
+            .header {
+                .search-wrapper {
+                    background: map-get($background, card);
+                    .sidebar-toggle {
+                        border-right-color: map-get($foreground, divider);
+                    }
+                    .search {
+                        input {
+                            background: map-get($background, card);
+                            color: map-get($foreground, text);
+                        }
+                    }
+                }
+            }
+            .content-card {
+                .toolbar {
+                    .toolbar-separator {
+                        background: map-get($foreground, divider);
+                    }
+                }
+            }
+        }
+    }
+    // profile list
+    profile-list {
+        border-right-color: map-get($foreground, divider);
+    }
+    // profile list item
+    profile-list-item {
+        border-bottom-color: map-get($foreground, divider);
+        &.unread {
+            .info {
+                .row-2 {
+                    color: map-get($foreground, text);
+                }
+            }
+        }
+        &.current-profile {
+            background: map-get($background, hover);
+        }
+        &.selected {
+            @if ($is-dark) {
+                background: map-get($background, background);
+            }
+            @else {
+                background: map-get($accent, 50);
+            }
+            .info {
+                .row-2 {
+                    .labels {
+                        @if ($is-dark) {
+                            background: map-get($background, background);
+                        }
+                        @else {
+                            background: map-get($accent, 50);
+                        }
+                    }
+                }
+            }
+        }
+        .info {
+            .row-2 {
+                color: map-get($foreground, secondary-text);
+                .labels {
+                    .label {
+                        background-color: rgba(0, 0, 0, 0.08);
+                    }
+                }
+            }
+        }
+    }
+    // profile details
+    profile-details {
+        .profile-header {
+            border-bottom-color: map-get($foreground, divider);
+            .label {
+                background-color: rgba(0, 0, 0, 0.08);
+            }
+            .mat-card {
+                box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+            }
+        }
+        .profile-content {
+            .to {
+                color: map-get($foreground, secondary-text);
+            }
+            .mat-card {
+                box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+            }
+            .info {
+                .avatar {
+                    background: map-get($accent, default);
+                }
+                .details {
+                    .detail {
+                        color: map-get($foreground, secondary-text);
+                    }
+                }
+            }
+        }
+        .profile-attachments {
+            border-top-color: map-get($foreground, divider);
+        }
+    }
+    // Compose dialog
+    .profile-compose-dialog {
+        .mat-dialog-container {
+            .compose-form {
+                .attachment-list {
+                    .attachment {
+                        background-color: map-get($background, card);
+                        border-color: map-get($foreground, divider);
+                    }
+                }
+            }
+        }
+    }
+}
