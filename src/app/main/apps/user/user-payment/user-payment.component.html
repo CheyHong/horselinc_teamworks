@@ -8,7 +8,17 @@
 
         <form id="paymentForm" novalidate>
             <div>
-                <input  matInput type="firstName" placeholder="First Name" autocomplete="off"/>
+                <!-- <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                    <mat-form-field appearance="outline" fxFlex="100">
+                        <mat-label>Company (disabled)</mat-label>
+                        <input matInput formControlName="company">
+                        <mat-icon matSuffix class="disabled-text">domain</mat-icon>
+                    </mat-form-field>
+
+                </div> -->
+        
+                <input  matInput type="firstName" placeholder="First Name" autocomplete="off">
                 <div style="width:5%"></div>
                 <input  matInput type="lastName" placeholder="Last Name" autocomplete="off"/>
             </div>
@@ -29,7 +39,7 @@
                 </p>
             </div>
             <div>
-                <button mat-raised-button color="warn" type="" >CREATE ACCOUNT</button>
+                <button mat-raised-button color="warn" type="" routerLink="/apps/horse" >CREATE ACCOUNT</button>
             </div>
         </form>
     </div>
