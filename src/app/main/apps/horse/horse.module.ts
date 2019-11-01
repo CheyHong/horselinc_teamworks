@@ -21,9 +21,6 @@ import { HorseComponent } from 'app/main/apps/horse/horse.component';
 import { HorseListComponent } from 'app/main/apps/horse/horse-list/horse-list.component';
 import { HorseListItemComponent } from 'app/main/apps/horse/horse-list/horse-list-item/horse-list-item.component';
 import { HorseDetailsComponent } from 'app/main/apps/horse/horse-details/horse-details.component';
-import { HorseMainSidebarComponent } from 'app/main/apps/horse/sidebars/main/main-sidebar.component';
-import { HorseComposeDialogComponent } from 'app/main/apps/horse/dialogs/compose/compose.component';
-
 import { CommonModule }   from '@angular/common';
 import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
 
@@ -84,8 +81,7 @@ const routes: Routes = [
         HorseListComponent,
         HorseListItemComponent,
         HorseDetailsComponent,
-        HorseMainSidebarComponent,
-        HorseComposeDialogComponent
+ 
     ],
     imports        : [
         RouterModule.forChild(routes),
@@ -118,9 +114,7 @@ const routes: Routes = [
     providers      : [
         HorseService
     ],
-    entryComponents: [
-        HorseComposeDialogComponent
-    ]
+   
 })
 export class HorseModule
 {

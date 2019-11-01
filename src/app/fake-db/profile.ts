@@ -1,357 +1,182 @@
 export class ProfileFakeDb
 {
-    public static timeline = {
-        activities: [
-            {
-                'user'   : {
-                    'name'  : 'Alice Freeman',
-                    'avatar': 'assets/images/avatars/alice.jpg'
-                },
-                'message': 'started following you.',
-                'time'   : '13 mins. ago'
+    public static profiles = [
+        {
+            'id'            : '15459251a6d6b397565',
+            'from'          : {
+                'name'  : 'Huckleberry',
+                'avatar': 'assets/images/avatars/alice.jpg',
+                'email' : 'alicefreeman@creapond.com'
             },
-            {
-                'user'   : {
-                    'name'  : 'Andrew Green',
-                    'avatar': 'assets/images/avatars/andrew.jpg'
+            'to'            : [
+                {
+                    'name' : 'Chocollete Cover',
+                    'email': 'johndoe@creapond.com'
+                }
+            ],
+            'subject'       : 'Commits that need to be pushed lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'message'       : '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. </p><p> In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. </p><p> Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem. </p>',
+            'time'          : '28 Jun',
+            'read'          : false,
+            'starred'       : false,
+            'important'     : true,
+            'hasAttachments': true,
+            'attachments'   : [
+                {
+                    'type'    : 'image',
+                    'fileName': 'flowers',
+                    'preview' : 'assets/images/mail/attachment-1.jpg',
+                    'url'     : '',
+                    'size'    : '1.1Mb'
                 },
-                'message': 'sent you a message.',
-                'time'   : 'June 10,2018'
+                {
+                    'type'    : 'image',
+                    'fileName': 'snow',
+                    'preview' : 'assets/images/mail/attachment-2.jpg',
+                    'url'     : '',
+                    'size'    : '380kb'
+                },
+                {
+                    'type'    : 'image',
+                    'fileName': 'sunrise',
+                    'preview' : 'assets/images/mail/attachment-3.jpg',
+                    'size': '17Mb'
+                }
+            ],
+            'labels'        : [
+                1
+            ],
+            'folder'        : 0
+        },
+        {
+            'id'            : '154588a0864d2881124',
+            'from'          : {
+                'name'  : '21C',
+                'avatar': 'assets/images/avatars/vincent.jpg',
+                'email' : 'lawrencecollins@creapond.com'
             },
-            {
-                'user'   : {
-                    'name'  : 'Garry Newman',
-                    'avatar': 'assets/images/avatars/garry.jpg'
-                },
-                'message': 'shared a public post with your group.',
-                'time'   : 'June 9,2018'
+            'to'            : [
+                {
+                    'name' : 'me',
+                    'email': 'johndoe@creapond.com'
+                }
+            ],
+            'subject'       : 'Commits that need to be pushed lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'message'       : '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. </p><p> In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. </p><p> Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem. </p>',
+            'time'          : '28 Jun',
+            'read'          : false,
+            'starred'       : false,
+            'important'     : false,
+            'hasAttachments': false,
+            'labels'        : [],
+            'folder'        : 0
+        },
+        {
+            'id'            : '15453ba60d3baa5daaf',
+            'from'          : {
+                'name'  : '21C',
+                'avatar': 'assets/images/avatars/joyce.jpg',
+                'email' : 'judithburton@creapond.com'
             },
-            {
-                'user'   : {
-                    'name'  : 'Carl Henderson',
-                    'avatar': 'assets/images/avatars/carl.jpg'
-                },
-                'message': 'wants to play Fallout Shelter with you.',
-                'time'   : 'June 8,2018'
-            },
-            {
-                'user'   : {
-                    'name'  : 'Jane Dean',
-                    'avatar': 'assets/images/avatars/jane.jpg'
-                },
-                'message': 'started following you.',
-                'time'   : 'June 7,2018'
-            },
-            {
-                'user'   : {
-                    'name'  : 'Juan Carpenter',
-                    'avatar': 'assets/images/avatars/james.jpg'
-                },
-                'message': 'sent you a message.',
-                'time'   : 'June 6,2018'
-            },
-            {
-                'user'   : {
-                    'name'  : 'Judith Burton',
-                    'avatar': 'assets/images/avatars/joyce.jpg'
-                },
-                'message': 'shared a photo with you.',
-                'time'   : 'June 5,2018'
-            },
-            {
-                'user'   : {
-                    'name'  : 'Vincent Munoz',
-                    'avatar': 'assets/images/avatars/vincent.jpg'
-                },
-                'message': 'shared a photo with you.',
-                'time'   : 'June 4,2018'
-            }
-        ],
-        posts     : [
-            {
-                'user'    : {
-                    'name'  : 'Garry Newman',
-                    'avatar': 'assets/images/avatars/garry.jpg'
-                },
-                'message' : 'Remember the place we were talking about the other night? Found it!',
-                'time'    : '32 minutes ago',
-                'type'    : 'post',
-                'like'    : 5,
-                'share'   : 21,
-                'media'   : {
-                    'type'   : 'image',
-                    'preview': 'assets/images/profile/morain-lake.jpg'
-                },
-                'comments': [
-                    {
-                        'user'   : {
-                            'name'  : 'Alice Freeman',
-                            'avatar': 'assets/images/avatars/alice.jpg'
-                        },
-                        'time'   : 'June 10, 2018',
-                        'message': 'That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat.'
-                    }
-                ]
-            },
-            {
-                'user'    : {
-                    'name'  : 'Andrew Green',
-                    'avatar': 'assets/images/avatars/andrew.jpg'
-                },
-                'message' : 'Hey, man! Check this, it’s pretty awesome!',
-                'time'    : 'June 12, 2018',
-                'type'    : 'article',
-                'like'    : 98,
-                'share'   : 6,
-                'article' : {
-                    'title'   : 'Never stop changing!',
-                    'subtitle': 'John Westrock',
-                    'excerpt' : 'John Westrock\'s new photo album called \'Never stop changing\' is published! It features more than 200 photos that will take you right in.',
-                    'media'   : {
-                        'type'   : 'image',
-                        'preview': 'assets/images/profile/never-stop-changing.jpg'
-                    }
-                },
-                'comments': [
-                    {
-                        'user'   : {
-                            'name'  : 'Alice Freeman',
-                            'avatar': 'assets/images/avatars/alice.jpg'
-                        },
-                        'time'   : 'June 10, 2018',
-                        'message': 'That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat.'
-                    }
-                ]
-            },
-            {
-                'user'   : {
-                    'name'  : 'Carl Henderson',
-                    'avatar': 'assets/images/avatars/carl.jpg'
-                },
-                'message': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat. Aenean lorem ex, ultrices sit amet ligula sed...',
-                'time'   : 'June 10, 2018',
-                'type'   : 'something',
-                'like'   : 4,
-                'share'  : 1
-            }
-        ]
-    };
+            'to'            : [
+                {
+                    'name' : 'me',
+                    'email': 'johndoe@creapond.com'
+                }
+            ],
+            'subject'       : 'Commits that need to be pushed lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            'message'       : '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lorem diam, pulvinar id nisl non, ultrices maximus nibh. Suspendisse ut justo velit. Nullam ac ultrices risus, quis auctor orci. Vestibulum volutpat nisi et neque porta ullamcorper. Maecenas porttitor porta erat ac suscipit. Sed cursus leo ut elementum fringilla. Maecenas semper viverra erat, vel ullamcorper dui efficitur in. Vestibulum placerat imperdiet tellus, et tincidunt eros posuere eget. Proin sit amet facilisis libero. Nulla eget est ut erat aliquet rhoncus. Quisque ac urna vitae dui hendrerit sollicitudin vel id sem. </p><p> In eget ante sapien. Quisque consequat velit non ante finibus, vel placerat erat ultricies. Aliquam bibendum justo erat, ultrices vehicula dolor elementum a. Mauris eu nisl feugiat ligula molestie eleifend. Aliquam efficitur venenatis velit ac porta. Vivamus vitae pulvinar tellus. Donec odio enim, auctor eget nibh mattis, ultricies dignissim lacus. Phasellus non tincidunt dui. Nulla eu arcu lorem. </p><p> Donec non hendrerit augue, lobortis sollicitudin odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis sit amet euismod enim, eget vestibulum justo. Fusce a placerat lectus, eget feugiat purus. Cras risus ante, faucibus eget justo commodo, volutpat tempor ante. Donec sit amet leo venenatis, gravida quam sit amet, blandit dui. In quam ante, elementum ut faucibus nec, tristique vitae dui. Praesent vel erat at enim placerat luctus vel ut ipsum. In congue tempor mi, non ornare lectus condimentum at. Aenean libero diam, finibus eget sapien et, tristique fermentum lorem. </p>',
+            'time'          : '28 Jun',
+            'read'          : true,
+            'starred'       : false,
+            'important'     : false,
+            'hasAttachments': false,
+            'labels'        : [
+                3,
+                2
+            ],
+            'folder'        : 0
+        },
+        
+                
+         
+           
+       ];
 
-    public static photosVideos = [
+    public static folders = [
         {
-            'name' : 'June 2018',
-            'info' : '5 Photos',
-            'media': [
-                {
-                    'type'   : 'photo',
-                    'title'  : 'A Walk Amongst Friends',
-                    'preview': 'assets/images/profile/a-walk-amongst-friends-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Braies Lake',
-                    'preview': 'assets/images/profile/braies-lake-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Fall Glow',
-                    'preview': 'assets/images/profile/fall-glow-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'First Snow',
-                    'preview': 'assets/images/profile/first-snow-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Lago di Braies',
-                    'preview': 'assets/images/profile/lago-di-braies-small.jpg'
-                }
-            ]
+            'id'    : 0,
+            'handle': 'inbox',
+            'title' : 'Inbox',
+            'icon'  : 'inbox'
         },
         {
-            'name' : 'May 2018',
-            'info' : '7 Photos, 3 Videos',
-            'media': [
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Lago di Sorapis',
-                    'preview': 'assets/images/profile/lago-di-sorapis-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Morain Lake',
-                    'preview': 'assets/images/profile/morain-lake-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Never Stop Changing',
-                    'preview': 'assets/images/profile/never-stop-changing-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Reaching',
-                    'preview': 'assets/images/profile/reaching-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Yosemite',
-                    'preview': 'assets/images/profile/yosemite-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'A Walk Amongst Friends',
-                    'preview': 'assets/images/profile/a-walk-amongst-friends-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Braies Lake',
-                    'preview': 'assets/images/profile/braies-lake-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Fall Glow',
-                    'preview': 'assets/images/profile/fall-glow-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'First Snow',
-                    'preview': 'assets/images/profile/first-snow-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Lago di Braies',
-                    'preview': 'assets/images/profile/lago-di-braies-small.jpg'
-                }
-            ]
+            'id'    : 1,
+            'handle': 'sent',
+            'title' : 'Sent',
+            'icon'  : 'send'
         },
         {
-            'name' : 'April 2018',
-            'info' : '7 Photos',
-            'media': [
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Lago di Sorapis',
-                    'preview': 'assets/images/profile/lago-di-sorapis-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Morain Lake',
-                    'preview': 'assets/images/profile/morain-lake-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Never Stop Changing',
-                    'preview': 'assets/images/profile/never-stop-changing-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Reaching',
-                    'preview': 'assets/images/profile/reaching-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Yosemite',
-                    'preview': 'assets/images/profile/yosemite-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'A Walk Amongst Friends',
-                    'preview': 'assets/images/profile/a-walk-amongst-friends-small.jpg'
-                },
-                {
-                    'type'   : 'photo',
-                    'title'  : 'Braies Lake',
-                    'preview': 'assets/images/profile/braies-lake-small.jpg'
-                }
-            ]
+            'id'    : 2,
+            'handle': 'drafts',
+            'title' : 'Drafts',
+            'icon'  : 'email_open'
+        },
+        {
+            'id'    : 3,
+            'handle': 'spam',
+            'title' : 'Spam',
+            'icon'  : 'error'
+        },
+        {
+            'id'    : 4,
+            'handle': 'trash',
+            'title' : 'Trash',
+            'icon'  : 'delete'
         }
     ];
 
-    public static about = {
-        'general': {
-            'gender'   : 'Male',
-            'birthday' : 'February 30th, 1974',
-            'locations': [
-                'London, UK',
-                'New York, USA'
-            ],
-            'about'    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.'
+    public static filters = [
+        {
+            'id'    : 0,
+            'handle': 'starred',
+            'title' : 'Starred',
+            'icon'  : 'star',
+            'color' : 'amber-fg'
         },
-        'work'   : {
-            'occupation': 'Developer',
-            'skills'    : 'C#, PHP, Javascript, Angular, JS, HTML, CSS',
-            'jobs'      : [
-                {
-                    'company': 'Self-Employed',
-                    'date'   : '2010 - Now'
-                },
-                {
-                    'company': 'Google',
-                    'date'   : '2008 - 2010'
-                }
-            ]
+        {
+            'id'    : 1,
+            'handle': 'important',
+            'title' : 'Important',
+            'icon'  : 'label',
+            'color' : 'red-fg'
+        }
+    ];
+
+    public static labels = [
+        {
+            'id'    : 0,
+            'handle': 'note',
+            'title' : 'Note',
+            'color' : '#7cb342'
         },
-        'contact': {
-            'address' : 'Ut pharetra luctus est quis sodales. Duis nisi tortor, bibendum eget tincidunt, aliquam ac elit. Mauris nec euismod odio.',
-            'tel'     : [
-                '+6 555 6600',
-                '+9 555 5255'
-            ],
-            'websites': [
-                'withinpixels.com'
-            ],
-            'emails'  : [
-                'mail@withinpixels.com',
-                'mail@creapond.com'
-            ]
+        {
+            'id'    : 1,
+            'handle': 'paypal',
+            'title' : 'Paypal',
+            'color' : '#d84315'
         },
-        'groups' : [
-            {
-                'name'    : 'Android',
-                'category': 'Technology',
-                'members' : '1.856.546'
-            },
-            {
-                'name'    : 'Google',
-                'category': 'Web',
-                'members' : '1.226.121'
-            },
-            {
-                'name'    : 'Fallout',
-                'category': 'Games',
-                'members' : '526.142'
-            }
-        ],
-        'friends': [
-            {
-                'name'  : 'Garry Newman',
-                'avatar': 'assets/images/avatars/garry.jpg'
-            },
-            {
-                'name'  : 'Carl Henderson',
-                'avatar': 'assets/images/avatars/carl.jpg'
-            },
-            {
-                'name'  : 'Jane Dean',
-                'avatar': 'assets/images/avatars/jane.jpg'
-            },
-            {
-                'name'  : 'Garry Arnold',
-                'avatar': 'assets/images/avatars/garry.jpg'
-            },
-            {
-                'name'  : 'Vincent Munoz',
-                'avatar': 'assets/images/avatars/vincent.jpg'
-            },
-            {
-                'name'  : 'Alice Freeman',
-                'avatar': 'assets/images/avatars/alice.jpg'
-            },
-            {
-                'name'  : 'Andrew Green',
-                'avatar': 'assets/images/avatars/andrew.jpg'
-            }
-        ]
-    };
+        {
+            'id'    : 2,
+            'handle': 'invoice',
+            'title' : 'Invoice',
+            'color' : '#607d8b'
+        },
+        {
+            'id'    : 3,
+            'handle': 'amazon',
+            'title' : 'Amazon',
+            'color' : '#03a9f4'
+        }
+    ];
 }

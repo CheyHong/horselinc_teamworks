@@ -93,127 +93,103 @@ horse-details {
             color: #000000;
         }
     }
-}
-
-.horse-content {
-    padding: 0;
-    .info {
-        padding-bottom: 16px;
-        .avatar {
-            margin-right: 8px;
-        }
-        .name {
-            margin-right: 8px;
-            font-size: 20px;
-        }
-        .area {
-            margin: 10px 0px 16px 32px;
-        }
-        .date {
-            margin-bottom: 8px;
-            font-family: Roboto;
-            font-size: 14px;
-            font-weight: 500;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
-            color: #5389a0;
-        }
-        .card {
-            width: 344px;
-            height: 196px;
-            border-radius: 8px;
-            box-shadow: 0 5px 30px 0 rgba(13, 62, 83, 0.17);
-            background-color: #ffffff;
-            .card_content {
-                padding: 12px 12px 12px 16px;
-                .queen {
-                    margin: 4px;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.43;
-                    letter-spacing: normal;
-                    opacity: 0.3;
-                    color: #000000;
-                }
-                .name {
-                    margin: 4px;
-                    font-family: Roboto;
-                    font-size: 16px;
-                    font-weight: 900;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.25;
-                    letter-spacing: normal;
-                    color: #000000;
-                }
-                .image {
-                    margin: 4px;
-                    font-family: Roboto;
-                    font-size: 16px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.25;
-                    letter-spacing: normal;
-                    color: #000000;
-                }
-                .mane {
-                    margin: 4px;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.43;
-                    letter-spacing: normal;
-                    color: #000000;
-                }
+    .horse-content {
+        padding: 0;
+        .info {
+            padding-bottom: 16px;
+            .avatar {
+                margin-right: 8px;
             }
-            .details1 {
-                border-left: 8px solid #961508;
-                border-radius: 0 0 8px 8px;
-                background-color: #f1f1f1;
-                padding-left: 8px;
+            .name {
+                margin-right: 8px;
+                font-size: 20px;
+            }
+            .area {
+                margin: 10px 0px 16px 32px;
+            }
+            .date {
+                margin-bottom: 8px;
+                font-family: Roboto;
                 font-size: 14px;
-                font-weight: normal;
+                font-weight: 500;
                 font-stretch: normal;
                 font-style: normal;
-                line-height: 1.43;
+                line-height: normal;
                 letter-spacing: normal;
-                color: #961508;
+                color: #5389a0;
             }
-            .details2 {
-                border-left: 8px solid #ec7185;
-                border-radius: 0 0 8px 8px;
-                background-color: #f1f1f1;
-                padding-left: 8px;
-                font-size: 14px;
-                font-weight: normal;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: 1.43;
-                letter-spacing: normal;
-                color: #ec7185;
-            }
-            .details3 {
-                border-left: 8px solid #41969c;
-                border-radius: 0 0 8px 8px;
-                background-color: #f1f1f1;
-                padding-left: 8px;
-            }
-            .details4 {
-                border-left: 8px solid #ec7185;
-                border-radius: 0 0 8px 8px;
-                background-color: #f1f1f1;
-                .tab_button1 {
-                    height: 48px;
-                    border-radius: 0 0 0 0;
+            .card {
+                width: 344px;
+                height: 196px;
+                border-radius: 8px;
+                box-shadow: 0 5px 30px 0 rgba(13, 62, 83, 0.17);
+                background-color: #ffffff;
+                .card_content {
+                    padding: 12px 12px 12px 16px;
+                    .queen {
+                        margin: 4px;
+                        font-family: Roboto;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        opacity: 0.3;
+                        color: #000000;
+                    }
+                    .name {
+                        margin: 4px;
+                        font-family: Roboto;
+                        font-size: 16px;
+                        font-weight: 900;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.25;
+                        letter-spacing: normal;
+                        color: #000000;
+                    }
+                    .image {
+                        margin: 4px;
+                        font-family: Roboto;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.25;
+                        letter-spacing: normal;
+                        color: #000000;
+                    }
+                    .mane {
+                        margin: 4px;
+                        font-family: Roboto;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        color: #000000;
+                    }
+                }
+                .details1 {
+                    border-left: 8px solid #961508;
+                    border-radius: 0 0 8px 8px;
                     background-color: #f1f1f1;
+                    padding-left: 8px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.43;
+                    letter-spacing: normal;
+                    color: #961508;
+                }
+                .details2 {
+                    border-left: 8px solid #ec7185;
+                    border-radius: 0 0 8px 8px;
+                    background-color: #f1f1f1;
+                    padding-left: 8px;
                     font-size: 14px;
                     font-weight: normal;
                     font-stretch: normal;
@@ -222,17 +198,40 @@ horse-details {
                     letter-spacing: normal;
                     color: #ec7185;
                 }
-                .tab_button2 {
-                    height: 48px;
-                    border-radius: 0 0 8px 0;
-                    background-color: #ec7185;
-                    font-size: 14px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.43;
-                    letter-spacing: normal;
-                    color: #ffffff;
+                .details3 {
+                    border-left: 8px solid #41969c;
+                    border-radius: 0 0 8px 8px;
+                    background-color: #f1f1f1;
+                    padding-left: 8px;
+                }
+                .details4 {
+                    border-left: 8px solid #ec7185;
+                    border-radius: 0 0 8px 8px;
+                    background-color: #f1f1f1;
+                    .tab_button1 {
+                        height: 48px;
+                        border-radius: 0 0 0 0;
+                        background-color: #f1f1f1;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        color: #ec7185;
+                    }
+                    .tab_button2 {
+                        height: 48px;
+                        border-radius: 0 0 8px 0;
+                        background-color: #ec7185;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        color: #ffffff;
+                    }
                 }
             }
         }

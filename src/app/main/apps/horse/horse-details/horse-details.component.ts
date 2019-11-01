@@ -66,10 +66,7 @@ export class HorseDetailsComponent implements OnInit, OnDestroy
             });
     }
 
-    onSelect(event){
-        console.log(event);
-        this.selectedDate = event;
-      }
+    
     /**
      * On destroy
      */

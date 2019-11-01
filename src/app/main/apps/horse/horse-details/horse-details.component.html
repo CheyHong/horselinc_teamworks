@@ -5,7 +5,7 @@
     </div> 
 </div>
 
-<div *ngIf="horse" fxLayout="column">
+<div *ngIf="horse" fxLayout="column" fxFlex>
 
     <div class="horse-header" fxFlex fxLayout="row" fxLayoutAlign="start center">
 
@@ -62,7 +62,7 @@
            
              
     </div>
-    <div class="horse-content" fxFlex>
+    <div class="horse-content" fxFlex="70">
 
         <div class="info" fxLayout="column" fxLayoutAlign="space-between start">
 
@@ -159,15 +159,13 @@
             </div>
             
         </div>
-        
-        <div fxfxLayoutAlign="space-evenly center" fxLayout="row">
-            <button mat-raised-button class="button big" fxFlexOffset="50">
-                Schedule a Service
-            </button>
-        </div>
 
     </div>
 
-
+    <div fxfxLayoutAlign="space-evenly center"  fxLayout="row">
+        <button mat-raised-button  class="button big" fxFlexOffset="50">
+            Schedule a Service
+        </button>
+    </div>
 
 </div>
