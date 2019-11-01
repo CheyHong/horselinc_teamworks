@@ -41,6 +41,10 @@ const routes = [
         loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
     },
     {
+        path        : 'schedule',
+        loadChildren: 'app/main/apps/schedule/schedule.module#ScheduleModule'
+    },
+    {
         path        : '',
         redirectTo  : 'welcome',
         pathMatch   : 'full'
