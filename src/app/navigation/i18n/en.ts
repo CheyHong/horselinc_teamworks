@@ -5,7 +5,7 @@ export const locale = {
             'HORSES': 'Horses',
             'PAYMENT': 'Payment',
             'PROFILE': 'Profile',
-            
+            'SCHEDULE': 'Schedule',
         }
     }
 };

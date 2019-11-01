@@ -1,0 +1,59 @@
+@import "src/@fuse/scss/fuse";
+
+schedule {
+    width: 100%;
+    background-color: #efefef;
+    .content-card {
+        
+        .toolbar_1 {
+            display: flex;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-flex: 1;
+            flex: 1 1 auto;
+            height: 80px;
+            min-height: 80px;
+            max-height: 80px;
+
+            .Schedule-Service {
+                width: 100%;
+                height: 24px;
+                font-family: Roboto;
+                font-size: 26px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 0.92;
+                letter-spacing: normal;
+                color: #4f748c;
+                overflow: hidden;
+            }
+
+            .toolbar-separator {
+                height: 32px;
+                width: 1px;
+                margin: 0 12px;
+            }
+        }
+
+        .content {
+
+        }
+
+        // @include media-breakpoint('lt-lg') {
+
+            &.current-schedule-selected {
+
+                .toolbar_1 {
+                    padding-left: 16px !important;
+
+                    .schedule-selection {
+                        display: none !important;
+                    }
+                }
+            // }
+        }
+    }
+}

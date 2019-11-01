@@ -7,8 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
-
-import {WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes = [
     {
@@ -30,6 +29,10 @@ const routes = [
     {
         path        : 'payment',
         loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
+    },
+    {
+        path        : 'schedule',
+        loadChildren: 'app/main/apps/schedule/schedule.module#ScheduleModule'
     },
     {
         path        : '',

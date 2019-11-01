@@ -25,6 +25,13 @@ export const navigation: FuseNavigation[] = [
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
         url      : '/apps/dashboards/project',          
+    },
+    {
+        id       : 'schedule',
+        title    : 'Schedule',
+        translate: 'NAV.SCHEDULE',
+        type     : 'item',
+        iconsrc  : 'assets/icons/horselinc/ic-shedule-black.svg',
+        url      : '/apps/schedule',
     }
 ];
-
