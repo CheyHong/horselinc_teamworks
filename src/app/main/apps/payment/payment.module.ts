@@ -27,12 +27,14 @@ import { ProviderPaymentListComponent } from './provider-payment-list/provider-p
 import { ProviderPaymentDetailsComponent } from './provider-payment-details/provider-payment-details.component';
 import { ProviderPaymentListItemComponent } from './provider-payment-list/provider-payment-list-item/provider-payment-list-item.component';
 
+import { DialogsComponent } from './dialogs/dialogs.component';
+
 const routes: Routes = [
     {
         path     : 'manager',
         component: PaymentComponent,
         resolve  : {
-            todo: PaymentService
+            manager: PaymentService
         }
     },
 
@@ -46,12 +48,8 @@ const routes: Routes = [
 
     {
         path      : '**',
-<<<<<<< HEAD
-        redirectTo: 'provider'
-=======
-        redirectTo: 'all',
+        redirectTo: 'provider',
         pathMatch: 'full'
->>>>>>> 623861aa1f1ebdd5eb15165b338ba552c637831f
     }
    
 ];
@@ -85,6 +83,8 @@ const routes: Routes = [
       ProviderPaymentListComponent,
       ProviderPaymentDetailsComponent,
       ProviderPaymentListItemComponent,
+
+      DialogsComponent,
   ],
   providers   : [
     PaymentService,

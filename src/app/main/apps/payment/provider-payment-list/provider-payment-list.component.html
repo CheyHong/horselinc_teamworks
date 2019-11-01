@@ -1,11 +1,24 @@
 
 <mat-tab-group>
     <mat-tab label="DRAFTS"> 
-        <provider-payment-list-item
-            *ngFor="let provider of providers"
-            [provider]="provider"
-            >
-        </provider-payment-list-item>
+        <div class="provider-list" fxLayout = "column">
+            <div fxFlex="92" [@animateStagger]="{value:'50'}">
+                <provider-payment-list-item
+                    *ngFor="let provider of providers"
+                    [provider]="provider"
+                    (click)="readProvider(provider.id)"
+                    [ngClass]="{'current-provider':provider?.id == currentProvider?.id}"
+                    matRipple
+                    [@animate]="{value:'*',params:{y:'100%'}}">
+                </provider-payment-list-item>
+            </div>
+            <div fxFlex="8" class="cbtn">
+                <button mat-raised-button class="createInvoice">
+                    Create Invoice 
+                </button>
+            </div>
+        </div>
+        
     </mat-tab>
     <mat-tab label="SUBMITTED">
         SUBMITTED

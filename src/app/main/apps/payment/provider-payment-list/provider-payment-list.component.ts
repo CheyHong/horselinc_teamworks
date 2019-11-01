@@ -51,7 +51,6 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
     }
 
     readProvider(providerId): void {
-
         this._providerService.setCurrentProvider(providerId);
     }
 

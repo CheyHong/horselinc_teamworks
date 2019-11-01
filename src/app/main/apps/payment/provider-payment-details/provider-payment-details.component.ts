@@ -43,25 +43,17 @@ export class ProviderPaymentDetailsComponent implements OnInit, OnDestroy
         
         this._providerService.onCurrentProviderChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(([provider, formType]) => {
-
-                if ( provider && formType === 'edit' )
-                {
-                    // this.formType = 'edit';
-                    this.provider = provider;
-                    // this.todoForm = this.createTodoForm();
-
-                    // this.todoForm.valueChanges
-                    //     .pipe(
-                    //         takeUntil(this._unsubscribeAll),
-                    //         debounceTime(500),
-                    //         distinctUntilChanged()
-                    //     )
-                    //     .subscribe(data => {
-                    //         this._todoService.updateTodo(data);
-                    //     });
-                }
+            .subscribe(provider => {
+                this.provider = provider;
             });
+
+        this._providerService.onNewProviderClicked
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(() => {
+                this.provider = new Provider({});
+                this.provider.id = FuseUtils.generateGUID();
+                this._providerService.onCurrentProviderChanged.next([this.provider, 'new']);
+        });
     }
 
     /**

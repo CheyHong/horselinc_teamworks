@@ -28,12 +28,12 @@ export class PaymentListComponent implements OnInit, OnDestroy {
      * Constructor
      *
      * @param {ActivatedRoute} _activatedRoute
-     * @param {PaymentService} _todoService
+     * @param {PaymentService} _managerService
      * @param {Location} _location
      */
     constructor(
         private _activatedRoute: ActivatedRoute,
-        private _todoService: PaymentService,
+        private _managerService: PaymentService,
         private _location: Location
     )
     {
@@ -51,14 +51,15 @@ export class PaymentListComponent implements OnInit, OnDestroy {
     ngOnInit(): void
     {
         // Subscribe to update todos on changes
-        this._todoService.onTodosChanged
+        this._managerService.onTodosChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(todos => {
                 this.todos = todos;
+                console.log(todos);
             });
 
         // Subscribe to update current todo on changes
-        this._todoService.onCurrentTodoChanged
+        this._managerService.onCurrentTodoChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(currentTodo => {
                 if ( !currentTodo )
@@ -70,18 +71,18 @@ export class PaymentListComponent implements OnInit, OnDestroy {
                     const tagHandle    = this._activatedRoute.snapshot.params.tagHandle,
                           filterHandle = this._activatedRoute.snapshot.params.filterHandle;
 
-                    if ( tagHandle )
-                    {
-                        this._location.go('apps/todo/tag/' + tagHandle);
-                    }
-                    else if ( filterHandle )
-                    {
-                        this._location.go('apps/todo/filter/' + filterHandle);
-                    }
-                    else
-                    {
-                        this._location.go('apps/todo/all');
-                    }
+                    // if ( tagHandle )
+                    // {
+                    //     this._location.go('apps/payment/tag/' + tagHandle);
+                    // }
+                    // else if ( filterHandle )
+                    // {
+                    //     this._location.go('apps/payment/filter/' + filterHandle);
+                    // }
+                    // else
+                    // {
+                        // this._location.go('apps/payment/all');
+                    // }
                 }
                 else
                 {
@@ -112,7 +113,7 @@ export class PaymentListComponent implements OnInit, OnDestroy {
     readTodo(todoId): void
     {
         // Set current todo
-        this._todoService.setCurrentTodo(todoId);
+        this._managerService.setCurrentTodo(todoId);
     }
 
     /**
