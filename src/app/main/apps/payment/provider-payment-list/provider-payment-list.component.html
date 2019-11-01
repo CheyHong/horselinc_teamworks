@@ -13,7 +13,7 @@
                 </provider-payment-list-item>
             </div>
             <div fxFlex="8" class="cbtn">
-                <button mat-raised-button class="createInvoice" [routerLink]="['/apps/payment/dialogs/edit']" routerLinkActive="router-link-active" >
+                <button mat-raised-button class="createInvoice" (click)="onShowDialog()" routerLinkActive="router-link-active" >
                     Create Invoice 
                 </button>
             </div>

@@ -91,6 +91,41 @@ $typography: mat-typography-config(
 
     @include horse-theme($theme);
 }
+// -----------------------------------------------------------------------------------------------------
+// @ Define the horselinc theme
+// -----------------------------------------------------------------------------------------------------
+
+// Define the primary, accent and warn palettes
+$horselinc-primary-palette: mat-palette($fuse-navy);
+$horselinc-accent-palette:  mat-palette($mat-cyan, 600, 400, 700);
+$horselinc-warn-palette: mat-palette($mat-red);
+
+// Create the Material theme object
+$theme: mat-light-theme($horselinc-primary-palette, $horselinc-accent-palette, $horselinc-warn-palette);
+
+// Add ".theme-horselinc" class to the body to activate this theme.
+// Class name must start with "theme-" !!!
+body.theme-horselinc {
+
+    // Create an Angular Material theme from the $theme map
+    @include angular-material-theme($theme);
+
+    // Apply the theme to the Fuse Core
+    @include fuse-core-theme($theme);
+
+    // Apply the theme to the user components
+    @include components-theme($theme);
+
+    // Generate Fuse color classes for primary, accent and warn colors
+    $palettes: (
+        primary: $horselinc-primary-palette,
+        accent: $horselinc-accent-palette,
+        warn: $horselinc-warn-palette
+    );
+
+    @include fuse-color-classes($palettes);
+}
+
 
 // -----------------------------------------------------------------------------------------------------
 // @ Define the default theme

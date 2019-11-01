@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FuseConfigService } from '@fuse/services/config.service';
-//import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
-
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
-  selector: 'apps-user-payment-account',
-  templateUrl: './user-payment-account.component.html',
-  styleUrls: ['./user-payment-account.component.scss']
+  selector: 'apps-user-payment',
+  templateUrl: './user-payment.component.html',
+  styleUrls: ['./user-payment.component.scss']
 })
-export class UserPaymentAccountComponent implements OnInit {
+export class UserPaymentComponent implements OnInit {
     accountForm: FormGroup;
 
     /**
@@ -22,7 +21,7 @@ export class UserPaymentAccountComponent implements OnInit {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
-//        private _fuseSidebarService: FuseSidebarService,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Configure the layout
@@ -59,8 +58,8 @@ export class UserPaymentAccountComponent implements OnInit {
             password: ['', Validators.required]
         });
     }
-    toggleSidebarOpen(key): void
+    toggleSidebarOpen(): void
     {
-//        this._fuseSidebarService.getSidebar(key).toggleOpen();
+        this._fuseSidebarService.getSidebar('user-payment-info-panel').toggleOpen();
     }
 }
