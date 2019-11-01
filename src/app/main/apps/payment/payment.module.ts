@@ -27,15 +27,16 @@ import { ProviderPaymentListComponent } from './provider-payment-list/provider-p
 import { ProviderPaymentDetailsComponent } from './provider-payment-details/provider-payment-details.component';
 import { ProviderPaymentListItemComponent } from './provider-payment-list/provider-payment-list-item/provider-payment-list-item.component';
 
+import { ProviderDialogModule } from './provider-dialogs/provider-dialogs.module';
+
 const routes: Routes = [
     {
         path     : 'manager',
         component: PaymentComponent,
         resolve  : {
-            todo: PaymentService
+            manager: PaymentService
         }
     },
-
     {
         path     : 'provider',
         component: PaymentComponent,
@@ -43,13 +44,15 @@ const routes: Routes = [
             provider: ProviderPaymentService
         }
     },
-
+    {
+        path        : 'dialogs',
+        loadChildren: 'app/main/apps/payment/provider-dialogs/provider-dialogs.module#ProviderDialogModule'
+    },
     {
         path      : '**',
         redirectTo: 'provider',
         pathMatch: 'full'
     }
-   
 ];
 
 @NgModule({
@@ -81,6 +84,7 @@ const routes: Routes = [
       ProviderPaymentListComponent,
       ProviderPaymentDetailsComponent,
       ProviderPaymentListItemComponent,
+
   ],
   providers   : [
     PaymentService,

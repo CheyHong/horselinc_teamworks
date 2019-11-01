@@ -17,6 +17,7 @@ export class ProviderPaymentService implements Resolve<any>{
 
     onProvidersChanged: BehaviorSubject<any>;
     onCurrentProviderChanged: BehaviorSubject<any>;
+    onNewProviderClicked: Subject<any>;
 
     /**
      * Constructor
@@ -31,6 +32,8 @@ export class ProviderPaymentService implements Resolve<any>{
     ) {
 
         this.onProvidersChanged = new BehaviorSubject([]);
+        this.onCurrentProviderChanged = new BehaviorSubject([]);
+        this.onNewProviderClicked = new Subject();
     }
 
 
@@ -91,7 +94,7 @@ export class ProviderPaymentService implements Resolve<any>{
     }
 
     /**
-     * Set current todo by id
+     * Set current provider by id
      *
      * @param id
      */
@@ -100,6 +103,8 @@ export class ProviderPaymentService implements Resolve<any>{
         this.currentProvider = this.providers.find(provider => {
             return provider.id === id;
         });
+
+        this.onCurrentProviderChanged.next(this.currentProvider);
     }
 
 }

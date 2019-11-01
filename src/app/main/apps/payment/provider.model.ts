@@ -1,5 +1,5 @@
 export class Provider {
-    id: number;
+    id: string;
     name: string;
 
     constructor(provider)

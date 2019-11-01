@@ -598,11 +598,11 @@ export class FuseSidebarComponent implements OnInit, OnDestroy
         // Enable the animations
         this._enableAnimations();
 
-        // Show the sidebar
-        this._showSidebar();
-
         // Show the backdrop
         this._showBackdrop();
+
+        // Show the sidebar
+        this._showSidebar();
 
         // Set the opened status
         this.opened = true;

@@ -8,7 +8,16 @@ import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 
+import {
+    MatToolbarModule, MatSidenavModule, 
+    MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
+} from '@angular/material';
+
+
 import {WelcomeComponent } from './welcome/welcome.component';
+import { CalendarComponent } from './calendar/calendar.component';
+
+
 
 const routes = [
     {
@@ -32,6 +41,10 @@ const routes = [
         loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
     },
     {
+        path        : 'schedule',
+        loadChildren: 'app/main/apps/schedule/schedule.module#ScheduleModule'
+    },
+    {
         path        : '',
         redirectTo  : 'profile',
         pathMatch   : 'full'
@@ -45,14 +58,19 @@ const routes = [
         MatButtonModule,
         MatFormFieldModule,
         MatIconModule,
-        MatInputModule
+        MatInputModule,
+
+        MatToolbarModule, MatSidenavModule, 
+        MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
     ],
     declarations: [
         WelcomeComponent, 
+        CalendarComponent
     ],
 
     exports     : [
         WelcomeComponent,
+        CalendarComponent
     ]
 })
 export class AppsModule

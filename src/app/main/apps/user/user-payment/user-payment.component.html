@@ -1,0 +1,43 @@
+<div id="user-payment" class="page-layout simple fullwidth">
+
+    <!-- CONTENT -->
+    <div class="content">
+        <div class="photo">
+                <img src="assets/icons/horselinc/ic-camera-alt.svg"/>
+        </div>
+
+        <form id="paymentForm" novalidate>
+            <div>
+                <input  matInput type="firstName" placeholder="First Name" autocomplete="off"/>
+                <div style="width:5%"></div>
+                <input  matInput type="lastName" placeholder="Last Name" autocomplete="off"/>
+            </div>
+            <div>
+                <input  matInput type="firstName" placeholder="Phone number" autocomplete="off"/>
+                <div style="width:5%"></div>
+                <input  matInput type="lastName" placeholder="Search your location" autocomplete="off"/>
+            </div>
+            <div>
+                <input  matInput type="addr" placeholder="Or enter your address here" autocomplete="off"/>
+            </div>
+            <div>
+                <button mat-raised-button color="warn" type="" (click)="toggleSidebarOpen()" >ADD PAYMENT INFORMATION</button>
+            </div>
+            <div>
+                <p>
+                    By creating an payment, you agree to the <a class="link" >Terms & Conditions</a> and <a class="link" >Privacy Policy</a> of HorseLinc.
+                </p>
+            </div>
+            <div>
+                <button mat-raised-button color="warn" type="" >CREATE ACCOUNT</button>
+            </div>
+        </form>
+    </div>
+    <!-- /CONTENT -->
+
+    <fuse-sidebar name="user-payment-info-panel" class="payment-sidebar" position="right" [invisibleOverlay]="false">
+        <apps-user-payment-info></apps-user-payment-info>
+
+    </fuse-sidebar>
+        
+</div>

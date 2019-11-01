@@ -59,10 +59,11 @@ export class PaymentService implements Resolve<any>
      */
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
+        console.log("sdfsd");
         this.routeParams = route.params;
 
         return new Promise((resolve, reject) => {
-
+            
             Promise.all([
                 this.getFilters(),
                 this.getTags(),
@@ -166,11 +167,10 @@ export class PaymentService implements Resolve<any>
                     this.todos = todos.map(todo => {
                         return new Payment(todo);
                     });
-
+                    console.log(this.todos);
                     this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);
 
                     this.onTodosChanged.next(this.todos);
-
                     resolve(this.todos);
                 });
         });
@@ -356,18 +356,18 @@ export class PaymentService implements Resolve<any>
         const tagHandle    = this.routeParams.tagHandle,
               filterHandle = this.routeParams.filterHandle;
 
-        if ( tagHandle )
-        {
-            this._location.go('apps/todo/tag/' + tagHandle + '/' + id);
-        }
-        else if ( filterHandle )
-        {
-            this._location.go('apps/todo/filter/' + filterHandle + '/' + id);
-        }
-        else
-        {
-            this._location.go('apps/todo/all/' + id);
-        }
+        // if ( tagHandle )
+        // {
+        //     this._location.go('apps/todo/tag/' + tagHandle + '/' + id);
+        // }
+        // else if ( filterHandle )
+        // {
+        //     this._location.go('apps/todo/filter/' + filterHandle + '/' + id);
+        // }
+        // else
+        // {
+        //     this._location.go('apps/todo/all/' + id);
+        // }
     }
 
     /**

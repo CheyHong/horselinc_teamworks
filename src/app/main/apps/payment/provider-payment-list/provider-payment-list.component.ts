@@ -51,7 +51,6 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
     }
 
     readProvider(providerId): void {
-
         this._providerService.setCurrentProvider(providerId);
     }
 
@@ -64,5 +63,8 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
-
+    onShowDialog()
+    {
+        console.log("Click");
+    }
 }

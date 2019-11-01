@@ -1,0 +1,32 @@
+<div class="page-layout carded left-sidebar">
+
+    <!-- CONTENT CARD -->
+    <div class="content-card" [ngClass]="{'current-schedule-selected':currentSchedule}">
+        <!-- CONTENT TOOLBAR -->
+        <div class="toolbar_1 px-24 py-8">
+
+            <div *ngIf="currentSchedule">
+                <button mat-icon-button (click)="deselectCurrentSchedule()">
+                    <mat-icon class="secondary-text">arrow_back</mat-icon>
+                </button>
+            </div>
+
+            <div class="Schedule-Service">
+                    Schedule Service
+            </div>
+
+        </div>
+        <!-- / CONTENT TOOLBAR -->
+
+        <div class="content" fxFlexAlign="row">
+            <mat-tab-group>
+                <mat-tab label="DRAFTS"> 
+                </mat-tab>
+                <mat-tab label="SUBMITTED">
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <!-- / CONTENT -->
+        
+    </div>
+</div>
