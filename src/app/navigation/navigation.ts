@@ -24,7 +24,7 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.PROFILE',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
-        url      : '/apps/dashboards/project',          
+        url      : '/apps/profile',          
     },
     {
         id       : 'schedule',

@@ -1,0 +1,95 @@
+profile-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    // padding: 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: #efefef;
+    .profile_details {
+        padding: 16px;
+        .card {
+            margin: 0 16px 8px 16px;
+            padding: 10px;
+            width: 360px;
+            height: 95px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+            background-color: #efefef;
+        }
+        .borderline {
+            border-bottom: 1px solid;
+            border-color: rgba(0, 0, 0, 0.12);
+        }
+        .button {
+            &.small {
+                margin: 16px 0 24px 0;
+                width: 93px;
+                height: 44px;
+                border-radius: 100px;
+                box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+            }
+            &.medium {
+                margin: 16px 0 24px 0;
+                width: 156.4px;
+                height: 44px;
+                border-radius: 100px;
+                box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+                background-color: #ec7185;
+            }
+            &.big {
+                margin: 16px 0 24px 0;
+                width: 186.3px;
+                height: 44px;
+                border-radius: 100px;
+                box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+                background-color: #ec7185;
+            }
+            &.huge {
+                margin: 16px 0 24px 0;
+                width: 328px;
+                height: 44px;
+                border-radius: 100px;
+                box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+                &.color {
+                    background-color: #ec7185;
+                }
+            }
+        }
+        .title {
+            font-family: Roboto;
+            font-size: 24px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 0.92;
+            letter-spacing: normal;
+            color: #4f748c;
+        }
+        .text1 {
+            margin: 24px 0 16px 32px;
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.25;
+            letter-spacing: normal;
+            color: #4f748c;
+        }
+        .text2 {
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.43;
+            letter-spacing: normal;
+            color: #000000;
+        }
+        .textbox {
+            width: 328px;
+            overflow: auto;
+        }
+    }
+}
