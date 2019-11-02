@@ -10,7 +10,7 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 
 @Component({
-    selector     : 'apps-profile-details',
+    selector     : 'profile-details',
     templateUrl  : './profile-details.component.html',
     styleUrls    : ['./profile-details.component.scss'],
     

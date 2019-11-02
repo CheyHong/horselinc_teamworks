@@ -21,8 +21,8 @@ import { ProfileComponent } from 'app/main/apps/profile/profile.component';
 import { ProfileListComponent } from 'app/main/apps/profile/profile-list/profile-list.component';
 import { ProfileListItemComponent } from 'app/main/apps/profile/profile-list/profile-list-item/profile-list-item.component';
 import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
-import { ProfileDetail5Component } from 'app/main/apps/profile/profile-detail5/profile-detail5.component';
 // import { CommonModule }   from '@angular/common';
+// import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
 
 
 const routes: Routes = [
@@ -80,8 +80,7 @@ const routes: Routes = [
         ProfileComponent,
         ProfileListComponent,
         ProfileListItemComponent,
-        ProfileDetailsComponent,
-        ProfileDetail5Component
+        ProfileDetailsComponent
  
     ],
     imports        : [
@@ -103,6 +102,7 @@ const routes: Routes = [
         MatDatepickerModule, 
         MatNativeDateModule, 
         MatCardModule,
+        TranslateModule,
         MatDividerModule,
         FuseSharedModule,
         FuseSidebarModule,

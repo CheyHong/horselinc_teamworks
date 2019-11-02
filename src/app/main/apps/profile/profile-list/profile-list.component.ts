@@ -10,7 +10,7 @@ import { Profile } from 'app/main/apps/profile/profile.model';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
-    selector     : 'apps-profile-list',
+    selector     : 'profile-list',
     templateUrl  : './profile-list.component.html',
     styleUrls    : ['./profile-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
