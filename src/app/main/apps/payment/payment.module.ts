@@ -28,6 +28,7 @@ import { ProviderPaymentDetailsComponent } from './provider-payment-details/prov
 import { ProviderPaymentListItemComponent } from './provider-payment-list/provider-payment-list-item/provider-payment-list-item.component';
 
 import {CreateDialogComponent} from './provider-dialogs/create-dialog/create-dialog.component';
+import {EditDialogComponent} from './provider-dialogs/edit-dialog/edit-dialog.component';
 
 const routes: Routes = [
     {
@@ -81,6 +82,7 @@ const routes: Routes = [
       ProviderPaymentDetailsComponent,
       ProviderPaymentListItemComponent,
       CreateDialogComponent,
+      EditDialogComponent
 
   ],
   providers   : [

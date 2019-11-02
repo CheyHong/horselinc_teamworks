@@ -1,5 +1,6 @@
 @import "src/@fuse/scss/fuse";
 
+
 provider-payment-list {
     display: flex;
     flex: 1 0 auto;
@@ -8,16 +9,23 @@ provider-payment-list {
     padding: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    
+}
 
-    .no-todos-text {
-        font-size: 24px;
-        font-weight: 300;
-    }
+mat-tab-group {
+    height: 100%;
+}
+
+::ng-deep.mat-tab-body-wrapper {
+    height: 100%;
 }
 
 .provider-list {
-    
+
     .cbtn {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
         width: 100%;
         padding: 20px;
         .createInvoice {

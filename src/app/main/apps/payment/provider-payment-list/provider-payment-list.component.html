@@ -1,8 +1,8 @@
 
 <mat-tab-group>
     <mat-tab label="DRAFTS"> 
-        <div class="provider-list" fxLayout = "column">
-            <div fxFlex="92" >
+        <div class="provider-list">
+            <div>
                 <provider-payment-list-item
                     *ngFor="let provider of providers"
                     [provider]="provider"
@@ -11,7 +11,7 @@
                     matRipple>
                 </provider-payment-list-item>
             </div>
-            <div fxFlex="8" class="cbtn">
+            <div class="cbtn">
                 <button mat-raised-button class="createInvoice" (click)="onShowDialog()" routerLinkActive="router-link-active" >
                     Create Invoice 
                 </button>
