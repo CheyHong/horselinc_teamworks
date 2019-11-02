@@ -15,12 +15,12 @@ export class UserPaymentComponent implements OnInit {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
      * @param {FormBuilder} _formBuilder
+     * @param {FuseConfigService} _fuseConfigService
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
+        private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
     )
     {
