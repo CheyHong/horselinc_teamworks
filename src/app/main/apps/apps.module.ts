@@ -15,9 +15,7 @@ import {
 
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import { CalendarComponent } from './calendar/calendar.component';
-
-
+import { CalendarComponent } from '../components/calendar/calendar.component';
 
 const routes = [
     {
