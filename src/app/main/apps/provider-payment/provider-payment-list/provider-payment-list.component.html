@@ -2,7 +2,7 @@
 <mat-tab-group>
     <mat-tab label="DRAFTS"> 
         <div class="provider-list">
-            <div>
+            <div class="list" ngxDroppable [model]="providers" (out)="onDrop($event)" >
                 <provider-payment-list-item
                     *ngFor="let provider of providers"
                     [provider]="provider"

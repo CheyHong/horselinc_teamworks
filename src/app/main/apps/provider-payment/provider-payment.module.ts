@@ -10,29 +10,30 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
-
 import {MatTabsModule} from '@angular/material/tabs';
-
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import { PaymentComponent } from './payment.component';
-import { PaymentService } from 'app/main/apps/payment/payment.service';
-import { PaymentDetailsComponent } from './payment-details/payment-details.component';
-import { PaymentListComponent } from 'app/main/apps/payment/payment-list/payment-list.component';
-import { PaymentListItemComponent } from './payment-list/payment-list-item/payment-list-item.component';
+import { ProviderPaymentService } from 'app/main/apps/provider-payment/provider-payment.service';
+import { ProviderPaymentComponent } from './provider-payment.component';
+import { ProviderPaymentListComponent } from './provider-payment-list/provider-payment-list.component';
+import { ProviderPaymentDetailsComponent } from './provider-payment-details/provider-payment-details.component';
+import { ProviderPaymentListItemComponent } from './provider-payment-list/provider-payment-list-item/provider-payment-list-item.component';
+
+import {CreateDialogComponent} from './provider-dialogs/create-dialog/create-dialog.component';
+import {EditDialogComponent} from './provider-dialogs/edit-dialog/edit-dialog.component';
 
 const routes: Routes = [
     {
-        path     : 'manager',
-        component: PaymentComponent,
+        path     : 'provider',
+        component: ProviderPaymentComponent,
         resolve  : {
-            manager: PaymentService
+            provider: ProviderPaymentService
         }
     },
     {
         path      : '**',
-        redirectTo: 'manager',
+        redirectTo: 'provider',
         pathMatch: 'full'
     }
 ];
@@ -59,14 +60,17 @@ const routes: Routes = [
     
   ],
   declarations: [
-      PaymentComponent,
-      PaymentDetailsComponent,
-      PaymentListComponent,
-      PaymentListItemComponent,
+      ProviderPaymentComponent,
+      ProviderPaymentListComponent,
+      ProviderPaymentDetailsComponent,
+      ProviderPaymentListItemComponent,
+      CreateDialogComponent,
+      EditDialogComponent
+
   ],
   providers   : [
-    PaymentService
+    ProviderPaymentService
   ]
 })
 
-export class PaymentModule { }
+export class ProviderPaymentModule { }

@@ -7,24 +7,24 @@ import { fuseAnimations } from '@fuse/animations';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
-import { Payment } from 'app/main/apps/payment/payment.model';
-import { PaymentService } from 'app/main/apps/payment/payment.service';
+import { Provider } from 'app/main/apps/provider-payment/provider.model';
+import { ProviderPaymentService } from 'app/main/apps/provider-payment/provider-payment.service';
 
 @Component({
-    selector     : 'payment',
-    templateUrl  : './payment.component.html',
-    styleUrls    : ['./payment.component.scss'],
+    selector     : 'provider',
+    templateUrl  : './provider-payment.component.html',
+    styleUrls    : ['./provider-payment.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class PaymentComponent implements OnInit, OnDestroy
+export class ProviderPaymentComponent implements OnInit, OnDestroy
 {
     hasSelectedTodos: boolean;
     isIndeterminate: boolean;
     filters: any[];
     tags: any[];
     searchInput: FormControl;
-    currentTodo: Payment;
+    currentTodo: Provider;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -33,11 +33,11 @@ export class PaymentComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {FuseSidebarService} _fuseSidebarService
-     * @param {PaymentService} _todoService
+     * @param {ProviderPaymentService} _todoService
      */
     constructor(
         private _fuseSidebarService: FuseSidebarService,
-        private _todoService: PaymentService,
+        private _todoService: ProviderPaymentService,
         private _fuseConfigService: FuseConfigService,
 
     )
@@ -77,45 +77,45 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this._todoService.onSelectedTodosChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(selectedTodos => {
-            });
+        // this._todoService.onSelectedTodosChanged
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(selectedTodos => {
+        //     });
 
-        this._todoService.onFiltersChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(folders => {
-                this.filters = this._todoService.filters;
-            });
+        // this._todoService.onFiltersChanged
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(folders => {
+        //         this.filters = this._todoService.filters;
+        //     });
 
-        this._todoService.onTagsChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(tags => {
-                this.tags = this._todoService.tags;
-            });
+        // this._todoService.onTagsChanged
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(tags => {
+        //         this.tags = this._todoService.tags;
+        //     });
 
-        this.searchInput.valueChanges
-            .pipe(
-                takeUntil(this._unsubscribeAll),
-                debounceTime(300),
-                distinctUntilChanged()
-            )
-            .subscribe(searchText => {
-                this._todoService.onSearchTextChanged.next(searchText);
-            });
+        // this.searchInput.valueChanges
+        //     .pipe(
+        //         takeUntil(this._unsubscribeAll),
+        //         debounceTime(300),
+        //         distinctUntilChanged()
+        //     )
+        //     .subscribe(searchText => {
+        //         this._todoService.onSearchTextChanged.next(searchText);
+        //     });
 
-        this._todoService.onCurrentTodoChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(([currentTodo, formType]) => {
-                if ( !currentTodo )
-                {
-                    this.currentTodo = null;
-                }
-                else
-                {
-                    this.currentTodo = currentTodo;
-                }
-            });
+        // this._todoService.onCurrentTodoChanged
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(([currentTodo, formType]) => {
+        //         if ( !currentTodo )
+        //         {
+        //             this.currentTodo = null;
+        //         }
+        //         else
+        //         {
+        //             this.currentTodo = currentTodo;
+        //         }
+        //     });
     }
 
     /**
@@ -137,7 +137,7 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     deselectCurrentTodo(): void
     {
-        this._todoService.onCurrentTodoChanged.next([null, null]);
+        this._todoService.onCurrentProviderChanged.next([null, null]);
     }
 
     /**
@@ -145,7 +145,7 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     toggleSelectAll(): void
     {
-        this._todoService.toggleSelectAll();
+        // this._todoService.toggleSelectAll();
     }
 
     /**
@@ -156,7 +156,7 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     selectTodos(filterParameter?, filterValue?): void
     {
-        this._todoService.selectTodos(filterParameter, filterValue);
+        // this._todoService.selectProviders(filterParameter, filterValue);
     }
 
     /**
@@ -164,7 +164,7 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     deselectTodos(): void
     {
-        this._todoService.deselectTodos();
+        // this._todoService.deselectProviders();
     }
 
     /**
@@ -174,7 +174,7 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     toggleTagOnSelectedTodos(tagId): void
     {
-        this._todoService.toggleTagOnSelectedTodos(tagId);
+        // this._todoService.toggleTagOnSelectedProviders(tagId);
     }
 
     /**

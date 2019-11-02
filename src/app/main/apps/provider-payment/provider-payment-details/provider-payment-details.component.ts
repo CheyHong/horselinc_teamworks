@@ -6,8 +6,8 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { FuseUtils } from '@fuse/utils';
 import { fuseAnimations } from '@fuse/animations';
 
-import { Provider } from 'app/main/apps/payment/provider.model';
-import { ProviderPaymentService } from 'app/main/apps/payment/provider-payment.service';
+import { Provider } from 'app/main/apps/provider-payment/provider.model';
+import { ProviderPaymentService } from 'app/main/apps/provider-payment/provider-payment.service';
 
 @Component({
   selector: 'provider-payment-details',
