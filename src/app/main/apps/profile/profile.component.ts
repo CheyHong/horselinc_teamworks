@@ -9,10 +9,12 @@ import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.
 import { Profile } from 'app/main/apps/profile/profile.model';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
+import { locale as english } from 'app/main/apps/profile//i18n/en';
+import { locale as turkish } from 'app/main/apps/profile//i18n/tr';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-    selector     : 'apps-profile',
+    selector     : 'profile',
     templateUrl  : './profile.component.html',
     styleUrls    : ['./profile.component.scss'],
     encapsulation: ViewEncapsulation.None
@@ -35,10 +37,12 @@ export class ProfileComponent implements OnInit, OnDestroy
      *
      * @param {ProfileService} _profileService
      * @param {FuseSidebarService} _fuseSidebarService
+     * @param {FuseTranslationLoaderService} _fuseTranslationLoaderService
      */
     constructor(
         private _profileService: ProfileService,
         private _fuseSidebarService: FuseSidebarService,
+        private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _fuseConfigService: FuseConfigService,
     )
     
@@ -47,7 +51,8 @@ export class ProfileComponent implements OnInit, OnDestroy
     
     {
         // Load the translations
-        
+        this._fuseTranslationLoaderService.loadTranslations(english, turkish);
+
         // Set the defaults
         this.searchInput = new FormControl('');
 
