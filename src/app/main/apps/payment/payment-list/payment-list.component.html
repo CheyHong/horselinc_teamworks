@@ -11,8 +11,7 @@
                 [model]="todo"
                 (click)="readTodo(todo.id)"
                 [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
-                matRipple
-                [@animate]="{value:'*',params:{y:'100%'}}">
+                matRipple>
             </payment-list-item>
         </div>
     </mat-tab>
@@ -24,8 +23,7 @@
                 [model]="todo"
                 (click)="readTodo(todo.id)"
                 [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
-                matRipple
-                [@animate]="{value:'*',params:{y:'100%'}}">
+                matRipple>
             </payment-list-item>
         </div>
     </mat-tab>
