@@ -81,11 +81,6 @@ export class PaymentComponent implements OnInit, OnDestroy
         this._todoService.onSelectedTodosChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(selectedTodos => {
-
-                setTimeout(() => {
-                    this.hasSelectedTodos = selectedTodos.length > 0;
-                    this.isIndeterminate = (selectedTodos.length !== this._todoService.todos.length && selectedTodos.length > 0);
-                }, 0);
             });
 
         this._todoService.onFiltersChanged

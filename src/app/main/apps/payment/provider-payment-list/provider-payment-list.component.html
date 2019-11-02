@@ -2,14 +2,13 @@
 <mat-tab-group>
     <mat-tab label="DRAFTS"> 
         <div class="provider-list" fxLayout = "column">
-            <div fxFlex="92" [@animateStagger]="{value:'50'}">
+            <div fxFlex="92" >
                 <provider-payment-list-item
                     *ngFor="let provider of providers"
                     [provider]="provider"
                     (click)="readProvider(provider.id)"
                     [ngClass]="{'current-provider':provider?.id == currentProvider?.id}"
-                    matRipple
-                    [@animate]="{value:'*',params:{y:'100%'}}">
+                    matRipple>
                 </provider-payment-list-item>
             </div>
             <div fxFlex="8" class="cbtn">
