@@ -27,7 +27,7 @@ import { ProviderPaymentListComponent } from './provider-payment-list/provider-p
 import { ProviderPaymentDetailsComponent } from './provider-payment-details/provider-payment-details.component';
 import { ProviderPaymentListItemComponent } from './provider-payment-list/provider-payment-list-item/provider-payment-list-item.component';
 
-import { ProviderDialogModule } from './provider-dialogs/provider-dialogs.module';
+import {CreateDialogComponent} from './provider-dialogs/create-dialog/create-dialog.component';
 
 const routes: Routes = [
     {
@@ -43,10 +43,6 @@ const routes: Routes = [
         resolve  : {
             provider: ProviderPaymentService
         }
-    },
-    {
-        path        : 'dialogs',
-        loadChildren: 'app/main/apps/payment/provider-dialogs/provider-dialogs.module#ProviderDialogModule'
     },
     {
         path      : '**',
@@ -84,6 +80,7 @@ const routes: Routes = [
       ProviderPaymentListComponent,
       ProviderPaymentDetailsComponent,
       ProviderPaymentListItemComponent,
+      CreateDialogComponent,
 
   ],
   providers   : [
