@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { FuseConfigService } from '@fuse/services/config.service';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'apps-user-payment-info',
@@ -14,12 +15,13 @@ export class UserPaymentInfoComponent implements OnInit {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
      * @param {FormBuilder} _formBuilder
+     * @param {FuseConfigService} _fuseConfigService
      */
     constructor(
+        private _formBuilder: FormBuilder,
         private _fuseConfigService: FuseConfigService,
-        private _formBuilder: FormBuilder
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Configure the layout
@@ -55,5 +57,10 @@ export class UserPaymentInfoComponent implements OnInit {
             email   : ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });
+    }
+
+    toggleSidebarOpen(): void
+    {
+        this._fuseSidebarService.getSidebar('user-payment-info-panel').toggleOpen();
     }
 }

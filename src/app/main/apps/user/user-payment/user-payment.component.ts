@@ -10,17 +10,17 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
   styleUrls: ['./user-payment.component.scss']
 })
 export class UserPaymentComponent implements OnInit {
-    accountForm: FormGroup;
+    paymentForm: FormGroup;
 
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
      * @param {FormBuilder} _formBuilder
+     * @param {FuseConfigService} _fuseConfigService
      */
     constructor(
-        private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
+        private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
     )
     {
@@ -53,7 +53,7 @@ export class UserPaymentComponent implements OnInit {
      */
     ngOnInit(): void
     {
-        this.accountForm = this._formBuilder.group({
+        this.paymentForm = this._formBuilder.group({
             email   : ['', [Validators.required, Validators.email]],
             password: ['', Validators.required]
         });

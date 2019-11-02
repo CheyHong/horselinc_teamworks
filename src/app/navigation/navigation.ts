@@ -11,12 +11,12 @@ export const navigation: FuseNavigation[] = [
         url      : '/apps/horse',          
     },
     {
-        id       : 'payment',
+        id       : 'payment-provider',
         title    : 'Payment',
         translate: 'NAV.PAYMENT',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',
-        url      : '/apps/payment',          
+        url      : '/apps/payment-provider',          
     },
     {
         id       : 'profile',
@@ -24,7 +24,7 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.PROFILE',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
-        url      : '/apps/dashboards/project',          
+        url      : '/apps/profile',          
     },
     {
         id       : 'schedule',

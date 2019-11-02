@@ -10,6 +10,11 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { Schedule } from 'app/main/apps/schedule/schedule.model';
 import { ScheduleService } from 'app/main/apps/schedule/schedule.service';
 
+interface Sortby {
+    value: string;
+    viewValue: string;
+}
+
 @Component({
   selector: 'schedule',
   templateUrl: './schedule.component.html',
@@ -20,11 +25,25 @@ import { ScheduleService } from 'app/main/apps/schedule/schedule.service';
 
 export class ScheduleComponent implements OnInit {
 
+    toggle: boolean;
+    
     currentSchedule: Schedule;
+
+    sortbys: Sortby[] = [
+        {value: 'steak-0', viewValue: 'Steak'},
+        {value: 'pizza-1', viewValue: 'Pizza'},
+        {value: 'tacos-2', viewValue: 'Tacos'}
+    ];
     
     constructor() { }
 
     ngOnInit() {
+        this.toggle = true;
+    }
+
+    toggleFilter() {
+        this.toggle = !this.toggle;
+        console.log("this");
     }
 
 }

@@ -4,29 +4,26 @@
 
 <mat-tab-group>
     <mat-tab label="OUTSTAND"> 
-        <!-- <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" [@animateStagger]="{value:'50'}"> -->
-        <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" [@animateStagger]="{value:'50'}">
+        <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" >
             <payment-list-item class="todo-list-item has-handle"
                 *ngFor="let todo of todos" [todo]="todo"
                 ngxDraggable
                 [model]="todo"
                 (click)="readTodo(todo.id)"
                 [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
-                matRipple
-                [@animate]="{value:'*',params:{y:'100%'}}">
+                matRipple>
             </payment-list-item>
         </div>
     </mat-tab>
     <mat-tab label="COMPLETED">
-        <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" [@animateStagger]="{value:'50'}">
+        <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)">
             <payment-list-item class="todo-list-item has-handle"
                 *ngFor="let todo of todos" [todo]="todo"
                 ngxDraggable
                 [model]="todo"
                 (click)="readTodo(todo.id)"
                 [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
-                matRipple
-                [@animate]="{value:'*',params:{y:'100%'}}">
+                matRipple>
             </payment-list-item>
         </div>
     </mat-tab>

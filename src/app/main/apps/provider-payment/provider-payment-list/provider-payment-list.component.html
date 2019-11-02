@@ -1,18 +1,17 @@
 
 <mat-tab-group>
     <mat-tab label="DRAFTS"> 
-        <div class="provider-list" fxLayout = "column">
-            <div fxFlex="92" [@animateStagger]="{value:'50'}">
+        <div class="provider-list">
+            <div class="list" ngxDroppable [model]="providers" (out)="onDrop($event)" >
                 <provider-payment-list-item
                     *ngFor="let provider of providers"
                     [provider]="provider"
                     (click)="readProvider(provider.id)"
                     [ngClass]="{'current-provider':provider?.id == currentProvider?.id}"
-                    matRipple
-                    [@animate]="{value:'*',params:{y:'100%'}}">
+                    matRipple>
                 </provider-payment-list-item>
             </div>
-            <div fxFlex="8" class="cbtn">
+            <div class="cbtn">
                 <button mat-raised-button class="createInvoice" (click)="onShowDialog()" routerLinkActive="router-link-active" >
                     Create Invoice 
                 </button>
@@ -27,3 +26,7 @@
          PAID 
     </mat-tab>
 </mat-tab-group>
+
+<fuse-sidebar name="provider-payment-create-panel" class="provider-payment-create-sidebar" position="right" [invisibleOverlay]="false">
+    <create-dialog></create-dialog>
+</fuse-sidebar>

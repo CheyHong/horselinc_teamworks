@@ -7,29 +7,44 @@
         </div>
 
         <form id="paymentForm" novalidate>
-            <div>
-                <input  matInput type="firstName" placeholder="First Name" autocomplete="off"/>
-                <div style="width:5%"></div>
-                <input  matInput type="lastName" placeholder="Last Name" autocomplete="off"/>
+            <div class="rowItem">
+                <div class="editItem">
+                    <input class="editContent" matInput type="firstName" placeholder="" autocomplete="off"/>
+                    <div class="editTitle">First name</div>
+                </div>
+                <div class="space5"></div>
+                <div class="editItem">
+                    <input class="editContent" matInput type="lastName" placeholder="" autocomplete="off">
+                    <div class="editTitle">Last name</div>
+                </div>
             </div>
-            <div>
-                <input  matInput type="firstName" placeholder="Phone number" autocomplete="off"/>
-                <div style="width:5%"></div>
-                <input  matInput type="lastName" placeholder="Search your location" autocomplete="off"/>
+            <div class="rowItem">
+                <div class="editItem">
+                    <input  class="editContent" matInput type="firstName" placeholder="" autocomplete="off"/>
+                    <div class="editTitle">Phone number</div>
+                </div>
+                <div class="space5"></div>
+                <div class="editItem">
+                    <input  class="editContent" matInput type="lastName" placeholder="Search your location" autocomplete="off"/>
+                    <mat-icon class="editIcon s-20">search</mat-icon>
+                </div>
             </div>
-            <div>
-                <input  matInput type="addr" placeholder="Or enter your address here" autocomplete="off"/>
+            <div class="rowItem">
+                <div class="editItem">
+                    <input  class="editContent" matInput type="addr" placeholder="" autocomplete="off"/>
+                    <div class="editTitle">Or enter your address here</div>
+                </div>
             </div>
-            <div>
+            <div class="rowItem">
                 <button mat-raised-button color="warn" type="" (click)="toggleSidebarOpen()" >ADD PAYMENT INFORMATION</button>
             </div>
-            <div>
+            <div rowItem>
                 <p>
-                    By creating an payment, you agree to the <a class="link" >Terms & Conditions</a> and <a class="link" >Privacy Policy</a> of HorseLinc.
+                    By creating an payment, you agree to the <a class="link" >Terms<br> & Conditions</a> and <a class="link" >Privacy Policy</a> of HorseLinc.
                 </p>
             </div>
             <div>
-                <button mat-raised-button color="warn" type="" >CREATE ACCOUNT</button>
+                <button mat-raised-button color="warn" type="" routerLink="/apps/horse" >CREATE ACCOUNT</button>
             </div>
         </form>
     </div>
@@ -37,7 +52,6 @@
 
     <fuse-sidebar name="user-payment-info-panel" class="payment-sidebar" position="right" [invisibleOverlay]="false">
         <apps-user-payment-info></apps-user-payment-info>
-
     </fuse-sidebar>
         
 </div>

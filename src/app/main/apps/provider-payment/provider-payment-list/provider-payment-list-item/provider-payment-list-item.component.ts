@@ -1,8 +1,8 @@
 import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
-import { Provider } from 'app/main/apps/payment/provider.model';
-import { ProviderPaymentService } from 'app/main/apps/payment/provider-payment.service';
+import { Provider } from 'app/main/apps/provider-payment/provider.model';
+import { ProviderPaymentService } from 'app/main/apps/provider-payment/provider-payment.service';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({

@@ -21,9 +21,8 @@ import { HorseComponent } from 'app/main/apps/horse/horse.component';
 import { HorseListComponent } from 'app/main/apps/horse/horse-list/horse-list.component';
 import { HorseListItemComponent } from 'app/main/apps/horse/horse-list/horse-list-item/horse-list-item.component';
 import { HorseDetailsComponent } from 'app/main/apps/horse/horse-details/horse-details.component';
-import { CommonModule }   from '@angular/common';
-import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
-
+import { CommonModule } from '@angular/common';
+import { jqxCalendarModule } from 'jqwidgets-ng/jqxcalendar';
 
 const routes: Routes = [
     {

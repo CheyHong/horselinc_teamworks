@@ -7,17 +7,15 @@ import { fuseAnimations } from '@fuse/animations';
 import { Profile } from 'app/main/apps/profile/profile.model';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
-
-
 @Component({
-    selector     : 'apps-profile-details',
-    templateUrl  : './profile-details.component.html',
-    styleUrls    : ['./profile-details.component.scss'],
+    selector     : 'apps-profile-detail5',
+    templateUrl  : './profile-detail5.component.html',
+    styleUrls    : ['./profile-detail5.component.scss'],
     
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class ProfileDetailsComponent implements OnInit, OnDestroy
+export class ProfileDetail5Component implements OnInit, OnDestroy
 {
     profile: Profile;
     labels: any[];

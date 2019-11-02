@@ -5,10 +5,11 @@ import { Subject } from 'rxjs';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { ProviderPaymentService } from 'app/main/apps/payment/provider-payment.service';
-import { Provider } from 'app/main/apps/payment/provider.model';
+import { ProviderPaymentService } from 'app/main/apps/provider-payment/provider-payment.service';
+import { Provider } from 'app/main/apps/provider-payment/provider.model';
 
 import { takeUntil } from 'rxjs/operators';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
   selector: 'provider-payment-list',
@@ -34,7 +35,8 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _location: Location,
-        private _providerService: ProviderPaymentService
+        private _providerService: ProviderPaymentService,
+        private _fuseSidebarService: FuseSidebarService,
     ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
@@ -65,6 +67,11 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
     }
     onShowDialog()
     {
-        console.log("Click");
+        this._fuseSidebarService.getSidebar('provider-payment-create-panel').toggleOpen();
+    }
+
+    onDrop(ev): void
+    {
+
     }
 }

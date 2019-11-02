@@ -15,9 +15,7 @@ import {
 
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import { CalendarComponent } from './calendar/calendar.component';
-
-
+import { CalendarComponent } from '../components/calendar/calendar.component';
 
 const routes = [
     {
@@ -43,6 +41,10 @@ const routes = [
     {
         path        : 'payment',
         loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
+    },
+    {
+        path        : 'payment-provider',
+        loadChildren: 'app/main/apps/provider-payment/provider-payment.module#ProviderPaymentModule'
     },
     {
         path        : 'schedule',

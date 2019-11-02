@@ -37,6 +37,7 @@
                 flex: 0 1 auto;
 
                 &:hover{
+                    cursor:pointer;
                     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
                 }
             }
@@ -48,11 +49,61 @@
                 justify-content: center;
                 flex: 0 1 auto;
 
-                div{
+                .rowItem{
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
-                    margin-bottom: 30px;
+                    align-items: center;
+                    margin:10px;
+
+                    @include media-breakpoint('xs') {
+                        flex-direction: column;
+                    }
+            
+                    .space5{
+                        width:5%;
+                        height:5%;
+                    }
+                    .editItem{
+                        @include media-breakpoint('xs') {
+                            margin:10px;
+                        }
+                            width:100%;
+                        position:relative;
+                        .editTitle{
+                            position: absolute;
+                            top:-5px;
+                            left: 23px;
+
+                            font-size: 12px;
+                            line-height: 1.33;
+                            letter-spacing: 0.4px;
+                        }
+                        .editIcon{
+                            position: absolute;
+                            top:15px;
+                            right: 12px;
+
+                            font-size: 12px;
+                            line-height: 1.33;
+                            letter-spacing: 0.4px;
+
+                            cursor:pointer;
+                            &:hover{
+                                border-radius:10px;
+                                box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
+                            }
+                            &:active{
+                                border-radius:10px;
+                                box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
+                            }
+                        }
+                        .editContent{
+                            font-size: 16px;
+                            line-height: 1.5;
+                            letter-spacing: 0.15px;
+                        }
+                    }
                 }
 
                 //affects all input placeholders across webkit browsers
@@ -72,8 +123,12 @@
                 }
                 button{
                     width:60%;
+                    @include media-breakpoint('xs') {
+                        width:100%;
+                    }
+
                     height:56px;
-                    margin-top: 20px;
+                    // margin-top: 20px;
     
                     font-family: "Roboto";
                     font-size: 16px;
@@ -82,11 +137,12 @@
                     background-color: #ec7185;
                 }
                 p{
-                    width:70%;
-                    font-family: "Roboto";
+                    // width:70%;
+                    // font-family: "Roboto";
                     font-size: 16px;
                     font-weight:300;
                     color:white;
+                    text-align:center;
                     .link{
                         color:#27c5c8;
                     }
