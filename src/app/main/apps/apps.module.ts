@@ -35,6 +35,10 @@ const routes = [
         loadChildren: 'app/main/apps/horse/horse.module#HorseModule'
     },
     {
+        path        : 'edithorseprofile',
+        loadChildren: 'app/main/apps/edithorseprofile/edithorseprofile.module#EdithorseprofileModule'
+    },
+    {
         path        : 'payment-manager',
         loadChildren: 'app/main/apps/payment/payment.module#PaymentModule'
     },

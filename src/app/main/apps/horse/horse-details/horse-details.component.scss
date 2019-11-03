@@ -261,4 +261,60 @@ horse-details {
             background-color: #ec7185;
         }
     }
+    .whitecolor {
+        color: #ffffff;
+    }
+    .blackcolor {
+        color: #000000;
+    }
+    .redcolor {
+        color: #ec7185;
+    }
+    .greencolor {
+        color: #27c5c8;
+    }
+    .blackgreencolor {
+        color: #4f748c;
+    }
+    .opacitycolor {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .opacitycolor1 {
+        color: rgba(0, 0, 0, 0.3);
+    }
+    .inputcolor {
+        background-color: #fafafa;
+    }
+    .title {
+        font-family: Roboto;
+        font-size: 26px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 0.92;
+        letter-spacing: normal;
+        color: #4f748c;
+    }
+    .text1 {
+        // margin: 24px 0 16px 32px;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        &.greencolor {
+            color: #27c5c8;
+        }
+    }
+    .text2 {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+    }
 }

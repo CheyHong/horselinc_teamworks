@@ -18,6 +18,7 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 })
 export class ProfileListComponent implements OnInit, OnDestroy
 {
+    selectedItemNo: number;
     profiles: Profile[];
     currentProfile: Profile;
 
@@ -37,6 +38,7 @@ export class ProfileListComponent implements OnInit, OnDestroy
         private _location: Location
     )
     {
+        this.selectedItemNo = 0;
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -55,39 +57,6 @@ export class ProfileListComponent implements OnInit, OnDestroy
         .subscribe(profiles => {
             this.profiles = profiles;
         });
-
-    // Subscribe to update current horse on changes
-    this._profileService.onCurrentProfileChanged
-        .pipe(takeUntil(this._unsubscribeAll))
-        .subscribe(currentProfile => {
-            if ( !currentProfile )
-            {
-                // Set the current horse id to null to deselect the current horse
-                this.currentProfile = null;
-
-                // Handle the location changes
-                const labelHandle  = this._activatedRoute.snapshot.params.labelHandle,
-                      filterHandle = this._activatedRoute.snapshot.params.filterHandle,
-                      folderHandle = this._activatedRoute.snapshot.params.folderHandle;
-
-                if ( labelHandle )
-                {
-                    this._location.go('apps/profile/label/' + labelHandle);
-                }
-                else if ( filterHandle )
-                {
-                    this._location.go('apps/profile/filter/' + filterHandle);
-                }
-                else
-                {
-                    this._location.go('apps/profile/' + folderHandle);
-                }
-            }
-            else
-            {
-                this.currentProfile = currentProfile;
-            }
-        });
     }
 
     /**
@@ -103,32 +72,10 @@ export class ProfileListComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Read profile
-     *
-     * @param profileId 
-     */   
-    readProfile(profileId): void
+    onClickItem(itemUri: any): void
     {
-        const labelHandle  = this._activatedRoute.snapshot.params.labelHandle,
-              filterHandle = this._activatedRoute.snapshot.params.filterHandle,
-              folderHandle = this._activatedRoute.snapshot.params.folderHandle;
-
-        if ( labelHandle )
-        {
-            this._location.go('apps/profile/label/' + labelHandle + '/' + profileId);
-        }
-        else if ( filterHandle )
-        {
-            this._location.go('apps/profile/filter/' + filterHandle + '/' + profileId);
-        }
-        else
-        {
-            this._location.go('apps/profile/' + folderHandle + '/' + profileId);
-        }
-
-        // Set current mail
-        this._profileService.setCurrentProfile(profileId);
+        this.selectedItemNo = itemUri;
+        console.log("porfile-list-item");
+        console.log(itemUri);
     }
 }

@@ -10,15 +10,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TranslateModule } from '@ngx-translate/core';
 import { MatSidenavModule, MatListModule,  MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule} from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import { ProfileService } from 'app/main/apps/profile/profile.service';
-import { ProfileComponent } from 'app/main/apps/profile/profile.component';
-import { ProfileListComponent } from 'app/main/apps/profile/profile-list/profile-list.component';
-import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
+
+import { EdithorseprofileService } from 'app/main/apps/edithorseprofile/edithorseprofile.service';
+import { EdithorseprofileComponent } from 'app/main/apps/edithorseprofile/edithorseprofile.component';
+// import { EdithorseprofileListComponent } from 'app/main/apps/edithorseprofile/edithorseprofile-list/edithorseprofile-list.component';
+// import { EdithorseprofileListItemComponent } from 'app/main/apps/edithorseprofile/edithorseprofile-list/edithorseprofile-list-item/edithorseprofile-list-item.component';
+// import { EdithorseprofileDetailsComponent } from 'app/main/apps/edithorseprofile/edithorseprofile-details/edithorseprofile-details.component';
 // import { CommonModule }   from '@angular/common';
 // import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
 
@@ -26,44 +29,44 @@ import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/p
 const routes: Routes = [
     {
         path     : 'label/:labelHandle',
-        component: ProfileComponent,
+        component: EdithorseprofileComponent,
         // resolve  : {
-        //     profile: ProfileService
+        //     edithorseprofile: EdithorseprofileService
         // }
     },
     {
-        path     : 'label/:labelHandle/:profileId',
-        component: ProfileComponent,
+        path     : 'label/:labelHandle/:edithorseprofileId',
+        component: EdithorseprofileComponent,
         // resolve  : {
-        //     profile: ProfileService
+        //     edithorseprofile: EdithorseprofileService
         // }
     },
     {
         path     : 'filter/:filterHandle',
-        component: ProfileComponent,
+        component: EdithorseprofileComponent,
         // resolve  : {
-        //     profile: ProfileService
+        //     edithorseprofile: EdithorseprofileService
         // }
     },
     {
-        path     : 'filter/:filterHandle/:profileId',
-        component: ProfileComponent,
+        path     : 'filter/:filterHandle/:edithorseprofileId',
+        component: EdithorseprofileComponent,
         // resolve  : {
-        //     profile: ProfileService
+        //     edithorseprofile: EdithorseprofileService
         // }
     },
     {
         path     : ':folderHandle',
-        component: ProfileComponent,
+        component: EdithorseprofileComponent,
         // resolve  : {
-        //     profile: ProfileService
+        //     edithorseprofile: EdithorseprofileService
         // }
     },
     {
-        path     : ':folderHandle/:profileId',
-        component: ProfileComponent,
+        path     : ':folderHandle/:edithorseprofileId',
+        component: EdithorseprofileComponent,
         // resolve  : {
-        //     profile: ProfileService
+        //     edithorseprofile: EdithorseprofileService
         // }
     },
     {
@@ -75,9 +78,10 @@ const routes: Routes = [
 
 @NgModule({
     declarations   : [
-        ProfileComponent,
-        ProfileListComponent,
-        ProfileDetailsComponent
+        EdithorseprofileComponent,
+        // EdithorseprofileListComponent,
+        // EdithorseprofileListItemComponent,
+        // EdithorseprofileDetailsComponent
  
     ],
     imports        : [
@@ -99,6 +103,7 @@ const routes: Routes = [
         MatDatepickerModule, 
         MatNativeDateModule, 
         MatCardModule,
+        TranslateModule,
         MatDividerModule,
         FuseSharedModule,
         FuseSidebarModule,
@@ -107,11 +112,11 @@ const routes: Routes = [
        
     ],
     providers      : [
-         ProfileService
+         EdithorseprofileService
     ]
    
 })
 
-export class ProfileModule
+export class EdithorseprofileModule
 {
 }

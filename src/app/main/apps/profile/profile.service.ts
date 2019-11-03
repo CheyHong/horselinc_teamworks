@@ -10,6 +10,7 @@ import { Profile } from 'app/main/apps/profile/profile.model';
 @Injectable()
 export class ProfileService implements Resolve<any>
 {
+    selectedListNo: number;
     profiles: Profile[];
     selectedProfiles: Profile[];
     currentProfile: Profile;
@@ -48,7 +49,7 @@ export class ProfileService implements Resolve<any>
         this.onSearchTextChanged = new BehaviorSubject('');
     }
 
-    /**
+       /**
      * Resolver
      *
      * @param {ActivatedRouteSnapshot} route
@@ -61,34 +62,8 @@ export class ProfileService implements Resolve<any>
 
         return new Promise((resolve, reject) => {
             Promise.all([
-                this.getFolders(),
-                this.getFilters(),
-                this.getLabels(),
-                this.getProfiles()
             ]).then(
                 () => {
-                    if ( this.routeParams.profileId )
-                    {
-                        this.setCurrentProfile(this.routeParams.profileId);
-                    }
-                    else
-                    {
-                        this.setCurrentProfile(null);
-                    }
-
-                    this.onSearchTextChanged.subscribe(searchText => {
-                        if ( searchText !== '' )
-                        {
-                            this.searchText = searchText;
-                            this.getProfiles();
-                        }
-                        else
-                        {
-                            this.searchText = searchText;
-                            this.getProfiles();
-                        }
-                    });
-
                     resolve();
                 },
                 reject
