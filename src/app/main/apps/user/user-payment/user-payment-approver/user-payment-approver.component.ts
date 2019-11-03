@@ -5,11 +5,11 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
-  selector: 'apps-user-payment-info',
-  templateUrl: './user-payment-info.component.html',
-  styleUrls: ['./user-payment-info.component.scss']
+  selector: 'apps-user-payment-approver',
+  templateUrl: './user-payment-approver.component.html',
+  styleUrls: ['./user-payment-approver.component.scss']
 })
-export class UserPaymentInfoComponent implements OnInit {
+export class UserPaymentApproverComponent implements OnInit {
     infoForm: FormGroup;
 
     /**
@@ -59,10 +59,6 @@ export class UserPaymentInfoComponent implements OnInit {
         });
     }
 
-    toggleInfoPanel(): void
-    {
-        this._fuseSidebarService.getSidebar('user-payment-info-panel').toggleOpen();
-    }
     toggleApproverPanel(): void
     {
         this._fuseSidebarService.getSidebar('user-payment-approver-panel').toggleOpen();

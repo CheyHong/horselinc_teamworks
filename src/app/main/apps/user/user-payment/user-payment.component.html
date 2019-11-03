@@ -2,11 +2,13 @@
 
     <!-- CONTENT -->
     <div class="content">
-        <div class="photo">
-                <img src="assets/icons/horselinc/ic-camera-alt.svg"/>
-        </div>
 
         <form id="paymentForm" novalidate>
+            <div class="rowItem">
+                <div class="photo">
+                        <img src="assets/icons/horselinc/ic-camera-alt.svg"/>
+                </div>            
+            </div>
             <div class="rowItem">
                 <div class="editItem">
                     <input class="editContent" matInput type="firstName" placeholder="" autocomplete="off"/>
@@ -36,7 +38,7 @@
                 </div>
             </div>
             <div class="rowItem">
-                <button mat-raised-button color="warn" type="" (click)="toggleSidebarOpen()" >ADD PAYMENT INFORMATION</button>
+                <button mat-raised-button color="warn" type="" (click)="toggleInfoPanelOpen()" >ADD PAYMENT INFORMATION</button>
             </div>
             <div rowItem>
                 <p>
@@ -50,7 +52,7 @@
     </div>
     <!-- /CONTENT -->
 
-    <fuse-sidebar name="user-payment-info-panel" class="payment-sidebar" position="right" [invisibleOverlay]="false">
+    <fuse-sidebar name="user-payment-info-panel" class="payment-info-sidebar" position="right" [invisibleOverlay]="false">
         <apps-user-payment-info></apps-user-payment-info>
     </fuse-sidebar>
         

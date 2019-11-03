@@ -1,0 +1,35 @@
+<div id="user-payment-approver" class="page-layout simple fullwidth">
+    
+    <!-- CONTENT -->
+    <div class="title">
+        <p class="label">Add payment approver</p>
+        <button mat-icon-button class="close toggle-sidebar-folded" (click)="toggleApproverPanel();">
+            <mat-icon class="secondary-text s-20">close</mat-icon>
+        </button>
+    </div>
+
+    <div class="content">
+        <p>Payment approvals</p>
+        <div class="editItem">
+                <input matInput type="" placeholder="" autocomplete="off" value="Search for payment approver"/>
+                <mat-icon class="editIcon s-20">search</mat-icon>
+        </div>
+
+        <p>Payment approvals</p>
+        <div class="editItem">
+                <input matInput type="" placeholder="" autocomplete="off" value="Unlimited"/>
+                <mat-slide-toggle class="editIcon"></mat-slide-toggle>
+        </div>  
+        
+        <div class="editItem">
+            <input matInput type="" placeholder="" autocomplete="off" value="$0.00"/>
+            <div class="editTitle">Up to</div>
+        </div>
+
+        <div class="nextCancel">
+            <button mat-raised-button class="cancel" type="" (click)="toggleApproverPanel();">CANCEL</button>
+            <button mat-raised-button class="next" type="" (click)="toggleApproverPanel();">NEXT</button>
+        </div>
+    </div>
+    <!-- /CONTENT -->
+</div>

@@ -24,23 +24,6 @@
              justify-content : space-evenly;
              align-items: center;
 
-            .photo{
-                margin-bottom:40px;
-                width : 112px;
-                height : 112px;
-                border-radius: 112px;
-                background-color: #27c5c8;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                flex: 0 1 auto;
-
-                &:hover{
-                    cursor:pointer;
-                    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
-                }
-            }
             #paymentForm {
                 width:100%;
                 padding:10px;
@@ -55,11 +38,29 @@
                     justify-content: center;
                     align-items: center;
                     margin:10px;
-
                     @include media-breakpoint('xs') {
+                        margin:0px 10px;
                         flex-direction: column;
                     }
-            
+
+                    .photo{
+                        margin-bottom:40px;
+                        width : 112px;
+                        height : 112px;
+                        border-radius: 112px;
+                        background-color: #27c5c8;
+        
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        flex: 0 1 auto;
+        
+                        &:hover{
+                            cursor:pointer;
+                            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
+                        }
+                    }
+
                     .space5{
                         width:5%;
                         height:5%;
@@ -68,7 +69,7 @@
                         @include media-breakpoint('xs') {
                             margin:10px;
                         }
-                            width:100%;
+                        width:100%;
                         position:relative;
                         .editTitle{
                             position: absolute;
@@ -120,11 +121,13 @@
                     font-size:16px;
                     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
                     background-color: #456579;
+
+                    caret-color:white;
                 }
                 button{
                     width:60%;
                     @include media-breakpoint('xs') {
-                        width:100%;
+                        width:80%;
                     }
 
                     height:56px;
@@ -161,7 +164,7 @@
     //     z-index: 998;
     //     opacity: 0;
     // }
-    .payment-sidebar {
+    .payment-info-sidebar {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
@@ -180,9 +183,10 @@
         background-color: #4f748c;
 
         @include media-breakpoint('xs') {
+            top:170px;
             min-width: 0 !important;
-            max-width: 80vw !important;
-            width: 80vw !important;       
+            max-width: 100% !important;
+            width: 100% !important;
         }
     
         &.left-positioned {

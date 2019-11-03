@@ -58,7 +58,7 @@ export class UserPaymentComponent implements OnInit {
             password: ['', Validators.required]
         });
     }
-    toggleSidebarOpen(): void
+    toggleInfoPanelOpen(): void
     {
         this._fuseSidebarService.getSidebar('user-payment-info-panel').toggleOpen();
     }

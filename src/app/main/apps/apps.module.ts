@@ -57,7 +57,7 @@ const routes = [
     },
     {
         path        : '',
-        redirectTo  : 'profile',
+        redirectTo  : 'welcome',
         pathMatch   : 'full'
     }
 ];
