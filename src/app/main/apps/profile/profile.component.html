@@ -10,12 +10,11 @@
                 <!--<div fxLayout="column" fxFlex>
                      <profile-details fusePerfectScrollbar fxFlex></profile-details>
                 <div>-->
-                <manager-profile fusePerfectScrollbar fxFlex *ngIf="selectedListNo==0"></manager-profile>
-                <profile-details fusePerfectScrollbar fxFlex *ngIf="selectedListNo==1"></profile-details>
+                <manager-profile fusePerfectScrollbar fxFlex [ngClass]="{'current-profile-selected':selectedListNo==0}" *ngIf="selectedListNo==0"></manager-profile>
+                <profile-details fusePerfectScrollbar fxFlex [ngClass]="{'current-profile-selected':selectedListNo==1}" *ngIf="selectedListNo==1"></profile-details>
 
             </div>
-          
-
+         
         </div> 
        
 
