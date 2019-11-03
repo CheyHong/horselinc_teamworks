@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { TranslateModule } from '@ngx-translate/core';
 import { MatSidenavModule, MatListModule,  MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule} from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
 import { FuseSharedModule } from '@fuse/shared.module';
@@ -19,7 +18,6 @@ import { FuseSidebarModule } from '@fuse/components';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 import { ProfileComponent } from 'app/main/apps/profile/profile.component';
 import { ProfileListComponent } from 'app/main/apps/profile/profile-list/profile-list.component';
-import { ProfileListItemComponent } from 'app/main/apps/profile/profile-list/profile-list-item/profile-list-item.component';
 import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
 // import { CommonModule }   from '@angular/common';
 // import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
@@ -79,7 +77,6 @@ const routes: Routes = [
     declarations   : [
         ProfileComponent,
         ProfileListComponent,
-        ProfileListItemComponent,
         ProfileDetailsComponent
  
     ],
@@ -102,7 +99,6 @@ const routes: Routes = [
         MatDatepickerModule, 
         MatNativeDateModule, 
         MatCardModule,
-        TranslateModule,
         MatDividerModule,
         FuseSharedModule,
         FuseSidebarModule,
