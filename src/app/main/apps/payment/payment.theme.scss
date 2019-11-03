@@ -67,7 +67,7 @@
         }
 
         &.current-payment {
-            background: black;//map-get($background, hover);
+            background: map-get($background, hover);
         }
 
         &.selected {

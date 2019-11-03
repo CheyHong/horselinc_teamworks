@@ -106,7 +106,7 @@ export class PaymentComponent implements OnInit, OnDestroy
 
         this._paymentService.onCurrentPaymentChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(([currentPayment, formType]) => {
+            .subscribe(currentPayment => {
                 if ( !currentPayment )
                 {
                     this.currentPayment = null;
@@ -114,7 +114,6 @@ export class PaymentComponent implements OnInit, OnDestroy
                 else
                 {
                     this.currentPayment = currentPayment;
-                    console.log("12312423456");
                 }
             });
     }
@@ -138,7 +137,7 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     deselectCurrentPayment(): void
     {
-        this._paymentService.onCurrentPaymentChanged.next([null, null]);
+        this._paymentService.onCurrentPaymentChanged.next(null);
     }
 
     /**

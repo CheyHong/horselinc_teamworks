@@ -167,7 +167,6 @@ export class ProviderPaymentService implements Resolve<any>{
                     this.providers = providers.map(provider => {
                         return new Provider(provider);
                     });
-                    console.log(this.providers);
                     this.providers = FuseUtils.filterArrayByString(this.providers, this.searchText);
 
                     this.onProvidersChanged.next(this.providers);

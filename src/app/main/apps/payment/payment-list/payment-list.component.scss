@@ -14,3 +14,13 @@ payment-list {
         font-weight: 300;
     }
 }
+
+mat-tab-group {
+    height: 100%;
+    .mat-tab-label {
+        width: 50%;
+    }
+    .mat-tab-body-wrapper {
+        height: 100%;
+    }
+}

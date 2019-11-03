@@ -85,6 +85,7 @@ export class PaymentListComponent implements OnInit, OnDestroy {
                 else
                 {
                     this.currentPayment = currentPayment;
+                    console.log(this.currentPayment);
                 }
             });
     }
@@ -111,6 +112,7 @@ export class PaymentListComponent implements OnInit, OnDestroy {
     readPayment(paymentId): void
     {
         this._managerService.setCurrentPayment(paymentId);
+        console.log(this.currentPayment.id, paymentId);
     }
 
     /**

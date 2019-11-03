@@ -166,7 +166,6 @@ export class PaymentService implements Resolve<any>
                     this.payments = payments.map(payment => {
                         return new Payment(payment);
                     });
-                    console.log(this.payments);
                     this.payments = FuseUtils.filterArrayByString(this.payments, this.searchText);
 
                     this.onPaymentsChanged.next(this.payments);
@@ -350,9 +349,7 @@ export class PaymentService implements Resolve<any>
             return payment.id === id;
         });
 
-        console.log(this.currentPayment);
-
-        this.onCurrentPaymentChanged.next([this.currentPayment, 'edit']);
+        this.onCurrentPaymentChanged.next(this.currentPayment);
 
         const tagHandle    = this.routeParams.tagHandle,
               filterHandle = this.routeParams.filterHandle;

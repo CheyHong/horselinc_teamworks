@@ -11,7 +11,7 @@ payment {
 
             payment-list,
             payment-details {
-                flex: 0 0 28%;
+                flex: 0 0 30%;
                 border-right: #efefef 1px solid;
             }
             .Schedule-Service {
@@ -78,11 +78,6 @@ payment {
                         }
                         payment-details {
                             display: flex !important;
-                            .payment-content {
-                                .Rectangle {
-                                    // padding-left: 50px;
-                                }
-                            }
                         }
                     }
                 }

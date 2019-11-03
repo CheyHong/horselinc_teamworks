@@ -56,25 +56,25 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
         // Subscribe to update the current payment
         this._paymentService.onCurrentPaymentChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(([payment, formType]) => {
+            .subscribe(payment => {
 
-                if ( payment && formType === 'edit' )
-                {
-                    this.formType = 'edit';
+                // if ( payment && formType === 'edit' )
+                // {
+                //     this.formType = 'edit';
                     this.payment = payment;
                     
-                    this.paymentForm = this.createPaymentForm();
+                    // this.paymentForm = this.createPaymentForm();
 
-                    this.paymentForm.valueChanges
-                    .pipe(
-                        takeUntil(this._unsubscribeAll),
-                        debounceTime(500),
-                        distinctUntilChanged()
-                    )
-                    .subscribe(data => {
-                        this._paymentService.updatePayment(data);
-                    });
-                }
+                //     this.paymentForm.valueChanges
+                //     .pipe(
+                //         takeUntil(this._unsubscribeAll),
+                //         debounceTime(500),
+                //         distinctUntilChanged()
+                //     )
+                //     .subscribe(data => {
+                //         this._paymentService.updatePayment(data);
+                //     });
+                // }
             });
 
         // Subscribe to update on tag change
@@ -91,7 +91,7 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
                 this.payment = new Payment({});
                 this.payment.id = FuseUtils.generateGUID();
                 this.formType = 'new';
-                this.paymentForm = this.createPaymentForm();
+                // this.paymentForm = this.createPaymentForm();
                 this.focusTitleField();
                 this._paymentService.onCurrentPaymentChanged.next([this.payment, 'new']);
             });
@@ -126,21 +126,21 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
      *
      * @returns {FormGroup}
      */
-    createPaymentForm(): FormGroup
-    {
-        return this._formBuilder.group({
-            id       : [this.payment.id],
-            title    : [this.payment.title],
-            notes    : [this.payment.notes],
-            startDate: [this.payment.startDate],
-            dueDate  : [this.payment.dueDate],
-            completed: [this.payment.completed],
-            starred  : [this.payment.starred],
-            important: [this.payment.important],
-            deleted  : [this.payment.deleted],
-            tags     : [this.payment.tags]
-        });
-    }
+    // createPaymentForm(): FormGroup
+    // {
+    //     return this._formBuilder.group({
+    //         id       : [this.payment.id],
+    //         title    : [this.payment.title],
+    //         notes    : [this.payment.notes],
+    //         startDate: [this.payment.startDate],
+    //         dueDate  : [this.payment.dueDate],
+    //         completed: [this.payment.completed],
+    //         starred  : [this.payment.starred],
+    //         important: [this.payment.important],
+    //         deleted  : [this.payment.deleted],
+    //         tags     : [this.payment.tags]
+    //     });
+    // }
 
     /**
      * Toggle star
@@ -216,6 +216,6 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
      */
     addPayment(): void
     {
-        this._paymentService.updatePayment(this.paymentForm.getRawValue());
+        // this._paymentService.updatePayment(this.paymentForm.getRawValue());
     }
 }
