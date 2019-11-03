@@ -9,10 +9,7 @@
     border-color: rgba(0, 0, 0, 0.12);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    .no-messages-text {
-        font-size: 24px;
-        font-weight: 300;
-    }
+
     .profile-header {
         padding: 20px 0 20px 16px;
         border-bottom: 1px solid;
@@ -21,6 +18,10 @@
     .navdiv {
         height: 56px;
         padding: 16px;
+        cursor: pointer;
+    }
+    .selected-item{
+        background-color:#27c5c8;
     }
     .name {
         margin-left: 4px;
