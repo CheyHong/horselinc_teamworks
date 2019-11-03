@@ -19,7 +19,7 @@ interface Food {
   }
   
 @Component({
-    selector     : 'edithorseprofile',
+    selector     : 'edit-horse-profile',
     templateUrl  : './edithorseprofile.component.html',
     styleUrls    : ['./edithorseprofile.component.scss'],
     encapsulation: ViewEncapsulation.None
