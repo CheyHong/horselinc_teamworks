@@ -8,14 +8,14 @@ import { Profile } from 'app/main/apps/profile/profile.model';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
-    selector     : 'profile-details',
-    templateUrl  : './profile-details.component.html',
-    styleUrls    : ['./profile-details.component.scss'],
+    selector     : 'profile-editpayment',
+    templateUrl  : './profile-editpayment.component.html',
+    styleUrls    : ['./profile-editpayment.component.scss'],
     
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class ProfileDetailsComponent implements OnInit, OnDestroy
+export class ProfileEditPaymentComponent implements OnInit, OnDestroy
 {
     /**
      * Constructor

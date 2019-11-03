@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-    selector   : 'manager-profile',
-    templateUrl: './manager-profile.component.html',
-    styleUrls  : ['./manager-profile.component.scss']
+    selector   : 'profile-provider',
+    templateUrl: './profile-provider.component.html',
+    styleUrls  : ['./profile-provider.component.scss']
 })
-export class ManagerProfileComponent
+export class ProfileProviderComponent
 {
     /**
      * Constructor
@@ -23,7 +23,7 @@ export class ManagerProfileComponent
                 navbar   : {
                     hidden: false
                 },
-                toolbar  : {
+                toolbar  : {          
                     hidden: false
                 },
                 footer   : {

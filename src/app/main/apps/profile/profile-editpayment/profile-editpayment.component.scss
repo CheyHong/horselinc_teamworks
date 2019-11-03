@@ -1,4 +1,4 @@
-profile-details {
+profile-editpayment {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -28,6 +28,12 @@ profile-details {
                 height: 44px;
                 border-radius: 100px;
                 box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+                &.redcolor {
+                    background-color: #ec7185;
+                }
+                &.whitecolor {
+                    background-color: #ffffff;
+                }
             }
             &.medium {
                 margin: 16px 0 24px 0;
@@ -35,7 +41,12 @@ profile-details {
                 height: 44px;
                 border-radius: 100px;
                 box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
-                background-color: #ec7185;
+                &.redcolor {
+                    background-color: #ec7185;
+                }
+                &.whitecolor {
+                    background-color: #ffffff;
+                }
             }
             &.big {
                 margin: 16px 0 24px 0;
@@ -43,7 +54,12 @@ profile-details {
                 height: 44px;
                 border-radius: 100px;
                 box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
-                background-color: #ec7185;
+                &.redcolor {
+                    background-color: #ec7185;
+                }
+                &.whitecolor {
+                    background-color: #ffffff;
+                }
             }
             &.huge {
                 margin: 16px 0 24px 0;
@@ -51,8 +67,11 @@ profile-details {
                 height: 44px;
                 border-radius: 100px;
                 box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
-                &.color {
+                &.redcolor {
                     background-color: #ec7185;
+                }
+                &.whitecolor {
+                    background-color: #ffffff;
                 }
             }
         }
@@ -67,7 +86,6 @@ profile-details {
             color: #4f748c;
         }
         .text1 {
-            margin: 24px 0 16px 32px;
             font-family: Roboto;
             font-size: 16px;
             font-weight: normal;
@@ -75,9 +93,9 @@ profile-details {
             font-style: normal;
             line-height: 1.25;
             letter-spacing: normal;
-            color: #4f748c;
         }
         .text2 {
+            margin: 24px 0 16px 32px;
             font-family: Roboto;
             font-size: 14px;
             font-weight: normal;
