@@ -10,8 +10,13 @@
                 <!--<div fxLayout="column" fxFlex>
                      <profile-details fusePerfectScrollbar fxFlex></profile-details>
                 <div>-->
+<<<<<<< HEAD
                 <manager-profile fusePerfectScrollbar fxFlex [ngClass]="{'current-profile-selected':selectedListNo==0}" *ngIf="selectedListNo==0"></manager-profile>
                 <profile-details fusePerfectScrollbar fxFlex [ngClass]="{'current-profile-selected':selectedListNo==1}" *ngIf="selectedListNo==1"></profile-details>
+=======
+                <profile-provider fusePerfectScrollbar fxFlex *ngIf="selectedListNo==0"></profile-provider>
+                <profile-editpayment fusePerfectScrollbar fxFlex *ngIf="selectedListNo==1"></profile-editpayment>
+>>>>>>> 24cf042783113ccc8014d7214e415f19001ea284
 
             </div>
          

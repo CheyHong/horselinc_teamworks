@@ -1,5 +1,5 @@
 @import "src/@fuse/scss/fuse";
-#manager_profile {
+#profile-provider {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -126,6 +126,7 @@
         padding: 8px;
         width: 344px;
         max-width: 344px;
+        height: fit-content;
         min-width: 320px;
         border-radius: 8px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);

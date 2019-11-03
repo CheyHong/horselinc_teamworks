@@ -1,0 +1,88 @@
+<div fxLayout ="row">
+<div fxLayout="column" fxFlax class="profile_details">
+    <div fxLayout="column" class="borderline">
+        <div class="title" style="margin:10px 0 16px 32px;">
+            Invoice
+        </div>
+        <div class="text2">
+            Horse show
+        </div>
+        <div fxLayout="column" >
+            <div fxLayout="column" class="card" fxLayoutAlign="space-between start">
+                <div fxLayout="row" class="borderline" fxFlex="50">
+                    <div fxFlax="90">
+                        <span class="text2"> Winter Equatrial Festival</span>
+                    </div>
+                    <div>
+                        <img src="assets/icons/horselinc/search.svg"/>
+                    </div>
+                </div>
+               
+                <div fxFlax="50"> 
+                    <span class="text2">
+                        Adult Hunter 18-35 
+                    </span>
+                </div>
+            </div> 
+            <div>
+                <button mat-raised-button class="button huge redcolor">
+                    <span class="text1 whitecolor">
+                         Edit
+                    </span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div fxLayout="column" class="borderline">
+        <div class="text1">
+            Payment Approvers
+        </div>
+        <div fxLayout="column" fxLayoutAlign="start center" >
+            <div class="text2 textbox">
+                These Horse Managers can approve payments to Service Providers on your behalf(up to a specified dollar value).
+
+            </div>
+            <div>
+                <button mat-raised-button class="button huge whitecolor">
+                    <span class="text1 greencolor">
+                        Request Authorization
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="column">
+        <div class="text1">
+           Authorized to Approve Payments
+        </div>
+        <div fxLayout="column" fxLayoutAlign="start center" >
+            <div class="text2 textbox">
+               These Horse Managers have added you as a payment appover.
+            </div>
+            <div class="textbox" fxLayout="column">
+                <div fxLayout="row" style="margin:12px 0 12px 0" fxLayoutAlign="start center">
+                    <img src="assets/images/avatars/joyce.jpg"class="avatar small32"/> 
+                    <div fxLayout="column">
+                        <span class="name">Kate tretina</span>
+                        <span class="details">(up to $500)</span> 
+                    </div>
+                </div>
+                <div fxLayout="row" style="margin:12px 0 12px 0" fxLayoutAlign="start center">
+                    <img src="assets/images/avatars/joyce.jpg" class="avatar small32"/> 
+                        <div fxLayout="column">
+                            <span class="name">Kate tretina</span>
+                            <span class="details">(up to $200)</span> 
+                        </div>
+                </div>
+            </div>
+            <div>
+                <button mat-raised-button class="button huge whitecolor">
+                    <span class="text1 greencolor">
+                        Add Payment Approver
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

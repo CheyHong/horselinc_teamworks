@@ -18,8 +18,8 @@ import { FuseSidebarModule } from '@fuse/components';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 import { ProfileComponent } from 'app/main/apps/profile/profile.component';
 import { ProfileListComponent } from 'app/main/apps/profile/profile-list/profile-list.component';
-import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
-import { ManagerProfileComponent } from 'app/main/apps/profile/manager-profile/manager-profile.component';
+import { ProfileEditPaymentComponent } from 'app/main/apps/profile/profile-editpayment/profile-editpayment.component';
+import { ProfileProviderComponent } from 'app/main/apps/profile/profile-provider/profile-provider.component';
 // import { CommonModule }   from '@angular/common';
 // import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
 
@@ -52,8 +52,8 @@ const routes: Routes = [
     declarations   : [
         ProfileComponent,
         ProfileListComponent,
-        ProfileDetailsComponent,
-        ManagerProfileComponent
+        ProfileEditPaymentComponent,
+        ProfileProviderComponent
     ],
     imports        : [
         RouterModule.forChild(routes),
