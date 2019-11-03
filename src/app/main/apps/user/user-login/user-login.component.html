@@ -9,20 +9,9 @@
     <!-- CONTENT -->
     <div class="content">
         <div class="login">
-            <form id="loginForm" name="loginForm" [formGroup]="loginForm" novalidate>
-                <input  matInput formControlName="email" type="email" placeholder="Enter email" autocomplete="off"/>
-                <!-- <mat-error *ngIf="loginForm.get('email').hasError('required')">
-                        Email is required
-                    </mat-error> -->
-
-                <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="off"/>
-
-                <!-- <mat-error
-                *ngIf="!loginForm.get('email').hasError('required') &&
-                        loginForm.get('email').hasError('email')">
-                    Please enter a valid email address
-                </mat-error> -->
-
+            <form id="loginForm" name="loginForm" [formGroup]="loginForm" novalidate autocomplete="off" >
+                <input  matInput formControlName="email" type="email" placeholder="Enter email" autocomplete="off" value=""/>
+                <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="new-password" value=""/>
                 <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid" routerLink="/apps/horse">LOG IN</button>
 
                 <p style="text-align:center; margin-bottom:40px"><a class="forget-password" routerLink="/apps/user/reset-password">Forget password?</a></p>

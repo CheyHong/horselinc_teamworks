@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
@@ -16,6 +17,7 @@ import {UserResetPasswordComponent} from './user-reset-password/user-reset-passw
 import {UserRoleComponent} from './user-role/user-role.component';
 import {UserPaymentComponent} from './user-payment/user-payment.component';
 import {UserPaymentInfoComponent} from './user-payment/user-payment-info/user-payment-info.component';
+import {UserPaymentApproverComponent} from './user-payment/user-payment-approver/user-payment-approver.component';
 
 const routes = [
 
@@ -44,6 +46,10 @@ const routes = [
         component   :   UserPaymentInfoComponent,        
     },
     {
+        path        : 'payment/info/approver',
+        component   :   UserPaymentApproverComponent,        
+    },
+    {
         path      : '**',
         redirectTo: 'login',
         pathMatch: 'full'
@@ -59,7 +65,8 @@ const routes = [
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSlideToggleModule
     ],
     declarations: [
         UserLoginComponent, 
@@ -67,7 +74,8 @@ const routes = [
         UserResetPasswordComponent,
         UserRoleComponent,
         UserPaymentComponent,
-        UserPaymentInfoComponent
+        UserPaymentInfoComponent,
+        UserPaymentApproverComponent
     ],
 
     exports     : [
@@ -76,7 +84,8 @@ const routes = [
         UserResetPasswordComponent,
         UserRoleComponent,
         UserPaymentComponent,
-        UserPaymentInfoComponent
+        UserPaymentInfoComponent,
+        UserPaymentApproverComponent
     ]
 })
 export class UserModule

@@ -9,19 +9,9 @@
     <!-- CONTENT -->
     <div class="content">
         <div class="register">
-            <form id="registerForm" name="registerForm" [formGroup]="registerForm" novalidate>
+            <form id="registerForm" name="registerForm" [formGroup]="registerForm" autocomplete="off" novalidate>
                 <input  matInput formControlName="email" type="email" placeholder="Enter email" autocomplete="off"/>
-                <!-- <mat-error *ngIf="loginForm.get('email').hasError('required')">
-                        Email is required
-                    </mat-error> -->
-
-                <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="off"/>
-
-                <!-- <mat-error
-                *ngIf="!loginForm.get('email').hasError('required') &&
-                        loginForm.get('email').hasError('email')">
-                    Please enter a valid email address
-                </mat-error> -->
+                <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="new-password"/>
 
                 <!-- [disabled]="registerForm.invalid" -->
                 <button mat-raised-button color="warn" type="" routerLink="/apps/user/role" [disabled]="registerForm.invalid" >SIGNUP</button>
