@@ -74,8 +74,10 @@ export class ProfileListComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     onClickItem(itemUri: any): void
     {
-        this.selectedItemNo = itemUri;
-        console.log("porfile-list-item");
-        console.log(itemUri);
+        
+        this.selectedItemNo = itemUri; 
+        this._profileService.setSelectedListNo(this.selectedItemNo);
+        this._location.go('apps/profile/navigation1' + '/' + itemUri);
+
     }
 }

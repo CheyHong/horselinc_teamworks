@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-    selector   : 'apps-welcome',
-    templateUrl: './welcome.component.html',
-    styleUrls  : ['./welcome.component.scss']
+    selector   : 'manager-profile',
+    templateUrl: './manager-profile.component.html',
+    styleUrls  : ['./manager-profile.component.scss']
 })
 export class ManagerProfileComponent
 {
@@ -21,10 +21,10 @@ export class ManagerProfileComponent
         this._fuseConfigService.config = {
             layout: {
                 navbar   : {
-                    hidden: true
+                    hidden: false
                 },
                 toolbar  : {
-                    hidden: true
+                    hidden: false
                 },
                 footer   : {
                     hidden: true

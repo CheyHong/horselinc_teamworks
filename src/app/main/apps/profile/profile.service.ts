@@ -21,6 +21,8 @@ export class ProfileService implements Resolve<any>
     labels: any[];
     routeParams: any;
 
+
+    onSelectedListNoChanged: BehaviorSubject<any>;
     onProfilesChanged: BehaviorSubject<any>;
     onSelectedProfilesChanged: BehaviorSubject<any>;
     onCurrentProfileChanged: BehaviorSubject<any>;
@@ -40,6 +42,9 @@ export class ProfileService implements Resolve<any>
     {
         // Set the defaults
         this.selectedProfiles = [];
+
+        this.selectedListNo = 0;
+        this.onSelectedListNoChanged = new BehaviorSubject([]);
         this.onProfilesChanged = new BehaviorSubject([]);
         this.onSelectedProfilesChanged = new BehaviorSubject([]);
         this.onCurrentProfileChanged = new BehaviorSubject([]);
@@ -59,6 +64,8 @@ export class ProfileService implements Resolve<any>
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
         this.routeParams = route.params;
+        console.log("profile service resolve");
+        console.log(route.params);
 
         return new Promise((resolve, reject) => {
             Promise.all([
@@ -71,6 +78,14 @@ export class ProfileService implements Resolve<any>
         });
     }
 
+    setSelectedListNo(listNo: number): void
+    {
+        this.selectedListNo = listNo;
+        console.log("selectListNo");
+        console.log(listNo);
+
+        this.onSelectedListNoChanged.next(this.selectedListNo);
+    }
     /**
      * Get all folders
      *

@@ -19,56 +19,31 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 import { ProfileComponent } from 'app/main/apps/profile/profile.component';
 import { ProfileListComponent } from 'app/main/apps/profile/profile-list/profile-list.component';
 import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
+import { ManagerProfileComponent } from 'app/main/apps/profile/manager-profile/manager-profile.component';
 // import { CommonModule }   from '@angular/common';
 // import { jqxCalendarModule }   from 'jqwidgets-ng/jqxcalendar';
 
 
 const routes: Routes = [
     {
-        path     : 'label/:labelHandle',
+        path  : 'navigation1',
         component: ProfileComponent,
-        // resolve  : {
-        //     profile: ProfileService
-        // }
+        resolve  : {
+            provider: ProfileService
+        }
+        
     },
     {
-        path     : 'label/:labelHandle/:profileId',
+        path  : 'navigation2',
         component: ProfileComponent,
-        // resolve  : {
-        //     profile: ProfileService
-        // }
-    },
-    {
-        path     : 'filter/:filterHandle',
-        component: ProfileComponent,
-        // resolve  : {
-        //     profile: ProfileService
-        // }
-    },
-    {
-        path     : 'filter/:filterHandle/:profileId',
-        component: ProfileComponent,
-        // resolve  : {
-        //     profile: ProfileService
-        // }
-    },
-    {
-        path     : ':folderHandle',
-        component: ProfileComponent,
-        // resolve  : {
-        //     profile: ProfileService
-        // }
-    },
-    {
-        path     : ':folderHandle/:profileId',
-        component: ProfileComponent,
-        // resolve  : {
-        //     profile: ProfileService
-        // }
+        resolve  : {
+            provider: ProfileService
+        }
+        
     },
     {
         path      : '**',
-        redirectTo: 'inbox',
+        redirectTo: 'navigation1',
         pathMatch: 'full'
     }
 ];
@@ -77,8 +52,8 @@ const routes: Routes = [
     declarations   : [
         ProfileComponent,
         ProfileListComponent,
-        ProfileDetailsComponent
- 
+        ProfileDetailsComponent,
+        ManagerProfileComponent
     ],
     imports        : [
         RouterModule.forChild(routes),

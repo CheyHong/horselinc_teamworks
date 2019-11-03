@@ -1,19 +1,12 @@
 @import "src/@fuse/scss/fuse";
-#managerprofile {
+#manager_profile {
     display: flex;
     flex-direction: column;
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: #ffffff;
-    .Edit-Horse-Profile {
-        padding: 24px 16px 16px 16px;
-    }
-    .img {
-        padding: 16px;
-    }
+    padding: 16px 0 0 16px;
     .matselect {
-        margin: 8px 16px 8px 16px;
         padding: 16px;
         height: 56px;
         min-height: 56px;
@@ -68,9 +61,19 @@
             }
         }
     }
-    .title {
+    .title1 {
         font-family: Roboto;
         font-size: 26px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 0.92;
+        letter-spacing: normal;
+        color: #4f748c;
+    }
+    .title2 {
+        font-family: Roboto;
+        font-size: 24px;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
@@ -112,10 +115,19 @@
         overflow: auto;
     }
     .textbox3 {
-        margin: 16px;
         padding: 10px;
         height: 56px;
         min-height: 56px;
+        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+        background-color: #fafafa;
+    }
+    .textbox4 {
+        margin: 6px;
+        padding: 8px;
+        width: 344px;
+        max-width: 344px;
+        min-width: 320px;
+        border-radius: 8px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
         background-color: #fafafa;
     }
@@ -139,6 +151,9 @@
     }
     .opacitycolor1 {
         color: rgba(0, 0, 0, 0.3);
+    }
+    .opacitycolor2 {
+        color: rgba(79, 116, 140, 0.57);
     }
     .inputcolor {
         background-color: #fafafa;

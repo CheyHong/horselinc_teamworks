@@ -112,19 +112,17 @@ export class HorseListComponent implements OnInit, OnDestroy
      */
     readhorse(horseId): void
     {
-        const labelHandle  = this._activatedRoute.snapshot.params.labelHandle,
-              filterHandle = this._activatedRoute.snapshot.params.filterHandle,
-              folderHandle = this._activatedRoute.snapshot.params.folderHandle;
-
-        if ( labelHandle )
-        {
-            this._location.go('apps/horse/label/' + labelHandle + '/' + horseId);
-        }
-        else if ( filterHandle )
-        {
-            this._location.go('apps/horse/filter/' + filterHandle + '/' + horseId);
-        }
-        else
+        const folderHandle = this._activatedRoute.snapshot.params.folderHandle;
+             
+        // if ( labelHandle )
+        // {
+        //     this._location.go('apps/horse/label/' + labelHandle + '/' + horseId);
+        // }
+        // else if ( filterHandle )
+        // {
+        //     this._location.go('apps/horse/filter/' + filterHandle + '/' + horseId);
+        // }
+        // else
         {
             this._location.go('apps/horse/' + folderHandle + '/' + horseId);
         }

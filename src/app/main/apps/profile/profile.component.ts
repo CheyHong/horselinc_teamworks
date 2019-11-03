@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
@@ -18,7 +19,12 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 })
 export class ProfileComponent implements OnInit, OnDestroy
 {
+    selectedListNo: number;
     hasSelectedProfiles: boolean;
+    select_component: string;
+
+    // Private
+    private _unsubscribeAll: Subject<any>;
 
     /**
      * Constructor
@@ -30,10 +36,14 @@ export class ProfileComponent implements OnInit, OnDestroy
         private _profileService: ProfileService,
         private _fuseSidebarService: FuseSidebarService,
         private _fuseConfigService: FuseConfigService,
+        private _activatedroute: ActivatedRoute,
     )
     
         // Configure the layout
-    {
+    { 
+        this.selectedListNo = 0;
+        this._unsubscribeAll = new Subject();
+
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -43,11 +53,15 @@ export class ProfileComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit(): void
-    {
+    ngOnInit() {
 
-    }
+         this._profileService.onSelectedListNoChanged
+        .pipe(takeUntil(this._unsubscribeAll))
+        .subscribe(selectedListNo => {
+            this.selectedListNo = selectedListNo;
+        });
 
+  }
     /**
      * On destroy
      */

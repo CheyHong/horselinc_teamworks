@@ -7,7 +7,11 @@
             <div class="content" fxLayout="row">
 
                 <profile-list fusePerfectScrollbar fxFlex.gt-md="27"></profile-list>
-                <profile-details fusePerfectScrollbar fxFlex></profile-details>
+                <!--<div fxLayout="column" fxFlex>
+                     <profile-details fusePerfectScrollbar fxFlex></profile-details>
+                <div>-->
+                <manager-profile fusePerfectScrollbar fxFlex *ngIf="selectedListNo==0"></manager-profile>
+                <profile-details fusePerfectScrollbar fxFlex *ngIf="selectedListNo==1"></profile-details>
 
             </div>
           

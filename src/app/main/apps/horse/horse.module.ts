@@ -26,47 +26,13 @@ import { jqxCalendarModule } from 'jqwidgets-ng/jqxcalendar';
 
 const routes: Routes = [
     {
-        path     : 'label/:labelHandle',
-        component: HorseComponent,
-        resolve  : {
-            horse: HorseService
-        }
-    },
-    {
-        path     : 'label/:labelHandle/:horseId',
-        component: HorseComponent,
-        resolve  : {
-            horse: HorseService
-        }
-    },
-    {
-        path     : 'filter/:filterHandle',
-        component: HorseComponent,
-        resolve  : {
-            horse: HorseService
-        }
-    },
-    {
-        path     : 'filter/:filterHandle/:horseId',
-        component: HorseComponent,
-        resolve  : {
-            horse: HorseService
-        }
-    },
-    {
         path     : ':folderHandle',
         component: HorseComponent,
         resolve  : {
             horse: HorseService
         }
     },
-    {
-        path     : ':folderHandle/:horseId',
-        component: HorseComponent,
-        resolve  : {
-            horse: HorseService
-        }
-    },
+   
     {
         path      : '**',
         redirectTo: 'inbox',
