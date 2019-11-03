@@ -18,10 +18,10 @@ import { PaymentService } from 'app/main/apps/payment/payment.service';
 })
 export class PaymentDetailsComponent implements OnInit, OnDestroy
 {
-    todo: Payment;
+    payment: Payment;
     tags: any[];
     formType: string;
-    todoForm: FormGroup;
+    paymentForm: FormGroup;
 
     @ViewChild('titleInput', {static: false})
     titleInputField;
@@ -32,11 +32,11 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {Payment} _todoService
+     * @param {Payment} _paymentService
      * @param {FormBuilder} _formBuilder
      */
     constructor(
-        private _todoService: PaymentService,
+        private _paymentService: PaymentService,
         private _formBuilder: FormBuilder
     )
     {
@@ -53,46 +53,47 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        // Subscribe to update the current todo
-        this._todoService.onCurrentTodoChanged
+        // Subscribe to update the current payment
+        this._paymentService.onCurrentPaymentChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(([todo, formType]) => {
+            .subscribe(payment => {
 
-                if ( todo && formType === 'edit' )
-                {
-                    this.formType = 'edit';
-                    this.todo = todo;
-                    this.todoForm = this.createTodoForm();
+                // if ( payment && formType === 'edit' )
+                // {
+                //     this.formType = 'edit';
+                    this.payment = payment;
+                    
+                    // this.paymentForm = this.createPaymentForm();
 
-                    this.todoForm.valueChanges
-                        .pipe(
-                            takeUntil(this._unsubscribeAll),
-                            debounceTime(500),
-                            distinctUntilChanged()
-                        )
-                        .subscribe(data => {
-                            this._todoService.updateTodo(data);
-                        });
-                }
+                //     this.paymentForm.valueChanges
+                //     .pipe(
+                //         takeUntil(this._unsubscribeAll),
+                //         debounceTime(500),
+                //         distinctUntilChanged()
+                //     )
+                //     .subscribe(data => {
+                //         this._paymentService.updatePayment(data);
+                //     });
+                // }
             });
 
         // Subscribe to update on tag change
-        this._todoService.onTagsChanged
+        this._paymentService.onTagsChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(labels => {
                 this.tags = labels;
             });
 
         // Subscribe to update on tag change
-        this._todoService.onNewTodoClicked
+        this._paymentService.onNewPaymentClicked
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(() => {
-                this.todo = new Payment({});
-                this.todo.id = FuseUtils.generateGUID();
+                this.payment = new Payment({});
+                this.payment.id = FuseUtils.generateGUID();
                 this.formType = 'new';
-                this.todoForm = this.createTodoForm();
+                // this.paymentForm = this.createPaymentForm();
                 this.focusTitleField();
-                this._todoService.onCurrentTodoChanged.next([this.todo, 'new']);
+                this._paymentService.onCurrentPaymentChanged.next([this.payment, 'new']);
             });
     }
 
@@ -121,25 +122,25 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
     }
 
     /**
-     * Create todo form
+     * Create payment form
      *
      * @returns {FormGroup}
      */
-    createTodoForm(): FormGroup
-    {
-        return this._formBuilder.group({
-            id       : [this.todo.id],
-            title    : [this.todo.title],
-            notes    : [this.todo.notes],
-            startDate: [this.todo.startDate],
-            dueDate  : [this.todo.dueDate],
-            completed: [this.todo.completed],
-            starred  : [this.todo.starred],
-            important: [this.todo.important],
-            deleted  : [this.todo.deleted],
-            tags     : [this.todo.tags]
-        });
-    }
+    // createPaymentForm(): FormGroup
+    // {
+    //     return this._formBuilder.group({
+    //         id       : [this.payment.id],
+    //         title    : [this.payment.title],
+    //         notes    : [this.payment.notes],
+    //         startDate: [this.payment.startDate],
+    //         dueDate  : [this.payment.dueDate],
+    //         completed: [this.payment.completed],
+    //         starred  : [this.payment.starred],
+    //         important: [this.payment.important],
+    //         deleted  : [this.payment.deleted],
+    //         tags     : [this.payment.tags]
+    //     });
+    // }
 
     /**
      * Toggle star
@@ -149,8 +150,8 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
     toggleStar(event): void
     {
         event.stopPropagation();
-        this.todo.toggleStar();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleStar();
+        this._paymentService.updatePayment(this.payment);
     }
 
     /**
@@ -161,8 +162,8 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
     toggleImportant(event): void
     {
         event.stopPropagation();
-        this.todo.toggleImportant();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleImportant();
+        this._paymentService.updatePayment(this.payment);
     }
 
     /**
@@ -173,8 +174,8 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
     toggleCompleted(event): void
     {
         event.stopPropagation();
-        this.todo.toggleCompleted();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleCompleted();
+        this._paymentService.updatePayment(this.payment);
     }
 
     /**
@@ -185,18 +186,18 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
     toggleDeleted(event): void
     {
         event.stopPropagation();
-        this.todo.toggleDeleted();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleDeleted();
+        this._paymentService.updatePayment(this.payment);
     }
 
     /**
-     * Toggle tag on todo
+     * Toggle tag on payment
      *
      * @param tagId
      */
-    toggleTagOnTodo(tagId): void
+    toggleTagOnPayment(tagId): void
     {
-        this._todoService.toggleTagOnTodo(tagId, this.todo);
+        this._paymentService.toggleTagOnPayment(tagId, this.payment);
     }
 
     /**
@@ -207,14 +208,14 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
      */
     hasTag(tagId): any
     {
-        return this._todoService.hasTag(tagId, this.todo);
+        return this._paymentService.hasTag(tagId, this.payment);
     }
 
     /**
-     * Add todo
+     * Add payment
      */
-    addTodo(): void
+    addPayment(): void
     {
-        this._todoService.updateTodo(this.todoForm.getRawValue());
+        // this._paymentService.updatePayment(this.paymentForm.getRawValue());
     }
 }

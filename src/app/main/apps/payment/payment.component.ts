@@ -19,12 +19,12 @@ import { PaymentService } from 'app/main/apps/payment/payment.service';
 })
 export class PaymentComponent implements OnInit, OnDestroy
 {
-    hasSelectedTodos: boolean;
+    hasSelectedPayments: boolean;
     isIndeterminate: boolean;
     filters: any[];
     tags: any[];
     searchInput: FormControl;
-    currentTodo: Payment;
+    currentPayment: Payment;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -33,11 +33,11 @@ export class PaymentComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {FuseSidebarService} _fuseSidebarService
-     * @param {PaymentService} _todoService
+     * @param {PaymentService} _paymentService
      */
     constructor(
         private _fuseSidebarService: FuseSidebarService,
-        private _todoService: PaymentService,
+        private _paymentService: PaymentService,
         private _fuseConfigService: FuseConfigService,
 
     )
@@ -77,21 +77,21 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this._todoService.onSelectedTodosChanged
+        this._paymentService.onSelectedPaymentsChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(selectedTodos => {
+            .subscribe(selectedPayments => {
             });
 
-        this._todoService.onFiltersChanged
+        this._paymentService.onFiltersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(folders => {
-                this.filters = this._todoService.filters;
+                this.filters = this._paymentService.filters;
             });
 
-        this._todoService.onTagsChanged
+        this._paymentService.onTagsChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(tags => {
-                this.tags = this._todoService.tags;
+                this.tags = this._paymentService.tags;
             });
 
         this.searchInput.valueChanges
@@ -101,19 +101,19 @@ export class PaymentComponent implements OnInit, OnDestroy
                 distinctUntilChanged()
             )
             .subscribe(searchText => {
-                this._todoService.onSearchTextChanged.next(searchText);
+                this._paymentService.onSearchTextChanged.next(searchText);
             });
 
-        this._todoService.onCurrentTodoChanged
+        this._paymentService.onCurrentPaymentChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(([currentTodo, formType]) => {
-                if ( !currentTodo )
+            .subscribe(currentPayment => {
+                if ( !currentPayment )
                 {
-                    this.currentTodo = null;
+                    this.currentPayment = null;
                 }
                 else
                 {
-                    this.currentTodo = currentTodo;
+                    this.currentPayment = currentPayment;
                 }
             });
     }
@@ -133,11 +133,11 @@ export class PaymentComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Deselect current todo
+     * 
      */
-    deselectCurrentTodo(): void
+    deselectCurrentPayment(): void
     {
-        this._todoService.onCurrentTodoChanged.next([null, null]);
+        this._paymentService.onCurrentPaymentChanged.next(null);
     }
 
     /**
@@ -145,36 +145,35 @@ export class PaymentComponent implements OnInit, OnDestroy
      */
     toggleSelectAll(): void
     {
-        this._todoService.toggleSelectAll();
+        this._paymentService.toggleSelectAll();
     }
 
     /**
-     * Select todos
-     *
+     * 
      * @param filterParameter
      * @param filterValue
      */
-    selectTodos(filterParameter?, filterValue?): void
+    selectPayments(filterParameter?, filterValue?): void
     {
-        this._todoService.selectTodos(filterParameter, filterValue);
+        this._paymentService.selectPayments(filterParameter, filterValue);
     }
 
     /**
-     * Deselect todos
+     * 
      */
-    deselectTodos(): void
+    deselectPayments(): void
     {
-        this._todoService.deselectTodos();
+        this._paymentService.deselectPayments();
     }
 
     /**
-     * Toggle tag on selected todos
+     
      *
      * @param tagId
      */
-    toggleTagOnSelectedTodos(tagId): void
+    toggleTagOnSelectedPayments(tagId): void
     {
-        this._todoService.toggleTagOnSelectedTodos(tagId);
+        this._paymentService.toggleTagOnSelectedPayments(tagId);
     }
 
     /**

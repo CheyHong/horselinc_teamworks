@@ -11,7 +11,7 @@ payment {
 
             payment-list,
             payment-details {
-                flex: 0 0 28%;
+                flex: 0 0 30%;
                 border-right: #efefef 1px solid;
             }
             .Schedule-Service {
@@ -27,7 +27,7 @@ payment {
                 color: #4f748c;
             }
 
-            .toolbar_1 {
+            .toolbar {
                 display: flex;
                 -webkit-box-pack: start;
                 justify-content: flex-start;
@@ -50,7 +50,7 @@ payment {
 
             @include media-breakpoint('lt-lg') {
 
-                payment-list, provider-payment-list {
+                payment-list{
                     border-right: 0;
                 }
 
@@ -62,12 +62,12 @@ payment {
                     display: none !important;
                 }
 
-                &.current-todo-selected {
+                &.current-payment-selected {
 
                     .toolbar {
                         padding-left: 16px !important;
 
-                        .todo-selection {
+                        .payment-selection {
                             display: none !important;
                         }
                     }

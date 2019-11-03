@@ -3,13 +3,13 @@
     <div class="center">
 
         <!-- CONTENT CARD -->
-        <div class="content-card" [ngClass]="{'current-todo-selected':currentTodo}">
+        <div class="content-card" [ngClass]="{'current-provider-selected':currentProvider}">
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar_1 px-24 py-8" fxHide.gt-md>
+            <div class="toolbar px-24 py-8" fxHide.gt-md>
 
-                <div *ngIf="currentTodo">
-                    <button mat-icon-button (click)="deselectCurrentTodo()">
+                <div *ngIf="currentProvider">
+                    <button mat-icon-button (click)="deselectCurrentProvider()">
                         <mat-icon class="secondary-text">arrow_back</mat-icon>
                     </button>
                 </div>

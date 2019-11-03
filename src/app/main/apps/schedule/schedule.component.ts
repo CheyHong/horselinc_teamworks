@@ -43,7 +43,6 @@ export class ScheduleComponent implements OnInit {
 
     toggleFilter() {
         this.toggle = !this.toggle;
-        console.log("this");
     }
 
 }

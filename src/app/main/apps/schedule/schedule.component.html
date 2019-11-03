@@ -30,7 +30,7 @@
                 </mat-tab>
             </mat-tab-group>
         </div>
-        <button class="button" (click)="toggleFilter()">Filters</button>
+        <button mat-raised-button class="button" (click)="toggleFilter()">Filters</button>
     </div>
 
     <div class="filterModal" fxHide="{{toggle}}">
@@ -64,8 +64,8 @@
                     <mat-slide-toggle style="width: 10%;"></mat-slide-toggle>
                 </div>
                 <div class="action" fxLayout="row" fxLayoutAlign="space-between center">
-                    <button class="button1">CLEAR</button>
-                    <button class="button2">APPLY</button>
+                    <button class="button1" mat-raised-button>CLEAR</button>
+                    <button class="button2" mat-raised-button>APPLY</button>
                 </div>
             </div>
             <div class="arrow-down"></div>

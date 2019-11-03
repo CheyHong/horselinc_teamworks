@@ -7,6 +7,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 import {MatTabsModule} from '@angular/material/tabs';
 
@@ -37,7 +38,7 @@ const routes: Routes = [
     MatSelectModule,
     MatSlideToggleModule,
     MatCardModule,
-
+    MatButtonModule,
     NgxDnDModule,
 
     FuseSharedModule,

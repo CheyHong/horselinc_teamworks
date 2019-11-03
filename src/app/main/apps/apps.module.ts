@@ -16,11 +16,16 @@ import {
 
 import {WelcomeComponent } from './welcome/welcome.component';
 import { CalendarComponent } from '../components/calendar/calendar.component';
+import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
 
 const routes = [
     {
         path        : 'welcome',
         component   :  WelcomeComponent,
+    },
+    {
+        path        : 'edit-profile-dialog',
+        component   :  EditProfileDialogComponent,
     },
     {
         path        : 'user',
@@ -70,12 +75,14 @@ const routes = [
         MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
     ],
     declarations: [
-        WelcomeComponent, 
+        WelcomeComponent,
+        EditProfileDialogComponent, 
         CalendarComponent
     ],
 
     exports     : [
         WelcomeComponent,
+        EditProfileDialogComponent,
         CalendarComponent
     ]
 })

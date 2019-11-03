@@ -27,7 +27,7 @@ provider {
                 color: #4f748c;
             }
 
-            .toolbar_1 {
+            .toolbar {
                 display: flex;
                 -webkit-box-pack: start;
                 justify-content: flex-start;
@@ -62,12 +62,12 @@ provider {
                     display: none !important;
                 }
 
-                &.current-todo-selected {
+                &.current-provider-selected {
 
                     .toolbar {
                         padding-left: 16px !important;
 
-                        .todo-selection {
+                        .provider-selection {
                             display: none !important;
                         }
                     }

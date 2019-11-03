@@ -61,13 +61,15 @@ export class FakeDbService implements InMemoryDbService
             'contacts-contacts': ContactsFakeDb.contacts,
             'contacts-user'    : ContactsFakeDb.user,
 
-            // Todo
-            'todo-todos'  : TodoFakeDb.todos,
-            'todo-filters': TodoFakeDb.filters,
-            'todo-tags'   : TodoFakeDb.tags,
+            // Payment
+            'payment-payments'  : TodoFakeDb.todos,
+            'payment-filters': TodoFakeDb.filters,
+            'payment-tags'   : TodoFakeDb.tags,
 
             // Provider
             'provider-providers'  : ProvidersFakeDb.providers,
+            'provider-filters': TodoFakeDb.filters,
+            'provider-tags'   : TodoFakeDb.tags,
 
             // Scrumboard
             'scrumboard-boards': ScrumboardFakeDb.boards,

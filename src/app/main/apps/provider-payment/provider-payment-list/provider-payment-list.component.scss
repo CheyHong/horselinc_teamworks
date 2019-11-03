@@ -10,6 +10,7 @@ provider-payment-list {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     
+    // mat-tab-group.mat-primary .mat-ink-bar {background-color: #27c5c8 !important;}
 }
 
 mat-tab-group {
@@ -19,6 +20,8 @@ mat-tab-group {
 ::ng-deep.mat-tab-body-wrapper {
     height: 100%;
 }
+
+::ng-deep.mat-ink-bar {background-color: #27c5c8 !important;}
 
 .provider-list {
 

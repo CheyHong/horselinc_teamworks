@@ -1,24 +1,24 @@
-<div *ngIf="!todo" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <mat-icon class="s-120 mb-12 select-todo-icon hint-text"
+<div *ngIf="!payment" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+    <mat-icon class="s-120 mb-12 select-payment-icon hint-text"
               [@animate]="{value:'*',params:{delay:'300ms',scale:'0.2'}}">check_box
     </mat-icon>
-    <span class="hint-text mat-h1 select-todo-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
+    <span class="hint-text mat-h1 select-payment-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
         Select a Trainer
     </span>
 </div>
 
-<div *ngIf="todo">
-    <div class="todo-header">
+<div *ngIf="payment">
+    <div class="payment-header">
         <div class="invoce"> Invoce </div>
     </div>
 
-    <div class="todo-content" fxLayout="column" fxLayoutAlign="space-between center">
+    <div class="payment-content" fxLayout="column" fxLayoutAlign="space-between center">
 
         <div class="Rectangle">
             <div>
                 <div class="trainer" fxLayout="row wrap" fxLayoutAlign="start center">
                     <img class="Oval" src="assets/images/avatars/Reyna.jpg" />
-                    <div class="Huckleberry"> {{todo.title}} </div>
+                    <div class="Huckleberry"> {{payment.title}} </div>
                 </div>
                 <div class="invoice-submitted-1"> INVOICE-SUBMITTED% 1/22/2018 </div>
             </div>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="button1">
-                <button>Submit Payment</button>
+                <button mat-raised-button>Submit Payment</button>
             </div>
 
             <div class="seperator"></div>
@@ -109,12 +109,12 @@
             </div>
 
             <div class="button2">
-                <button>Request Approval</button>
+                <button mat-raised-button>Request Approval</button>
             </div>
           
         </div>
 
-        <!-- <form [formGroup]="todoForm" (submit)="addTodo()"> -->
+        <!-- <form [formGroup]="paymentForm" (submit)="addPayment()"> -->
 
             <!-- <mat-form-field appearance="outline" class="title mt-8" fxFill>
                 <mat-label>Title</mat-label>
@@ -156,7 +156,7 @@
 
             <!-- <button *ngIf="formType === 'new'"
                     mat-raised-button color="accent"
-                    [disabled]="todoForm.invalid">
+                    [disabled]="paymentForm.invalid">
                 SAVE
             </button> -->
         <!-- </form> -->

@@ -43,13 +43,42 @@ export class ProviderPaymentListComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        // Subscribe to update todos on changes
         this._providerService.onProvidersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(providers => {
                 this.providers = providers;
-            }
-        );
+            });
+
+        this._providerService.onCurrentProviderChanged
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(currentPayment => {
+                if ( !currentPayment )
+                {
+             
+                    this.currentProvider = null;
+
+                    // Handle the location changes
+                    const tagHandle    = this._activatedRoute.snapshot.params.tagHandle,
+                          filterHandle = this._activatedRoute.snapshot.params.filterHandle;
+
+                    if ( tagHandle )
+                    {
+                        this._location.go('apps/payment/tag/' + tagHandle);
+                    }
+                    else if ( filterHandle )
+                    {
+                        this._location.go('apps/payment/filter/' + filterHandle);
+                    }
+                    else
+                    {
+                        this._location.go('apps/payment/all');
+                    }
+                }
+                else
+                {
+                    this.currentProvider = currentPayment;
+                }
+            });
     }
 
     readProvider(providerId): void {
