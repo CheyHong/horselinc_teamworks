@@ -24,7 +24,7 @@ export class ProviderPaymentListItemComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {PaymentService} _todoService
+     * @param {PaymentService} _providerService
      * @param {ActivatedRoute} _activatedRoute
      */
     constructor(

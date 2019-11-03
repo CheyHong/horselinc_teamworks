@@ -11,21 +11,21 @@ import { Payment } from 'app/main/apps/payment/payment.model';
 @Injectable()
 export class PaymentService implements Resolve<any>
 {
-    todos: Payment[];
-    selectedTodos: Payment[];
-    currentTodo: Payment;
+    payments: Payment[];
+    selectedPayments: Payment[];
+    currentPayment: Payment;
     searchText: string;
     filters: any[];
     tags: any[];
     routeParams: any;
 
-    onTodosChanged: BehaviorSubject<any>;
-    onSelectedTodosChanged: BehaviorSubject<any>;
-    onCurrentTodoChanged: BehaviorSubject<any>;
+    onPaymentsChanged: BehaviorSubject<any>;
+    onSelectedPaymentsChanged: BehaviorSubject<any>;
+    onCurrentPaymentChanged: BehaviorSubject<any>;
     onFiltersChanged: BehaviorSubject<any>;
     onTagsChanged: BehaviorSubject<any>;
     onSearchTextChanged: BehaviorSubject<any>;
-    onNewTodoClicked: Subject<any>;
+    onNewPaymentClicked: Subject<any>;
 
     /**
      * Constructor
@@ -39,15 +39,15 @@ export class PaymentService implements Resolve<any>
     )
     {
         // Set the defaults
-        this.selectedTodos = [];
+        this.selectedPayments = [];
         this.searchText = '';
-        this.onTodosChanged = new BehaviorSubject([]);
-        this.onSelectedTodosChanged = new BehaviorSubject([]);
-        this.onCurrentTodoChanged = new BehaviorSubject([]);
+        this.onPaymentsChanged = new BehaviorSubject([]);
+        this.onSelectedPaymentsChanged = new BehaviorSubject([]);
+        this.onCurrentPaymentChanged = new BehaviorSubject([]);
         this.onFiltersChanged = new BehaviorSubject([]);
         this.onTagsChanged = new BehaviorSubject([]);
         this.onSearchTextChanged = new BehaviorSubject('');
-        this.onNewTodoClicked = new Subject();
+        this.onNewPaymentClicked = new Subject();
     }
 
     /**
@@ -59,7 +59,6 @@ export class PaymentService implements Resolve<any>
      */
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
-        console.log("sdfsd");
         this.routeParams = route.params;
 
         return new Promise((resolve, reject) => {
@@ -67,28 +66,28 @@ export class PaymentService implements Resolve<any>
             Promise.all([
                 this.getFilters(),
                 this.getTags(),
-                this.getTodos()
+                this.getPayments()
             ]).then(
                 () => {
-                    if ( this.routeParams.todoId )
+                    if ( this.routeParams.paymentId )
                     {
-                        this.setCurrentTodo(this.routeParams.todoId);
+                        this.setCurrentPayment(this.routeParams.paymentId);
                     }
                     else
                     {
-                        this.setCurrentTodo(null);
+                        this.setCurrentPayment(null);
                     }
 
                     this.onSearchTextChanged.subscribe(searchText => {
                         if ( searchText !== '' )
                         {
                             this.searchText = searchText;
-                            this.getTodos();
+                            this.getPayments();
                         }
                         else
                         {
                             this.searchText = searchText;
-                            this.getTodos();
+                            this.getPayments();
                         }
                     });
                     resolve();
@@ -106,7 +105,7 @@ export class PaymentService implements Resolve<any>
     getFilters(): Promise<any>
     {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/todo-filters')
+            this._httpClient.get('api/payment-filters')
                 .subscribe((response: any) => {
                     this.filters = response;
                     this.onFiltersChanged.next(this.filters);
@@ -123,7 +122,7 @@ export class PaymentService implements Resolve<any>
     getTags(): Promise<any>
     {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/todo-tags')
+            this._httpClient.get('api/payment-tags')
                 .subscribe((response: any) => {
                     this.tags = response;
                     this.onTagsChanged.next(this.tags);
@@ -133,56 +132,56 @@ export class PaymentService implements Resolve<any>
     }
 
     /**
-     * Get todos
+     * Get payments
      *
-     * @returns {Promise<Todo[]>}
+     * @returns {Promise<Payment[]>}
      */
-    getTodos(): Promise<Payment[]>
+    getPayments(): Promise<Payment[]>
     {
         if ( this.routeParams.tagHandle )
         {
-            return this.getTodosByTag(this.routeParams.tagHandle);
+            return this.getPaymentsByTag(this.routeParams.tagHandle);
         }
 
         if ( this.routeParams.filterHandle )
         {
-            return this.getTodosByFilter(this.routeParams.filterHandle);
+            return this.getPaymentsByFilter(this.routeParams.filterHandle);
         }
 
-        return this.getTodosByParams(this.routeParams);
+        return this.getPaymentsByParams(this.routeParams);
     }
 
     /**
-     * Get todos by params
+     * Get payments by params
      *
      * @param handle
-     * @returns {Promise<Todo[]>}
+     * @returns {Promise<Payment[]>}
      */
-    getTodosByParams(handle): Promise<Payment[]>
+    getPaymentsByParams(handle): Promise<Payment[]>
     {
         return new Promise((resolve, reject) => {
 
-            this._httpClient.get('api/todo-todos')
-                .subscribe((todos: any) => {
-                    this.todos = todos.map(todo => {
-                        return new Payment(todo);
+            this._httpClient.get('api/payment-payments')
+                .subscribe((payments: any) => {
+                    this.payments = payments.map(payment => {
+                        return new Payment(payment);
                     });
-                    console.log(this.todos);
-                    this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);
+                    console.log(this.payments);
+                    this.payments = FuseUtils.filterArrayByString(this.payments, this.searchText);
 
-                    this.onTodosChanged.next(this.todos);
-                    resolve(this.todos);
+                    this.onPaymentsChanged.next(this.payments);
+                    resolve(this.payments);
                 });
         });
     }
 
     /**
-     * Get todos by filter
+     * Get payments by filter
      *
      * @param handle
-     * @returns {Promise<Todo[]>}
+     * @returns {Promise<Payment[]>}
      */
-    getTodosByFilter(handle): Promise<Payment[]>
+    getPaymentsByFilter(handle): Promise<Payment[]>
     {
 
         let param = handle + '=true';
@@ -194,49 +193,49 @@ export class PaymentService implements Resolve<any>
 
         return new Promise((resolve, reject) => {
 
-            this._httpClient.get('api/todo-todos?' + param)
-                .subscribe((todos: any) => {
+            this._httpClient.get('api/payment-payments?' + param)
+                .subscribe((payments: any) => {
 
-                    this.todos = todos.map(todo => {
-                        return new Payment(todo);
+                    this.payments = payments.map(payment => {
+                        return new Payment(payment);
                     });
 
-                    this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);
+                    this.payments = FuseUtils.filterArrayByString(this.payments, this.searchText);
 
-                    this.onTodosChanged.next(this.todos);
+                    this.onPaymentsChanged.next(this.payments);
 
-                    resolve(this.todos);
+                    resolve(this.payments);
 
                 }, reject);
         });
     }
 
     /**
-     * Get todos by tag
+     * Get payments by tag
      *
      * @param handle
-     * @returns {Promise<Todo[]>}
+     * @returns {Promise<Payment[]>}
      */
-    getTodosByTag(handle): Promise<Payment[]>
+    getPaymentsByTag(handle): Promise<Payment[]>
     {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/todo-tags?handle=' + handle)
+            this._httpClient.get('api/payment-tags?handle=' + handle)
                 .subscribe((tags: any) => {
 
                     const tagId = tags[0].id;
 
-                    this._httpClient.get('api/todo-todos?tags=' + tagId)
-                        .subscribe((todos: any) => {
+                    this._httpClient.get('api/payment-payments?tags=' + tagId)
+                        .subscribe((payments: any) => {
 
-                            this.todos = todos.map(todo => {
-                                return new Payment(todo);
+                            this.payments = payments.map(payment => {
+                                return new Payment(payment);
                             });
 
-                            this.todos = FuseUtils.filterArrayByString(this.todos, this.searchText);
+                            this.payments = FuseUtils.filterArrayByString(this.payments, this.searchText);
 
-                            this.onTodosChanged.next(this.todos);
+                            this.onPaymentsChanged.next(this.payments);
 
-                            resolve(this.todos);
+                            resolve(this.payments);
 
                         }, reject);
                 });
@@ -244,28 +243,28 @@ export class PaymentService implements Resolve<any>
     }
 
     /**
-     * Toggle selected todo by id
+     * Toggle selected payment by id
      *
      * @param id
      */
-    toggleSelectedTodo(id): void
+    toggleSelectedPayment(id): void
     {
-        // First, check if we already have that todo as selected...
-        if ( this.selectedTodos.length > 0 )
+        // First, check if we already have that payment as selected...
+        if ( this.selectedPayments.length > 0 )
         {
-            for ( const todo of this.selectedTodos )
+            for ( const payment of this.selectedPayments )
             {
-                // ...delete the selected todo
-                if ( todo.id === id )
+                // ...delete the selected payment
+                if ( payment.id === id )
                 {
-                    const index = this.selectedTodos.indexOf(todo);
+                    const index = this.selectedPayments.indexOf(payment);
 
                     if ( index !== -1 )
                     {
-                        this.selectedTodos.splice(index, 1);
+                        this.selectedPayments.splice(index, 1);
 
                         // Trigger the next event
-                        this.onSelectedTodosChanged.next(this.selectedTodos);
+                        this.onSelectedPaymentsChanged.next(this.selectedPayments);
 
                         // Return
                         return;
@@ -275,14 +274,14 @@ export class PaymentService implements Resolve<any>
         }
 
         // If we don't have it, push as selected
-        this.selectedTodos.push(
-            this.todos.find(todo => {
-                return todo.id === id;
+        this.selectedPayments.push(
+            this.payments.find(payment => {
+                return payment.id === id;
             })
         );
 
         // Trigger the next event
-        this.onSelectedTodosChanged.next(this.selectedTodos);
+        this.onSelectedPaymentsChanged.next(this.selectedPayments);
     }
 
     /**
@@ -290,153 +289,155 @@ export class PaymentService implements Resolve<any>
      */
     toggleSelectAll(): void
     {
-        if ( this.selectedTodos.length > 0 )
+        if ( this.selectedPayments.length > 0 )
         {
-            this.deselectTodos();
+            this.deselectPayments();
         }
         else
         {
-            this.selectTodos();
+            this.selectPayments();
         }
 
     }
 
     /**
-     * Select todos
+     * Select payments
      *
      * @param filterParameter
      * @param filterValue
      */
-    selectTodos(filterParameter?, filterValue?): void
+    selectPayments(filterParameter?, filterValue?): void
     {
-        this.selectedTodos = [];
+        this.selectedPayments = [];
 
-        // If there is no filter, select all todos
+        // If there is no filter, select all payments
         if ( filterParameter === undefined || filterValue === undefined )
         {
-            this.selectedTodos = this.todos;
+            this.selectedPayments = this.payments;
         }
         else
         {
-            this.selectedTodos.push(...
-                this.todos.filter(todo => {
-                    return todo[filterParameter] === filterValue;
+            this.selectedPayments.push(...
+                this.payments.filter(payment => {
+                    return payment[filterParameter] === filterValue;
                 })
             );
         }
 
         // Trigger the next event
-        this.onSelectedTodosChanged.next(this.selectedTodos);
+        this.onSelectedPaymentsChanged.next(this.selectedPayments);
     }
 
     /**
-     * Deselect todos
+     * Deselect payments
      */
-    deselectTodos(): void
+    deselectPayments(): void
     {
-        this.selectedTodos = [];
+        this.selectedPayments = [];
 
         // Trigger the next event
-        this.onSelectedTodosChanged.next(this.selectedTodos);
+        this.onSelectedPaymentsChanged.next(this.selectedPayments);
     }
 
     /**
-     * Set current todo by id
+     * Set current payment by id
      *
      * @param id
      */
-    setCurrentTodo(id): void
+    setCurrentPayment(id): void
     {
-        this.currentTodo = this.todos.find(todo => {
-            return todo.id === id;
+        this.currentPayment = this.payments.find(payment => {
+            return payment.id === id;
         });
 
-        this.onCurrentTodoChanged.next([this.currentTodo, 'edit']);
+        console.log(this.currentPayment);
+
+        this.onCurrentPaymentChanged.next([this.currentPayment, 'edit']);
 
         const tagHandle    = this.routeParams.tagHandle,
               filterHandle = this.routeParams.filterHandle;
 
         // if ( tagHandle )
         // {
-        //     this._location.go('apps/todo/tag/' + tagHandle + '/' + id);
+        //     this._location.go('apps/payment/tag/' + tagHandle + '/' + id);
         // }
         // else if ( filterHandle )
         // {
-        //     this._location.go('apps/todo/filter/' + filterHandle + '/' + id);
+        //     this._location.go('apps/payment/filter/' + filterHandle + '/' + id);
         // }
         // else
         // {
-        //     this._location.go('apps/todo/all/' + id);
+        //     this._location.go('apps/payment/all/' + id);
         // }
     }
 
     /**
-     * Toggle tag on selected todos
+     * Toggle tag on selected payments
      *
      * @param tagId
      */
-    toggleTagOnSelectedTodos(tagId): void
+    toggleTagOnSelectedPayments(tagId): void
     {
-        this.selectedTodos.map(todo => {
-            this.toggleTagOnTodo(tagId, todo);
+        this.selectedPayments.map(payment => {
+            this.toggleTagOnPayment(tagId, payment);
         });
     }
 
     /**
-     * Toggle tag on todo
+     * Toggle tag on payment
      *
      * @param tagId
-     * @param todo
+     * @param payment
      */
-    toggleTagOnTodo(tagId, todo): void
+    toggleTagOnPayment(tagId, payment): void
     {
-        const index = todo.tags.indexOf(tagId);
+        const index = payment.tags.indexOf(tagId);
 
         if ( index !== -1 )
         {
-            todo.tags.splice(index, 1);
+            payment.tags.splice(index, 1);
         }
         else
         {
-            todo.tags.push(tagId);
+            payment.tags.push(tagId);
         }
 
-        this.updateTodo(todo);
+        this.updatePayment(payment);
     }
 
     /**
      * Has tag?
      *
      * @param tagId
-     * @param todo
+     * @param payment
      * @returns {boolean}
      */
-    hasTag(tagId, todo): any
+    hasTag(tagId, payment): any
     {
-        if ( !todo.tags )
+        if ( !payment.tags )
         {
             return false;
         }
 
-        return todo.tags.indexOf(tagId) !== -1;
+        return payment.tags.indexOf(tagId) !== -1;
     }
 
     /**
-     * Update the todo
+     * Update the payment
      *
-     * @param todo
+     * @param payment
      * @returns {Promise<any>}
      */
-    updateTodo(todo): any
+    updatePayment(payment): any
     {
         return new Promise((resolve, reject) => {
 
-            this._httpClient.post('api/todo-todos/' + todo.id, {...todo})
+            this._httpClient.post('api/payment-payments/' + payment.id, {...payment})
                 .subscribe(response => {
 
-                    this.getTodos().then(todos => {
+                    this.getPayments().then(payments => {
 
-                        resolve(todos);
+                        resolve(payments);
 
                     }, reject);
                 });

@@ -18,8 +18,8 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class PaymentListComponent implements OnInit, OnDestroy {
 
-    todos: Payment[];
-    currentTodo: Payment;
+    payments: Payment[];
+    currentPayment: Payment;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -50,43 +50,41 @@ export class PaymentListComponent implements OnInit, OnDestroy {
      */
     ngOnInit(): void
     {
-        // Subscribe to update todos on changes
-        this._managerService.onTodosChanged
+   
+        this._managerService.onPaymentsChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(todos => {
-                this.todos = todos;
-                console.log(todos);
+            .subscribe(payments => {
+                this.payments = payments;
             });
 
-        // Subscribe to update current todo on changes
-        this._managerService.onCurrentTodoChanged
+        this._managerService.onCurrentPaymentChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(currentTodo => {
-                if ( !currentTodo )
+            .subscribe(currentPayment => {
+                if ( !currentPayment )
                 {
-                    // Set the current todo id to null to deselect the current todo
-                    this.currentTodo = null;
+             
+                    this.currentPayment = null;
 
                     // Handle the location changes
                     const tagHandle    = this._activatedRoute.snapshot.params.tagHandle,
                           filterHandle = this._activatedRoute.snapshot.params.filterHandle;
 
-                    // if ( tagHandle )
-                    // {
-                    //     this._location.go('apps/payment/tag/' + tagHandle);
-                    // }
-                    // else if ( filterHandle )
-                    // {
-                    //     this._location.go('apps/payment/filter/' + filterHandle);
-                    // }
-                    // else
-                    // {
-                        // this._location.go('apps/payment/all');
-                    // }
+                    if ( tagHandle )
+                    {
+                        this._location.go('apps/payment/tag/' + tagHandle);
+                    }
+                    else if ( filterHandle )
+                    {
+                        this._location.go('apps/payment/filter/' + filterHandle);
+                    }
+                    else
+                    {
+                        this._location.go('apps/payment/all');
+                    }
                 }
                 else
                 {
-                    this.currentTodo = currentTodo;
+                    this.currentPayment = currentPayment;
                 }
             });
     }
@@ -106,14 +104,13 @@ export class PaymentListComponent implements OnInit, OnDestroy {
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Read todo
+ 
      *
-     * @param todoId
+     * @param paymentId
      */
-    readTodo(todoId): void
+    readPayment(paymentId): void
     {
-        // Set current todo
-        this._managerService.setCurrentTodo(todoId);
+        this._managerService.setCurrentPayment(paymentId);
     }
 
     /**

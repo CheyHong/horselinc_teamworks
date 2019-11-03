@@ -1,30 +1,27 @@
-<div *ngIf="todos.length === 0" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
-    <span class="no-todos-text hint-text">There are no todos!</span>
+<div *ngIf="payments.length === 0" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+    <span class="no-payments-text hint-text">There are no payments!</span>
 </div>
 
 <mat-tab-group>
     <mat-tab label="OUTSTAND"> 
-        <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)" >
-            <payment-list-item class="todo-list-item has-handle"
-                *ngFor="let todo of todos" [todo]="todo"
-                ngxDraggable
-                [model]="todo"
-                (click)="readTodo(todo.id)"
-                [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
+        <div class="payment-list">
+            <payment-list-item class="payment-list-item has-handle"
+                *ngFor="let payment of payments" [payment]="payment" (click)="readPayment(payment.id)"
+                [ngClass]="{'current-payment':payment?.id == currentPayment?.id}"
                 matRipple>
             </payment-list-item>
         </div>
     </mat-tab>
     <mat-tab label="COMPLETED">
-        <div class="todo-list" ngxDroppable [model]="todos" (out)="onDrop($event)">
-            <payment-list-item class="todo-list-item has-handle"
-                *ngFor="let todo of todos" [todo]="todo"
+        <!-- <div class="payment-list" ngxDroppable [model]="payments" (out)="onDrop($event)">
+            <payment-list-item class="payment-list-item has-handle"
+                *ngFor="let payment of payments" [payment]="payment"
                 ngxDraggable
-                [model]="todo"
-                (click)="readTodo(todo.id)"
-                [ngClass]="{'current-todo':todo?.id == currentTodo?.id}"
+                [model]="payment"
+                (click)="readPayment(payment.id)"
+                [ngClass]="{'current-payment':payment?.id == currentPayment?.id}"
                 matRipple>
             </payment-list-item>
-        </div>
+        </div> -->
     </mat-tab>
 </mat-tab-group>

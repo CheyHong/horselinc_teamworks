@@ -7,7 +7,9 @@ payment-list {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
-    .no-todos-text {
+    mat-tab-group.mat-primary .mat-ink-bar {background-color: #27c5c8 !important;}
+
+    .no-payments-text {
         font-size: 24px;
         font-weight: 300;
     }

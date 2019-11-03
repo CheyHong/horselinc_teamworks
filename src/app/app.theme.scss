@@ -81,6 +81,8 @@ $typography: mat-typography-config(
 @import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 @import "src/app/main/apps/horse/horse.theme";
+@import "src/app/main/apps/payment/payment.theme";
+@import "src/app/main/apps/provider-payment/provider-payment.theme";
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {
@@ -90,6 +92,8 @@ $typography: mat-typography-config(
     @include toolbar-theme($theme);
 
     @include horse-theme($theme);
+    @include payment-theme($theme);
+    @include provider-payment-theme($theme);
 }
 // -----------------------------------------------------------------------------------------------------
 // @ Define the horselinc theme

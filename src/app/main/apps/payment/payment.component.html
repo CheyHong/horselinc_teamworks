@@ -3,13 +3,13 @@
     <div class="center">
 
         <!-- CONTENT CARD -->
-        <div class="content-card" [ngClass]="{'current-todo-selected':currentTodo}">
+        <div class="content-card" [ngClass]="{'current-payment-selected':currentPayment}">
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar_1 px-24 py-8" fxHide.gt-md>
+            <div class="toolbar px-24 py-8" fxHide.gt-md>
 
-                <div *ngIf="currentTodo">
-                    <button mat-icon-button (click)="deselectCurrentTodo()">
+                <div *ngIf="currentPayment">
+                    <button mat-icon-button (click)="deselectCurrentPayment()">
                         <mat-icon class="secondary-text">arrow_back</mat-icon>
                     </button>
                 </div>
@@ -27,10 +27,6 @@
                 <payment-details fusePerfectScrollbar fxFlex></payment-details>
             </div>
 
-            <!-- <div class="content" fxFlexAlign="row">
-                <provider-payment-list ></provider-payment-list>
-                <provider-payment-details fusePerfectScrollbar fxFlex></provider-payment-details>
-            </div> -->
             <!-- / CONTENT -->
 
         </div>

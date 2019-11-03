@@ -25,7 +25,7 @@ import {EditDialogComponent} from './provider-dialogs/edit-dialog/edit-dialog.co
 
 const routes: Routes = [
     {
-        path     : 'provider',
+        path     : 'all',
         component: ProviderPaymentComponent,
         resolve  : {
             provider: ProviderPaymentService
@@ -33,7 +33,7 @@ const routes: Routes = [
     },
     {
         path      : '**',
-        redirectTo: 'provider',
+        redirectTo: 'all',
         pathMatch: 'full'
     }
 ];

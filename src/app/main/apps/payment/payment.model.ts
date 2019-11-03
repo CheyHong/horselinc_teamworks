@@ -21,21 +21,21 @@ export class Payment
     /**
      * Constructor
      *
-     * @param todo
+     * @param 
      */
-    constructor(todo)
+    constructor(payment)
     {
         {
-            this.id = todo.id;
-            this.title = todo.title;
-            this.notes = todo.notes;
-            this.startDate = todo.startDate;
-            this.dueDate = todo.dueDate;
-            this.completed = todo.completed;
-            this.starred = todo.starred;
-            this.important = todo.important;
-            this.deleted = todo.deleted;
-            this.tags = todo.tags || [];
+            this.id = payment.id;
+            this.title = payment.title;
+            this.notes = payment.notes;
+            this.startDate = payment.startDate;
+            this.dueDate = payment.dueDate;
+            this.completed = payment.completed;
+            this.starred = payment.starred;
+            this.important = payment.important;
+            this.deleted = payment.deleted;
+            this.tags = payment.tags || [];
         }
     }
 

@@ -16,7 +16,7 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
     tags: any[];
 
     @Input()
-    todo: Payment;
+    payment: Payment;
 
     @HostBinding('class.selected')
     selected: boolean;
@@ -33,11 +33,11 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {PaymentService} _todoService
+     * @param {PaymentService} _paymentService
      * @param {ActivatedRoute} _activatedRoute
      */
     constructor(
-        private _todoService: PaymentService,
+        private _paymentService: PaymentService,
         private _activatedRoute: ActivatedRoute
     )
     {
@@ -61,20 +61,20 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Set the initial values
-        this.todo = new Payment(this.todo);
-        this.completed = this.todo.completed;
+        this.payment = new Payment(this.payment);
+        this.completed = this.payment.completed;
 
-        // Subscribe to update on selected todo change
-        this._todoService.onSelectedTodosChanged
+        // Subscribe to update on selected payment change
+        this._paymentService.onSelectedPaymentsChanged
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(selectedTodos => {
+            .subscribe(selectedPayments => {
                 this.selected = false;
 
-                if ( selectedTodos.length > 0 )
+                if ( selectedPayments.length > 0 )
                 {
-                    for ( const todo of selectedTodos )
+                    for ( const payment of selectedPayments )
                     {
-                        if ( todo.id === this.todo.id )
+                        if ( payment.id === this.payment.id )
                         {
                             this.selected = true;
                             break;
@@ -84,7 +84,7 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
             });
 
         // Subscribe to update on tag change
-        this._todoService.onTagsChanged
+        this._paymentService.onTagsChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(tags => {
                 this.tags = tags;
@@ -110,7 +110,7 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
      */
     onSelectedChange(): void
     {
-        this._todoService.toggleSelectedTodo(this.todo.id);
+        this._paymentService.toggleSelectedPayment(this.payment.id);
     }
 
     /**
@@ -120,8 +120,8 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
     {
         event.stopPropagation();
 
-        this.todo.toggleStar();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleStar();
+        this._paymentService.updatePayment(this.payment);
     }
 
     /**
@@ -131,8 +131,8 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
     {
         event.stopPropagation();
 
-        this.todo.toggleImportant();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleImportant();
+        this._paymentService.updatePayment(this.payment);
     }
 
     /**
@@ -142,7 +142,7 @@ export class PaymentListItemComponent implements OnInit, OnDestroy
     {
         event.stopPropagation();
 
-        this.todo.toggleCompleted();
-        this._todoService.updateTodo(this.todo);
+        this.payment.toggleCompleted();
+        this._paymentService.updatePayment(this.payment);
     }
 }

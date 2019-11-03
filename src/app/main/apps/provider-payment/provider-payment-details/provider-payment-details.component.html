@@ -1,18 +1,18 @@
 <div *ngIf="!provider" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <mat-icon class="s-120 mb-12 select-todo-icon hint-text"
+    <mat-icon class="s-120 mb-12 select-provider-icon hint-text"
                 [@animate]="{value:'*',params:{delay:'300ms',scale:'0.2'}}">check_box
     </mat-icon>
-    <span class="hint-text mat-h1 select-todo-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
+    <span class="hint-text mat-h1 select-provider-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
         Select a Service Provider
     </span>
 </div>
 
 <div *ngIf="provider">
-    <div class="todo-header">
+    <div class="provider-header">
         <div class="invoce"> Invoce </div>
     </div>
 
-    <div class="todo-content" fxLayout="column" fxLayoutAlign="space-between center">
+    <div class="provider-content" fxLayout="column" fxLayoutAlign="space-between center">
 
         <div class="Rectangle">
             <div>

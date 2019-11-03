@@ -19,12 +19,12 @@ import { ProviderPaymentService } from 'app/main/apps/provider-payment/provider-
 })
 export class ProviderPaymentComponent implements OnInit, OnDestroy
 {
-    hasSelectedTodos: boolean;
+    hasSelectedProviders: boolean;
     isIndeterminate: boolean;
     filters: any[];
     tags: any[];
     searchInput: FormControl;
-    currentTodo: Provider;
+    currentProvider: Provider;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -33,11 +33,11 @@ export class ProviderPaymentComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {FuseSidebarService} _fuseSidebarService
-     * @param {ProviderPaymentService} _todoService
+     * @param {ProviderPaymentService} _providerService
      */
     constructor(
         private _fuseSidebarService: FuseSidebarService,
-        private _todoService: ProviderPaymentService,
+        private _providerService: ProviderPaymentService,
         private _fuseConfigService: FuseConfigService,
 
     )
@@ -77,45 +77,45 @@ export class ProviderPaymentComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        // this._todoService.onSelectedTodosChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(selectedTodos => {
-        //     });
+        this._providerService.onSelectedProvidersChanged
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(selectedProviders => {
+            });
 
-        // this._todoService.onFiltersChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(folders => {
-        //         this.filters = this._todoService.filters;
-        //     });
+        this._providerService.onFiltersChanged
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(folders => {
+                this.filters = this._providerService.filters;
+            });
 
-        // this._todoService.onTagsChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(tags => {
-        //         this.tags = this._todoService.tags;
-        //     });
+        this._providerService.onTagsChanged
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(tags => {
+                this.tags = this._providerService.tags;
+            });
 
-        // this.searchInput.valueChanges
-        //     .pipe(
-        //         takeUntil(this._unsubscribeAll),
-        //         debounceTime(300),
-        //         distinctUntilChanged()
-        //     )
-        //     .subscribe(searchText => {
-        //         this._todoService.onSearchTextChanged.next(searchText);
-        //     });
+        this.searchInput.valueChanges
+            .pipe(
+                takeUntil(this._unsubscribeAll),
+                debounceTime(300),
+                distinctUntilChanged()
+            )
+            .subscribe(searchText => {
+                this._providerService.onSearchTextChanged.next(searchText);
+            });
 
-        // this._todoService.onCurrentTodoChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(([currentTodo, formType]) => {
-        //         if ( !currentTodo )
-        //         {
-        //             this.currentTodo = null;
-        //         }
-        //         else
-        //         {
-        //             this.currentTodo = currentTodo;
-        //         }
-        //     });
+        this._providerService.onCurrentProviderChanged
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(currentProvider => {
+                if ( !currentProvider )
+                {
+                    this.currentProvider = null;
+                }
+                else
+                {
+                    this.currentProvider = currentProvider;
+                }
+            });
     }
 
     /**
@@ -133,11 +133,11 @@ export class ProviderPaymentComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Deselect current todo
+     * Deselect current provider
      */
-    deselectCurrentTodo(): void
+    deselectCurrentProvider(): void
     {
-        this._todoService.onCurrentProviderChanged.next([null, null]);
+        this._providerService.onCurrentProviderChanged.next(null);
     }
 
     /**
@@ -145,36 +145,36 @@ export class ProviderPaymentComponent implements OnInit, OnDestroy
      */
     toggleSelectAll(): void
     {
-        // this._todoService.toggleSelectAll();
+        this._providerService.toggleSelectAll();
     }
 
     /**
-     * Select todos
+     * Select providers
      *
      * @param filterParameter
      * @param filterValue
      */
-    selectTodos(filterParameter?, filterValue?): void
+    selectProviders(filterParameter?, filterValue?): void
     {
-        // this._todoService.selectProviders(filterParameter, filterValue);
+        this._providerService.selectProviders(filterParameter, filterValue);
     }
 
     /**
-     * Deselect todos
+     * Deselect providers
      */
-    deselectTodos(): void
+    deselectProviders(): void
     {
-        // this._todoService.deselectProviders();
+        this._providerService.deselectProviders();
     }
 
     /**
-     * Toggle tag on selected todos
+     * Toggle tag on selected providers
      *
      * @param tagId
      */
-    toggleTagOnSelectedTodos(tagId): void
+    toggleTagOnSelectedProviders(tagId): void
     {
-        // this._todoService.toggleTagOnSelectedProviders(tagId);
+        this._providerService.toggleTagOnSelectedProviders(tagId);
     }
 
     /**
