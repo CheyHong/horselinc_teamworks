@@ -6,7 +6,6 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { Profile } from 'app/main/apps/profile/profile.model';
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
@@ -18,9 +17,7 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 })
 export class ProfileListComponent implements OnInit, OnDestroy
 {
-    selectedItemNo: number;
-    profiles: Profile[];
-    currentProfile: Profile;
+    selectedProfileNo: number;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -38,7 +35,7 @@ export class ProfileListComponent implements OnInit, OnDestroy
         private _location: Location
     )
     {
-        this.selectedItemNo = 0;
+        this.selectedProfileNo = 0;
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -52,10 +49,10 @@ export class ProfileListComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this._profileService.onProfilesChanged
+        this._profileService.onSelectedProfileNoChanged
         .pipe(takeUntil(this._unsubscribeAll))
-        .subscribe(profiles => {
-            this.profiles = profiles;
+        .subscribe(selectedProfileNo => {
+            this.selectedProfileNo = selectedProfileNo;
         });
     }
 
@@ -72,12 +69,11 @@ export class ProfileListComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
-    onClickItem(itemUri: any): void
+    onSelectedProfile(profileNo: any): void
     {
-        
-        this.selectedItemNo = itemUri; 
-        this._profileService.setSelectedListNo(this.selectedItemNo);
-        this._location.go('apps/profile/navigation1' + '/' + itemUri);
-
+        console.log("profile-list-onSelectedProfile:", profileNo);
+        this.selectedProfileNo = profileNo; 
+        this._profileService.selectProfile(this.selectedProfileNo);
+//        this._location.go('apps/profile/navigation1' + '/' + itemUri);
     }
 }

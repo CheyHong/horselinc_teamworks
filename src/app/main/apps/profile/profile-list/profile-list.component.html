@@ -26,8 +26,8 @@
     <div class="profile-list" fxFlex fxLayout = "column">
 
         <div matRipple class="navdiv" 
-        [ngClass]="{'selected-item':selectedItemNo == 0}"
-        (click)="onClickItem(0)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 0}"
+        (click)="onSelectedProfile(0)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> My Service Providers </span>
@@ -40,8 +40,8 @@
         <mat-divider></mat-divider>
         
         <div matRipple class="navdiv" 
-        [ngClass]="{'selected-item':selectedItemNo == 1}"
-        (click)="onClickItem(1)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 1}"
+        (click)="onSelectedProfile(1)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Edit Payment Information </span>
@@ -54,8 +54,8 @@
         <mat-divider></mat-divider>
         
         <div matRipple class="navdiv"         
-        [ngClass]="{'selected-item':selectedItemNo == 2}"
-        (click)="onClickItem(2)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 2}"
+        (click)="onSelectedProfile(2)">
 
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Contact HorseLinc </span>
@@ -68,8 +68,8 @@
         <mat-divider></mat-divider>
         
         <div matRipple class="navdiv" 
-        [ngClass]="{'selected-item':selectedItemNo == 3}"
-        (click)="onClickItem(3)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 3}"
+        (click)="onSelectedProfile(3)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Terms & Conditions </span>
@@ -82,8 +82,8 @@
         <mat-divider></mat-divider>
        
         <div matRipple class="navdiv"
-        [ngClass]="{'selected-item':selectedItemNo == 4}"
-        (click)="onClickItem(4)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 4}"
+        (click)="onSelectedProfile(4)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Privacy Police </span>

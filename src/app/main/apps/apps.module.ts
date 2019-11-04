@@ -15,7 +15,6 @@ import {
 
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import { CalendarComponent } from '../components/calendar/calendar.component';
 import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
 
 const routes = [
@@ -77,13 +76,11 @@ const routes = [
     declarations: [
         WelcomeComponent,
         EditProfileDialogComponent, 
-        CalendarComponent
     ],
 
     exports     : [
         WelcomeComponent,
         EditProfileDialogComponent,
-        CalendarComponent
     ]
 })
 export class AppsModule

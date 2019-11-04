@@ -1,29 +1,12 @@
  <div id="profile" class="page-layout carded left-sidebar inner-scroll">
- 
-     <div class="m-0 center">  
-       
-         <div class="content-card">
-            
-            <div class="content" fxLayout="row">
+      <div class="m-0 center">  
+           <div class="content-card">          
+            <div class="content current-profile-selected" fxLayout="row">
 
                 <profile-list fusePerfectScrollbar fxFlex.gt-md="27"></profile-list>
-                <!--<div fxLayout="column" fxFlex>
-                     <profile-details fusePerfectScrollbar fxFlex></profile-details>
-                <div>-->
-<<<<<<< HEAD
-                <manager-profile fusePerfectScrollbar fxFlex [ngClass]="{'current-profile-selected':selectedListNo==0}" *ngIf="selectedListNo==0"></manager-profile>
-                <profile-details fusePerfectScrollbar fxFlex [ngClass]="{'current-profile-selected':selectedListNo==1}" *ngIf="selectedListNo==1"></profile-details>
-=======
-                <profile-provider fusePerfectScrollbar fxFlex *ngIf="selectedListNo==0"></profile-provider>
-                <profile-editpayment fusePerfectScrollbar fxFlex *ngIf="selectedListNo==1"></profile-editpayment>
->>>>>>> 24cf042783113ccc8014d7214e415f19001ea284
+                <profile-details fusePerfectScrollbar fxFlex></profile-details>
 
             </div>
-         
         </div> 
-       
-
       </div>  
-    
-
  </div> 
