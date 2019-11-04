@@ -26,7 +26,7 @@ import { ProfileManagerPaymentComponent } from 'app/main/apps/profile-manager/pr
 
 const routes: Routes = [
     {
-        path  : 'index',
+        path  : 'manager',
         component: ProfileManagerComponent,
         resolve  : {
             provider: ProfileManagerService
@@ -34,7 +34,7 @@ const routes: Routes = [
     },
     {
         path      : '**',
-        redirectTo: 'index',
+        redirectTo: 'manager',
         pathMatch: 'full'
     }
 ];
