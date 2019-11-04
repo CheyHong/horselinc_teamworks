@@ -16,28 +16,22 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import { ProfileService } from 'app/main/apps/profile/profile.service';
-import { ProfileComponent } from 'app/main/apps/profile/profile.component';
-import { ProfileListComponent } from 'app/main/apps/profile/profile-list/profile-list.component';
-import { ProfileDetailsComponent } from 'app/main/apps/profile/profile-details/profile-details.component';
-import { ProfileProviderComponent } from 'app/main/apps/profile/profile-details/profile-provider/profile-provider.component';
-import { ProfileEditPaymentComponent } from 'app/main/apps/profile/profile-details/profile-editpayment/profile-editpayment.component';
+import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
+import { ProfileManagerComponent } from 'app/main/apps/profile-manager/profile-manager.component';
+import { ProfileManagerListComponent } from 'app/main/apps/profile-manager/profile-manager-list/profile-manager-list.component';
+import { ProfileManagerDetailsComponent } from 'app/main/apps/profile-manager/profile-manager-details/profile-manager-details.component';
+import { ProfileManagerManagerComponent } from 'app/main/apps/profile-manager/profile-manager-details/profile-manager-manager/profile-manager-manager.component';
+import { ProfileManagerProviderComponent } from 'app/main/apps/profile-manager/profile-manager-details/profile-manager-provider/profile-manager-provider.component';
+import { ProfileManagerPaymentComponent } from 'app/main/apps/profile-manager/profile-manager-details/profile-manager-payment/profile-manager-payment.component';
 
 const routes: Routes = [
     {
         path  : 'index',
-        component: ProfileComponent,
+        component: ProfileManagerComponent,
         resolve  : {
-            provider: ProfileService
+            provider: ProfileManagerService
         }
     },
-    // {
-    //     path  : 'payment',
-    //     component: ProfileComponent,
-    //     resolve  : {
-    //         provider: ProfileService
-    //     }
-    // },
     {
         path      : '**',
         redirectTo: 'index',
@@ -47,11 +41,12 @@ const routes: Routes = [
 
 @NgModule({
     declarations   : [
-        ProfileComponent,
-        ProfileListComponent,
-        ProfileDetailsComponent,
-        ProfileProviderComponent,
-        ProfileEditPaymentComponent,
+        ProfileManagerComponent,
+        ProfileManagerListComponent,
+        ProfileManagerDetailsComponent,
+        ProfileManagerManagerComponent,
+        ProfileManagerProviderComponent,
+        ProfileManagerPaymentComponent,
     ],
     imports        : [
         RouterModule.forChild(routes),
@@ -79,11 +74,11 @@ const routes: Routes = [
       
     ],
     providers      : [
-         ProfileService
+         ProfileManagerService
     ]
    
 })
 
-export class ProfileModule
+export class ProfileManagerModule
 {
 }

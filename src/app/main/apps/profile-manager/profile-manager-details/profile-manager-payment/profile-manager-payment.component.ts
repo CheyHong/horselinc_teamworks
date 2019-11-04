@@ -4,17 +4,17 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { ProfileService } from 'app/main/apps/profile/profile.service';
+import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
 
 @Component({
-    selector     : 'profile-editpayment',
-    templateUrl  : './profile-editpayment.component.html',
-    styleUrls    : ['./profile-editpayment.component.scss'],
+    selector     : 'apps-profile-manager-payment',
+    templateUrl  : './profile-manager-payment.component.html',
+    styleUrls    : ['./profile-manager-payment.component.scss'],
     
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class ProfileEditPaymentComponent implements OnInit, OnDestroy
+export class ProfileManagerPaymentComponent implements OnInit, OnDestroy
 {
     /**
      * Constructor
@@ -22,7 +22,7 @@ export class ProfileEditPaymentComponent implements OnInit, OnDestroy
      * @param {profileService} _profileService
      */
     constructor(
-        private _profileService: ProfileService
+        private _profileService: ProfileManagerService
     )
     {
     }

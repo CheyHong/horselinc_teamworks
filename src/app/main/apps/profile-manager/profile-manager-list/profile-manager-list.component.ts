@@ -6,16 +6,16 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { ProfileService } from 'app/main/apps/profile/profile.service';
+import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
 
 @Component({
-    selector     : 'profile-list',
-    templateUrl  : './profile-list.component.html',
-    styleUrls    : ['./profile-list.component.scss'],
+    selector     : 'apps-profile-manager-list',
+    templateUrl  : './profile-manager-list.component.html',
+    styleUrls    : ['./profile-manager-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class ProfileListComponent implements OnInit, OnDestroy
+export class ProfileManagerListComponent implements OnInit, OnDestroy
 {
     selectedProfileNo: number;
 
@@ -26,12 +26,12 @@ export class ProfileListComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {ActivatedRoute} _activatedRoute
-     * @param {ProfileService} _profileService
+     * @param {ProfileManagerService} _profileService
      * @param {Location} _location
      */
     constructor(
         private _activatedRoute: ActivatedRoute,
-        private _profileService: ProfileService,
+        private _profileService: ProfileManagerService,
         private _location: Location
     )
     {
@@ -75,5 +75,9 @@ export class ProfileListComponent implements OnInit, OnDestroy
         this.selectedProfileNo = profileNo; 
         this._profileService.selectProfile(this.selectedProfileNo);
 //        this._location.go('apps/profile/navigation1' + '/' + itemUri);
+    }
+    editProfile(): void
+    {
+        console.log("EditProfile");
     }
 }

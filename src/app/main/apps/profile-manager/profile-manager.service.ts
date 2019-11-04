@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { FuseUtils } from '@fuse/utils';
 
 @Injectable()
-export class ProfileService implements Resolve<any>
+export class ProfileManagerService implements Resolve<any>
 {
     selectedProfileNo: number;
     isSelectedProfile: boolean;

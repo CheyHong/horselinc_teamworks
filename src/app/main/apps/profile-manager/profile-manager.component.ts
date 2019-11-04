@@ -4,15 +4,15 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { ProfileService } from 'app/main/apps/profile/profile.service';
+import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
 
 @Component({
-    selector     : 'profile-details',
-    templateUrl  : './profile-details.component.html',
-    styleUrls    : ['./profile-details.component.scss'],
+    selector     : 'apps-profile-manager',
+    templateUrl  : './profile-manager.component.html',
+    styleUrls    : ['./profile-manager.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ProfileDetailsComponent implements OnInit, OnDestroy
+export class ProfileManagerComponent implements OnInit, OnDestroy
 {
     selectedProfileNo: number;
     isSelectedProfile: boolean;
@@ -23,18 +23,16 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {ProfileService} _profileService
+     * @param {ProfileManagerService} _profileService
      */
     constructor(
-        private _profileService: ProfileService,
+        private _profileService: ProfileManagerService,
     )
     
         // Configure the layout
     { 
         this.selectedProfileNo = 0;
         this._unsubscribeAll = new Subject();
-
-        console.log("profile-detail-constructor", this.selectedProfileNo);
 
     }
 
@@ -51,10 +49,7 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe(selectedProfileNo => {
             this.selectedProfileNo = selectedProfileNo;
-
-            console.log("profile-detail-onSelectedProfileNoChanged", this.selectedProfileNo);
         });
-
   }
     /**
      * On destroy
