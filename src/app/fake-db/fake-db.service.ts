@@ -5,7 +5,7 @@ import { AnalyticsDashboardDb } from 'app/fake-db/dashboard-analytics';
 import { CalendarFakeDb } from 'app/fake-db/calendar';
 import { ECommerceFakeDb } from 'app/fake-db/e-commerce';
 import { AcademyFakeDb } from 'app/fake-db/academy';
-import { HorseFakeDb } from 'app/fake-db/horse';
+import { HorseManagerFakeDb } from 'app/fake-db/horse-manager';
 import { ChatFakeDb } from 'app/fake-db/chat';
 import { FileManagerFakeDb } from 'app/fake-db/file-manager';
 import { ContactsFakeDb } from 'app/fake-db/contacts';
@@ -44,10 +44,10 @@ export class FakeDbService implements InMemoryDbService
             'academy-course'    : AcademyFakeDb.course,
 
             // Mail
-            'horse-horses'  : HorseFakeDb.horses,
-            'horse-folders': HorseFakeDb.folders,
-            'horse-filters': HorseFakeDb.filters,
-            'horse-labels' : HorseFakeDb.labels,
+            'horsemanager-horsemanagers'  : HorseManagerFakeDb.horsemanagers,
+            'horsemanager-folders': HorseManagerFakeDb.folders,
+            'horsemanager-filters': HorseManagerFakeDb.filters,
+            'horsemanager-labels' : HorseManagerFakeDb.labels,
 
             // Chat
             'chat-contacts': ChatFakeDb.contacts,

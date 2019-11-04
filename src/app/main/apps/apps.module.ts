@@ -13,9 +13,10 @@ import {
     MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
 } from '@angular/material';
 
-
 import {WelcomeComponent } from './welcome/welcome.component';
 import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
+import {HorseManagerScheduleComponent} from './horse-manager-schedule/horse-manager-schedule.component';
+import {HorseManagerConfirmComponent} from './horse-manager-confirm/horse-manager-confirm.component';
 
 const routes = [
     {
@@ -27,6 +28,14 @@ const routes = [
         component   :  EditProfileDialogComponent,
     },
     {
+        path        : 'horse-manager-confirm',
+        component   :  HorseManagerConfirmComponent,
+    },
+    {
+        path        : 'horse-manager-schedule',
+        component   :  HorseManagerScheduleComponent,
+    },
+    {
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
@@ -35,12 +44,8 @@ const routes = [
         loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
     },
     {
-        path        : 'horse',
-        loadChildren: 'app/main/apps/horse/horse.module#HorseModule'
-    },
-    {
-        path        : 'edithorseprofile',
-        loadChildren: 'app/main/apps/edithorseprofile/edithorseprofile.module#EdithorseprofileModule'
+        path        : 'horse-manager',
+        loadChildren: 'app/main/apps/horse-manager/horse-manager.module#HorseManagerModule'
     },
     {
         path        : 'payment-manager',
@@ -76,11 +81,17 @@ const routes = [
     declarations: [
         WelcomeComponent,
         EditProfileDialogComponent, 
+
+        HorseManagerScheduleComponent,
+        HorseManagerConfirmComponent,
     ],
 
     exports     : [
         WelcomeComponent,
         EditProfileDialogComponent,
+
+        HorseManagerScheduleComponent,
+        HorseManagerConfirmComponent,
     ]
 })
 export class AppsModule

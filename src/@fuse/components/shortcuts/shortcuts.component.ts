@@ -88,7 +88,7 @@ export class FuseShortcutsComponent implements OnInit, AfterViewInit, OnDestroy
                     title: 'Horse',
                     type : 'item',
                     icon : 'email',
-                    url  : '/apps/horse'
+                    url  : '/apps/horsemanager'
                 },
                 {
                     title: 'Contacts',

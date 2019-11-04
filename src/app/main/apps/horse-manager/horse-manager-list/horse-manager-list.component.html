@@ -1,0 +1,22 @@
+<div *ngIf="horsemanagers.length === 0" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+    <span class="no-messages-text hint-text">{{ 'horsmanagere.NO_MESSAGES' | translate }}</span>
+</div>
+
+<div fxLayout = "column" fxFlexFill>
+    <div class="horse-manager-list" fxFlex="92" [@animateStagger]="{value:'50'}">
+        <horse-manager-list-item matRipple *ngFor="let horsemanager of horsemanagers" [horsemanager]="horsemanager" (click)="readhorsemanager(horsemanager.id)"
+                        [ngClass]="{'current-horsemanager':horsemanager?.id == currentHorseManager?.id}"
+                        [@animate]="{value:'*',params:{y:'100%'}}">
+        </horse-manager-list-item>
+    </div>
+
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+         <button mat-raised-button color="#ffffff" class="button small">
+                <span class="text1 greencolor"> Filter</span>
+         </button>
+
+        <button mat-raised-button class="button big ">
+                <span class="text1 whitecolor"> New Horse Profile </span>
+         </button>
+    </div>
+</div>

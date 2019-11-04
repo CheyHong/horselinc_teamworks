@@ -1,0 +1,21 @@
+ <div id="horse" class="page-layout carded left-sidebar inner-scroll">
+ 
+     <div class="m-0 center">  
+       
+         <div class="content-card" [ngClass]="{'current-horse-selected':currentHorse}">
+            
+            <div class="content" fxLayout="row">
+
+                <horse-manager-list fusePerfectScrollbar fxFlex.gt-md="25"></horse-manager-list>
+                <horse-manager-details fusePerfectScrollbar fxFlex></horse-manager-details>
+
+            </div>
+          
+
+        </div> 
+       
+
+      </div>  
+    
+
+ </div> 
