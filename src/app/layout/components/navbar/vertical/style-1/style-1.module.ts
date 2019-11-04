@@ -7,6 +7,7 @@ import { FuseSharedModule } from '@fuse/shared.module';
 
 import { NavbarVerticalStyle1Component } from 'app/layout/components/navbar/vertical/style-1/style-1.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
 import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
 
 
@@ -22,7 +23,7 @@ import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
         FuseNavigationModule,
         FuseSearchBarModule,
         FuseShortcutsModule,
- 
+        MatDividerModule
     ],
     exports     : [
         NavbarVerticalStyle1Component
