@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -28,7 +29,8 @@ import { CalendarComponent } from './calendar.component';
         MatDatepickerModule,
         MatNativeDateModule,
         MatCardModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        CommonModule
          ],
 
     exports: [

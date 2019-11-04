@@ -1,38 +1,11 @@
 @import "src/@fuse/scss/fuse";
 #profile {
     width: 100%;
-    manager-profile {
+    profile-provider {
         background-color: #efefef;
     }
     .center {
-        .header {
-            .search-wrapper {
-                border-radius: 28px;
-                overflow: hidden;
-                @include mat-elevation(1);
-                .sidebar-toggle {
-                    margin: 0 0 0 6px;
-                    width: 56px;
-                    height: 56px;
-                    border-radius: 0;
-                    border-right: 1px solid;
-                }
-                .search {
-                    width: 100%;
-                    height: 56px;
-                    line-height: 56px;
-                    padding: 0 18px;
-                    input {
-                        height: 56px;
-                        min-height: 56px;
-                        max-height: 56px;
-                        padding: 0 16px;
-                        border: none;
-                        outline: none;
-                    }
-                }
-            }
-        }
+
         .content-card {
             .toolbar {
                 .toolbar-separator {
@@ -41,31 +14,35 @@
                     margin: 0 12px;
                 }
             }
-            @include media-breakpoint(xs) {
-                profile-list {
-                    border-right: none;
-                }
-                profile-list,
-                profile-details {
-                    flex: 1 0 100%;
-                }
-                profile-details {
-                    display: none !important;
-                }
-                &.current-profile-selected {
-                    .toolbar {
-                        padding-left: 16px !important;
-                        .profile-selection {
-                            display: none !important;
-                        }
+            .content{
+                @include media-breakpoint(xs) {
+                    profile-list {
+                        border-right: none;
                     }
-                    .content {
-                        profile-list {
-                            display: none !important;
+                    profile-list,
+                    profile-details {
+                        flex: 1 0 100%;
+                    }
+                    profile-details {
+                        display: none !important;
+                    }
+
+                    &.current-profile-selected {
+                        flex: 1 0 100%;
+                        .toolbar {
+                            padding-left: 16px !important;
+                            .profile-selection {
+                                display: none !important;
+                            }
                         }
-                        profile-details {
-                            display: flex !important;
-                        }
+                        // .content {
+                            profile-list {
+                                display: none !important;
+                            }
+                            profile-details {
+                                display: flex !important;
+                            }
+                        // }
                     }
                 }
             }

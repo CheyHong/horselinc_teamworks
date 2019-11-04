@@ -22,7 +22,8 @@ import { HorseListComponent } from 'app/main/apps/horse/horse-list/horse-list.co
 import { HorseListItemComponent } from 'app/main/apps/horse/horse-list/horse-list-item/horse-list-item.component';
 import { HorseDetailsComponent } from 'app/main/apps/horse/horse-details/horse-details.component';
 import { CommonModule } from '@angular/common';
-import { jqxCalendarModule } from 'jqwidgets-ng/jqxcalendar';
+import { CalendarModule } from 'app/main/components/calendar/calendar.module';
+import { CalendarComponent } from './../../components/calendar/calendar.component';
 
 const routes: Routes = [
     {
@@ -46,7 +47,7 @@ const routes: Routes = [
         HorseListComponent,
         HorseListItemComponent,
         HorseDetailsComponent,
- 
+        CalendarComponent
     ],
     imports        : [
         RouterModule.forChild(routes),
@@ -73,7 +74,7 @@ const routes: Routes = [
         FuseSharedModule,
         FuseSidebarModule,
         CommonModule,
-        jqxCalendarModule,
+//        CalendarModule
        
     ],
     providers      : [

@@ -59,7 +59,7 @@ export class CalendarComponent implements OnInit, OnDestroy
               .map(strDate => new Date(strDate))
               .some(d => d.getDate() === date.getDate() && d.getMonth() === date.getMonth() && d.getFullYear() === date.getFullYear());
             
-              console.log(highlightDate);
+            //   console.log(highlightDate);
             return highlightDate ? 'special-date' : '';
         };
     }
