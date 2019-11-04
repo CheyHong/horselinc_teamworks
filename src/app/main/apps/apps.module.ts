@@ -36,7 +36,7 @@ const routes = [
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
     {
-        path        : 'profile',
+        path        : 'profile/manager',
         loadChildren: 'app/main/apps/profile-manager/profile-manager.module#ProfileManagerModule'
     },
     {
