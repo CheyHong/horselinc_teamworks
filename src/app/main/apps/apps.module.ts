@@ -76,22 +76,15 @@ const routes = [
     ],
     declarations: [
         WelcomeComponent,
-<<<<<<< HEAD
-        CreateInvoiceDialogComponent, 
-        CalendarComponent
-=======
+        CreateInvoiceDialogComponent,
         EditProfileDialogComponent, 
->>>>>>> ec26c0307c7d37f82eed58590aaf8de92ff0ea7e
     ],
 
     exports     : [
         WelcomeComponent,
-<<<<<<< HEAD
         CreateInvoiceDialogComponent,
-        CalendarComponent
-=======
         EditProfileDialogComponent,
->>>>>>> ec26c0307c7d37f82eed58590aaf8de92ff0ea7e
+
     ]
 })
 export class AppsModule
