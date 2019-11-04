@@ -76,7 +76,8 @@ export class ProviderPaymentService implements Resolve<any>{
                     }
                     else
                     {
-                        this.setCurrentProvider(null);
+                        this.setCurrentProvider(this.providers[0].id);
+                        // this.setCurrentProvider(null);
                     }
 
                     this.onSearchTextChanged.subscribe(searchText => {
@@ -346,6 +347,8 @@ export class ProviderPaymentService implements Resolve<any>{
         });
 
         this.onCurrentProviderChanged.next(this.currentProvider);
+        console.log(id);
+        this._location.go('apps/payment-provider/all/' + id);
     }
 
     /**

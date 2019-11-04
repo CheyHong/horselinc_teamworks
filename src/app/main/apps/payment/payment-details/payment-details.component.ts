@@ -53,6 +53,7 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        
         // Subscribe to update the current payment
         this._paymentService.onCurrentPaymentChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -93,7 +94,7 @@ export class PaymentDetailsComponent implements OnInit, OnDestroy
                 this.formType = 'new';
                 // this.paymentForm = this.createPaymentForm();
                 this.focusTitleField();
-                this._paymentService.onCurrentPaymentChanged.next([this.payment, 'new']);
+                this._paymentService.onCurrentPaymentChanged.next(this.payment);
             });
     }
 

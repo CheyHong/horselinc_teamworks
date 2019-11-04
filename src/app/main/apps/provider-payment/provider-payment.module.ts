@@ -32,6 +32,13 @@ const routes: Routes = [
         }
     },
     {
+        path     : 'all/:providerId',
+        component: ProviderPaymentComponent,
+        resolve  : {
+            provider: ProviderPaymentService
+        }
+    },
+    {
         path      : '**',
         redirectTo: 'all',
         pathMatch: 'full'
