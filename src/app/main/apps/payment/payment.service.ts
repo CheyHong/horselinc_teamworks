@@ -75,7 +75,8 @@ export class PaymentService implements Resolve<any>
                     }
                     else
                     {
-                        this.setCurrentPayment(null);
+                        this.setCurrentPayment(this.payments[0].id);
+                        // this.setCurrentPayment(null);
                     }
 
                     this.onSearchTextChanged.subscribe(searchText => {

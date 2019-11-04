@@ -13,6 +13,12 @@ provider-payment-list {
     // mat-tab-group.mat-primary .mat-ink-bar {background-color: #27c5c8 !important;}
 }
 
+@include media-breakpoint('lt-lg') {
+    ::ng-deep.mat-tab-label {
+        width: 33.3%;
+    }    
+}
+
 mat-tab-group {
     height: 100%;
 }

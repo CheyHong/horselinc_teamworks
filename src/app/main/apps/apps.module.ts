@@ -15,7 +15,8 @@ import {
 
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import {EditProfileDialogComponent} from './profile/edit-profile-dialog/edit-profile-dialog.component';
+import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
+import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
 
 const routes = [
     {
@@ -23,8 +24,8 @@ const routes = [
         component   :  WelcomeComponent,
     },
     {
-        path        : 'edit-profile-dialog',
-        component   :  EditProfileDialogComponent,
+        path        : 'create-invoice-dialog',
+        component   :  CreateInvoiceDialogComponent,
     },
     {
         path        : 'user',
@@ -75,12 +76,15 @@ const routes = [
     ],
     declarations: [
         WelcomeComponent,
+        CreateInvoiceDialogComponent,
         EditProfileDialogComponent, 
     ],
 
     exports     : [
         WelcomeComponent,
+        CreateInvoiceDialogComponent,
         EditProfileDialogComponent,
+
     ]
 })
 export class AppsModule
