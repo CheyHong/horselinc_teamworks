@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -74,9 +75,8 @@ const routes: Routes = [
         MatDividerModule,
         FuseSharedModule,
         FuseSidebarModule,
-        // CommonModule,
-        // jqxCalendarModule,
-       
+        CommonModule
+      
     ],
     providers      : [
          ProfileService

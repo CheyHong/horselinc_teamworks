@@ -15,7 +15,7 @@ import {
 
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
+import {EditProfileDialogComponent} from './profile/edit-profile-dialog/edit-profile-dialog.component';
 
 const routes = [
     {

@@ -1,24 +1,5 @@
 <div class="navbar-top" [ngClass]="fuseConfig.layout.navbar.secondaryBackground">
 
-    <!-- <div class="logo">
-        <img class="logo-icon" src="assets/images/logos/fuse.svg">
-        <span class="logo-text secondary-text">FUSE</span>
-    </div> -->
-
-    <!--<div class="buttons">
-
-        <button mat-icon-button class="toggle-sidebar-folded"
-                (click)="toggleSidebarFolded()" fxHide.lt-lg>
-            <mat-icon class="secondary-text">menu</mat-icon>
-        </button>
-
-        <button mat-icon-button class="toggle-sidebar-opened"
-                (click)="toggleSidebarOpened()" fxHide.gt-md>
-            <mat-icon class="secondary-text">arrow_back</mat-icon>
-        </button>
-
-    </div> -->
-
 </div>
 
 
@@ -31,43 +12,37 @@
         </div>
         <div>
             <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
-                <div fxLayout="row" fxLayoutAlign="center center">
+               <div fxLayout="row" fxLayoutAlign="center center">
                     <img class="avatar small" src="assets/images/avatars/Velazquez.jpg">
-                    <span class="username mr-12" fxHide fxShow.gt-sm>Charlie Adams</span>
+                    <span class="username ml-8 mr-12" fxHide fxShow.gt-sm>Charlie Adams</span>
                     <img class="avatar" src="assets/icons/horselinc/arrow-drop-down-24-px.svg">
-                </div>
+                </div> 
             </button>
 
-            <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+            <mat-menu class="userMenu" #userMenu="matMenu" [overlapTrigger]="false">
 
                 <button mat-menu-item>
-                    <mat-icon>account_circle</mat-icon>
-                    <span>My Profile</span>
+                    <span>Horse Manager</span>
                 </button>
 
-                <button mat-menu-item class="">
-                    <mat-icon>mail</mat-icon>
-                    <span>Inbox</span>
+                <mat-divider></mat-divider>
+                
+                <button mat-menu-item fxLayout="row" fxLayoutAlign="start center">
+                    <img class="small mr-12" src="assets/icons/horselinc/ic-side-freelancer.svg">
+                    <span>Switch To Provider Profile</span>
                 </button>
 
-                <button mat-menu-item class="">
-                    <mat-icon>exit_to_app</mat-icon>
-                    <span>Logout</span>
+                <button mat-menu-item fxLayout="row" fxLayoutAlign="start center">
+                    <img class="small mr-12" src="assets/icons/horselinc/ic-side-exit.svg">
+                    <span>Log out</span>
                 </button>
 
             </mat-menu>
         </div> 
-        <!-- <div class="h5 email hint-text mt-8">adams.charlie@mail.com</div>
-        <div class="avatar-container" [ngClass]="fuseConfig.layout.navbar.primaryBackground">
-            <img class="avatar" src="assets/images/avatars/Velazquez.jpg">
-        </div>   -->
-
     </div>
 
     <div class="navbar-content">
         <fuse-navigation class="material2" layout="vertical"></fuse-navigation>
     </div>
-
-    
 
 </div>

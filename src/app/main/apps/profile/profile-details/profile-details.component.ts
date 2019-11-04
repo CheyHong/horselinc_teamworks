@@ -34,6 +34,8 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy
         this.selectedProfileNo = 0;
         this._unsubscribeAll = new Subject();
 
+        console.log("profile-detail-constructor", this.selectedProfileNo);
+
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -49,6 +51,8 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe(selectedProfileNo => {
             this.selectedProfileNo = selectedProfileNo;
+
+            console.log("profile-detail-onSelectedProfileNoChanged", this.selectedProfileNo);
         });
 
   }
