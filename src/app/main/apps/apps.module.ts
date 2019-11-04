@@ -48,11 +48,11 @@ const routes = [
         loadChildren: 'app/main/apps/edithorseprofile/edithorseprofile.module#EdithorseprofileModule'
     },
     {
-        path        : 'payment-manager',
+        path        : 'payment/manager',
         loadChildren: 'app/main/apps/payment-manager/payment-manager.module#PaymentManagerModule'
     },
     {
-        path        : 'payment-provider',
+        path        : 'payment/provider',
         loadChildren: 'app/main/apps/payment-provider/payment-provider.module#PaymentProviderModule'
     },
     {

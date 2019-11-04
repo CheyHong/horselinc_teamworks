@@ -24,7 +24,7 @@ import { PaymentManagerListItemComponent } from './payment-manager-list/payment-
 
 const routes: Routes = [
     {
-        path     : 'manager',
+        path     : 'list',
         component: PaymentManagerComponent,
         resolve  : {
             manager: PaymentManagerService
@@ -32,7 +32,7 @@ const routes: Routes = [
     },
     {
         path      : '**',
-        redirectTo: 'manager',
+        redirectTo: 'list',
         pathMatch: 'full'
     }
 ];
