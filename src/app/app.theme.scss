@@ -24,8 +24,8 @@ $typography: mat-typography-config( $font-family: 'Roboto', $title: mat-typograp
 @import "src/app/layout/components/chat-panel/chat-panel.theme";
 @import "src/app/layout/components/toolbar/toolbar.theme";
 @import "src/app/main/apps/horse/horse.theme";
-@import "src/app/main/apps/payment/payment.theme";
-@import "src/app/main/apps/provider-payment/provider-payment.theme";
+@import "src/app/main/apps/payment-manager/payment-manager.theme";
+@import "src/app/main/apps/payment-provider/payment-provider.theme";
 
 // Define a mixin for easier access
 @mixin components-theme($theme) {
@@ -33,8 +33,8 @@ $typography: mat-typography-config( $font-family: 'Roboto', $title: mat-typograp
     @include chat-panel-theme($theme);
     @include toolbar-theme($theme);
     @include horse-theme($theme);
-    @include payment-theme($theme);
-    @include provider-payment-theme($theme);
+    @include payment-manager-theme($theme);
+    @include payment-provider-theme($theme);
 }
 
 // -----------------------------------------------------------------------------------------------------
