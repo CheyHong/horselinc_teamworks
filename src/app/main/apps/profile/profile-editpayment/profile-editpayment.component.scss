@@ -9,13 +9,13 @@ profile-editpayment {
     .profile_details {
         padding: 16px;
         .card {
-            margin: 0 16px 8px 16px;
+            margin: 16px 16px 8px 16px;
             padding: 10px;
             width: 360px;
             height: 95px;
             border-radius: 8px;
             box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
-            background-color: #efefef;
+            background-color: #fafafa;
         }
         .borderline {
             border-bottom: 1px solid;
@@ -95,7 +95,7 @@ profile-editpayment {
             letter-spacing: normal;
         }
         .text2 {
-            margin: 24px 0 16px 32px;
+            margin: 16px 0 0 32px;
             font-family: Roboto;
             font-size: 14px;
             font-weight: normal;
@@ -103,7 +103,6 @@ profile-editpayment {
             font-style: normal;
             line-height: 1.43;
             letter-spacing: normal;
-            color: #000000;
         }
         .textbox {
             width: 328px;
