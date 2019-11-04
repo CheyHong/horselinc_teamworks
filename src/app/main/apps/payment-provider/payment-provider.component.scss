@@ -1,0 +1,88 @@
+@import "src/@fuse/scss/fuse";
+
+provider {
+    width: 100%;
+
+    .center {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+        .content-card {
+            payment-provider-list,
+            payment-provider-details {
+                flex: 0 0 28%;
+                border-right: #efefef 1px solid;
+            }
+
+            .Schedule-Service {
+                width: 100%;
+                height: 24px;
+                font-family: Roboto;
+                font-size: 26px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 0.92;
+                letter-spacing: normal;
+                color: #4f748c;
+            }
+
+            .toolbar {
+                display: flex;
+                -webkit-box-pack: start;
+                justify-content: flex-start;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-flex: 1;
+                flex: 1 1 auto;
+                height: 80px;
+                min-height: 80px;
+                max-height: 80px;
+
+                .toolbar-separator {
+                    height: 32px;
+                    width: 1px;
+                    margin: 0 12px;
+                }
+            }
+
+            
+
+            @include media-breakpoint('lt-lg') {
+
+                payment-provider-list {
+                    border-right: 0;
+                }
+
+                payment-provider-list,
+                payment-provider-details {
+                    flex: 1 0 100%;
+                }
+                payment-provider-details {
+                    display: none !important;
+                }
+
+                &.current-provider-selected {
+
+                    .toolbar {
+                        padding-left: 16px !important;
+
+                        .provider-selection {
+                            display: none !important;
+                        }
+                    }
+
+                    .content {
+                        payment-provider-list {
+                            display: none !important;
+                        }
+                        payment-provider-details {
+                            display: flex !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

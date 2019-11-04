@@ -1,0 +1,27 @@
+<div *ngIf="payments.length === 0" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+    <span class="no-payments-text hint-text">There are no payments!</span>
+</div>
+
+<mat-tab-group>
+    <mat-tab label="OUTSTAND"> 
+        <div class="payment-manager-list">
+            <payment-manager-list-item class="payment-manager-list-item has-handle"
+                *ngFor="let payment of payments" [payment]="payment" (click)="readPayment(payment.id)"
+                [ngClass]="{'current-payment-manager':payment?.id == currentPayment?.id}"
+                matRipple>
+            </payment-manager-list-item>
+        </div>
+    </mat-tab>
+    <mat-tab label="COMPLETED">
+        <!-- <div class="payment-manager-list" ngxDroppable [model]="payments" (out)="onDrop($event)">
+            <payment-manager-list-item class="payment-manager-list-item has-handle"
+                *ngFor="let payment of payments" [payment]="payment"
+                ngxDraggable
+                [model]="payment"
+                (click)="readPayment(payment.id)"
+                [ngClass]="{'current-payment':payment?.id == currentPayment?.id}"
+                matRipple>
+            </payment-manager-list-item>
+        </div> -->
+    </mat-tab>
+</mat-tab-group>

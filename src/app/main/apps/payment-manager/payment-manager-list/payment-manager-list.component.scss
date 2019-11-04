@@ -1,0 +1,26 @@
+payment-manager-list {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    mat-tab-group.mat-primary .mat-ink-bar {background-color: #27c5c8 !important;}
+
+    .no-payments-text {
+        font-size: 24px;
+        font-weight: 300;
+    }
+}
+
+mat-tab-group {
+    height: 100%;
+    .mat-tab-label {
+        width: 50%;
+    }
+    .mat-tab-body-wrapper {
+        height: 100%;
+    }
+}

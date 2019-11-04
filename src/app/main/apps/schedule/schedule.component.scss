@@ -8,6 +8,11 @@ schedule {
         left: 0px;
         top: 0px;
         z-index: 0;
+
+        @include media-breakpoint('lt-lg') {
+            padding: 30px 5px;
+        }
+
         .toolbar_1 {
             height: 40px;
             min-height: 40px;
@@ -25,6 +30,10 @@ schedule {
                 letter-spacing: normal;
                 color: #4f748c;
                 overflow: hidden;
+
+                @include media-breakpoint('lt-lg') {
+                    padding-left: 30px;
+                }
             }
         }
 
@@ -42,70 +51,84 @@ schedule {
             }
 
             .card {
-                max-width: 344px;
+                width: 344px;
+                min-height: 194px;
+                padding:0px;
 
-                .header-image {
-                    background-image: url('assets/images/avatars/Reyna.jpg');
-                    background-size: cover;
+                @include media-breakpoint('lt-lg') {
+                    width: 100%;
                 }
-    
-                .Testuser2Barn {
-                    height: 16px;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    line-height: 1.14;
-                    letter-spacing: normal;
-                    color: #000000;
+
+                mat-card-header{
+                    padding: 15px 20px 5px 20px;
+                    border-radius: 6px 6px 0px 0px;
+                    background-color: #f1f1f1;
+                    .header-image {
+                        background-image: url('assets/images/avatars/Reyna.jpg');
+                        background-size: cover;
+                    }
+        
+                    .Testuser2Barn {
+                        height: 16px;
+                        font-family: Roboto;
+                        font-size: 14px;
+                        line-height: 1.14;
+                        letter-spacing: normal;
+                        color: #000000;
+                    }
+                    .Testuser2 {
+                        height: 14px;
+                        font-family: Roboto;
+                        font-size: 12px;
+                        line-height: 1.17;
+                        color: rgba(0, 0, 0, 0.54);
+                    }
                 }
-                .Testuser2 {
-                    height: 14px;
-                    font-family: Roboto;
-                    font-size: 12px;
-                    line-height: 1.17;
-                    color: rgba(0, 0, 0, 0.54);
-                  }
-    
-                .The-greates-show---f {
-                    width: 294px;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.43;
-                    letter-spacing: normal;
-                    color: var(--black-37);
-                    margin: 0px 0px 5px;
-                }
-                .Make-a-horse-speed-u {
-                    width: 293px;
-                    font-family: Roboto;
-                    font-size: 14px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.43;
-                    letter-spacing: normal;
-                    color: #000000;
-                    margin: 5px 0px 10px;
-                }
-                img {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    margin-right: 15px;
-                }
-                .Testuser1-Testuser1 {
-                    width: 280px;
-                    height: 20px;
-                    font-family: Roboto;
-                    font-size: 12px;
-                    font-weight: normal;
-                    font-stretch: normal;
-                    font-style: normal;
-                    line-height: 1.67;
-                    letter-spacing: normal;
-                    color: #000000;
+
+                mat-card-content{
+                    padding: 10px 20px 5px 20px;
+                    .The-greates-show---f {
+                        width: 294px;
+                        font-family: Roboto;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        color: var(--black-37);
+                        margin: 0px 0px 5px;
+                    }
+                    .Make-a-horse-speed-u {
+                        width: 293px;
+                        font-family: Roboto;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.43;
+                        letter-spacing: normal;
+                        color: #000000;
+                        margin: 5px 0px 10px;
+                    }
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        margin-right: 15px;
+                    }
+                    .Testuser1-Testuser1 {
+                        width: 280px;
+                        height: 20px;
+                        font-family: Roboto;
+                        font-size: 12px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.67;
+                        letter-spacing: normal;
+                        color: #000000;
+                    }
                 }
             }
         }
@@ -124,12 +147,22 @@ schedule {
     }
 
     .filterModal {
-        max-width: 377px;
+        width: 377px;
         height: 484px;
         position: absolute;
         bottom: 100px;
         right: 20px;
         z-index: 1;
+        
+        @include media-breakpoint('lt-lg') {
+            width:100%;
+            height: 484px;
+            right:0px;
+            z-index: 1;
+            padding: 5px;
+            bottom: 80px;
+        }
+
         .modal{
             width: 100%;
             height: 100%;
@@ -254,9 +287,6 @@ schedule {
         }
     }
     @include media-breakpoint('lt-lg') {
-        .filterModal {
-            width: 100%;
-        }
         .card {
             width: 100%;
         }
