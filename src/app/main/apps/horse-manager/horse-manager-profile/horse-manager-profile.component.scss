@@ -2,7 +2,6 @@
 #horsemanagerprofile {
     display: flex;
     flex-direction: column;
-    flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background-color: #ffffff;
@@ -13,7 +12,12 @@
         padding: 16px;
     }
     .matselect {
-        margin: 8px 16px 8px 16px;
+        margin: 8px 16px 8px 0;
+        width: 328px;
+        @include media-breakpoint('xs') {
+            margin: 8px 0px 8px 0px;
+            width: 100%
+        }
         padding: 16px;
         height: 56px;
         min-height: 56px;
@@ -32,11 +36,16 @@
             box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
         }
         &.medium {
-            margin: 16px 0 24px 0;
+            margin: 16px 16px 24px 0px;
             width: 156.4px;
+            @include media-breakpoint('xs') {
+                width: 94.7px;
+                min-width: 94.7px;
+            }
             height: 44px;
             border-radius: 100px;
-            box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+            box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15),
+            0 2px 10px 0 rgba(12, 75, 80, 0.29);
             &.redcolor {
                 background-color: #ec7185;
             }
@@ -45,8 +54,9 @@
             }
         }
         &.big {
-            margin: 16px 0 24px 0;
+            margin: 16px 16px 24px 0;
             width: 186.3px;
+            min-width: 186.3px;
             height: 44px;
             border-radius: 100px;
             box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
@@ -113,6 +123,11 @@
     }
     .textbox3 {
         margin: 16px;
+        width: 328px;
+        @include media-breakpoint('xs') {
+            margin: 8px 0px 8px 0px;
+            width: 100%
+        }
         padding: 10px;
         height: 56px;
         min-height: 56px;

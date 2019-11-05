@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
 import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
-
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 @Component({
     selector     : 'horse-manager-details',
     templateUrl  : './horse-manager-details.component.html',
@@ -28,7 +28,8 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
      * @param {horsemanagerService} _horsemanagerService
      */
     constructor(
-        private _horsemanagerService: HorseManagerService
+        private _horsemanagerService: HorseManagerService,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Set the defaults
@@ -103,6 +104,10 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
         this.horsemanager.toggleImportant();
 
         this._horsemanagerService.updateHorseManager(this.horsemanager);
+    }
+    ScheduleService():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
     }
     
 }
