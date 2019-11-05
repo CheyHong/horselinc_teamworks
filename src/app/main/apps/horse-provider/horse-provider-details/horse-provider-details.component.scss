@@ -1,6 +1,6 @@
 @import 'src/@fuse/scss/fuse';
 
-payment-provider-details {
+horse-provider-details {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
@@ -127,11 +127,10 @@ payment-provider-details {
                   }
             }
             .item2 {
-                width: 90%;
-                max-width: 500px;
+                width: 100%;
                 margin: 20px 0px;
                 .mane {
-                    width: 100%;
+                    width: 80%;
                     height: 20px;
                     font-family: Roboto;
                     font-size: 14px;
@@ -144,8 +143,7 @@ payment-provider-details {
             }
 
             .Subtotal {
-                width: 90%;
-                max-width: 500px;
+                width: 80%;
                 height: 25px;
                 font-family: Roboto;
                 font-size: 14px;
@@ -164,8 +162,7 @@ payment-provider-details {
 
             .inVal {
                 text-align: center;
-                width: 90%;
-                max-width: 500px;
+                width: 80%;
                 height: 60px;
                 background-color: #ffffff;
                 display: flex;

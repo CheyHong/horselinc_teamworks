@@ -3,12 +3,12 @@ import { url } from 'inspector';
 
 export const navigation: FuseNavigation[] = [
     {
-        id       : 'horses',
+        id       : 'horses-provider',
         title    : 'Horses',
         translate: 'NAV.HORSES',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-manager-black.svg',
-        url      : '/apps/horse',          
+        url      : '/apps/horse/provider',          
     },
     {
         id       : 'payment-provider',
@@ -16,7 +16,7 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.PAYMENT',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',
-        url      : '/apps/payment-provider',          
+        url      : '/apps/payment/provider',          
     },
     {
         id       : 'profile',

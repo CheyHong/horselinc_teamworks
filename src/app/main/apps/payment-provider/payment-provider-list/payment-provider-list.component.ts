@@ -94,7 +94,7 @@ export class PaymentProviderListComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
-    onShowDialog()
+    onShowCreateDialog()
     {
         this._fuseSidebarService.getSidebar('payment-provider-create-panel').toggleOpen();
     }

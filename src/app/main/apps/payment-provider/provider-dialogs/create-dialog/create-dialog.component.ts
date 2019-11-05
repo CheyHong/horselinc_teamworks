@@ -13,11 +13,13 @@ export class CreateDialogComponent implements OnInit {
     private _fuseSidebarService: FuseSidebarService
   ) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  onShowDialog(){
-    this._fuseSidebarService.getSidebar('payment-provider-edit-panel').toggleOpen();
-  }
+    onShowEditDialog()
+    {
+        this._fuseSidebarService.getSidebar('payment-provider-create-panel').close();
+        this._fuseSidebarService.getSidebar('payment-provider-edit-panel').toggleOpen();
+    }
 
 }

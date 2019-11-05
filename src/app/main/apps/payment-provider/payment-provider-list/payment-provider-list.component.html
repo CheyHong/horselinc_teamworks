@@ -8,7 +8,7 @@
                 matRipple>
             </payment-provider-list-item>
             <div class="cbtn">
-                <button mat-raised-button class="createInvoice" (click)="onShowDialog()" routerLinkActive="router-link-active" >
+                <button mat-raised-button class="createInvoice" (click)="onShowCreateDialog()" routerLinkActive="router-link-active" >
                     Create Invoice 
                 </button>
             </div>
@@ -37,4 +37,7 @@
 
 <fuse-sidebar name="payment-provider-create-panel" class="payment-provider-create-sidebar" position="right" [invisibleOverlay]="false">
     <create-dialog></create-dialog>
+</fuse-sidebar>
+<fuse-sidebar name="payment-provider-edit-panel" class="payment-provider-edit-sidebar" position="right" [invisibleOverlay]="false">
+    <edit-dialog></edit-dialog>
 </fuse-sidebar>
