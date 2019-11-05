@@ -22,15 +22,14 @@ $typography: mat-typography-config( $font-family: 'Roboto', $title: mat-typograp
 // -----------------------------------------------------------------------------------------------------
 // Import app and page component themes here to enable theming for them
 @import "src/app/layout/components/toolbar/toolbar.theme";
-@import "src/app/main/apps/horse/horse.theme";
+@import "src/app/main/apps/horse-manager/horse-manager.theme";
 @import "src/app/main/apps/payment-manager/payment-manager.theme";
 @import "src/app/main/apps/payment-provider/payment-provider.theme";
-
 // Define a mixin for easier access
 @mixin components-theme($theme) {
     // Layout components
     @include toolbar-theme($theme);
-    @include horse-theme($theme);
+    @include horsemanager-theme($theme);
     @include payment-manager-theme($theme);
     @include payment-provider-theme($theme);
 }

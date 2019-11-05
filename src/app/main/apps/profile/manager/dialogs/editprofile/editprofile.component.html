@@ -1,0 +1,45 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start">
+    <div class="intro" fxLayout="column" fxLayoutAlign="start">
+        <div class="item1" fxLayout="row" fxLayoutAlign="space-between center" >
+            <div class="Edit-Profile">Edit Profile</div>
+            <div mat-raised-button class="btn" (click)="closePanel()"> <img src="assets/icons/horselinc/filled.svg" /> </div>
+        </div>
+        <div class="avatar1 mb-10"> 
+            <!-- <img src="assets/images/avatars/Reyna.jpg" /> -->
+            <div class="take">
+                <img src="assets/icons/horselinc/ic-camera-alt.svg"/>
+            </div>
+        </div>
+
+        <p class="itemName">Name</p>
+        <input class="shadow mb-10" value="Testuser1" />
+
+        <p class="itemName">Barn Name</p>
+        <input class="shadow mb-10" value="Testuser1barn" />
+
+        <p class="itemName">Phone</p>
+        <input class="shadow mb-10" value="123-456-789" />
+
+        <p class="itemName">Location</p>
+
+        <div class="item2">
+            <input class="m-0" value="Search for your address" />
+            <mat-divider style="margin-left:5%;width:95%"></mat-divider>
+            <input class="m-0" value="Or enter adress here" />
+            <mat-icon class="searchIcon s-24">search</mat-icon>
+        </div>
+
+        <p class="itemName"></p>
+        <div class="item2">
+            <button mat-button class="m-0" (click)="openUpdateEmailPanel()">Change Email</button>
+            <mat-divider style="margin-left:5%;width:95%"></mat-divider>
+            <button mat-button class="m-0" (click)="openUpdatePasswordPanel()">Change Password</button>
+        </div>
+
+        <p class="itemName"></p>
+        <div class="cancelSave" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-button class="cancel m-0" (click)="closePanel()">CANCEL</button>
+            <button mat-button class="save m-0" (click)="closePanel()">SAVE</button>
+        </div>
+    </div>
+</div>

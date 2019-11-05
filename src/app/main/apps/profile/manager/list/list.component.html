@@ -1,0 +1,107 @@
+
+<div fxLayout = "column" fxFlexFill>
+
+    <div class ="profile-header" fxLayout="row" fxLayoutAlign="start start">
+        <div fxFlex>
+                <img src="assets/images/avatars/Helen.jpg" class="avatar big"/>
+        </div>
+        
+        <div fxLayout="column" fxFlex="60">
+            <div class="name">
+                Anna B Mngr
+            </div>
+            <div class="text1 opacitycolor2" fxLayout="row" >  
+                "Naples"
+            </div>
+            <div class="text2 opacitycolor2 " fxLayout="row">  
+                Naples FL USA 239-810-2350 
+            </div>
+        </div>
+    
+        <div  class="avatar small" fxFlex  fxLayoutAlign="start start">
+                <img class="editProfile" src="assets/icons/horselinc/ic-nav-create.svg" (click)="editProfile()"/>
+         </div>
+    </div>
+
+    <div class="profile-list" fxFlex fxLayout = "column">
+
+        <div matRipple class="navdiv" 
+        [ngClass]="{'selectedProfile':selectedProfileNo == 0}"
+        (click)="onSelectedProfile(0)">
+            
+            <div fxLayout = "row" fxLayoutAlign="start center">
+                <span class="text1" fxFlex="90"> My Service Providers </span>
+                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
+            </div>
+           
+
+        </div> 
+        
+        <mat-divider></mat-divider>
+        
+        <div matRipple class="navdiv" 
+        [ngClass]="{'selectedProfile':selectedProfileNo == 1}"
+        (click)="onSelectedProfile(1)">
+            
+            <div fxLayout = "row" fxLayoutAlign="start center">
+                <span class="text1" fxFlex="90"> Edit Payment Information </span>
+                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
+            </div>
+           
+
+        </div> 
+        
+        <mat-divider></mat-divider>
+        
+        <div matRipple class="navdiv"         
+        [ngClass]="{'selectedProfile':selectedProfileNo == 2}"
+        (click)="onSelectedProfile(2)">
+
+            <div fxLayout = "row" fxLayoutAlign="start center">
+                <span class="text1" fxFlex="90"> Contact HorseLinc </span>
+                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
+            </div>
+           
+
+        </div> 
+       
+        <mat-divider></mat-divider>
+        
+        <div matRipple class="navdiv" 
+        [ngClass]="{'selectedProfile':selectedProfileNo == 3}"
+        (click)="onSelectedProfile(3)">
+            
+            <div fxLayout = "row" fxLayoutAlign="start center">
+                <span class="text1" fxFlex="90"> Terms & Conditions </span>
+                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
+            </div>
+           
+
+        </div> 
+       
+        <mat-divider></mat-divider>
+       
+        <div matRipple class="navdiv"
+        [ngClass]="{'selectedProfile':selectedProfileNo == 4}"
+        (click)="onSelectedProfile(4)">
+            
+            <div fxLayout = "row" fxLayoutAlign="start center">
+                <span class="text1" fxFlex="90"> Privacy Police </span>
+                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
+            </div>
+           
+
+        </div> 
+      
+        <mat-divider></mat-divider>
+
+      
+    </div>   
+    <div fxLayoutAlign="end center"> 
+        <button mat-raised-button  class="button big redcolor">
+            <span class="text2 whitecolor">
+                Add Service Provider
+            </span>
+        </button>
+    </div>
+</div>

@@ -7,15 +7,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
-
-import {
+import { 
     MatToolbarModule, MatSidenavModule, 
     MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
 } from '@angular/material';
 
-
 import {WelcomeComponent } from './welcome/welcome.component';
-import {EditProfileDialogComponent} from './profile-manager/edit-profile-dialog/edit-profile-dialog.component';
 import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
 
 const routes = [
@@ -27,25 +24,34 @@ const routes = [
         path        : 'create-invoice-dialog',
         component   :  CreateInvoiceDialogComponent,
     },
-    {
-        path        : 'edit-profile-dialog',
-        component   :  EditProfileDialogComponent,
-    },
+
+    // {
+    //     path        : 'horse-manager-confirm',
+    //     component   :  HorseManagerConfirmComponent,
+    // },
+    // {
+    //     path        : 'horse-manager-schedule',
+    //     component   :  HorseManagerScheduleComponent,
+    // },
     {
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
     {
         path        : 'profile',
+<<<<<<< HEAD
         loadChildren: 'app/main/apps/profile-manager/profile-manager.module#ProfileManagerModule'
     },
     {
         path        : 'horse/provider',
         loadChildren: 'app/main/apps/horse-provider/horse-provider.module#HorseProviderModule'
+=======
+        loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
+>>>>>>> bb0f56f5fde35904c268165d09bc288a03eb11d6
     },
     {
-        path        : 'edithorseprofile',
-        loadChildren: 'app/main/apps/edithorseprofile/edithorseprofile.module#EdithorseprofileModule'
+        path        : 'horse/manager',
+        loadChildren: 'app/main/apps/horse-manager/horse-manager.module#HorseManagerModule'
     },
     {
         path        : 'payment/manager',
@@ -81,14 +87,15 @@ const routes = [
     declarations: [
         WelcomeComponent,
         CreateInvoiceDialogComponent,
-        EditProfileDialogComponent, 
+        // HorseManagerScheduleComponent,
+        // HorseManagerConfirmComponent,
+        
     ],
 
     exports     : [
         WelcomeComponent,
         CreateInvoiceDialogComponent,
-        EditProfileDialogComponent,
-
+        
     ]
 })
 export class AppsModule

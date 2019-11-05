@@ -1,0 +1,120 @@
+@import "src/@fuse/scss/fuse";
+horse-manager {
+    width: 100%;
+    .center {
+        .header {
+            .search-wrapper {
+                border-radius: 28px;
+                overflow: hidden;
+                @include mat-elevation(1);
+                .sidebar-toggle {
+                    margin: 0 0 0 6px;
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 0;
+                    border-right: 1px solid;
+                }
+                .search {
+                    width: 100%;
+                    height: 56px;
+                    line-height: 56px;
+                    padding: 0 18px;
+                    input {
+                        height: 56px;
+                        min-height: 56px;
+                        max-height: 56px;
+                        padding: 0 16px;
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+        }
+        .content-card {
+            .toolbar {
+                .toolbar-separator {
+                    height: 32px;
+                    width: 1px;
+                    margin: 0 12px;
+                }
+            }
+            @include media-breakpoint(xs) {
+                horse-manager-list {
+                    border-right: none;
+                }
+                horse-manager-list,
+                horse-manager-details {
+                    flex: 1 0 100%;
+                }
+                horse-manager-details {
+                    display: none !important;
+                }
+                &.current-horse-selected {
+                    .toolbar {
+                        padding-left: 16px !important;
+                        .horse-selection {
+                            display: none !important;
+                        }
+                    }
+                    .content {
+                        horse-manager-list {
+                            display: none !important;
+                        }
+                        horse-manager-details {
+                            display: flex !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .horse-manager-profile-sidebar {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        width: auto;
+        min-width: 400px;
+        max-width: 600px;
+        z-index: 1000;
+        //        opacity: 0.0;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.35);
+        background-color: #4f748c;
+        @include media-breakpoint('xs') {
+            top: 0px;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        &.left-positioned {
+            left: 0;
+            transform: translateX(-100%);
+        }
+        &.right-positioned {
+            right: 0;
+            transform: translateX(100%);
+        }
+        &.open {
+            transform: translateX(0);
+        }
+        &.locked-open {
+            position: relative !important;
+            transform: translateX(0) !important;
+        }
+        &.folded {
+            position: absolute !important;
+            top: 0;
+            bottom: 0;
+        }
+        &.animations-enabled {
+            transition-property: transform, width, min-width, max-width;
+            transition-duration: 150ms;
+            transition-timing-function: ease-in-out;
+        }
+    }
+}

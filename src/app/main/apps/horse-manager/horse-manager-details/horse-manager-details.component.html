@@ -1,0 +1,172 @@
+<div *ngIf="!horsemanager" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+    <img src="assets/icons/horselinc/ic-manager.svg" class="avatar huge"/>  
+    <div class="text">
+        No horses available at this time
+    </div> 
+</div>
+
+<div *ngIf="horsemanager" fxLayout="column" fxFlex>
+
+    <div class="horse-header" fxFlex fxLayout="row" fxLayoutAlign="start center">
+
+            <div fxLayout = "column"  fxLayoutAlign="start start" >
+                <div fxLayout="row" fxLayoutAlign="start start">
+                        <div>
+                            <img src="assets/images/avatars/Helen.jpg" class="avatar big"/>                         
+                        </div>
+
+                        <div fxLayout="column" fxLayoutAlign="start start">
+                            <div class="name">
+                                {{horsemanager.from.name}}
+                            </div>
+                            <div class="text1" fxLayout="row" fxLayoutAlign="start start">  
+                                <div>{{horsemanager.to[0].name}}</div>
+                            </div>
+                            <div class="text2" fxLayout="row" fxLayoutAlign="start start">  
+                                <div>{{horsemanager.to[0].name}}</div>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="pt-12" fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start center"  fxFlex>
+                     
+                    <div   fxLayout="column" fxFlex class="card">
+                            <span class="text">Trainer</span>
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img *ngIf="horsemanager.from.avatar" alt="{{horsemanager.from.name}}" src="{{horsemanager.from.avatar}}" class="avatar small32"/> 
+                                <div fxLayout="column">
+                                    <span class="name">Kate tretina</span>
+                                    <span class="details">(River Wind Farm)</span> 
+                                </div>
+                            </div>
+                    </div>
+                   
+                    <div  fxLayout="column" fxFlex class="card">
+                            <span class="text">Owner</span>
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <img *ngIf="horsemanager.from.avatar" alt="{{horsemanager.from.name}}" src="{{horsemanager.from.avatar}}" class="avatar small32"/> 
+                                <div fxLayout="column">
+                                    <span class="name">Kate tretina</span>
+                                </div>
+                            </div>
+                    </div>
+                   
+                </div>
+
+            </div>
+            <div  fxHide fxShow.gt-md class="calendar">
+                <apps-calendar></apps-calendar>
+                 <!-- <jqxCalendar [width]="365" [height]="195"  [enableTooltips]="true" [disabled]="false" class="borderline" ></jqxCalendar> -->
+            </div>    
+        
+            <!--</div>  -->
+           
+             
+    </div>
+    <div class="horse-content" fxFlex="70">
+
+        <div class="info" fxLayout="column" fxLayoutAlign="space-between start">
+
+            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start start">
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horsemanager.time}}</span>
+                     <div fxLayout="column" class="p-0 card">
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horsemanager.from.avatar" alt="{{horsemanager.from.name}}" src="{{horsemanager.from.avatar}}" class="avatar small32"/> 
+                                <span>Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
+                        </div>
+
+                        <div fxFlex = "25" class="details1" fxLayoutAlign="start center">
+                                Completed-awating-payment request
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horsemanager.time}}</span>
+                    <div fxLayout="column" class="p-0 card">
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horsemanager.from.avatar" alt="{{horsemanager.from.name}}" src="{{horsemanager.from.avatar}}" class="avatar small32"/> 
+                                <span>Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
+                        </div>
+
+                        <div fxFlex = "25" class="details2" fxLayoutAlign="start center">
+                                Pending
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start start">
+
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horsemanager.time}}</span>
+                    <div fxLayout="column" class="p-0 card">
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horsemanager.from.avatar" alt="{{horsemanager.from.name}}" src="{{horsemanager.from.avatar}}" class="avatar small32"/> 
+                                <span>Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
+                        </div>
+
+                        <div fxFlex = "25" class="details3" fxLayoutAlign="start center">
+                               Accepted   
+                        </div>
+                    </div>
+                </div>
+
+                <div fxFlex fxLayout = "column" class="area">
+                    <span class="date" fxLayoutAlign="start center">{{horsemanager.time}}</span>
+                     <div fxLayout="column" class="p-0 card" >
+                        <div fxFlex = "75" fxLayout="column" class="card_content">
+                         
+                            <span class="queen">Queenie prodoctions winter festival!!!</span>
+                            <span class="name">Kate trantina</span>
+                            <div class="image" fxLayoutAlign="start center">
+                                <img *ngIf="horsemanager.from.avatar" alt="{{horsemanager.from.name}}" src="{{horsemanager.from.avatar}}" class="avatar small32"/> 
+                                <span >Kate trantina</span>
+                            </div>
+                            <span class="mane">Mane-French,Tail-Braid</span>
+
+                        </div>
+
+                        <div fxFlex = "25" fxLayout = "row" class="details4" fxLayoutAlign="center center">
+
+                            <button mat-raised-button fxFlex="50" class="tab_button1"> DECLIND</button>
+                                                        
+                            <button mat-raised-button fxFlex class="p-0 tab_button2"> Choose Service Provider</button>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div fxfxLayoutAlign="space-evenly center"  fxLayout="row">
+        <button mat-raised-button  class="button big" fxFlexOffset="50" (click)="ScheduleService()">
+           <span class="text1 whitecolor"> Schedule a Service </span>
+        </button>
+    </div>
+
+</div>
