@@ -6,7 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
+import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
     selector     : 'apps-profile-manager-list',
@@ -26,12 +26,12 @@ export class ProfileManagerListComponent implements OnInit, OnDestroy
      * Constructor
      *
      * @param {ActivatedRoute} _activatedRoute
-     * @param {ProfileManagerService} _profileService
+     * @param {ProfileService} _profileService
      * @param {Location} _location
      */
     constructor(
         private _activatedRoute: ActivatedRoute,
-        private _profileService: ProfileManagerService,
+        private _profileService: ProfileService,
         private _location: Location
     )
     {

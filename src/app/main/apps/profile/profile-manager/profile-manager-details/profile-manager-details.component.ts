@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
+import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
     selector     : 'apps-profile-manager-details',
@@ -23,10 +23,10 @@ export class ProfileManagerDetailsComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
-     * @param {ProfileManagerService} _profileService
+     * @param {ProfileService} _profileService
      */
     constructor(
-        private _profileService: ProfileManagerService,
+        private _profileService: ProfileService,
     )
     
         // Configure the layout

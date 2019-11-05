@@ -1,0 +1,48 @@
+@import "src/@fuse/scss/fuse";
+#profile {
+    width: 100%;
+    .center {
+
+        .content-card {
+            .toolbar {
+                .toolbar-separator {
+                    height: 32px;
+                    width: 1px;
+                    margin: 0 12px;
+                }
+            }
+            .content{
+                @include media-breakpoint(xs) {
+                    apps-profile-provider-list {
+                        border-right: none;
+                    }
+                    apps-profile-provider-list,
+                    apps-profile-provider-details {
+                        flex: 1 0 100%;
+                    }
+                    apps-profile-provider-details {
+                        display: none !important;
+                    }
+
+                    &.current-profile-selected {
+                        flex: 1 0 100%;
+                        .toolbar {
+                            padding-left: 16px !important;
+                            .profile-selection {
+                                display: none !important;
+                            }
+                        }
+                        // .content {
+                            apps-profile-provider-list {
+                                display: none !important;
+                            }
+                            apps-profile-provider-details {
+                                display: flex !important;
+                            }
+                        // }
+                    }
+                }
+            }
+        }
+    }
+}

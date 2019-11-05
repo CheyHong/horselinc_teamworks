@@ -4,7 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { ProfileManagerService } from 'app/main/apps/profile-manager/profile-manager.service';
+import { ProfileService } from 'app/main/apps/profile/profile.service';
 
 @Component({
     selector     : 'apps-profile-manager-payment',
@@ -22,7 +22,7 @@ export class ProfileManagerPaymentComponent implements OnInit, OnDestroy
      * @param {profileService} _profileService
      */
     constructor(
-        private _profileService: ProfileManagerService
+        private _profileService: ProfileService
     )
     {
     }

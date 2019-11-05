@@ -13,14 +13,14 @@
             }
             .content{
                 @include media-breakpoint(xs) {
-                    profile-list {
+                    apps-profile-manager-list {
                         border-right: none;
                     }
-                    profile-list,
-                    profile-details {
+                    apps-profile-manager-list,
+                    apps-profile-manager-details {
                         flex: 1 0 100%;
                     }
-                    profile-details {
+                    apps-profile-manager-details {
                         display: none !important;
                     }
 
@@ -33,10 +33,10 @@
                             }
                         }
                         // .content {
-                            profile-list {
+                            apps-profile-manager-list {
                                 display: none !important;
                             }
-                            profile-details {
+                            apps-profile-manager-details {
                                 display: flex !important;
                             }
                         // }
