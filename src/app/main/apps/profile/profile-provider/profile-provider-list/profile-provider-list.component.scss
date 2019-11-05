@@ -1,6 +1,6 @@
 @import "src/@fuse/scss/fuse";
 
-apps-profile-manager-list {
+apps-profile-provider-list {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,9 @@ apps-profile-manager-list {
         height: 56px;
         padding: 16px;
         cursor: pointer;
+    }
+    .selectedProfile{
+        background-color: #27c5c8;
     }
     .editProfile {
         &:hover{

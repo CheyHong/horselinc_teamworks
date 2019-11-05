@@ -13,7 +13,7 @@ import {
 } from '@angular/material';
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import {EditProfileDialogComponent} from './profile-manager/edit-profile-dialog/edit-profile-dialog.component';
+import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
 import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
 
 const routes = [
@@ -42,8 +42,8 @@ const routes = [
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
     {
-        path        : 'profile/manager',
-        loadChildren: 'app/main/apps/profile-manager/profile-manager.module#ProfileManagerModule'
+        path        : 'profile',
+        loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
     },
     {
         path        : 'horse-manager',

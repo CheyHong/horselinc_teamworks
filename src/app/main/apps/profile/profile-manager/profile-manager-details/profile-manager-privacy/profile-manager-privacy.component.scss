@@ -1,0 +1,29 @@
+@import "src/@fuse/scss/fuse";
+#profile-privacy {
+    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 1.43;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: #ffffff;  
+    text-align:left;
+    color: #4f748c;
+
+    .mainTitle{
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 1.15;
+    }
+    .subTitle{
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 0.92;
+    }
+}
