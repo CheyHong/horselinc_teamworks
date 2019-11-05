@@ -157,7 +157,7 @@ export class HorseManagerComponent implements OnInit, OnDestroy
      * @param filterParameter
      * @param filterValue
      */
-    selecthorsemanagers(filterParameter?, filterValue?): void
+    selectHorseManagers(filterParameter?, filterValue?): void
     {
         this._horsemanagerService.selectHorseManagers(filterParameter, filterValue);
     }

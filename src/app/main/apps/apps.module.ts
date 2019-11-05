@@ -7,8 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { FuseSharedModule } from '@fuse/shared.module';
-
-import {
+import { 
     MatToolbarModule, MatSidenavModule, 
     MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
 } from '@angular/material';
@@ -30,14 +29,14 @@ const routes = [
         path        : 'edit-profile-dialog',
         component   :  EditProfileDialogComponent,
     },
-    {
-        path        : 'horse-manager-confirm',
-        component   :  HorseManagerConfirmComponent,
-    },
-    {
-        path        : 'horse-manager-schedule',
-        component   :  HorseManagerScheduleComponent,
-    },
+    // {
+    //     path        : 'horse-manager-confirm',
+    //     component   :  HorseManagerConfirmComponent,
+    // },
+    // {
+    //     path        : 'horse-manager-schedule',
+    //     component   :  HorseManagerScheduleComponent,
+    // },
     {
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'
@@ -85,21 +84,16 @@ const routes = [
         WelcomeComponent,
         CreateInvoiceDialogComponent,
         EditProfileDialogComponent, 
-
-        HorseManagerScheduleComponent,
-        HorseManagerConfirmComponent,
+        // HorseManagerScheduleComponent,
+        // HorseManagerConfirmComponent,
+        
     ],
 
     exports     : [
         WelcomeComponent,
         CreateInvoiceDialogComponent,
         EditProfileDialogComponent,
-
-<<<<<<< HEAD
-        HorseManagerScheduleComponent,
-        HorseManagerConfirmComponent,
-=======
->>>>>>> c20babfc41d8b83c810af867bed9ea8a3e00b392
+        
     ]
 })
 export class AppsModule
