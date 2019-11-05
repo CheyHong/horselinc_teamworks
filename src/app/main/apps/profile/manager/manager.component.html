@@ -1,0 +1,23 @@
+ <div id="profile-manager" class="page-layout carded left-sidebar inner-scroll">
+      <div class="m-0 center">  
+           <div class="content-card">          
+            <div class="content current-profile-selected" fxLayout="row">
+
+                <apps-profile-manager-list fusePerfectScrollbar fxFlex.gt-md="27"></apps-profile-manager-list>
+                <apps-profile-manager-details fusePerfectScrollbar fxFlex></apps-profile-manager-details>
+
+            </div>
+        </div> 
+      </div>
+
+    <fuse-sidebar name="profile-manager-editprofile" class="profile-manager-editprofile" position="right" [invisibleOverlay]="false">
+        <profile-manager-editprofile></profile-manager-editprofile>
+    </fuse-sidebar>
+    <fuse-sidebar name="profile-manager-updateemail" class="profile-manager-editprofile" position="right" [invisibleOverlay]="false">
+        <profile-manager-updateemail></profile-manager-updateemail>
+    </fuse-sidebar>
+    <fuse-sidebar name="profile-manager-updatepassword" class="profile-manager-editprofile" position="right" [invisibleOverlay]="false">
+        <profile-manager-updatepassword></profile-manager-updatepassword>
+    </fuse-sidebar>
+
+ </div> 

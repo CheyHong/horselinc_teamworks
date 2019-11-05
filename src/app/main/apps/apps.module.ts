@@ -13,7 +13,6 @@ import {
 } from '@angular/material';
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
 import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
 
 const routes = [
@@ -25,10 +24,7 @@ const routes = [
         path        : 'create-invoice-dialog',
         component   :  CreateInvoiceDialogComponent,
     },
-    {
-        path        : 'edit-profile-dialog',
-        component   :  EditProfileDialogComponent,
-    },
+
     // {
     //     path        : 'horse-manager-confirm',
     //     component   :  HorseManagerConfirmComponent,
@@ -83,7 +79,6 @@ const routes = [
     declarations: [
         WelcomeComponent,
         CreateInvoiceDialogComponent,
-        EditProfileDialogComponent, 
         // HorseManagerScheduleComponent,
         // HorseManagerConfirmComponent,
         
@@ -92,7 +87,6 @@ const routes = [
     exports     : [
         WelcomeComponent,
         CreateInvoiceDialogComponent,
-        EditProfileDialogComponent,
         
     ]
 })

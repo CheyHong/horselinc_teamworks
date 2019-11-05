@@ -11,13 +11,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import {UserLoginComponent } from './user-login/user-login.component';
-import {UserRegisterComponent } from './user-register/user-register.component';
-import {UserResetPasswordComponent} from './user-reset-password/user-reset-password.component';
-import {UserRoleComponent} from './user-role/user-role.component';
-import {UserPaymentComponent} from './user-payment/user-payment.component';
-import {UserPaymentInfoComponent} from './user-payment/user-payment-info/user-payment-info.component';
-import {UserPaymentApproverComponent} from './user-payment/user-payment-approver/user-payment-approver.component';
+import {UserLoginComponent } from './login/login.component';
+import {UserRegisterComponent } from './register/register.component';
+import {UserResetPasswordComponent} from './reset-password/reset-password.component';
+import {UserRoleComponent} from './role/role.component';
+import {UserPaymentComponent} from './payment/payment.component';
+import {UserPaymentInfoComponent} from './payment/info/info.component';
+import {UserPaymentApproverComponent} from './payment/approver/approver.component';
 
 const routes = [
 

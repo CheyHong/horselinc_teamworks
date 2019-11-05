@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -18,28 +19,39 @@ import { FuseSidebarModule } from '@fuse/components';
 
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
-import { ProfileManagerComponent } from 'app/main/apps/profile/profile-manager/profile-manager.component';
-import { ProfileManagerListComponent } from 'app/main/apps/profile/profile-manager/profile-manager-list/profile-manager-list.component';
-import { ProfileManagerDetailsComponent } from 'app/main/apps/profile/profile-manager/profile-manager-details/profile-manager-details.component';
-import { ProfileManagerManagerComponent } from 'app/main/apps/profile/profile-manager/profile-manager-details/profile-manager-manager/profile-manager-manager.component';
-import { ProfileManagerProviderComponent } from 'app/main/apps/profile/profile-manager/profile-manager-details/profile-manager-provider/profile-manager-provider.component';
-import { ProfileManagerPaymentComponent } from 'app/main/apps/profile/profile-manager/profile-manager-details/profile-manager-payment/profile-manager-payment.component';
-import { ProfileManagerTermsComponent } from 'app/main/apps/profile/profile-manager/profile-manager-details/profile-manager-terms/profile-manager-terms.component';
-import { ProfileManagerPrivacyComponent } from 'app/main/apps/profile/profile-manager/profile-manager-details/profile-manager-privacy/profile-manager-privacy.component';
+import { ProfileManagerComponent } from 'app/main/apps/profile/manager/manager.component';
+import { ProfileManagerListComponent } from 'app/main/apps/profile/manager/list/list.component';
+import { ProfileManagerDetailsComponent } from 'app/main/apps/profile/manager/details/details.component';
+import { ProfileManagerProviderComponent } from 'app/main/apps/profile/manager/details/provider/provider.component';
+import { ProfileManagerPaymentComponent } from 'app/main/apps/profile/manager/details/payment/payment.component';
+import { ProfileManagerTermsComponent } from 'app/main/apps/profile/manager/details/terms/terms.component';
+import { ProfileManagerPrivacyComponent } from 'app/main/apps/profile/manager/details/privacy/privacy.component';
+import { ProfileManagerEditProfileComponent } from 'app/main/apps/profile/manager/dialogs/editprofile/editprofile.component';
+import { ProfileManagerUpdateEmailComponent } from './manager/dialogs/updateemail/updateemail.component';
+import { ProfileManagerUpdatePasswordComponent } from './manager/dialogs/updatepassword/updatepassword.component';
+import {ProfileManagerExportInvoiceComponent} from './manager/dialogs/exportinvoice/exportinvoice.component';
 
-import { ProfileProviderComponent } from 'app/main/apps/profile/profile-provider/profile-provider.component';
-import { ProfileProviderListComponent } from 'app/main/apps/profile/profile-provider/profile-provider-list/profile-provider-list.component';
-import { ProfileProviderDetailsComponent } from 'app/main/apps/profile/profile-provider/profile-provider-details/profile-provider-details.component';
-import { ProfileProviderApplogComponent } from 'app/main/apps/profile/profile-provider/profile-provider-details/profile-provider-applog/profile-provider-applog.component';
-import { ProfileProviderProviderComponent } from 'app/main/apps/profile/profile-provider/profile-provider-details/profile-provider-provider/profile-provider-provider.component';
-import { ProfileProviderPaymentComponent } from 'app/main/apps/profile/profile-provider/profile-provider-details/profile-provider-payment/profile-provider-payment.component';
-import { ProfileProviderTermsComponent } from 'app/main/apps/profile/profile-provider/profile-provider-details/profile-provider-terms/profile-provider-terms.component';
-import { ProfileProviderPrivacyComponent } from 'app/main/apps/profile/profile-provider/profile-provider-details/profile-provider-privacy/profile-provider-privacy.component';
+import { ProfileProviderComponent } from 'app/main/apps/profile/provider/provider.component';
+import { ProfileProviderListComponent } from 'app/main/apps/profile/provider/list/list.component';
+import { ProfileProviderDetailsComponent } from 'app/main/apps/profile/provider/details/details.component';
+import { ProfileProviderApplogComponent } from 'app/main/apps/profile/provider/details/applog/applog.component';
+import { ProfileProviderProviderComponent } from 'app/main/apps/profile/provider/details/provider/provider.component';
+import { ProfileProviderPaymentComponent } from 'app/main/apps/profile/provider/details/payment/payment.component';
+import { ProfileProviderTermsComponent } from 'app/main/apps/profile/provider/details/terms/terms.component';
+import { ProfileProviderPrivacyComponent } from 'app/main/apps/profile/provider/details/privacy/privacy.component';
+import { ProfileProviderEditProfileComponent } from 'app/main/apps/profile/provider/dialogs/editprofile/editprofile.component';
 
 const routes: Routes = [
     {
         path  : 'manager',
         component: ProfileManagerComponent,
+        resolve  : {
+            provider: ProfileService
+        }
+    },
+    {
+        path  : 'manager/exportinvoice',
+        component: ProfileManagerExportInvoiceComponent,
         resolve  : {
             provider: ProfileService
         }
@@ -63,11 +75,14 @@ const routes: Routes = [
         ProfileManagerComponent,
         ProfileManagerListComponent,
         ProfileManagerDetailsComponent,
-        ProfileManagerManagerComponent,
         ProfileManagerProviderComponent,
         ProfileManagerPaymentComponent,
         ProfileManagerTermsComponent,
         ProfileManagerPrivacyComponent,
+        ProfileManagerEditProfileComponent,
+        ProfileManagerUpdateEmailComponent,
+        ProfileManagerUpdatePasswordComponent,
+        ProfileManagerExportInvoiceComponent,
 
         ProfileProviderComponent,
         ProfileProviderListComponent,
@@ -77,6 +92,7 @@ const routes: Routes = [
         ProfileProviderPaymentComponent,
         ProfileProviderTermsComponent,
         ProfileProviderPrivacyComponent,
+        ProfileProviderEditProfileComponent
     ],
     imports        : [
         RouterModule.forChild(routes),

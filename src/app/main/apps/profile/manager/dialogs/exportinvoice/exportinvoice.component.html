@@ -1,0 +1,25 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start">
+    <div class="intro" fxLayout="column" fxLayoutAlign="start">
+        <div class="item1" fxLayout="row" fxLayoutAlign="space-between center" >
+            <div class="Edit-Profile">Update Email</div>
+            <div mat-raised-button class="btn" (click)="closePanel()"> <img src="assets/icons/horselinc/filled.svg" /> </div>
+        </div>
+
+        <p class="itemName">Service</p>
+        <mat-select class="shadow p-16 mb-15">
+            <mat-option>
+                All Payments
+            </mat-option>   
+            <mat-option>
+                All Payments1
+            </mat-option>   
+        </mat-select>     
+
+        <p class="itemName">Invoice Date(s)/p>
+
+        <div class="cancelSave" fxLayout="row" fxLayoutAlign="flex-end center">
+            <!-- <button mat-button class="cancel m-0" (click)="closePanel()">CANCEL</button> -->
+            <button mat-button class="save m-0" (click)="closePanel()">Export Invoices</button>
+        </div>
+    </div>
+</div>
