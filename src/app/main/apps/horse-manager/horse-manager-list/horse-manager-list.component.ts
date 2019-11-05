@@ -22,6 +22,8 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
 {
     horsemanagers: HorseManager[];
     currentHorseManager: HorseManager;
+    toggle: boolean;
+    
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -54,6 +56,7 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Subscribe to update horses on changes
+        this.toggle = true;
         this._horsemanagerService.onHorseManagersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(horsemanagers => {
@@ -137,4 +140,8 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
     {
         this._fuseSidebarService.getSidebar('horse-manager-profile-panel').toggleOpen();
     }
+    HorseFilter() {
+        this.toggle = !this.toggle;
+    }
+    
 }
