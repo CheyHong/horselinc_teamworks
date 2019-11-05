@@ -3,20 +3,20 @@ import { url } from 'inspector';
 
 export const navigation: FuseNavigation[] = [
     {
-        id       : 'horsemanagers',
+        id       : 'horse-managers',
         title    : 'Horses',
         translate: 'NAV.HORSES',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-manager-black.svg',
-        url      : '/apps/horse-manager',          
+        url      : '/apps/horse/manager',          
     },
     {
-        id       : 'payment-provider',
+        id       : 'payment-manager',
         title    : 'Payment',
         translate: 'NAV.PAYMENT',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',
-        url      : '/apps/payment-provider',          
+        url      : '/apps/payment/manager',          
     },
     {
         id       : 'profile',
@@ -24,7 +24,7 @@ export const navigation: FuseNavigation[] = [
         translate: 'NAV.PROFILE',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
-        url      : '/apps/profile',          
+        url      : '/apps/profile/manager',          
     },
     {
         id       : 'schedule',

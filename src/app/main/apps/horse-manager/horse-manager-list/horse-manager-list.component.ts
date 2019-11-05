@@ -1,3 +1,4 @@
+
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
@@ -5,6 +6,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
 import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
@@ -34,7 +36,8 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _horsemanagerService: HorseManagerService,
-        private _location: Location
+        private _location: Location,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Set the private defaults
@@ -110,7 +113,7 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
      *
      * @param horseId
      */
-    readhorse(horsemanagerId): void
+    readhorsemanager(horsemanagerId): void
     {
         const folderHandle = this._activatedRoute.snapshot.params.folderHandle;
              
@@ -129,5 +132,9 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
 
         // Set current horse
         this._horsemanagerService.setCurrentHorseManager(horsemanagerId);
+    }
+    editHorseProfile(): void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-profile-panel').toggleOpen();
     }
 }

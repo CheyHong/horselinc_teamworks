@@ -46,7 +46,7 @@ const routes = [
         loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
     },
     {
-        path        : 'horse-manager',
+        path        : 'horse/manager',
         loadChildren: 'app/main/apps/horse-manager/horse-manager.module#HorseManagerModule'
     },
     {
