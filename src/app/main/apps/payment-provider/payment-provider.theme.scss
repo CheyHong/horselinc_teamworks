@@ -67,7 +67,7 @@
         }
 
         &.current-provider {
-            background: map-get($background, hover);
+            background: rgba(39, 197, 200, 0.2);//map-get($background, hover);
            
         }
         

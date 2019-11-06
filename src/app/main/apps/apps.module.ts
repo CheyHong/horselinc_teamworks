@@ -25,13 +25,8 @@ const routes = [
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
     {
-<<<<<<< HEAD
         path        : 'horse/provider',
         loadChildren: 'app/main/apps/horse-provider/horse-provider.module#HorseProviderModule'
-=======
-        path        : 'profile',
-        loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
->>>>>>> abfe7de6f8b26c8d631ddfad83d5373f2f2111e2
     },
     {
         path        : 'horse/manager',
