@@ -14,8 +14,11 @@ import {
 
 import {WelcomeComponent } from './welcome/welcome.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
+=======
+>>>>>>> update
 import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
  
 
@@ -33,10 +36,7 @@ const routes = [
         path        : 'create-invoice-dialog',
         component   :  CreateInvoiceDialogComponent,
     },
-    {
-        path        : 'edit-profile-dialog',
-        component   :  EditProfileDialogComponent,
-    },
+   
     {
 >>>>>>> horser providr change
         path        : 'user',
@@ -83,12 +83,23 @@ const routes = [
     ],
     declarations: [
         WelcomeComponent,
+<<<<<<< HEAD
         
+=======
+        CreateInvoiceDialogComponent,
+ 
+>>>>>>> update
     ],
 
     exports     : [
         WelcomeComponent,
+<<<<<<< HEAD
         
+=======
+        CreateInvoiceDialogComponent,
+      
+       
+>>>>>>> update
     ]
 })
 export class AppsModule
