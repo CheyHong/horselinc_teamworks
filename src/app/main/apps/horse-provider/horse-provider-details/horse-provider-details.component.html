@@ -1,90 +1,56 @@
-<div *ngIf="!provider" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <mat-icon class="s-120 mb-12 select-provider-icon hint-text"
-                [@animate]="{value:'*',params:{delay:'300ms',scale:'0.2'}}">check_box
-    </mat-icon>
-    <span class="hint-text mat-h1 select-provider-text" [@animate]="{value:'*',params:{delay:'400ms'}}">
-        Select a Service Provider
-    </span>
-</div>
-
-<div *ngIf="provider">
-    <div class="provider-header">
-        <div class="invoce"> Invoce </div>
+<div id="profile-provider" fxLayout="column">
+    <div fxHide fxShow.xs class="mb-16" fxLayout="row" fxLayoutAlign="start center"> 
+        <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-back-red-ios-24-px.svg"/>
+        <span class="text1 redcolor">Manager Profile</span>
     </div>
-
-    <div class="provider-content" fxLayout="column" fxLayoutAlign="space-between center">
-
-        <div class="Rectangle">
-            <div>
-                <div class="trainer" fxLayout="row wrap" fxLayoutAlign="start center">
-                    <img class="Oval" src="assets/images/avatars/Reyna.jpg" />
-                    <div class="Huckleberry"> {{provider.name}} </div>
-                </div>
-                <div class="invoice-submitted-1"> INVOICE-SUBMITTED% 1/22/2018 </div>
-            </div>
-            
+    <div class ="pl-16 mb-32" fxLayout="row" fxLayoutAlign="start center">
+        <div>
+            <img src="assets/images/avatars/Helen.jpg" class="avatar medium-65"/>
         </div>
-
-        <div class="detailShow">
-            <div style="width: 100%;">
-                <div class="trainer" fxLayout="row wrap" fxLayoutAlign="start center">
-                    <img class="Oval" src="assets/images/avatars/Reyna.jpg" />
-                    <div fxLayout="column wrap" fxLayoutAlign="start center">
-                        <div class="Coal"> Coal </div>
-                        <div class="Chocolate-Chip-Sup"> Chocolate Chip Suprise </div>
-                    </div>
-                </div>
-    
-                <div class="item1"> 
-                    <div class="date"> 1/10/2018 </div>
-                    <div class="winter-equstrian-fes"> winter equstrian fes </div>
-                </div>
-                <div class="item2"> 
-                    <div class="mane"> 
-                        <div> Mane - Hunter (x1) </div>
-                        <div class="money"> $57.75 </div>
-                    </div>
-                    <div class="mane"> 
-                        <div> Mane - Hunter (x1) </div>
-                        <div class="money"> $57.75 </div>
-                    </div>
-                </div>
-
-                <div class="item1"> 
-                    <div class="date"> 1/10/2018 </div>
-                    <div class="winter-equstrian-fes"> winter equstrian fes </div>
-                </div>
-                <div class="item2"> 
-                    <div class="mane"> 
-                        <div> Mane - Hunter (x1) </div>
-                        <div class="money"> $57.75 </div>
-                    </div>
-                    <div class="mane"> 
-                        <div> Mane - Hunter (x1) </div>
-                        <div class="money"> $57.75 </div>
-                    </div>
-                </div>
-                <div class="Subtotal">
-                    <div> SubTotal </div>
-                    <div > $157.50 </div>
-                </div>
-                
-            </div>
-            
-        </div>
-
-        <div class="requireAction">
-            <div class="inVal">
-                <div class="Add-Tip"> Add Tip </div>
-                <div class="money"> $0 </div>
-            </div>
-            <div class="seperator"></div>
-            <div class="inVal">
-                <div class="Invoice-Total"> Invoice Total </div>
-                <div class="money"> $0 </div>
+        
+        <div fxLayout="column">
+            <div class="title2 blackgreencolor">
+                Zoar Technology Barn
             </div>
 
+            <div class="text3 opacitycolor2" fxLayout="row" >  
+                "zoar house 1"
+            </div>
         </div>
     </div>
+    <div fxLayout="column">
+        <div class="textbox4" fxLayout="column">
+            <div class="pb-16">
+                <span class="text2 blackgreencolor">TRANINER</span> 
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <div>
+                     <img src="assets/images/avatars/Helen.jpg" class="avatar small32"/>   
+                </div>
+                <div>
+                    <div class="text1 blackcolor">
+                        Debbie Mitchell  
+                    </div>
+                    <div class="text3 blackcolor" >  
+                        (Zoar technology Barn)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxLayout="column" class="textbox1">
+            <span class="text2 blackgreencolor">Horse details</span>
+            <span class="text2 mt-10 blackcolor">Mare, Born 2016</span>
+        </div>
+        <div fxLayout="row" class="textbox1 mt-8">
+            <div fxLayout="column" fxFlex="90">
+                <span class="text2 blackgreencolor">USEF Registration</span>
+                <span class="text2 mt-10 blackcolor">321-3452324</span>
+            </div>
+            <div fxFlex="10"> 
+                <img class="buttondiv" src="assets/icons/horselinc/edit-24-px-green.svg"/>
+            </div>
+        </div>
+
+    </div>
+
 </div>
-    

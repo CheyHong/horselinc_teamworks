@@ -19,14 +19,6 @@ const routes = [
         path        : 'welcome',
         component   :  WelcomeComponent,
     },
-      // {
-    //     path        : 'horse-manager-confirm',
-    //     component   :  HorseManagerConfirmComponent,
-    // },
-    // {
-    //     path        : 'horse-manager-schedule',
-    //     component   :  HorseManagerScheduleComponent,
-    // },
     {
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'

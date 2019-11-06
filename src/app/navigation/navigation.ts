@@ -3,19 +3,19 @@ import { url } from 'inspector';
 
 export const navigation: FuseNavigation[] = [
     {
-        id       : 'horse-managers',
+        id       : 'horses-provider',
         title    : 'Horses',
         translate: 'NAV.HORSES',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-manager-black.svg',
-        url      : '/apps/horse/manager',          
+        url      : '/apps/horse/provider',           
     },
     {
         id       : 'payment-manager',
         title    : 'Payment',
         translate: 'NAV.PAYMENT',
         type     : 'item',       
-        iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',
+        iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',   
         url      : '/apps/payment/manager',          
     },
     {
