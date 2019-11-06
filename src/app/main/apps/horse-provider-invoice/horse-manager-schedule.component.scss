@@ -1,6 +1,5 @@
 @import "src/@fuse/scss/fuse";
 #horsemanagerschedule {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -14,10 +13,6 @@
         max-width: 100%;
     }
     background-color: #ffffff;
-    .cancelSave {
-        position: absolute;
-        bottom: 10px;
-    }
     .matselect {
         padding: 16px;
         height: 56px;

@@ -2,9 +2,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
-
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
-import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 interface Food {
@@ -13,22 +11,22 @@ interface Food {
   }
   
 @Component({
-    selector     : 'horse-manager-searchprofile',
-    templateUrl  : './horse-manager-searchprofile.component.html',
-    styleUrls    : ['./horse-manager-searchprofile.component.scss'],
+    selector     : 'horse-manager-schedule',
+    templateUrl  : './horse-manager-schedule.component.html',
+    styleUrls    : ['./horse-manager-schedule.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
+export class HorseManagerScheduleComponent implements OnInit, OnDestroy
 {
-    hasSelectedHorseSearchProfileComponent: boolean;
+    hasSelectedHorseScheduleComponent: boolean;
     isIndeterminate: boolean;
     folders: any[];
     filters: any[];
     labels: any[];
     searchInput: FormControl;
-    currentHorseSearchProfileComponent: HorseManagerSearchProfileComponent;
-
-    foods:Food[];
+    currentHorseScheduleComponent: HorseManagerScheduleComponent;
+    toggle: boolean;
+    foods: Food[];
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -43,20 +41,12 @@ export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
     constructor(
      
         private _fuseSidebarService: FuseSidebarService,
-        private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         private _fuseConfigService: FuseConfigService,
+       
     )
     
-        // Configure the layout
-        
-      
     {
-
-      
-        // Load the translations
-        // this._fuseTranslationLoaderService.loadTranslations(english, turkish);
-
-        // Set the defaults
+ 
         this.searchInput = new FormControl('');
 
         // Set the private defaults
@@ -92,17 +82,23 @@ export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
         this.searchInput.valueChanges.pipe(
             takeUntil(this._unsubscribeAll),
             debounceTime(300),
-            distinctUntilChanged()
+            distinctUntilChanged(),
         )
-            
-    }
+        
+        this.foods = [
+            {value: 'steak-0', viewValue: 'Steak'},
+            {value: 'pizza-1', viewValue: 'Pizza'},
+            {value: 'tacos-2', viewValue: 'Tacos'}
+          ];
 
+        this.toggle = true;
+
+    }
     /**
      * On destroy
      */
     ngOnDestroy(): void
     {
-        // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
@@ -118,9 +114,6 @@ export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
     {
          
     }
-
-   
-    
     /**
      * Toggle the sidebar
      *
@@ -130,11 +123,14 @@ export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
     {
          this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
-    confirmCancel():void
+    ScheduleCancel():void
     {
-        this._fuseSidebarService.getSidebar('horse-manager-confirm-panel').toggleOpen();
         this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
-    }   
-   
+    }
+    ScheduleSave():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+    }    
 }
+
  

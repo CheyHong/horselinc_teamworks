@@ -1,0 +1,50 @@
+
+<div id="horsemanagerconfirm" fxLayout="column" >
+    <div fxLayout="column" fxFlex>
+        <div fxLayout="row">
+            <div class="textbox6 title1 blackgreencolor pt-8 pb-20">
+                Confirm
+            </div>
+            <div (click)="confirmCancel()"> 
+                <img class="buttondiv" src="assets/icons/horselinc/filled.svg"/>
+            </div>
+        </div>
+        <div fxLayout="column" class="textbox2">
+            <span class="textbox1 text2 blackgreencolor">Date</span>
+            <span class="textbox1 text2 blackcolor">saturday, junary 13,2018</span>
+        </div>
+        <div fxLayout="column" class="textbox2">
+            <span class="textbox1 text2 blackgreencolor">Show</span>
+            <span class="textbox1 text2 blackcolor">Winter Equestrian Festival</span>
+        </div>
+        <div fxLayout="column" class="textbox2">
+            <span class="textbox1 text2 blackgreencolor">Class</span>
+            <span class="textbox1 text2 blackcolor">Adult Hunter 18-35</span>
+        </div>
+        <div fxLayout="column" class="textbox2">
+            <span class="textbox1 text2 blackgreencolor">Service provider</span>
+            <span class="textbox1 text2 blackcolor">Debbie Mitchell</span>
+        </div>
+        <div fxLayout="column" class="textbox2">
+            <span class="textbox1 text2 blackgreencolor">Service</span>
+            <div class="textbox1 text2 blackcolor" fxLayout="row" fxLayoutAlign="space-between center">
+                <span>Mane-Hunter Braid(x1)</span>
+                <span>$57.75</span>
+            </div>
+        </div>
+    </div>   
+    <div class="cancelSave" >
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
+            <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="confirmCancel()">
+                <span class="text1 greencolor">
+                    CANCEL
+                </span>
+            </button>
+            <button mat-raised-button class="m-8 mb-16 button medium redcolor">
+                <span class="text1 whitecolor">
+                    SAVE
+                </span>
+            </button>
+        </div>
+    </div>
+<div>

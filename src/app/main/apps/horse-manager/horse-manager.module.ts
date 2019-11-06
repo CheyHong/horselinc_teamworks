@@ -21,6 +21,7 @@ import { HorseManagerComponent } from 'app/main/apps/horse-manager/horse-manager
 import { HorseManagerListComponent } from 'app/main/apps/horse-manager/horse-manager-list/horse-manager-list.component';
 import { HorseManagerListItemComponent } from 'app/main/apps/horse-manager/horse-manager-list/horse-manager-list-item/horse-manager-list-item.component';
 import { HorseManagerDetailsComponent } from 'app/main/apps/horse-manager/horse-manager-details/horse-manager-details.component';
+import { HorseManagerConfirmComponent } from 'app/main/apps/horse-manager/horse-manager-confirm/horse-manager-confirm.component';
 import { HorseManagerProfileComponent } from 'app/main/apps/horse-manager/horse-manager-profile/horse-manager-profile.component';
 import { HorseManagerScheduleComponent } from 'app/main/apps/horse-manager/horse-manager-schedule/horse-manager-schedule.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -51,6 +52,7 @@ const routes: Routes = [
         HorseManagerListItemComponent,
         HorseManagerDetailsComponent,
         HorseManagerProfileComponent,
+        HorseManagerConfirmComponent,
         HorseManagerScheduleComponent,
         CalendarComponent
     ],

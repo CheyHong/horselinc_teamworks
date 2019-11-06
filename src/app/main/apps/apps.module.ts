@@ -13,6 +13,14 @@ import {
 } from '@angular/material';
 
 import {WelcomeComponent } from './welcome/welcome.component';
+<<<<<<< HEAD
+=======
+import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
+import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
+ 
+
+
+>>>>>>> horser providr change
 
 const routes = [
     {
@@ -20,6 +28,17 @@ const routes = [
         component   :  WelcomeComponent,
     },
     {
+<<<<<<< HEAD
+=======
+        path        : 'create-invoice-dialog',
+        component   :  CreateInvoiceDialogComponent,
+    },
+    {
+        path        : 'edit-profile-dialog',
+        component   :  EditProfileDialogComponent,
+    },
+    {
+>>>>>>> horser providr change
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
