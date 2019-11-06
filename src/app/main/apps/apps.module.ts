@@ -64,15 +64,11 @@ const routes = [
     ],
     declarations: [
         WelcomeComponent,
-        CreateInvoiceDialogComponent,
-        // HorseManagerScheduleComponent,
-        // HorseManagerConfirmComponent,
         
     ],
 
     exports     : [
         WelcomeComponent,
-        CreateInvoiceDialogComponent,
         
     ]
 })
