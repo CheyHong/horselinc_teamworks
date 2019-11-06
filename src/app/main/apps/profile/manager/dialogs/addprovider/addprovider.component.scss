@@ -2,8 +2,9 @@
 .container {
     width: 360px;
     height: 100vh;
-     @include media-breakpoint('xs') {
-        height: calc(100vh-64px);
+    @include media-breakpoint('xs') {
+        width: 100%;
+        height: calc(100%-64px);
     }
     background-color: #ffffff;
 

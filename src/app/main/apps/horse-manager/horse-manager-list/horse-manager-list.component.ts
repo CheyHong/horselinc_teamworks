@@ -130,7 +130,7 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
         // }
         // else
         {
-            this._location.go('apps/horse-manager/' + folderHandle + '/' + horsemanagerId);
+            this._location.go('apps/horse/manager/' + folderHandle + '/' + horsemanagerId);
         }
 
         // Set current horse
