@@ -13,17 +13,9 @@ import {
 } from '@angular/material';
 
 import {WelcomeComponent } from './welcome/welcome.component';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-import {EditProfileDialogComponent} from './edit-profile-dialog/edit-profile-dialog.component';
-=======
->>>>>>> update
-import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
+
+
  
-
-
->>>>>>> horser providr change
 
 const routes = [
     {
@@ -31,14 +23,6 @@ const routes = [
         component   :  WelcomeComponent,
     },
     {
-<<<<<<< HEAD
-=======
-        path        : 'create-invoice-dialog',
-        component   :  CreateInvoiceDialogComponent,
-    },
-   
-    {
->>>>>>> horser providr change
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
@@ -83,23 +67,12 @@ const routes = [
     ],
     declarations: [
         WelcomeComponent,
-<<<<<<< HEAD
         
-=======
-        CreateInvoiceDialogComponent,
- 
->>>>>>> update
     ],
 
     exports     : [
         WelcomeComponent,
-<<<<<<< HEAD
         
-=======
-        CreateInvoiceDialogComponent,
-      
-       
->>>>>>> update
     ]
 })
 export class AppsModule

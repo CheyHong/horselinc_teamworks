@@ -13,12 +13,12 @@ interface Food {
   }
   
 @Component({
-    selector     : 'horse-manager-searchprofile',
-    templateUrl  : './horse-manager-searchprofile.component.html',
-    styleUrls    : ['./horse-manager-searchprofile.component.scss'],
+    selector     : 'horse-manager-confirm',
+    templateUrl  : './horse-manager-confirm.component.html',
+    styleUrls    : ['./horse-manager-confirm.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
+export class HorseManagerConfirmComponent implements OnInit, OnDestroy
 {
     hasSelectedHorseSearchProfileComponent: boolean;
     isIndeterminate: boolean;
@@ -26,7 +26,7 @@ export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
     filters: any[];
     labels: any[];
     searchInput: FormControl;
-    currentHorseSearchProfileComponent: HorseManagerSearchProfileComponent;
+    currentHorseSearchProfileComponent: HorseManagerConfirmComponent;
 
     foods:Food[];
 
