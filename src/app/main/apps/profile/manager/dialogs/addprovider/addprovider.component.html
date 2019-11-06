@@ -1,0 +1,33 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start">
+    <div class="intro" fxLayout="column" fxLayoutAlign="start">
+
+        <div class="titleItem" fxLayout="row" fxLayoutAlign="space-between center" >
+            <div class="Edit-Profile">Add Service Provider</div>
+            <div mat-raised-button class="btn" (click)="closePanel()"> <img src="assets/icons/horselinc/filled.svg" /> </div>
+        </div>
+        <p class="titleDesc">Add a Service Provider to your profile in order to give them the ability to invoice you directly for services they provide. Invoices will ruquire your approval prior ti payment.</p>
+        <p class="titleDesc">When a Service provider is added, services don’t have to be scheduled ahead og time in order for the Service Provider to request payment. </p>
+         
+        <p class="itemName">Service Providers</p>
+        <div class="item1" style="margin-bottom:10px" fxLayout="row" fxLayoutAlign="space-between center">
+            <span style="margin-left:10px" fxFlex="15">
+                <img src="assets/images/avatars/Helen.jpg" class="avatar small32"/>   
+            </span>
+            <input style="margin:0px; padding:0px" value="Search by Name" />
+            <div class="searchIcon" style="margin-right:10px" fxFlax="15" (click)="searchProvider()">
+                <mat-icon class="s-24">search</mat-icon>
+            </div>
+        </div> 
+
+        <p class="itemName">Dollar Value </p>
+        <mat-select class="shadow p-16 mb-20" [(value)]="serviceType">
+            <mat-option value="Braider">Braider</mat-option>   
+            <mat-option value="Braider1">Braider1</mat-option>   
+        </mat-select>     
+
+        <div class="cancelSave" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-button class="cancel m-0" (click)="closePanel()">CANCEL</button>
+            <button mat-button class="save m-0" (click)="closePanel()">SAVE</button>
+        </div>
+    </div>
+</div>

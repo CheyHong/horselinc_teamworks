@@ -1,21 +1,52 @@
 <div class="container" fxLayout="column" fxLayoutAlign="start">
     <div class="intro" fxLayout="column" fxLayoutAlign="start">
-        <div class="item1" fxLayout="row" fxLayoutAlign="space-between center" >
-            <div class="Edit-Profile">Update Email</div>
+        <div class="titleItem" fxLayout="row" fxLayoutAlign="space-between center" >
+            <div class="Edit-Profile">Export Payment History</div>
             <div mat-raised-button class="btn" (click)="closePanel()"> <img src="assets/icons/horselinc/filled.svg" /> </div>
         </div>
 
         <p class="itemName">Service</p>
-        <mat-select class="shadow p-16 mb-15">
-            <mat-option>
-                All Payments
-            </mat-option>   
-            <mat-option>
-                All Payments1
-            </mat-option>   
+        <mat-select class="shadow p-16 mb-20" [(value)]="serviceType">
+            <mat-option value="All Payments">All Payments</mat-option>   
+            <mat-option value="All Payments1">All Payments1</mat-option>   
         </mat-select>     
 
-        <p class="itemName">Invoice Date(s)/p>
+        <p class="itemName">Invoice Date(s)</p>
+        <div class="item2 mb-20" fxLayout="column" fxLayoutAlign="space-between center">
+            <div style="width:95%;" fxLayout="row" fxLayoutAlign="space-between center">
+                <span fxFlex="15">
+                    From:
+                </span>
+                <input style="height:44px" matInput [matDatepicker]="picker1" placeholder="MM/DD/YYYY">
+                <div fxFlax="15">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </div>
+            </div> 
+            <mat-divider style="margin-left:5%;width:95%"></mat-divider>
+            <div style="width:95%;" fxLayout="row" fxLayoutAlign="space-between center">
+                <span fxFlex="15">
+                    To:
+                </span>
+                <input style="height:44px" matInput [matDatepicker]="picker2" placeholder="MM/DD/YYYY">
+                <div fxFlax="15">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </div>
+            </div>     
+        </div>
+   
+        <p class="itemName">Service Providers</p>
+        <div class="item1 mb-10">
+            <input class="m-0" value="Search for your address" />
+            <mat-icon class="searchIcon s-24">search</mat-icon>
+        </div>
+
+        <p class="itemName">Horses</p>
+        <div class="item1">
+            <input class="m-0" value="Tap To Search" />
+            <mat-icon class="searchIcon s-24">search</mat-icon>
+        </div>
 
         <div class="cancelSave" fxLayout="row" fxLayoutAlign="flex-end center">
             <!-- <button mat-button class="cancel m-0" (click)="closePanel()">CANCEL</button> -->

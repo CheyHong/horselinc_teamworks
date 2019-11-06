@@ -1,0 +1,38 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start">
+        <div class="intro" fxLayout="column" fxLayoutAlign="start">
+    
+            <div class="titleItem mb-20" fxLayout="row" fxLayoutAlign="space-between center" >
+                <div class="Edit-Profile">Service Provider</div>
+                <div mat-raised-button class="btn" (click)="closePanel()"> <img src="assets/icons/horselinc/filled.svg" /> </div>
+            </div>
+
+            <div class="searchEdit">
+                <input class="edit" style="margin:0px; padding:0px" value="Lind" />
+                <mat-divider style="margin-left:-15px; margin-right:-15px; margin-bottom:20px"></mat-divider>
+            </div>
+
+            <div class="itemList" fxLayout="column" fxLayoutAlign="space-between center">
+                <div class="item" fxLayout="row" fxLayoutAlign="flex-start center">
+                    <img class="avatar" src="assets/images/avatars/Helen.jpg" class="avatar small32"/>   
+                    <span class="name" >Linda Stone</span>
+                </div>
+                <div class="item" fxLayout="row" fxLayoutAlign="flex-start center">
+                    <img class="avatar" src="assets/images/avatars/Helen.jpg" class="avatar small32"/>   
+                    <span class="name" >Linda Hamelton</span>
+                </div>
+                <div class="item" fxLayout="row" fxLayoutAlign="flex-start center">
+                    <img class="avatar" src="assets/images/avatars/Helen.jpg" class="avatar small32"/>   
+                    <span class="name" >Linda Sweet</span>
+                </div>
+            </div>
+
+            <p class="cantFindSomeone">CAN'T FIND SOMEONE?</p>
+            <button class="inviteButton" mat-button>Invite to HorseLinc</button>
+
+            <div class="cancelSave" fxLayout="row" fxLayoutAlign="space-between center">
+                <button mat-button class="cancel m-0" (click)="closePanel()">CANCEL</button>
+                <button mat-button class="save m-0" (click)="closePanel()">SAVE</button>
+            </div>
+        </div>
+    </div>
+    
