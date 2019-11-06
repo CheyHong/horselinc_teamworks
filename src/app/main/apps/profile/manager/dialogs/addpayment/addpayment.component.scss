@@ -37,6 +37,11 @@
                 color: #4f748c;
             }
         }
+        .titleDesc{
+            font-size: 14px;
+            line-height: 1.14;
+            color: #000000;
+        }
 
         .itemName{
             width: 100%;
@@ -51,11 +56,8 @@
             border-radius: 4px;
             box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.1);
             background-color: #fafafa;
-            position:relative;
+
             .searchIcon{
-                position:absolute;
-                right: 12px;
-                top: 12px;
                 cursor:pointer;
                 &:hover{
                     border-radius:10px;
@@ -65,31 +67,9 @@
                     border-radius:10px;
                     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
                 }
-            }
+            }        
         }
 
-        .item2{
-            width:100%;
-            height: 96px;
-            border-radius: 4px;
-            box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.1);
-            background-color: #fafafa;
-            position:relative;
-            .searchIcon{
-                position:absolute;
-                right: 12px;
-                top: 12px;
-                cursor:pointer;
-                &:hover{
-                    border-radius:10px;
-                    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
-                }
-                &:active{
-                    border-radius:10px;
-                    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
-                }
-            }
-        }
         .cancelSave{
             width:90%;
             height: 96px;

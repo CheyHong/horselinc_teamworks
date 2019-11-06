@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
@@ -22,7 +23,8 @@ export class ProfileManagerPaymentComponent implements OnInit, OnDestroy
      * @param {profileService} _profileService
      */
     constructor(
-        private _profileService: ProfileService
+        private _profileService: ProfileService,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
     }
@@ -49,4 +51,8 @@ export class ProfileManagerPaymentComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
+    onAddPayment(): void
+    {
+        this._fuseSidebarService.getSidebar('profile-manager-addpayment').toggleOpen();
+    }
 }

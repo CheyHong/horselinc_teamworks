@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,6 +15,7 @@ import { MatSidenavModule, MatListModule,  MatRadioModule, MatGridListModule, Ma
 import { MatDividerModule } from '@angular/material/divider';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
@@ -29,7 +29,10 @@ import { ProfileManagerPrivacyComponent } from 'app/main/apps/profile/manager/de
 import { ProfileManagerEditProfileComponent } from 'app/main/apps/profile/manager/dialogs/editprofile/editprofile.component';
 import { ProfileManagerUpdateEmailComponent } from './manager/dialogs/updateemail/updateemail.component';
 import { ProfileManagerUpdatePasswordComponent } from './manager/dialogs/updatepassword/updatepassword.component';
-import {ProfileManagerExportInvoiceComponent} from './manager/dialogs/exportinvoice/exportinvoice.component';
+import { ProfileManagerExportInvoiceComponent } from './manager/dialogs/exportinvoice/exportinvoice.component';
+import { ProfileManagerAddProviderComponent } from './manager/dialogs/addprovider/addprovider.component';
+import { ProfileManagerSearchProviderComponent } from './manager/dialogs/searchprovider/searchprovider.component';
+import { ProfileManagerAddPaymentComponent } from './manager/dialogs/addpayment/addpayment.component';
 
 import { ProfileProviderComponent } from 'app/main/apps/profile/provider/provider.component';
 import { ProfileProviderListComponent } from 'app/main/apps/profile/provider/list/list.component';
@@ -52,6 +55,13 @@ const routes: Routes = [
     {
         path  : 'manager/exportinvoice',
         component: ProfileManagerExportInvoiceComponent,
+        resolve  : {
+            provider: ProfileService
+        }
+    },
+    {
+        path  : 'manager/addpayment',
+        component: ProfileManagerAddPaymentComponent,
         resolve  : {
             provider: ProfileService
         }
@@ -83,6 +93,9 @@ const routes: Routes = [
         ProfileManagerUpdateEmailComponent,
         ProfileManagerUpdatePasswordComponent,
         ProfileManagerExportInvoiceComponent,
+        ProfileManagerAddProviderComponent,
+        ProfileManagerSearchProviderComponent,
+        ProfileManagerAddPaymentComponent,
 
         ProfileProviderComponent,
         ProfileProviderListComponent,
@@ -114,6 +127,7 @@ const routes: Routes = [
         MatNativeDateModule, 
         MatCardModule,
         MatDividerModule,
+        MatSlideToggleModule,
         FuseSharedModule,
         FuseSidebarModule,
         CommonModule
