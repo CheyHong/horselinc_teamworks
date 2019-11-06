@@ -28,6 +28,14 @@ const TREE_DATA: HorseNode[] = [
             {name: 'Banana'},
             {name: 'Fruit loops'},
         ]
+    },
+    {
+        name: 'YaoYuan Mei',
+        children: [
+            {name: 'Apple'},
+            {name: 'Banana'},
+            {name: 'Fruit loops'},
+        ]
     }
 ];
   
@@ -67,76 +75,10 @@ export class HorseProviderListComponent implements OnInit{
         this.dataSource.data = TREE_DATA;
     }
 
-    hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
-    // /**
-    //  * Constructor
-    //  *
-    //  * @param {ActivatedRoute} _activatedRoute
-    //  * @param {HorseProviderService} _providerService
-    //  * @param {Location} _location
-    //  */
+    ngOnInit(){
 
-    // constructor(
-    //     // private _activatedRoute: ActivatedRoute,
-    //     // private _location: Location,
-    //     // private _providerService: HorseProviderService,
-    //     // private _fuseSidebarService: FuseSidebarService,
-    // ) {
-    //     // Set the private defaults
-    //     // this._unsubscribeAll = new Subject();
-    //     this.dataSource.data = TREE_DATA;
-    // }
-
-    ngOnInit() {
-        // this._providerService.onProvidersChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(providers => {
-        //         this.providers = providers;
-        //     });
-
-        // this._providerService.onCurrentProviderChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(currentHorse => {
-        //         if ( !currentHorse )
-        //         {
-             
-        //             this.currentProvider = null;
-
-        //             // Handle the location changes
-        //             const tagHandle    = this._activatedRoute.snapshot.params.tagHandle,
-        //                   filterHandle = this._activatedRoute.snapshot.params.filterHandle;
-
-        //             if ( tagHandle )
-        //             {
-        //                 this._location.go('apps/horse/tag/' + tagHandle);
-        //             }
-        //             else if ( filterHandle )
-        //             {
-        //                 this._location.go('apps/horse/filter/' + filterHandle);
-        //             }
-        //             else
-        //             {
-        //                 this._location.go('apps/horse/all');
-        //             }
-        //         }
-        //         else
-        //         {
-        //             this.currentProvider = currentHorse;
-        //         }
-        //     });
     }
 
-    // readProvider(providerId): void {
-    //     this._providerService.setCurrentProvider(providerId);
-    // }
-
-    // /**
-    //  * On destroy
-    //  */
-    // ngOnDestroy(): void
-    // {
-    //     // Unsubscribe from all subscriptions
-    //     this._unsubscribeAll.next();
-    //     this._unsubscribeAll.complete();
-    // }
+    hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+   
 }

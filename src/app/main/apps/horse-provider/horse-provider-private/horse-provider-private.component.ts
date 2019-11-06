@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-    selector   : 'horse-provider-details',
-    templateUrl: './horse-provider-details.component.html',
-    styleUrls  : ['./horse-provider-details.component.scss']
+    selector   : 'horse-provider-private',
+    templateUrl: './horse-provider-private.component.html',
+    styleUrls  : ['./horse-provider-private.component.scss']
 })
-export class HorseProviderDetailsComponent
+export class HorseProviderPrivateComponent
 {
     /**
      * Constructor

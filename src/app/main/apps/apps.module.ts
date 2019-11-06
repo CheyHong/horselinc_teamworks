@@ -21,33 +21,12 @@ const routes = [
         component   :  WelcomeComponent,
     },
     {
-        path        : 'create-invoice-dialog',
-        component   :  CreateInvoiceDialogComponent,
-    },
-
-    // {
-    //     path        : 'horse-manager-confirm',
-    //     component   :  HorseManagerConfirmComponent,
-    // },
-    // {
-    //     path        : 'horse-manager-schedule',
-    //     component   :  HorseManagerScheduleComponent,
-    // },
-    {
         path        : 'user',
         loadChildren: 'app/main/apps/user/user.module#UserModule'
     },
     {
-        path        : 'profile',
-<<<<<<< HEAD
-        loadChildren: 'app/main/apps/profile-manager/profile-manager.module#ProfileManagerModule'
-    },
-    {
         path        : 'horse/provider',
         loadChildren: 'app/main/apps/horse-provider/horse-provider.module#HorseProviderModule'
-=======
-        loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
->>>>>>> bb0f56f5fde35904c268165d09bc288a03eb11d6
     },
     {
         path        : 'horse/manager',
