@@ -43,8 +43,8 @@
                 }
             }
         }
-        &.current-horse {
-            background: map-get($background, hover);
+        &.current-horsemanager {
+            background: rgba(39, 197, 200, 0.2);
         }
         &.selected {
             @if ($is-dark) {
