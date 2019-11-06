@@ -13,19 +13,13 @@ import {
 } from '@angular/material';
 
 import {WelcomeComponent } from './welcome/welcome.component';
-import { CreateInvoiceDialogComponent } from './create-invoice-dialog/create-invoice-dialog.component';
 
 const routes = [
     {
         path        : 'welcome',
         component   :  WelcomeComponent,
     },
-    {
-        path        : 'create-invoice-dialog',
-        component   :  CreateInvoiceDialogComponent,
-    },
-
-    // {
+      // {
     //     path        : 'horse-manager-confirm',
     //     component   :  HorseManagerConfirmComponent,
     // },
