@@ -1,0 +1,87 @@
+
+<div id="horseproviderinvoice" fxLayout="column">
+    <div fxLayout="column">
+         <div fxLayout="row" class="textbox2">
+            <div class="textbox6 title1 blackgreencolor pt-8">
+                Private Note
+            </div>
+            <div (click)="InvoiceCancel()">
+                <img class="buttondiv" src="assets/icons/horselinc/filled.svg"/>
+            </div>
+        </div>
+        <div class="text2 blackgreencolor pl-16 pt-12 pb-12">Horse</div>
+        <div class="textbox1" fxLayout="row" fxLayoutAlign="space-between center">
+           <div fxLayout="row" fxLayoutAlign="start center">  
+                <img src="assets/images/avatars/Barrera.jpg" class="avatar small40"/>
+                <div fxLayout="column">
+                    <span class="text1 blackcolor">
+                        Anna Burkard Mngr
+                    </span>
+                    <span class="text3 blackcolor">
+                        "Chocolate Covered Marshmallows"
+                    </span>
+                </div>
+            </div> 
+            <div class="buttondiv"> 
+                <img src="assets/icons/horselinc/search.svg"/>
+            </div> 
+            
+        </div>
+        <div class="text2 blackgreencolor pl-16 mt-24 mb-12">Horse</div>
+        <div class="textbox2" fxLayout="row" fxLayoutAlign="start center">  
+            <img src="assets/images/avatars/Barrera.jpg" class="avatar small40"/>
+           
+            <span class="text1 blackcolor">
+                    Debbie Mitchell
+            </span>   
+        </div> 
+        <div fxLayout="row" class="textbox5 mt-8" fxLayoutAlign="space-between center">
+            <span fxFlex="15" class="text2 blackcolor">
+                Data
+            </span>
+            <input fxFlex="75" class="inputcolor text2 blackcolor" matInput [matDatepicker]="picker1" placeholder="" [formControl]="date">
+            <div fxFlax="15">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </div>
+        </div> 
+        
+        <div class="textbox5 mt-24 mb-20" fxLayoutAlign="space-between center">
+            <mat-select>
+                 <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>   
+            </mat-select>     
+            <div class="editTitle">Service</div>  
+            
+        </div>
+        <div class="textbox2 mb-24" fxLayout="row" fxLayoutAlign="start center">
+            <div>
+                <span class="text2 blackgreencolor">
+                    Horse managers will see the these prices increased by 5% as the HorseLinc service free.
+                </span>
+            </div>   
+        </div>
+        <div class="textbox5 mb-24" fxLayout="row" fxLayoutAlign="start center">
+            <div>
+                <span class="text2 blackcolor">
+                    Add a note to the Horse Managers
+                </span>
+            </div>   
+        </div>
+    </div>
+    <div class="cancelSave">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
+            <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="InvoiceCancel()">
+                <span class="text1 greencolor">
+                    CANCEL
+                </span>
+            </button>
+            <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="InvoiceSave()">
+                <span class="text1 whitecolor">
+                    SAVE
+                </span>
+            </button>
+        </div>
+    </div>
+<div>

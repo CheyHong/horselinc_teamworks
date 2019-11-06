@@ -1,7 +1,7 @@
 <div id="profile-provider" fxLayout="column">
     <div fxHide fxShow.xs class="mb-16" fxLayout="row" fxLayoutAlign="start center"> 
         <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-back-red-ios-24-px.svg"/>
-        <span class="text1 redcolor">Manager Profile</span>
+        <span class="buttondiv text1 redcolor">Manager Profile</span>
     </div>
     <div class ="pl-16 mb-32" fxLayout="row" fxLayoutAlign="start center">
         <div>
@@ -51,6 +51,20 @@
             </div>
         </div>
 
+    </div>
+    <div class="cancelSave">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
+            <button mat-raised-button class="m-4 button small redcolor" (click)="AddNote()">
+                <span class="text1 whitecolor">
+                    Add note
+                </span>
+            </button>
+            <button mat-raised-button class="m-4 button big redcolor" (click)="CreateInvoice()">
+                <span class="text1 whitecolor">
+                    Create Invoice
+                </span>
+            </button>
+        </div>
     </div>
 
 </div>

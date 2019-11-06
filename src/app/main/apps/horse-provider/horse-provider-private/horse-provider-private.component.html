@@ -1,16 +1,18 @@
 
-<div id="horseproviderprivate" fxLayout="column" fxFill>
-    <div fxFlex="95" fxLayout="column">
-        <div fxLayout="row">
-            <div class="textbox6 title1 blackgreencolor pt-8 pb-20">
-                Confirm
+<div id="horseproviderprivate" fxLayout="column">
+    <div fxLayout="column">
+        <div fxLayout="row" class="textbox2">
+            <div class="textbox6 title1 blackgreencolor pt-8">
+                Private Note
             </div>
-            <div>
+            <div (click)="CancelPrivate()">
                 <img class="buttondiv" src="assets/icons/horselinc/filled.svg"/>
             </div>
         </div>
         <div fxLayout="column" class="textbox2">
-            <span class="textbox1 text2 blackgreencolor">Date</span>
+            <span class="textbox1 text2 blackgreencolor">
+                My notes for zoar technology barn
+            </span>
         </div>
        
         <div class="textbox4">
@@ -19,19 +21,18 @@
             </span>
         </div>
         
-    </div>   
-    <div fxFlex="5">
-        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
-            <button mat-raised-button class="m-8 mb-16 button medium whitecolor">
+    </div> 
+     
+        <div class="cancelSave" fxLayout="row">
+            <button mat-raised-button class="m-8 button medium whitecolor" (click)="CancelPrivate()">
                 <span class="text1 greencolor">
                     CANCEL
                 </span>
             </button>
-            <button mat-raised-button class="m-8 mb-16 button medium redcolor">
+            <button mat-raised-button class="m-8 button medium redcolor">
                 <span class="text1 whitecolor">
                     SAVE
                 </span>
             </button>
         </div>
-    </div>
 <div>

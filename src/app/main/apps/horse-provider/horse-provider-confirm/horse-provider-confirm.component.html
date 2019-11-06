@@ -1,0 +1,66 @@
+<div class="container_h" fxLayout="column" fxLayoutAlign="start space-between" >
+    <div class="content_h">
+        <div class="title_h" fxLayout="row" fxLayoutAlign="space-between center">
+            <div>Confirm</div>
+            <div class="buttondiv" (click)="ConfirmCancel()">
+                <img src="assets/icons/horselinc/filled.svg" />
+            </div>
+        </div>
+        <div class="format1">
+            <div class="txt1">Horse</div>
+            <div class="txt2">Zoar Technology Barn <span class="text-style-1">"Zoar horse 1"</span></div>
+        </div>
+        
+        <div class="format1">
+            <div class="txt1">Trainer</div>
+            <div class="txt2">YaoYuan Mei</div>
+        </div>
+        
+        <div class="format1">
+            <div class="txt1">Date</div>
+            <div class="txt2">Jule 23, 2019</div>
+        </div>
+
+        <div class="format2">
+            <div class="txt1">Service</div>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="txt2">Clean (x1)</div>
+                <div class="txt2"> $ 80.00</div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="txt2">Make a horse speed up (x1)</div>
+                <div class="txt2">$ 80.00</div>
+            </div>
+        </div>
+
+        <div class="format1">
+            <div class="txt1">Total</div>
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="txt2">2 Service</div>
+                <div class="txt2">$ 160.00</div>
+            </div>
+        </div>
+
+        <div class="sum_h" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="txt3"> Total</div>
+            <div class="txt3"> $ 160.00</div>
+        </div>
+        
+    </div>
+   
+   <div class="cancelSave" fxLayoutAlign="center center">
+        <div fxLayout="column">
+            <button mat-raised-button class="button huge redcolor" (click)="ConfirmSubmit()">
+                <span class="text1 whitecolor">
+                    Confirm & Submit Invoice
+                </span>
+            </button>
+            <button mat-raised-button class="button huge whitecolor" (click)="ConfirmSave()">
+                <span class="text1 greencolor">
+                    Save to Drafts
+                </span>
+            </button>
+        </div>
+    </div>
+
+</div>

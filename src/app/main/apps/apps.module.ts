@@ -35,6 +35,10 @@ const routes = [
         loadChildren: 'app/main/apps/horse-manager/horse-manager.module#HorseManagerModule'
     },
     {
+        path        : 'horse/provider',
+        loadChildren: 'app/main/apps/horse-provider/horse-provider.module#HorseProviderModule'
+    },
+    {
         path        : 'payment/manager',
         loadChildren: 'app/main/apps/payment-manager/payment-manager.module#PaymentManagerModule'
     },
@@ -42,6 +46,7 @@ const routes = [
         path        : 'payment/provider',
         loadChildren: 'app/main/apps/payment-provider/payment-provider.module#PaymentProviderModule'
     },
+    
     {
         path        : 'schedule',
         loadChildren: 'app/main/apps/schedule/schedule.module#ScheduleModule'

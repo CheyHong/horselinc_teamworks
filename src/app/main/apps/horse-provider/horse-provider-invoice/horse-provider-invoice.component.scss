@@ -1,16 +1,21 @@
 @import "src/@fuse/scss/fuse";
-#horsemanagerschedule {
+#horseproviderinvoice {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 1;
     -webkit-overflow-scrolling: touch;
-    padding: 16px;
+    padding-top: 24px;
     width: 360;
     max-width: 360px;
     @include media-breakpoint('xs') {
-        padding: 8px;
         width: 100%;
         max-width: 100%;
+    }
+    .cancelSave {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
     }
     background-color: #ffffff;
     .matselect {
@@ -105,11 +110,6 @@
             color: #27c5c8;
         }
     }
-    .borderline {
-        height: 1px;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.55);
-    }
     .text2 {
         font-family: Roboto;
         font-size: 14px;
@@ -119,13 +119,63 @@
         line-height: 1.43;
         letter-spacing: normal;
     }
+    .text3 {
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+    }
     .textbox1 {
+        margin: 0 16px 0 16px;
+        padding: 16px;
+        height: 72px;
+        min-height: 72px;
+        width: 328px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+            margin: 0;
+        }
+        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+        background-color: #fafafa;
+    }
+    .textbox2 {
+        padding: 0 16px 0 16px;
+        width: 360px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+        }
+    }
+    .textbox4 {
+        margin: 0 16px 0 16px;
+        width: 328px;
+        padding: 14px;
+        height: 48px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+            margin: 0 8px 0 8px;
+        }
+        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+        border-radius: 4px;
+        background-color: #fafafa;
+    }
+    .textbox6 {
+        width: 328px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+        }
+    }
+    .textbox5 {
+        margin: 0 16px 0 16px;
         padding: 14px;
         height: 56px;
         min-height: 56px;
         width: 328px;
         @include media-breakpoint('xs') {
             width: 100%;
+            margin: 0 8px 0 8px;
         }
         padding-left: 20px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
@@ -139,42 +189,6 @@
             line-height: 1.33;
             letter-spacing: 0.4px;
         }
-    }
-    .textbox2 {
-        margin: 0 16px 0px 16px;
-        overflow: auto;
-    }
-    .textbox3 {
-        padding: 14px;
-        height: 47px;
-        min-height: 48px;
-    }
-    .textbox4 {
-        width: 328px;
-        @include media-breakpoint('xs') {
-            width: 100%;
-        }
-        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
-        border-radius: 4px;
-        background-color: #fafafa;
-    }
-    .textbox6 {
-        width: 290px;
-        @include media-breakpoint('xs') {
-            width: 100%;
-        }
-    }
-    .textbox5 {
-        padding: 14px;
-        height: 78px;
-        min-height: 78px;
-        width: 328px;
-        @include media-breakpoint('xs') {
-            width: 100%;
-        }
-        padding-left: 20px;
-        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
-        background-color: #fafafa;
     }
     .whitecolor {
         color: #ffffff;

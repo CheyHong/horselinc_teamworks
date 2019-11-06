@@ -6,19 +6,7 @@
         <div class="content-card" [ngClass]="{'current-provider-selected':currentProvider}">
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar px-24 py-8" fxHide.gt-md>
-
-                <div *ngIf="currentProvider">
-                    <button mat-icon-button (click)="deselectCurrentProvider()">
-                        <mat-icon class="secondary-text">arrow_back</mat-icon>
-                    </button>
-                </div>
-
-                <div class="Schedule-Service">
-                        Schedule Service
-                </div>
-
-            </div>
+           
             <!-- / CONTENT TOOLBAR -->
 
             <!-- CONTENT -->
@@ -33,5 +21,13 @@
 
     </div>
     <!-- / CENTER -->
-
+    <fuse-sidebar  name="horse-provider-private-panel" class="horse-provider-sidebar" position="right" [invisibleOverlay]="false">
+        <horse-provider-private></horse-provider-private>
+    </fuse-sidebar>
+    <fuse-sidebar  name="horse-provider-invoice-panel" class="horse-provider-sidebar" position="right" [invisibleOverlay]="false">
+        <horse-provider-invoice></horse-provider-invoice>
+    </fuse-sidebar>
+     <fuse-sidebar  name="horse-provider-confirm-panel" class="horse-provider-sidebar" position="right" [invisibleOverlay]="false">
+        <horse-provider-confirm></horse-provider-confirm>
+    </fuse-sidebar>
 </div>
