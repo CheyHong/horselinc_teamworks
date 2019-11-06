@@ -1,12 +1,12 @@
 
-<div id="horsemanagerconfirm" fxLayout="column" fxFill>
-    <div fxFlex="95" fxLayout="column">
+<div id="horsemanagerconfirm" fxLayout="column" >
+    <div fxLayout="column" fxFlex>
         <div fxLayout="row">
             <div class="textbox6 title1 blackgreencolor pt-8 pb-20">
                 Confirm
             </div>
-            <div>
-                <img src="assets/icons/horselinc/filled.svg"/>
+            <div (click)="confirmCancel()"> 
+                <img class="buttondiv" src="assets/icons/horselinc/filled.svg"/>
             </div>
         </div>
         <div fxLayout="column" class="textbox2">
@@ -33,16 +33,16 @@
             </div>
         </div>
     </div>   
-    <div fxFlex="5">
+    <div class="cancelSave" >
         <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
-            <button mat-raised-button class="m-8 mb-16 button medium whitecolor">
+            <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="confirmCancel()">
                 <span class="text1 greencolor">
                     CANCEL
                 </span>
             </button>
             <button mat-raised-button class="m-8 mb-16 button medium redcolor">
                 <span class="text1 whitecolor">
-                    NEXT
+                    SAVE
                 </span>
             </button>
         </div>

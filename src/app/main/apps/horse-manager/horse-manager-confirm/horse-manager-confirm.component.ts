@@ -13,12 +13,12 @@ interface Food {
   }
   
 @Component({
-    selector     : 'horse-searchprofile',
-    templateUrl  : './horse-searchprofile.component.html',
-    styleUrls    : ['./horse-searchprofile.component.scss'],
+    selector     : 'horse-manager-confirm',
+    templateUrl  : './horse-manager-confirm.component.html',
+    styleUrls    : ['./horse-manager-confirm.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class HorseSearchProfileComponent implements OnInit, OnDestroy
+export class HorseManagerConfirmComponent implements OnInit, OnDestroy
 {
     hasSelectedHorseSearchProfileComponent: boolean;
     isIndeterminate: boolean;
@@ -26,7 +26,7 @@ export class HorseSearchProfileComponent implements OnInit, OnDestroy
     filters: any[];
     labels: any[];
     searchInput: FormControl;
-    currentHorseSearchProfileComponent: HorseSearchProfileComponent;
+    currentHorseSearchProfileComponent: HorseManagerConfirmComponent;
 
     foods:Food[];
 
@@ -130,6 +130,11 @@ export class HorseSearchProfileComponent implements OnInit, OnDestroy
     {
          this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
+    confirmCancel():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-confirm-panel').toggleOpen();
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+    }   
    
 }
  

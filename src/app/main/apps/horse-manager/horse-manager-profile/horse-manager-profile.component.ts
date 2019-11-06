@@ -27,6 +27,7 @@ export class HorseManagerProfileComponent implements OnInit, OnDestroy
     searchInput: FormControl;
     currentHorseProfileComponent: HorseManagerProfileComponent;
 
+    stateMessage: string;
     foods:Food[];
 
     // Private
@@ -122,6 +123,15 @@ export class HorseManagerProfileComponent implements OnInit, OnDestroy
     {
          this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
-   
+    ProfileDelete():void
+    {
+        this.stateMessage = "Delete Button Click!";
+    }
+    ProfileSave():void
+    {
+        this.stateMessage = "Save Button Click!";
+    }
+
+
 }
  

@@ -25,8 +25,8 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
     labels: any[];
     searchInput: FormControl;
     currentHorseScheduleComponent: HorseManagerScheduleComponent;
-
-    foods:Food[];
+    toggle: boolean;
+    foods: Food[];
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -42,6 +42,7 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
      
         private _fuseSidebarService: FuseSidebarService,
         private _fuseConfigService: FuseConfigService,
+       
     )
     
     {
@@ -81,7 +82,7 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
         this.searchInput.valueChanges.pipe(
             takeUntil(this._unsubscribeAll),
             debounceTime(300),
-            distinctUntilChanged()
+            distinctUntilChanged(),
         )
         
         this.foods = [
@@ -89,6 +90,8 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
             {value: 'pizza-1', viewValue: 'Pizza'},
             {value: 'tacos-2', viewValue: 'Tacos'}
           ];
+
+        this.toggle = true;
 
     }
     /**
@@ -120,6 +123,15 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
     {
          this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
-   
+    ScheduleCancel():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+    }
+    ScheduleNext():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+        this._fuseSidebarService.getSidebar('horse-manager-confirm-panel').toggleOpen();
+    }    
 }
+
  

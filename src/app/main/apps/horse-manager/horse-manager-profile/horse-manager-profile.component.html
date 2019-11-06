@@ -8,7 +8,7 @@
     </div>
     <div  fxLayout="column">
         <div  fxLayout="column">
-        <div fxLayout="row" fxLayout.lt-sm ="column" fxFlex>
+             <div fxLayout="row" fxLayout.lt-sm ="column" fxFlex>
                      <div fxFlex="50" class="matselect" fxLayoutAlign="start center">
                         <input  class="text1 inputcolor" fxFlex placeholder="Name"/>  
                     </div>   
@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div fxLayout="row" fxLayout.lt-sm ="column">
-                <div class="matselect"  fxFlex="47" fxLayoutAlign="start center">
+                <div class="matselect"  fxFlex="45" fxLayoutAlign="start center">
                         <div class="text1 opacitycolor">
                             Height
                         </div>
@@ -187,13 +187,18 @@
                 ADD ANOTHER REGISTRATION
             </span>
         </div>
+        <div>
+            <span class="text1"> 
+               {{stateMessage}}
+            </span>
+        </div>
         <div fxLayout="row" fxLayoutAlign="end center" >
-            <button mat-raised-button class="button big whitecolor">
+            <button mat-raised-button class="button big whitecolor" (click)="ProfileDelete()">
                 <span class="text1 greencolor">
                     Delete horse profile
                 </span>
             </button>
-            <button mat-raised-button class="button medium redcolor">
+            <button mat-raised-button class="button medium redcolor" (click)="ProfileSave()">
                 <span class="text1 whitecolor">
                     Save
                 </span>

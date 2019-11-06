@@ -1,6 +1,6 @@
 
 <div id="horsemanagerschedule" fxLayout="column">
-    <div fxLayout="column">
+    <div fxFlex="95" fxLayout="column">
         <div fxLayout="row">
             <div class="textbox6 title1 blackgreencolor pt-8 pb-20">
                 Schedule Service
@@ -10,7 +10,6 @@
             </div>
         </div>
         <div class="text2 blackgreencolor pt-12 pb-12">Horse show</div>
-        
         <div class="textbox4" fxLayout="column">
             <div fxLayout="row" class="textbox3" fxLayoutAlign="space-between center">
                 <span fxFlex="15" class="text2 blackcolor">
@@ -94,16 +93,16 @@
             </div>   
         </div>
     </div>
-    <div class="cancelSave">
+    <div fxFlex="5">
         <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
             <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="ScheduleCancel()">
                 <span class="text1 greencolor">
                     CANCEL
                 </span>
             </button>
-            <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="ScheduleNext()">
+            <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="ScheduleSave()">
                 <span class="text1 whitecolor">
-                    NEXT
+                    SAVE
                 </span>
             </button>
         </div>

@@ -1,15 +1,23 @@
 @import "src/@fuse/scss/fuse";
 #horsemanagerschedule {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 1;
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 16px;
+    width: 360;
+    max-width: 360px;
     @include media-breakpoint('xs') {
         padding: 8px;
+        width: 100%;
+        max-width: 100%;
     }
     background-color: #ffffff;
+    .cancelSave {
+        position: absolute;
+        bottom: 10px;
+    }
     .matselect {
         padding: 16px;
         height: 56px;

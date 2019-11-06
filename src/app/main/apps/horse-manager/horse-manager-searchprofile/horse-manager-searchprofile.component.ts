@@ -130,6 +130,11 @@ export class HorseManagerSearchProfileComponent implements OnInit, OnDestroy
     {
          this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
+    confirmCancel():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-confirm-panel').toggleOpen();
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+    }   
    
 }
  

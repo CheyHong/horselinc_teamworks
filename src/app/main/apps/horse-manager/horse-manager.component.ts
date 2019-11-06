@@ -207,5 +207,5 @@ export class HorseManagerComponent implements OnInit, OnDestroy
     {
         this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
-
+    
 }

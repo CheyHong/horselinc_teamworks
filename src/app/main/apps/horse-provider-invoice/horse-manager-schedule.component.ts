@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
-
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
@@ -12,12 +11,12 @@ interface Food {
   }
   
 @Component({
-    selector     : 'horse-manager-confirm',
-    templateUrl  : './horse-manager-confirm.component.html',
-    styleUrls    : ['./horse-manager-confirm.component.scss'],
+    selector     : 'horse-manager-schedule',
+    templateUrl  : './horse-manager-schedule.component.html',
+    styleUrls    : ['./horse-manager-schedule.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class HorseManagerConfirmComponent implements OnInit, OnDestroy
+export class HorseManagerScheduleComponent implements OnInit, OnDestroy
 {
     hasSelectedHorseScheduleComponent: boolean;
     isIndeterminate: boolean;
@@ -25,9 +24,9 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
     filters: any[];
     labels: any[];
     searchInput: FormControl;
-    currentHorseScheduleComponent: HorseManagerConfirmComponent;
-
-    foods:Food[];
+    currentHorseScheduleComponent: HorseManagerScheduleComponent;
+    toggle: boolean;
+    foods: Food[];
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -43,6 +42,7 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
      
         private _fuseSidebarService: FuseSidebarService,
         private _fuseConfigService: FuseConfigService,
+       
     )
     
     {
@@ -82,7 +82,7 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
         this.searchInput.valueChanges.pipe(
             takeUntil(this._unsubscribeAll),
             debounceTime(300),
-            distinctUntilChanged()
+            distinctUntilChanged(),
         )
         
         this.foods = [
@@ -90,6 +90,8 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
             {value: 'pizza-1', viewValue: 'Pizza'},
             {value: 'tacos-2', viewValue: 'Tacos'}
           ];
+
+        this.toggle = true;
 
     }
     /**
@@ -121,6 +123,14 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
     {
          this._fuseSidebarService.getSidebar(name).toggleOpen();
     }
-   
+    ScheduleCancel():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+    }
+    ScheduleSave():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
+    }    
 }
+
  

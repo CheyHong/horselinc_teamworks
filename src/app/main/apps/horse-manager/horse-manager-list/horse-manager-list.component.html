@@ -1,8 +1,22 @@
 <div *ngIf="horsemanagers.length === 0" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
     <span class="no-messages-text hint-text">{{ 'horsmanagere.NO_MESSAGES' | translate }}</span>
 </div>
-
 <div fxLayout = "column" fxFlexFill>
+
+    <div class="textbox1" fxLayoutAlign="start center">
+        <div fxLayout="row" fxFlex>
+            <div class="buttondiv"  fxFlex="10">
+                <img src="assets/icons/horselinc/search.svg" class="avatar small"/>
+            </div>
+            <div  fxFlex="80">
+                <input class="text1 inputcolor" fxFlex placeholder="Search"/>  
+            </div>
+            <div  fxFlex="10">
+                <img src="assets/icons/horselinc/settings_voice-24px.svg" class="avatar small"/>
+            </div>
+        </div>
+    </div>   
+
     <div class="horse-manager-list" fxFlex="92" [@animateStagger]="{value:'50'}">
         <horse-manager-list-item matRipple *ngFor="let horsemanager of horsemanagers" [horsemanager]="horsemanager" (click)="readhorsemanager(horsemanager.id)"
                         [ngClass]="{'current-horsemanager':horsemanager?.id == currentHorseManager?.id}"
@@ -16,7 +30,9 @@
                 <div class="rect">
                     <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
                         <div class="Filters">Filters</div>
-                        <img src="assets/icons/horselinc/filled.svg" class="Filled" />
+                        <div (click)="HorseFilter()" >
+                            <img src="assets/icons/horselinc/filled.svg" class="Filled buttondiv" />
+                        </div>
                     </div>
                     <div class="box">
                         <div style="width: 70%;">Sort by</div>
@@ -50,7 +66,7 @@
             </div>
         </div>
 <!--/////////////////////////////////////////////////////////////////////////////-->
-    <div fxFlex fxLayout="row" fxLayoutAlign="end center">
+    <div fxFlex fxLayout="row" >
          <button mat-raised-button color="#ffffff" class="button small" (click)="HorseFilter()">
                 <span class="text1 greencolor"> Filter</span>
          </button>

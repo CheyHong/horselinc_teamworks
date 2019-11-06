@@ -10,6 +10,10 @@
         padding: 8px;
     }
     background-color: #ffffff;
+    .cancelSave {
+        position: absolute;
+        bottom: 10px;
+    }
     .button {
         &.small {
             margin: 16px 0 24px 0;
@@ -83,8 +87,21 @@
             width: 100%;
         }
     }
+    .textbox4 {
+        width: 328px;
+        max-width: 328px;
+        padding: 16px;
+        margin-bottom: 14px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+            max-width: 100%;
+        }
+        height: fit-content;
+        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+        background-color: #fafafa;
+    }
     .textbox6 {
-        width: 290px;
+        width: 328px;
         @include media-breakpoint('xs') {
             width: 100%;
         }
