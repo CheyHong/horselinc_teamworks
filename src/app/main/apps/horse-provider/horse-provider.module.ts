@@ -19,6 +19,8 @@ import { HorseProviderListComponent } from './horse-provider-list/horse-provider
 import { HorseProviderDetailsComponent } from './horse-provider-details/horse-provider-details.component';
 import { HorseProviderListItemComponent } from './horse-provider-list/horse-provider-list-item/horse-provider-list-item.component';
 
+import {HorseProviderConfirmComponent} from './horse-provider-confirm/horse-provider-confirm.component';
+
 const routes: Routes = [
     {
         path     : 'list',
@@ -35,8 +37,12 @@ const routes: Routes = [
         }
     },
     {
+        path     : 'confirm',
+        component: HorseProviderConfirmComponent
+    },
+    {
         path      : '**',
-        redirectTo: 'list',
+        redirectTo: 'confirm',
         pathMatch: 'full'
     }
 ];
@@ -63,7 +69,8 @@ const routes: Routes = [
       HorseProviderListComponent,
       HorseProviderDetailsComponent,
       HorseProviderListItemComponent,
-
+      HorseProviderConfirmComponent,
+    
   ],
   providers   : [
     HorseProviderService
