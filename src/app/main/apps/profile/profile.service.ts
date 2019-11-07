@@ -9,10 +9,11 @@ import { FuseUtils } from '@fuse/utils';
 export class ProfileService implements Resolve<any>
 {
     selectedProfileNo: number;
-    isSelectedProfile: boolean;
+    currentProfileFlag: boolean;
     routeParams: any;
 
     onSelectedProfileNoChanged: BehaviorSubject<any>;
+    onCurrentProfileFlagChanged: BehaviorSubject<any>;
     /**
      * Constructor
      *
@@ -25,21 +26,23 @@ export class ProfileService implements Resolve<any>
         // Set the defaults
 
         this.selectedProfileNo = 0;
-        this.isSelectedProfile = false;
+        this.currentProfileFlag = false;
         this.onSelectedProfileNoChanged = new BehaviorSubject([]);
+        this.onCurrentProfileFlagChanged = new BehaviorSubject([]);
     }
 
-       /**
+    /**
      * Resolver
      *
      * @param {ActivatedRouteSnapshot} route
      * @param {RouterStateSnapshot} state
      * @returns {Observable<any> | Promise<any> | any}
      */
+
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any
     {
         this.routeParams = route.params;
-        console.log("profile service resolve");
+        console.log('profile service resolve');
         console.log(route.params);
 
         return new Promise((resolve, reject) => {
@@ -58,9 +61,14 @@ export class ProfileService implements Resolve<any>
      *
      * @returns {Promise<any>}
      */
-    selectProfile(selectedProfileNo: number): void
+    setSelectProfileNo(selectedProfileNo: number): void
     {
         this.selectedProfileNo = selectedProfileNo;
         this.onSelectedProfileNoChanged.next(this.selectedProfileNo);
+    }
+    setCurrentProfileFlag(currentProfileFlag: boolean): void
+    {
+        this.currentProfileFlag = currentProfileFlag;
+        this.onCurrentProfileFlagChanged.next(this.currentProfileFlag);
     }
 }

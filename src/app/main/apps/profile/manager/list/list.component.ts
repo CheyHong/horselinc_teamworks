@@ -73,10 +73,9 @@ export class ProfileManagerListComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     onSelectedProfile(profileNo: any): void
     {
-        console.log("profile-list-onSelectedProfile:", profileNo);
         this.selectedProfileNo = profileNo; 
-        this._profileService.selectProfile(this.selectedProfileNo);
-//        this._location.go('apps/profile/navigation1' + '/' + itemUri);
+        this._profileService.setSelectProfileNo(this.selectedProfileNo);
+        this._profileService.setCurrentProfileFlag(true);
     }
     editProfile(): void
     {

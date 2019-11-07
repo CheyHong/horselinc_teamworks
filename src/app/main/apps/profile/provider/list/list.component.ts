@@ -73,7 +73,7 @@ export class ProfileProviderListComponent implements OnInit, OnDestroy
     {
         console.log("profile-list-onSelectedProfile:", profileNo);
         this.selectedProfileNo = profileNo; 
-        this._profileService.selectProfile(this.selectedProfileNo);
+        this._profileService.setSelectProfileNo(this.selectedProfileNo);
 //        this._location.go('apps/profile/navigation1' + '/' + itemUri);
     }
     editProfile(): void

@@ -15,7 +15,6 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 export class ProfileManagerDetailsComponent implements OnInit, OnDestroy
 {
     selectedProfileNo: number;
-    isSelectedProfile: boolean;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -33,9 +32,6 @@ export class ProfileManagerDetailsComponent implements OnInit, OnDestroy
     { 
         this.selectedProfileNo = 0;
         this._unsubscribeAll = new Subject();
-
-        console.log("profile-detail-constructor", this.selectedProfileNo);
-
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -45,14 +41,12 @@ export class ProfileManagerDetailsComponent implements OnInit, OnDestroy
     /**
      * On init
      */
-    ngOnInit() {
+    ngOnInit(): void {
 
          this._profileService.onSelectedProfileNoChanged
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe(selectedProfileNo => {
             this.selectedProfileNo = selectedProfileNo;
-
-            console.log("profile-detail-onSelectedProfileNoChanged", this.selectedProfileNo);
         });
 
   }

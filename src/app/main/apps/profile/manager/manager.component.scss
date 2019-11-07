@@ -11,7 +11,7 @@
                     margin: 0 12px;
                 }
             }
-            .content{
+ //           .content{
                 @include media-breakpoint(xs) {
                     apps-profile-manager-list {
                         border-right: none;
@@ -32,16 +32,16 @@
                                 display: none !important;
                             }
                         }
-                        // .content {
+                        .content {
                             apps-profile-manager-list {
                                 display: none !important;
                             }
                             apps-profile-manager-details {
                                 display: flex !important;
                             }
-                        // }
+                        }
                     }
-                }
+                // }
             }
         }
     }
