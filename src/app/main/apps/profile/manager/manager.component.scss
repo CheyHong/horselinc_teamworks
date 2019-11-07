@@ -46,7 +46,15 @@
         }
     }
 
-    .profile-manager-editprofile {
+    
+    .profile-manager-editprofile,
+    .profile-manager-updateemail,
+    .profile-manager-updatepassword,
+    .profile-manager-exportinvoice,
+    .profile-manager-addprovider,
+    .profile-manager-searchprovider,
+    .profile-manager-addpayment
+    {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;

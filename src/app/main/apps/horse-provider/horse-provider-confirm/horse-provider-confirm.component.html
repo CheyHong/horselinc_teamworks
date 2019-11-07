@@ -1,8 +1,10 @@
 <div class="container_h" fxLayout="column" fxLayoutAlign="start space-between" >
-    <div fxFlex="95%" class="content_h">
+    <div class="content_h">
         <div class="title_h" fxLayout="row" fxLayoutAlign="space-between center">
             <div>Confirm</div>
-            <img src="assets/icons/horselinc/filled.svg" />
+            <div class="buttondiv" (click)="ConfirmCancel()">
+                <img src="assets/icons/horselinc/filled.svg" />
+            </div>
         </div>
         <div class="format1">
             <div class="txt1">Horse</div>
@@ -45,8 +47,27 @@
         </div>
         
     </div>
+<<<<<<< HEAD
     <div fxFlex fxLayout="column" fxLayoutAlign="end center" class=btnGroup>
         <button class="confirm" mat-icon-button>Confirm & Submit Invoice</button>
         <button class="save" mat-icon-button>Save to Drafts</button>
     </div>
+=======
+   
+   <div class="cancelSave" fxLayoutAlign="center center">
+        <div fxLayout="column">
+            <button mat-raised-button class="button huge redcolor" (click)="ConfirmSubmit()">
+                <span class="text1 whitecolor">
+                    Confirm & Submit Invoice
+                </span>
+            </button>
+            <button mat-raised-button class="button huge whitecolor" (click)="ConfirmSave()">
+                <span class="text1 greencolor">
+                    Save to Drafts
+                </span>
+            </button>
+        </div>
+    </div>
+
+>>>>>>> 2317abb4f49911ccbf34dbee9c167ac8eeebdfe8
 </div>

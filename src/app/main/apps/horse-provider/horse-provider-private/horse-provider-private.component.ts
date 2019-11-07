@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FuseConfigService } from '@fuse/services/config.service';
-
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 @Component({
     selector   : 'horse-provider-private',
     templateUrl: './horse-provider-private.component.html',
@@ -15,6 +15,7 @@ export class HorseProviderPrivateComponent
      */
     constructor(
         private _fuseConfigService: FuseConfigService,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Configure the layout
@@ -34,5 +35,8 @@ export class HorseProviderPrivateComponent
                 }
             }
         };
+    }
+    CancelPrivate():void{
+        this._fuseSidebarService.getSidebar('horse-provider-private-panel').toggleOpen();
     }
 }

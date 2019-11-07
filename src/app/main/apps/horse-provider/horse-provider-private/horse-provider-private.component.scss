@@ -1,5 +1,6 @@
 @import "src/@fuse/scss/fuse";
 #horseproviderprivate {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -13,6 +14,7 @@
     .cancelSave {
         position: absolute;
         bottom: 10px;
+        right: 10px;
     }
     .button {
         &.small {
@@ -85,6 +87,7 @@
         width: 328px;
         @include media-breakpoint('xs') {
             width: 100%;
+            padding-left: 16px;
         }
     }
     .textbox4 {

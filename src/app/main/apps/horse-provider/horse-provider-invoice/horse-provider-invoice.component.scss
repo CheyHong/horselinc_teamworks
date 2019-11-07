@@ -1,14 +1,14 @@
 @import "src/@fuse/scss/fuse";
-#profile-provider {
+#horseproviderinvoice {
     height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 1;
-    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 24px 0 0 32px;
+    padding-top: 24px;
+    width: 360;
+    max-width: 360px;
     @include media-breakpoint('xs') {
-        padding: 16px 0 0 0;
         width: 100%;
         max-width: 100%;
     }
@@ -17,7 +17,9 @@
         bottom: 10px;
         right: 10px;
     }
+    background-color: #ffffff;
     .matselect {
+        padding: 16px;
         height: 56px;
         min-height: 56px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
@@ -28,22 +30,22 @@
     }
     .button {
         &.small {
-            width: 99.6px;
+            margin: 16px 0 24px 0;
+            width: 93px;
             height: 44px;
             border-radius: 100px;
             box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
-            &.redcolor {
-                background-color: #ec7185;
-            }
-            &.whitecolor {
-                background-color: #ffffff;
-            }
         }
         &.medium {
             width: 156.4px;
+            min-width: 94.7px;
+            @include media-breakpoint('xs') {
+                width: 94.7px;
+            }
             height: 44px;
             border-radius: 100px;
-            box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15), 0 2px 10px 0 rgba(12, 75, 80, 0.29);
+            box-shadow: 0 5px 20px 0 rgba(13, 62, 83, 0.15),
+            0 2px 10px 0 rgba(12, 75, 80, 0.29);
             &.redcolor {
                 background-color: #ec7185;
             }
@@ -52,6 +54,7 @@
             }
         }
         &.big {
+            margin: 16px 0 24px 0;
             width: 186.3px;
             height: 44px;
             border-radius: 100px;
@@ -64,6 +67,7 @@
             }
         }
         &.huge {
+            margin: 16px 0 24px 0;
             width: 328px;
             height: 44px;
             border-radius: 100px;
@@ -86,16 +90,6 @@
     .title2 {
         font-family: Roboto;
         font-size: 24px;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 0.92;
-        letter-spacing: normal;
-        color: #4f748c;
-    }
-    .title3 {
-        font-family: Roboto;
-        font-size: 20px;
         font-weight: bold;
         font-stretch: normal;
         font-style: normal;
@@ -135,37 +129,66 @@
         letter-spacing: normal;
     }
     .textbox1 {
-        width: 360px;
-        max-width: 360px;
+        margin: 0 16px 0 16px;
+        padding: 16px;
+        height: 72px;
+        min-height: 72px;
+        width: 328px;
         @include media-breakpoint('xs') {
             width: 100%;
-            max-width: 100%;
+            margin: 0;
         }
-        width: 360px;
-        padding: 16px 0 0 16px;
+        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+        background-color: #fafafa;
     }
     .textbox2 {
-        margin: 0 16px 0px 16px;
-    }
-    .textbox3 {
-        padding: 10px;
-        height: 56px;
-        min-height: 56px;
-        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
-        background-color: #fafafa;
-    }
-    .textbox4 {
+        padding: 0 16px 0 16px;
         width: 360px;
-        max-width: 360px;
-        padding: 16px;
-        margin-bottom: 14px;
         @include media-breakpoint('xs') {
             width: 100%;
-            max-width: 100%;
         }
-        height: fit-content;
+    }
+    .textbox4 {
+        margin: 0 16px 0 16px;
+        width: 328px;
+        padding: 14px;
+        height: 48px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+            margin: 0 8px 0 8px;
+        }
+        box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
+        border-radius: 4px;
+        background-color: #fafafa;
+    }
+    .textbox6 {
+        width: 328px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+        }
+    }
+    .textbox5 {
+        margin: 0 16px 0 16px;
+        padding: 14px;
+        height: 56px;
+        min-height: 56px;
+        width: 328px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+            margin: 0 8px 0 8px;
+        }
+        padding-left: 20px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
         background-color: #fafafa;
+        position: relative;
+        .editTitle {
+            position: absolute;
+            top: -5px;
+            left: 20px;
+            font-size: 12px;
+            line-height: 1.33;
+            letter-spacing: 0.4px;
+        }
     }
     .whitecolor {
         color: #ffffff;
