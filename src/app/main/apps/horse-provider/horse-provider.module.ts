@@ -39,12 +39,8 @@ const routes: Routes = [
         }
     },
     {
-        path     : 'confirm',
-        component: HorseProviderConfirmComponent
-    },
-    {
         path      : '**',
-        redirectTo: 'confirm',
+        redirectTo: 'list',
         pathMatch: 'full'
     }
 ];
@@ -79,14 +75,9 @@ const routes: Routes = [
       HorseProviderListComponent,
       HorseProviderDetailsComponent,
       HorseProviderListItemComponent,
-<<<<<<< HEAD
-      HorseProviderConfirmComponent,
-    
-=======
       HorseProviderPrivateComponent,
       HorseProviderInvoiceComponent,
       HorseProviderConfirmComponent,
->>>>>>> 2317abb4f49911ccbf34dbee9c167ac8eeebdfe8
   ],
   providers   : [
     HorseProviderService
