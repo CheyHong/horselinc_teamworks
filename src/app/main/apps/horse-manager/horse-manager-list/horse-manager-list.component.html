@@ -18,7 +18,7 @@
     </div>   
 
     <div class="horse-manager-list" fxFlex="92" [@animateStagger]="{value:'50'}">
-        <horse-manager-list-item matRipple *ngFor="let horsemanager of horsemanagers" [horsemanager]="horsemanager" (click)="readhorsemanager(horsemanager.id)"
+        <horse-manager-list-item matRipple *ngFor="let horsemanager of horsemanagers" [horsemanager]="horsemanager" (click)="readHorseManager(horsemanager.id)"
                         [ngClass]="{'current-horsemanager':horsemanager?.id == currentHorseManager?.id}"
                         [@animate]="{value:'*',params:{y:'100%'}}">
         </horse-manager-list-item>
@@ -66,7 +66,7 @@
             </div>
         </div>
 <!--/////////////////////////////////////////////////////////////////////////////-->
-    <div fxFlex fxLayout="row" >
+    <div fxFlex fxLayout="row" fxLayoutAlign="center center" >
          <button mat-raised-button color="#ffffff" class="button small" (click)="HorseFilter()">
                 <span class="text1 greencolor"> Filter</span>
          </button>
