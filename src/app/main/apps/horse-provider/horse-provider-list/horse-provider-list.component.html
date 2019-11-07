@@ -3,7 +3,7 @@
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
 
         <mat-tree-node *matTreeNodeDef="let node" matRipple>
-            <div class="horseList" fxLayout="row" fxLayoutAlign="start center">
+            <div class="horseList" fxLayout="row" fxLayoutAlign="start center" (click)="readHorseProvider()">
                 <img fxFlex="20%" src="assets/icons/horselinc/ic-manager-green.svg" style="width: 56px; height: 56px;"/>
                 <div fxFlex="70%"> {{node.name}} </div>
                 <mat-icon fxFlex class="mat-icon-rtl-mirror">
@@ -14,7 +14,7 @@
 
         <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
             <div class="horseManager" matRipple>
-                <div mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
+                <div mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name" >
                     <div style="width: 100%; padding-left: 20px;" fxLayout="row" fxLayoutAlign="start center" >
                         <img  src="assets/images/avatars/katherine.jpg" style="border-radius: 50%; width: 40px; height: 40px;"/>
                         <div fxFlex="80%" style="padding-left: 20px; font-size: 16px;">{{node.name}}</div>

@@ -68,7 +68,7 @@
             }
         }
     }
-    .horse-manager-profile-sidebar {
+    .horse-manager-sidebar {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
@@ -116,5 +116,8 @@
             transition-duration: 150ms;
             transition-timing-function: ease-in-out;
         }
+    }
+    .redcolor {
+        color: #ec7185;
     }
 }

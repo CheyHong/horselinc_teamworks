@@ -14,6 +14,7 @@ export class HorseManagerService implements Resolve<any>
     selectedHorseManagers: HorseManager[];
     currentHorseManager: HorseManager;
     searchText = '';
+    currentHorseFlag: boolean;
 
     folders: any[];
     filters: any[];
@@ -27,7 +28,7 @@ export class HorseManagerService implements Resolve<any>
     onFiltersChanged: BehaviorSubject<any>;
     onLabelsChanged: BehaviorSubject<any>;
     onSearchTextChanged: BehaviorSubject<any>;
-
+    onCurrentHorseFlagChanged: BehaviorSubject<any>;
     /**
      * Constructor
      *
@@ -45,7 +46,9 @@ export class HorseManagerService implements Resolve<any>
         this.onFoldersChanged = new BehaviorSubject([]);
         this.onFiltersChanged = new BehaviorSubject([]);
         this.onLabelsChanged = new BehaviorSubject([]);
+        this.onCurrentHorseFlagChanged = new BehaviorSubject([]);
         this.onSearchTextChanged = new BehaviorSubject('');
+        
     }
 
     /**
@@ -430,4 +433,11 @@ export class HorseManagerService implements Resolve<any>
                 });
         });
     }
+    setCurrentHorseFlag(currentHorseFlag: boolean): void
+    {
+        this.currentHorseFlag = currentHorseFlag; 
+        console.log('CurrentHorseFlag', this.currentHorseFlag);
+        this.onCurrentHorseFlagChanged.next(this.currentHorseFlag);
+       
+    } 
 }
