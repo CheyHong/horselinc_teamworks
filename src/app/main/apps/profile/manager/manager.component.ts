@@ -16,7 +16,7 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 export class ProfileManagerComponent implements OnInit, OnDestroy
 {
     selectedProfileNo: number;
-    isSelectedProfile: boolean;
+    currentProfileFlag: boolean;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -34,6 +34,7 @@ export class ProfileManagerComponent implements OnInit, OnDestroy
         // Configure the layout
     { 
         this.selectedProfileNo = 0;
+        this.currentProfileFlag = false;
         this._unsubscribeAll = new Subject();
 
     }
@@ -51,6 +52,14 @@ export class ProfileManagerComponent implements OnInit, OnDestroy
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe(selectedProfileNo => {
             this.selectedProfileNo = selectedProfileNo;
+            console.log('SelectedProfileNo:', this.currentProfileFlag);
+        });
+
+         this._profileService.onCurrentProfileFlagChanged
+        .pipe(takeUntil(this._unsubscribeAll))
+        .subscribe(currentProfileFlag => {
+            this.currentProfileFlag = currentProfileFlag;
+            console.log('CurrentProfileFlag:', this.currentProfileFlag);
         });
   }
     /**
@@ -63,4 +72,8 @@ export class ProfileManagerComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
+    gotoList(): void
+    {
+        this._profileService.setCurrentProfileFlag(false);
+    }
 }

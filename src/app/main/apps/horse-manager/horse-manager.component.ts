@@ -119,6 +119,7 @@ export class HorseManagerComponent implements OnInit, OnDestroy
                 }
             });
 
+
         this.searchInput.valueChanges.pipe(
             takeUntil(this._unsubscribeAll),
             debounceTime(300),

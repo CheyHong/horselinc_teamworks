@@ -109,5 +109,8 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
     {
         this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
     }
+    editHorseProfile():void{
+        this._fuseSidebarService.getSidebar('horse-manager-profile-panel').toggleOpen();
+    }
     
 }
