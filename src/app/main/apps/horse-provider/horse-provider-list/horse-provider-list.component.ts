@@ -3,17 +3,6 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
-
-import { fuseAnimations } from '@fuse/animations';
-
-import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
-import { Provider } from 'app/main/apps/horse-provider/provider.model';
-
-import { takeUntil } from 'rxjs/operators';
-import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 interface HorseNode {
     name: string;

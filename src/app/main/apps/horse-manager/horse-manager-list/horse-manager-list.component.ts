@@ -37,7 +37,7 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
      */
     constructor(
         private _activatedRoute: ActivatedRoute,
-        private _horsemanagerService: HorseManagerService,
+        private _horseManagerService: HorseManagerService,
         private _location: Location,
         private _fuseSidebarService: FuseSidebarService,
     )
@@ -57,14 +57,14 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
     {
         // Subscribe to update horses on changes
         this.toggle = true;
-        this._horsemanagerService.onHorseManagersChanged
+        this._horseManagerService.onHorseManagersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(horsemanagers => {
                 this.horsemanagers = horsemanagers;
             });
 
         // Subscribe to update current horse on changes
-        this._horsemanagerService.onCurrentHorseManagerChanged
+        this._horseManagerService.onCurrentHorseManagerChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(currentHorseManager => {
                 if ( !currentHorseManager )
@@ -116,7 +116,7 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
      *
      * @param horseId
      */
-    readhorsemanager(horsemanagerId): void
+    readHorseManager(horseManagerId): void
     {
         const folderHandle = this._activatedRoute.snapshot.params.folderHandle;
              
@@ -128,13 +128,15 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
         // {
         //     this._location.go('apps/horse/filter/' + filterHandle + '/' + horseId);
         // }
-        // else
-        {
-            this._location.go('apps/horse/manager/' + folderHandle + '/' + horsemanagerId);
-        }
+        // // else
+        // {
+        //     this._location.go('apps/horse/manager/' + folderHandle + '/' + horsemanagerId);
+        // }
 
         // Set current horse
-        this._horsemanagerService.setCurrentHorseManager(horsemanagerId);
+        this._horseManagerService.setCurrentHorseManager(horseManagerId);
+      
+    
     }
     editHorseProfile(): void
     {

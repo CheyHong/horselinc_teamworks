@@ -1,9 +1,9 @@
 import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+
 import { Subject } from 'rxjs';
 import { Provider } from 'app/main/apps/horse-provider/provider.model';
 import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
-import { takeUntil } from 'rxjs/operators';
+
 
 @Component({
   selector: 'horse-provider-list-item',

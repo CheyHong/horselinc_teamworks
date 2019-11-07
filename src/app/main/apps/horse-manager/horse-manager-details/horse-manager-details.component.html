@@ -10,21 +10,24 @@
     <div class="horse-header" fxFlex fxLayout="row" fxLayoutAlign="start center">
 
             <div fxLayout = "column"  fxLayoutAlign="start start" >
-                <div fxLayout="row" fxLayoutAlign="start start">
-                        <div>
+                <div fxLayout="row" fxFlexFill fxLayoutAlign="start start">
+                        <div fxFlex="30">
                             <img src="assets/images/avatars/Helen.jpg" class="avatar big"/>                         
                         </div>
 
-                        <div fxLayout="column" fxLayoutAlign="start start">
+                        <div fxLayout="column" fxLayoutAlign="start start" fxFlex="55">
                             <div class="name">
                                 {{horsemanager.from.name}}
                             </div>
-                            <div class="text1" fxLayout="row" fxLayoutAlign="start start">  
+                            <div class="text1" fxLayout="row">  
                                 <div>{{horsemanager.to[0].name}}</div>
                             </div>
-                            <div class="text2" fxLayout="row" fxLayoutAlign="start start">  
+                            <div class="text2" fxLayout="row">  
                                 <div>{{horsemanager.to[0].name}}</div>
                             </div>
+                        </div>
+                        <div (click)="editHorseProfile()">
+                            <img class="avatar small buttondiv" src="assets/icons/horselinc/ic-nav-create.svg">
                         </div>
 
                 </div>
@@ -149,10 +152,10 @@
                         </div>
 
                         <div fxFlex = "25" fxLayout = "row" class="details4" fxLayoutAlign="center center">
-
-                            <button mat-raised-button fxFlex="50" class="tab_button1"> DECLIND</button>
+                    
+                            <button mat-raised-button fxFlex="50" class="tab_button1"> DECLIND </button>
                                                         
-                            <button mat-raised-button fxFlex class="p-0 tab_button2"> Choose Service Provider</button>
+                            <button mat-raised-button fxFlex class="p-0 tab_button2">  Choose Service Provider</button>
                                 
                         </div>
                     </div>
@@ -163,8 +166,11 @@
 
     </div>
 
-    <div fxfxLayoutAlign="space-evenly center"  fxLayout="row">
-        <button mat-raised-button  class="button big" fxFlexOffset="50" (click)="ScheduleService()">
+    <div fxLayout="row" fxLayoutAlign="end start">      
+        <button mat-raised-button  fxHide fxShow.lt-md class="button small" (click)="ScheduleService()">
+           <span class="text1 greencolor"> Date </span>
+        </button>
+        <button mat-raised-button  class="button big" (click)="ScheduleService()">
            <span class="text1 whitecolor"> Schedule a Service </span>
         </button>
     </div>
