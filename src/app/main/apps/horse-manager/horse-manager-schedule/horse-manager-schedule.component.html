@@ -16,14 +16,12 @@
                 <span fxFlex="15" class="text2 blackcolor">
                     Data
                 </span>
-                <input fxFlex="75" class="inputcolor text2 blackcolor" matInput [matDatepicker]="picker1" placeholder="" [formControl]="date">
+                <input fxFlex="70" class="inputcolor text2" matInput [matDatepicker]="picker1" placeholder="Date" [formControl]="date">
                 <div fxFlax="15">
                     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker #picker1></mat-datepicker>
                 </div>
-                 <!--<span class="text2 greencolor">
-                    Select
-                </span>-->
+                
             </div> 
             <mat-divider></mat-divider>
             <div fxLayout="row" class="textbox3" fxLayoutAlign="space-between center">
@@ -94,18 +92,20 @@
             </div>   
         </div>
     </div>
-    <div class="cancelSave">
-        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
-            <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="ScheduleCancel()">
-                <span class="text1 greencolor">
-                    CANCEL
-                </span>
-            </button>
-            <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="ScheduleNext()">
-                <span class="text1 whitecolor">
-                    NEXT
-                </span>
-            </button>
+    <div class="cancelSave" >
+        <div>
+            <div fxLayout="row" fxLayoutAlign="end end">
+                <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="ScheduleCancel()">
+                    <span class="text1 greencolor">
+                        CANCEL
+                    </span>
+                </button>
+                <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="ScheduleNext()">
+                    <span class="text1 whitecolor">
+                        NEXT
+                    </span>
+                </button>
+            </div>
         </div>
     </div>
-<div>
+</div>
