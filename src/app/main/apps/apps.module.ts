@@ -31,12 +31,12 @@ const routes = [
         loadChildren: 'app/main/apps/profile/profile.module#ProfileModule'
     },
     {
-        path        : 'horse/manager',
-        loadChildren: 'app/main/apps/horse-manager/horse-manager.module#HorseManagerModule'
-    },
-    {
         path        : 'horse/provider',
         loadChildren: 'app/main/apps/horse-provider/horse-provider.module#HorseProviderModule'
+    },
+    {
+        path        : 'horse/manager',
+        loadChildren: 'app/main/apps/horse-manager/horse-manager.module#HorseManagerModule'
     },
     {
         path        : 'payment/manager',

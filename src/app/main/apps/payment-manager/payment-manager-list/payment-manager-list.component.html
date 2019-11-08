@@ -3,28 +3,26 @@
 </div>
 
 <mat-tab-group>
-    <mat-tab label="OUTSTAND"> 
-        <div class="payment-manager-list">
-            <payment-manager-list-item class="payment-manager-list-item has-handle"
-                *ngFor="let payment of payments" [payment]="payment" (click)="readPayment(payment.id)"
-                [ngClass]="{'current-payment-manager':payment?.id == currentPayment?.id}"
-                matRipple>
-            </payment-manager-list-item>
-        </div>
-        <div class="actionBtn">
-            Export payment history
-        </div>
+    <mat-tab label="OUTSTAND">
+            <div class="payment-manager-list">
+                <payment-manager-list-item class="payment-manager-list-item has-handle"
+                    *ngFor="let payment of payments" [payment]="payment" (click)="readPayment(payment.id)"
+                    [ngClass]="{'current-payment-manager':payment?.id == currentPayment?.id}"
+                    matRipple>
+                </payment-manager-list-item>
+            </div>
+            <div class="Btn" fxFlex fxLayoutAlign="center center">
+                <button  class="actionBtn" mat-raised-button>Export payment history </button>
+            </div>
+        
     </mat-tab>
     <mat-tab label="COMPLETED">
-        <!-- <div class="payment-manager-list" ngxDroppable [model]="payments" (out)="onDrop($event)">
-            <payment-manager-list-item class="payment-manager-list-item has-handle"
-                *ngFor="let payment of payments" [payment]="payment"
-                ngxDraggable
-                [model]="payment"
-                (click)="readPayment(payment.id)"
-                [ngClass]="{'current-payment':payment?.id == currentPayment?.id}"
-                matRipple>
-            </payment-manager-list-item>
-        </div> -->
+            <div  class="payment-manager-list">
+                    <payment-manager-list-item class="payment-manager-list-item has-handle"
+                        *ngFor="let payment of payments" [payment]="payment" (click)="readPayment(payment.id)"
+                        [ngClass]="{'current-payment-manager':payment?.id == currentPayment?.id}"
+                        matRipple>
+                    </payment-manager-list-item>
+                </div>
     </mat-tab>
 </mat-tab-group>
