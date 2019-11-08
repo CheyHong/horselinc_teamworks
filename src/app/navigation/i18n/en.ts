@@ -6,6 +6,7 @@ export const locale = {
             'PAYMENT': 'Payment',
             'PROFILE': 'Profile',
             'SCHEDULE': 'Schedule',
+            'NOTIFICATION': 'Notification'
         }
     }
 };

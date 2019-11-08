@@ -33,5 +33,13 @@ export const navigationManager: FuseNavigation[] = [
         type     : 'item',
         iconsrc  : 'assets/icons/horselinc/ic-shedule-black.svg',
         url      : '/apps/schedule',
+    },
+    {
+        id       : 'notification',
+        title    : 'notification',
+        translate: 'NAV.NOTIFICATION',
+        type     : 'item',
+        icon     : 'notifications',
+        url      : '/apps/notification',
     }
 ];

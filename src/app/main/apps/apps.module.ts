@@ -14,13 +14,14 @@ import {
 
 import {WelcomeComponent } from './welcome/welcome.component';
 
-
- 
-
 const routes = [
     {
         path        : 'welcome',
         component   :  WelcomeComponent,
+    },
+    {
+        path        : 'notification',
+        loadChildren: 'app/main/apps/notification/notification.module#NotificationModule'
     },
     {
         path        : 'user',
@@ -72,12 +73,10 @@ const routes = [
     ],
     declarations: [
         WelcomeComponent,
-        
     ],
 
-    exports     : [
+    exports: [
         WelcomeComponent,
-        
     ]
 })
 export class AppsModule
