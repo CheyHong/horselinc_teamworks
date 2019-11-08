@@ -24,8 +24,6 @@ interface Sortby {
 })
 
 export class ScheduleComponent implements OnInit {
-
-    toggle: boolean;
     
     currentSchedule: Schedule;
 
@@ -38,11 +36,9 @@ export class ScheduleComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        this.toggle = true;
+        
     }
 
-    toggleFilter() {
-        this.toggle = !this.toggle;
-    }
+    
 
 }

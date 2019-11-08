@@ -1,76 +1,53 @@
 @import "src/@fuse/scss/fuse";
-
 fuse-sidebar {
-
-    // min-width: 0 !important;
-    // max-width: 360px !important;
-    // width: 80% !important;
-
     &.navbar-fuse-sidebar {
         overflow: hidden;
-
         &.folded:not(.unfolded) {
-
             navbar {
-
                 navbar-vertical-style-1 {
-
                     .navbar-top {
                         padding: 12px 0;
                         justify-content: center;
-
                         .buttons {
                             display: none;
                         }
-
                         .logo {
-
                             .logo-icon {
                                 width: 32px;
                                 height: 32px;
                             }
-
                             .logo-text {
                                 display: none;
                             }
                         }
                     }
-
                     .navbar-scroll-container {
-
                         .user {
                             padding: 12px 0;
                             height: 64px;
                             min-height: 64px;
                             max-height: 64px;
-
                             .avatar-container {
                                 position: relative;
                                 top: auto;
                                 padding: 0;
                                 transform: translateX(0);
                                 left: auto;
-
                                 .avatar {
                                     width: 40px;
                                     height: 40px;
                                 }
                             }
-
                             .username,
                             .email {
                                 //display: none;
                             }
                         }
-
                         .navbar-content {
                             padding-top: 0;
-
                             // Material 2 specific style
                             .material2 {
-
                                 .nav-item {
-
                                     .nav-link {
                                         border-radius: 20px;
                                         margin: 0 12px;
@@ -88,36 +65,29 @@ fuse-sidebar {
 
 // fuse-sidebar {
 //     min-width: 0 !important;
-//     max-width: 360px !important;
+//     max-width: 600px !important;
 //     width: 80% !important;
 // }
-
 navbar {
-
     &.vertical-style-1 {
         display: flex;
         flex-direction: column;
         flex: 1 1 auto;
         width: 100%;
         height: 100%;
-
         &.right-navbar {
-
             .toggle-sidebar-opened {
-
                 mat-icon {
                     transform: rotate(180deg);
                 }
             }
         }
     }
-
     navbar-vertical-style-1 {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: 100%;
-
         .navbar-top {
             display: flex;
             flex-direction: row;
@@ -128,22 +98,18 @@ navbar {
             max-height: 30px;
             height: 30px;
             padding: 8px 6px 0px;
-
             @include media-breakpoint('xs') {
                 min-height: 30px;
                 max-height: 30px;
                 height: 30px;
             }
-
             .logo {
                 display: flex;
                 align-items: center;
-
                 .logo-icon {
                     width: 24px;
                     height: 24px;
                 }
-
                 .logo-text {
                     margin-left: 12px;
                     font-size: 16px;
@@ -152,27 +118,21 @@ navbar {
                     line-height: normal;
                 }
             }
-
             .buttons {
                 display: flex;
                 align-items: center;
             }
         }
-
         .navbar-scroll-container {
             display: flex;
             flex-direction: column;
             flex: 1 1 auto;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
-
-            background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 30%),
-            linear-gradient(rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0) 40%);
-
+            background: linear-gradient(rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 30%), linear-gradient(rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0) 40%);
             background-repeat: no-repeat;
             background-size: 100% 40px, 100% 10px;
             background-attachment: local, scroll;
-
             .user {
                 position: relative;
                 display: flex;
@@ -183,7 +143,6 @@ navbar {
                 min-height: 104px;
                 max-height: 104px;
                 padding: 2px 0 2px 0;
-
                 .avatar-container {
                     position: absolute;
                     top: 92px;
@@ -191,18 +150,16 @@ navbar {
                     padding: 8px;
                     transform: translateX(-50%);
                     left: 50%;
-
                     .avatar {
                         width: 72px;
                         height: 72px;
                         margin: 0;
                     }
                 }
-                .userMenu.mat-menu-content{
-                    background-color:red;
+                .userMenu.mat-menu-content {
+                    background-color: red;
                 }
             }
-
             .navbar-content {
                 flex: 1 1 auto;
                 padding-top: 12px;

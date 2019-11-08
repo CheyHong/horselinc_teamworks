@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
 
 
 interface HorseNode {
@@ -60,8 +61,11 @@ export class HorseProviderListComponent implements OnInit{
 
     dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-    constructor() {
+    constructor(
+        private _horseManagerService: HorseProviderService,
+    ) {
         this.dataSource.data = TREE_DATA;
+        
     }
 
     ngOnInit(){
@@ -69,5 +73,13 @@ export class HorseProviderListComponent implements OnInit{
     }
 
     hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
+    readHorseProvider(horseManagerId): void
+    {
+       
+        // this._horseManagerService.setCurrentHorseProvider(horseProviderId);
+        this._horseManagerService.setCurrentHorseFlag(true);
+    
+    }
    
 }

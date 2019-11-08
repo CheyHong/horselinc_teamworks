@@ -15,6 +15,9 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
 import { ScheduleComponent } from './schedule.component';
+import {SchedulePastComponent} from './schedule-past/schedule-past.component';
+import {ScheduleCurrentComponent} from './schedule-current/schedule-current.component';
+import {ScheduleFilterDialogComponent} from './schedule-filter-dialog/schedule-filter-dialog.component';
 
 
 const routes: Routes = [
@@ -46,7 +49,10 @@ const routes: Routes = [
     MatTabsModule
   ],
   declarations: [
-      ScheduleComponent
+      ScheduleComponent,
+      SchedulePastComponent,
+      ScheduleCurrentComponent,
+      ScheduleFilterDialogComponent
     ]
 })
 export class ScheduleModule { }

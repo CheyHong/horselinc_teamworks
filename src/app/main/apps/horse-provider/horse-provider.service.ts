@@ -17,7 +17,7 @@ export class HorseProviderService implements Resolve<any>{
     selectedProviders: Provider[];
     searchText: string;
     filters: any[];
-    tags: any[];
+    currentHorseFlag: boolean;
 
     onProvidersChanged: BehaviorSubject<any>;
     onCurrentProviderChanged: BehaviorSubject<any>;
@@ -26,7 +26,7 @@ export class HorseProviderService implements Resolve<any>{
     onFiltersChanged: BehaviorSubject<any>;
     onTagsChanged: BehaviorSubject<any>;
     onSearchTextChanged: BehaviorSubject<any>;
-
+    onCurrentHorseFlagChanged: BehaviorSubject<any>;
     /**
      * Constructor
      *
@@ -48,6 +48,8 @@ export class HorseProviderService implements Resolve<any>{
         this.onTagsChanged = new BehaviorSubject([]);
         this.onSearchTextChanged = new BehaviorSubject('');
         this.onNewProviderClicked = new Subject();
+        this.currentHorseFlag = false;
+        this.onCurrentHorseFlagChanged = new BehaviorSubject([]);
     }
 
 
@@ -66,7 +68,7 @@ export class HorseProviderService implements Resolve<any>{
 
             Promise.all([
                 this.getFilters(),
-                this.getTags(),
+               
                 this.getProviders()
             ]).then(
                 () => {
@@ -121,17 +123,7 @@ export class HorseProviderService implements Resolve<any>{
      *
      * @returns {Promise<any>}
      */
-    getTags(): Promise<any>
-    {
-        return new Promise((resolve, reject) => {
-            this._httpClient.get('api/provider-tags')
-                .subscribe((response: any) => {
-                    this.tags = response;
-                    this.onTagsChanged.next(this.tags);
-                    resolve(this.tags);
-                }, reject);
-        });
-    }
+   
 
     /**
      * Get providers
@@ -423,4 +415,11 @@ export class HorseProviderService implements Resolve<any>{
                 });
         });
     }
+    setCurrentHorseFlag(currentHorseFlag: boolean): void
+    {
+        this.currentHorseFlag = currentHorseFlag; 
+        console.log('CurrentHorseFlag', this.currentHorseFlag);
+        this.onCurrentHorseFlagChanged.next(this.currentHorseFlag);
+       
+    } 
 }

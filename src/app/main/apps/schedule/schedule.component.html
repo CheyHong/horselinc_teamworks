@@ -10,67 +10,19 @@
             <mat-tab-group>
                 <mat-tab label="CURENT"> 
                     <div style="width: 250px; margin-top: 20px;" fxHide  fxShow.xs>Last update: 12/30/2018 1:35 PM</div>
-                    <div class="fri-june-21-2019">FRI, JUNE 21, 2019</div>
-                    <mat-card class="card">
-                        <mat-card-header>
-                            <div mat-card-avatar class="header-image"></div>
-                            <mat-card-title class="Testuser2Barn">Testuser2Barn</mat-card-title>
-                            <mat-card-subtitle class="Testuser2">Testuser2</mat-card-subtitle>
-                        </mat-card-header>
-                        <mat-card-content>
-                                <div class="The-greates-show---f">THE GREATES SHOW - FRI, JUNE 21, 2019</div>
-                                <div class="Make-a-horse-speed-u">Make a horse speed up (x4), Make a horse healthy(x1)</div>
-                                <div fxLayout="row" fxLayoutAlign="start center">
-                                    <img src="assets/images/avatars/Reyna.jpg" />
-                                    <div class="Testuser1-Testuser1">Testuser1 (Testuser1barn)</div>
-                                </div>
-                        </mat-card-content>
-                    </mat-card>
+                    <schedule-current></schedule-current>
                 </mat-tab>
                 <mat-tab label="PAST">
+                    <div style="width: 250px; margin-top: 20px;" fxHide  fxShow.xs>Last update: 12/30/2018 1:35 PM</div>
+                    <div class="fri-june-21-2019">FRI, JUNE 21, 2019</div>
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <schedule-past></schedule-past>
+                        <schedule-past></schedule-past>
+                        <schedule-past></schedule-past>
+                    </div>
+                     <div style="margin: 20px;"><schedule-filter-dialog></schedule-filter-dialog></div>
                 </mat-tab>
             </mat-tab-group>
         </div>
-        <div class="filterModal" fxHide="{{toggle}}">
-            <div class="modal" fxLayout="column" fxLayoutAlign="start center">
-                <div class="rect">
-                    <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
-                        <div class="Filters">Filters</div>
-                        <img src="assets/icons/horselinc/filled.svg" class="Filled" />
-                    </div>
-                    <div class="box">
-                        <div style="width: 70%;">Sort by</div>
-                        <div style="width: 30%;">
-                            <mat-select>
-                                <mat-option *ngFor="let sortby of sortbys" [value]="sortby.value" style="color: #27c5c8;">
-                                {{sortby.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </div>
-                    </div>
-                    <div class="flat">
-                        <div class="Show-only">Show only</div>
-                    </div>
-                    <div class="box">
-                        <div>Owner</div>
-                    </div>
-                    <div class="box">
-                        <div>Trainer</div>
-                    </div>
-                    <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
-                        <div class="service-scheduled" style="width: 90%;"> Services Scheduled </div>
-                        <mat-slide-toggle style="width: 10%;"></mat-slide-toggle>
-                    </div>
-                    <div class="action" fxLayout="row" fxLayoutAlign="space-between center">
-                        <button class="button1" mat-raised-button>CLEAR</button>
-                        <button class="button2" mat-raised-button>APPLY</button>
-                    </div>
-                </div>
-                <div class="arrow-down"></div>
-            </div>
-        </div>
-        <button mat-raised-button class="button" (click)="toggleFilter()">Filters</button>
     </div>
-
 </div>
-
