@@ -19,6 +19,7 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
     labels: any[];
     showDetails: boolean;
     selectedDate: any;
+    dateToggle: boolean;
     // Private
     private _unsubscribeAll: Subject<any>;
 
@@ -34,7 +35,7 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
     {
         // Set the defaults
         this.showDetails = false;
-
+        this.dateToggle = true;
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }
@@ -48,6 +49,7 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        this.dateToggle = true;
         // Subscribe to update the current horse
         this._horsemanagerService.onCurrentHorseManagerChanged
             .pipe(takeUntil(this._unsubscribeAll))
@@ -109,7 +111,13 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
     {
         this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
     }
+    DateShow():void
+    {
+        this.dateToggle = !this.dateToggle;
+        console.log('dateToggle', this.dateToggle);
+    }
     editHorseProfile():void{
+
         this._fuseSidebarService.getSidebar('horse-manager-profile-panel').toggleOpen();
     }
     

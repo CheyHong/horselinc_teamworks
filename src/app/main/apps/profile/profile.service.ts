@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { FuseUtils } from '@fuse/utils';
 
 @Injectable()
@@ -20,7 +20,8 @@ export class ProfileService implements Resolve<any>
      * @param {HttpClient} _httpClient
      */
     constructor(
-        private _httpClient: HttpClient
+        private _httpClient: HttpClient,
+        private _router: Router
     )
     {
         // Set the defaults
@@ -70,5 +71,9 @@ export class ProfileService implements Resolve<any>
     {
         this.currentProfileFlag = currentProfileFlag;
         this.onCurrentProfileFlagChanged.next(this.currentProfileFlag);
+    }
+    exportManagerPayment(): void
+    {
+        this.setSelectProfileNo(1);
     }
 }

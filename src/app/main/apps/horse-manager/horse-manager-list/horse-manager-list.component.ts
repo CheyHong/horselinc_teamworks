@@ -67,31 +67,9 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
         this._horseManagerService.onCurrentHorseManagerChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(currentHorseManager => {
-                if ( !currentHorseManager )
+                if ( currentHorseManager )
                 {
-                    // Set the current horse id to null to deselect the current horse
-                    this.currentHorseManager = null;
-
-                    // Handle the location changes
-                    const labelHandle  = this._activatedRoute.snapshot.params.labelHandle,
-                          filterHandle = this._activatedRoute.snapshot.params.filterHandle,
-                          folderHandle = this._activatedRoute.snapshot.params.folderHandle;
-
-                    if ( labelHandle )
-                    {
-                        this._location.go('apps/horse-manager/label/' + labelHandle);
-                    }
-                    else if ( filterHandle )
-                    {
-                        this._location.go('apps/horse-manager/filter/' + filterHandle);
-                    }
-                    else
-                    {
-                        this._location.go('apps/horse-manager/' + folderHandle);
-                    }
-                }
-                else
-                {
+                
                     this.currentHorseManager = currentHorseManager;
                 }
             });
