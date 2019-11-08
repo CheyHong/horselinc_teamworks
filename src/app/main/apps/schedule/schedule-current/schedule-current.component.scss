@@ -1,3 +1,10 @@
+@import "src/@fuse/scss/fuse";
+
+@include media-breakpoint('xs') {
+    schedule-card {
+        width: 100%;
+    }
+}
 
 .date_s {
     width: 100%;
