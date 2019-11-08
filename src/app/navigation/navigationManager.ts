@@ -39,7 +39,7 @@ export const navigationManager: FuseNavigation[] = [
         title    : 'notification',
         translate: 'NAV.NOTIFICATION',
         type     : 'item',
-        icon     : 'notification',
+        icon     : 'notifications',
         url      : '/apps/notification',
     }
 ];
