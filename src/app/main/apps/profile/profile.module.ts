@@ -40,7 +40,7 @@ import { ProfileProviderDetailsComponent } from 'app/main/apps/profile/provider/
 import { ProfileProviderInvoiceComponent } from 'app/main/apps/profile/provider/details/invoice/invoice.component';
 import { ProfileProviderTermsComponent } from 'app/main/apps/profile/provider/details/terms/terms.component';
 import { ProfileProviderPrivacyComponent } from 'app/main/apps/profile/provider/details/privacy/privacy.component';
-//import { ProfileProviderEditProfileComponent } from 'app/main/apps/profile/provider/dialogs/editprofile/editprofile.component';
+import { ProfileProviderEditProfileComponent } from 'app/main/apps/profile/provider/dialogs/editprofile/editprofile.component';
 
 const routes: Routes = [
     {
@@ -88,7 +88,7 @@ const routes: Routes = [
         ProfileProviderInvoiceComponent,
         ProfileProviderTermsComponent,
         ProfileProviderPrivacyComponent,
-//        ProfileProviderEditProfileComponent
+        ProfileProviderEditProfileComponent
     ],
     imports        : [
         RouterModule.forChild(routes),

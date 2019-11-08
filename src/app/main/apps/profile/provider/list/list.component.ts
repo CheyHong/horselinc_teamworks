@@ -79,7 +79,7 @@ export class ProfileProviderListComponent implements OnInit, OnDestroy
     }
     editProfile(): void
     {
- //       this._fuseSidebarService.getSidebar('profile-manager-editprofile').toggleOpen();
+        this._fuseSidebarService.getSidebar('profile-provider-editprofile').toggleOpen();
     }
     addServiceProvider(): void
     {
