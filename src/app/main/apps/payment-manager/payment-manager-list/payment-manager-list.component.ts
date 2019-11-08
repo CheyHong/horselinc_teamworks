@@ -9,6 +9,8 @@ import { PaymentManager } from 'app/main/apps/payment-manager/payment-manager.mo
 import { PaymentManagerService } from 'app/main/apps/payment-manager/payment-manager.service';
 import { takeUntil } from 'rxjs/operators';
 
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+
 @Component({
   selector: 'payment-manager-list',
   templateUrl: './payment-manager-list.component.html',
@@ -34,7 +36,8 @@ export class PaymentManagerListComponent implements OnInit, OnDestroy {
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _managerService: PaymentManagerService,
-        private _location: Location
+        private _location: Location,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         // Set the private defaults
@@ -111,6 +114,10 @@ export class PaymentManagerListComponent implements OnInit, OnDestroy {
     readPayment(paymentId): void
     {
         this._managerService.setCurrentPayment(paymentId);
+    }
+
+    onExportInovice(){
+        this._fuseSidebarService.getSidebar('payment-manager-export-invoice').toggleOpen();
     }
 
     /**
