@@ -9,11 +9,11 @@
     <!-- CONTENT -->
     <div class="content">
         <div class="login">
-            <form id="loginForm" name="loginForm" [formGroup]="loginForm" novalidate autocomplete="off" >
+            <form id="loginForm" name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off" >
                 <input  matInput formControlName="email" type="email" placeholder="Enter email" autocomplete="off" value=""/>
                 <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="new-password" value=""/>
-                <button mat-raised-button color="warn" type="" [disabled]="loginForm.invalid" routerLink="/apps/horse/manager">LOG IN</button>
-
+                <button mat-raised-button color="warn" type="submit" [disabled]="loginForm.invalid" >LOG IN</button>
+                <!-- routerLink="/apps/horse/manager" -->
                 <p style="text-align:center; margin-bottom:40px"><a class="forget-password" routerLink="/apps/user/reset-password">Forget password?</a></p>
                 <p style="text-align:center; margin-bottom:30px">Don't have an account? <a class="signup" routerLink="/apps/user/register">Sign Up</a></p>
     
