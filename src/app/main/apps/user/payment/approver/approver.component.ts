@@ -5,7 +5,7 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
-  selector: 'apps-user-payment-approver',
+  selector: 'user-payment-approver',
   templateUrl: './approver.component.html',
   styleUrls: ['./approver.component.scss']
 })
@@ -59,9 +59,9 @@ export class UserPaymentApproverComponent implements OnInit {
         });
     }
 
-    toggleApproverPanel(): void
+    closePanel(): void
     {
-        this._fuseSidebarService.getSidebar('user-payment-approver-panel').toggleOpen();
-        this._fuseSidebarService.getSidebar('user-payment-info-panel').open();
+        this._fuseSidebarService.getSidebar('user-payment-approver').toggleOpen();
+        this._fuseSidebarService.getSidebar('user-payment-info').open();
     }
 }

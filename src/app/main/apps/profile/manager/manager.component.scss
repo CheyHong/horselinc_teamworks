@@ -1,128 +1,128 @@
-@import "src/@fuse/scss/fuse";
-#profile-manager {
-    width: 100%;
-    .center {
+    @import "src/@fuse/scss/fuse";
+    #profile-manager {
+        width: 100%;
+        .center {
 
-        .content-card {
-            .toolbar {
-                display: flex;
-                -webkit-box-pack: start;
-                justify-content: flex-start;
-                -webkit-box-align: center;
-                align-items: center;
-                -webkit-box-flex: 1;
-                flex: 1 1 auto;
-                height: 32px;
-                min-height: 32px;
-                max-height: 32px;
-                color:#ec7185;
-                mat-icon{
-                    color:#ec7185;
-                }
-                .toolbar-separator {
+            .content-card {
+                .toolbar {
+                    display: flex;
+                    -webkit-box-pack: start;
+                    justify-content: flex-start;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-flex: 1;
+                    flex: 1 1 auto;
                     height: 32px;
-                    width: 1px;
-                    margin: 0 12px;
+                    min-height: 32px;
+                    max-height: 32px;
+                    color:#ec7185;
+                    mat-icon{
+                        color:#ec7185;
+                    }
+                    .toolbar-separator {
+                        height: 32px;
+                        width: 1px;
+                        margin: 0 12px;
+                    }
+                }
+        
+            // .content{
+                    @include media-breakpoint(xs) {
+                        apps-profile-manager-list {
+                            border-right: none;
+                        }
+                        apps-profile-manager-list,
+                        apps-profile-manager-details {
+                            flex: 1 0 100%;
+                        }
+                        apps-profile-manager-details {
+                            display: none !important;
+                        }
+
+                        &.current-profile-selected {
+                            flex: 1 0 100%;
+                            .toolbar {
+                                padding-left: 16px !important;
+                                .profile-selection {
+                                    display: none !important;
+                                }
+                            }
+                            .content {
+                                apps-profile-manager-list {
+                                    display: none !important;
+                                }
+                                apps-profile-manager-details {
+                                    display: flex !important;
+                                }
+                            }
+                        }
+                    //}
                 }
             }
-       
-           // .content{
-                @include media-breakpoint(xs) {
-                    apps-profile-manager-list {
-                        border-right: none;
-                    }
-                    apps-profile-manager-list,
-                    apps-profile-manager-details {
-                        flex: 1 0 100%;
-                    }
-                    apps-profile-manager-details {
-                        display: none !important;
-                    }
+        }
 
-                    &.current-profile-selected {
-                        flex: 1 0 100%;
-                        .toolbar {
-                            padding-left: 16px !important;
-                            .profile-selection {
-                                display: none !important;
-                            }
-                        }
-                        .content {
-                            apps-profile-manager-list {
-                                display: none !important;
-                            }
-                            apps-profile-manager-details {
-                                display: flex !important;
-                            }
-                        }
-                    }
-                 //}
-            }
-        }
-    }
-
-    
-    .profile-manager-editprofile,
-    .profile-manager-updateemail,
-    .profile-manager-updatepassword,
-    .profile-manager-exportinvoice,
-    .profile-manager-addprovider,
-    .profile-manager-searchprovider,
-    .profile-manager-addpayment
-    {
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        width: auto;
-        min-width: 360px;
-        max-width: 600px;
-        z-index: 1000;
-//        opacity: 0.0;
-        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.35);
-        background-color: #4f748c;
-
-        @include media-breakpoint('xs') {
-            top:0px;
-            min-width: 0 !important;
-            max-width: 100% !important;
-            width: 100% !important;
-        }
-    
-        &.left-positioned {
-            left: 0;
-            transform: translateX(-100%);
-        }
-    
-        &.right-positioned {
-            right: 0;
-            transform: translateX(100%);
-        }
-    
-        &.open {
-            transform: translateX(0);
-        }
-    
-        &.locked-open {
-            position: relative !important;
-            transform: translateX(0) !important;
-        }
-    
-        &.folded {
-            position: absolute !important;
+        
+        .profile-manager-editprofile,
+        .profile-manager-updateemail,
+        .profile-manager-updatepassword,
+        .profile-manager-exportinvoice,
+        .profile-manager-addprovider,
+        .profile-manager-searchprovider,
+        .profile-manager-addpayment
+        {
+            display: flex;
+            flex-direction: column;
+            flex: 1 0 auto;
+            position: absolute;
             top: 0;
             bottom: 0;
-        }
-    
-        &.animations-enabled {
-            transition-property: transform, width, min-width, max-width;
-            transition-duration: 150ms;
-            transition-timing-function: ease-in-out;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            width: auto;
+            min-width: 360px;
+            max-width: 600px;
+            z-index: 1000;
+    //        opacity: 0.0;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.35);
+            background-color: #4f748c;
+
+            @include media-breakpoint('xs') {
+                top:0px;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+        
+            &.left-positioned {
+                left: 0;
+                transform: translateX(-100%);
+            }
+        
+            &.right-positioned {
+                right: 0;
+                transform: translateX(100%);
+            }
+        
+            &.open {
+                transform: translateX(0);
+            }
+        
+            &.locked-open {
+                position: relative !important;
+                transform: translateX(0) !important;
+            }
+        
+            &.folded {
+                position: absolute !important;
+                top: 0;
+                bottom: 0;
+            }
+        
+            &.animations-enabled {
+                transition-property: transform, width, min-width, max-width;
+                transition-duration: 150ms;
+                transition-timing-function: ease-in-out;
+            }
         }
     }
-}

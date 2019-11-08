@@ -1,6 +1,6 @@
 @import "src/@fuse/scss/fuse";
 
-#profile-details 
+#profile-provider-details 
 {
     width: 100%;
     height: 100%;
@@ -10,6 +10,5 @@
     // padding: 24px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: #efefef;
-
+    background-color: #ffffff;
 }

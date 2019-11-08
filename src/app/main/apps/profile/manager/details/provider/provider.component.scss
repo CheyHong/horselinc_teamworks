@@ -5,7 +5,7 @@
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 16px 0 0 16px;
+    padding: 16px;
     .matselect {
         padding: 16px;
         height: 56px;
@@ -125,10 +125,15 @@
         margin: 6px;
         padding: 8px;
         width: 344px;
+        min-width: 320px;
         max-width: 344px;
+        @include media-breakpoint(xs) {
+            width: 95%;
+            min-width: 95%;
+            max-width: 95%;
+        }
 
         height: fit-content;
-        min-width: 320px;
         border-radius: 8px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
         background-color: #fafafa;

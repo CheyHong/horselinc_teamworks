@@ -2,6 +2,10 @@
 
 fuse-sidebar {
 
+    // min-width: 0 !important;
+    // max-width: 360px !important;
+    // width: 80% !important;
+
     &.navbar-fuse-sidebar {
         overflow: hidden;
 
@@ -82,11 +86,11 @@ fuse-sidebar {
     }
 }
 
-fuse-sidebar {
-    min-width: 0 !important;
-    max-width: 360px !important;
-    width: 80% !important;
-}
+// fuse-sidebar {
+//     min-width: 0 !important;
+//     max-width: 360px !important;
+//     width: 80% !important;
+// }
 
 navbar {
 

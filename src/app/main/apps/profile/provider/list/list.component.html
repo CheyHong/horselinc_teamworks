@@ -11,12 +11,15 @@
                 Anna B Mngr
             </div>
             <div class="text1 opacitycolor2" fxLayout="row" >  
-                (617) 548-1139
+                "Naples"
+            </div>
+            <div class="text2 opacitycolor2 " fxLayout="row">  
+                Naples FL USA 239-810-2350 
             </div>
         </div>
     
         <div  class="avatar small" fxFlex  fxLayoutAlign="start start">
-                <img class="editProfile" src="assets/icons/horselinc/ic-nav-create.svg"/>
+                <img class="editProfile" src="assets/icons/horselinc/ic-nav-create.svg" (click)="editProfile()"/>
          </div>
     </div>
 
@@ -27,31 +30,18 @@
         (click)="onSelectedProfile(0)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
-                <span class="text1" fxFlex="90"> App Log </span>
+                <span class="text1" fxFlex="90"> Enable Invocing </span>
                 <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
             </div>
            
 
         </div> 
-        
-        <mat-divider></mat-divider>
-        
-        <div matRipple class="navdiv" 
-        [ngClass]="{'selectedProfile':selectedProfileNo == 1}"
-        (click)="onSelectedProfile(1)">
-            
-            <div fxLayout = "row" fxLayoutAlign="start center">
-                <span class="text1" fxFlex="90"> Edit Payment Information </span>
-                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-forward-ios-24-px.svg"/>
-            </div>
-
-        </div> 
-        
+         
         <mat-divider></mat-divider>
         
         <div matRipple class="navdiv"         
-        [ngClass]="{'selectedProfile':selectedProfileNo == 2}"
-        (click)="onSelectedProfile(2)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 1}"
+        (click)="onSelectedProfile(1)">
 
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Contact HorseLinc </span>
@@ -64,8 +54,8 @@
         <mat-divider></mat-divider>
         
         <div matRipple class="navdiv" 
-        [ngClass]="{'selectedProfile':selectedProfileNo == 3}"
-        (click)="onSelectedProfile(3)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 2}"
+        (click)="onSelectedProfile(2)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Terms & Conditions </span>
@@ -78,8 +68,8 @@
         <mat-divider></mat-divider>
        
         <div matRipple class="navdiv"
-        [ngClass]="{'selectedProfile':selectedProfileNo == 4}"
-        (click)="onSelectedProfile(4)">
+        [ngClass]="{'selectedProfile':selectedProfileNo == 3}"
+        (click)="onSelectedProfile(3)">
             
             <div fxLayout = "row" fxLayoutAlign="start center">
                 <span class="text1" fxFlex="90"> Privacy Police </span>
@@ -94,7 +84,7 @@
       
     </div>   
     <div fxLayoutAlign="end center"> 
-        <button mat-raised-button  class="button big redcolor">
+        <button mat-raised-button  class="button big redcolor" (click)="addServiceProvider()">
             <span class="text2 whitecolor">
                 Add Service Provider
             </span>
