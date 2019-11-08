@@ -7,13 +7,15 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 16px;
+    background-color: #ffffff;
     @include media-breakpoint('xs') {
         padding: 8px;
     }
-    background-color: #ffffff;
+    position: relative;
     .cancelSave {
         position: absolute;
         bottom: 10px;
+        right: 10px;
     }
     .button {
         &.small {

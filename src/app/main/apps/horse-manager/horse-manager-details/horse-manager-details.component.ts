@@ -35,7 +35,7 @@ export class HorseManagerDetailsComponent implements OnInit, OnDestroy
     {
         // Set the defaults
         this.showDetails = false;
-        this.dateToggle = true;
+       
         // Set the private defaults
         this._unsubscribeAll = new Subject();
     }

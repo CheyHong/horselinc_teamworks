@@ -59,7 +59,7 @@
                 </div>
 
             </div>
-            <div  fxHide fxShow.gt-md class="calendar">
+            <div  fxShow fxHide.lt-lg class="calendar">
                 <apps-calendar></apps-calendar>
                  <!-- <jqxCalendar [width]="365" [height]="195"  [enableTooltips]="true" [disabled]="false" class="borderline" ></jqxCalendar> -->
             </div>    
@@ -169,11 +169,11 @@
          </div>
     </div>
     <!--////////////////////////////////////Calendar Modal/////////////////////////////////////////////////-->
-     <!--  <div class="filterModal" fxShow.xs fxHide="{{dateToggle}}">
+       <div class="filterModal" fxHide ="{{dateToggle}}" >
             <div class="modal" fxLayout="column" fxLayoutAlign="start start">
                 <div class="rect">
                     <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
-                        <div class="Filters">Filters</div>
+                        <div class="Filters">Filters</div>  
                         <div (click)="DateShow()">
                             <img src="assets/icons/horselinc/filled.svg" class="Filled buttondiv" />
                         </div>
@@ -208,10 +208,10 @@
                 </div>
                 <div class="arrow-down mr-30"></div>
             </div>
-        </div>-->
-    <!--/////////////////////////////////////////////////////////////////////////////////////-->
+        </div>
+  
     <div fxLayout="row" fxLayoutAlign="end start">      
-        <button mat-raised-button  fxHide fxShow.lt-md class="button small" (click)="DateShow()">
+        <button mat-raised-button  fxHide fxShow.lt-lg class="button small" (click)="DateShow()">
            <span class="text1 greencolor"> Date </span>
         </button>
         <button mat-raised-button  class="button big" (click)="ScheduleService()">
