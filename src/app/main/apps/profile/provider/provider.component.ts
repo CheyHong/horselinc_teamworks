@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 import { ProfileService } from 'app/main/apps/profile/profile.service';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({
     selector     : 'apps-profile-provider',
@@ -15,7 +16,7 @@ import { ProfileService } from 'app/main/apps/profile/profile.service';
 export class ProfileProviderComponent implements OnInit, OnDestroy
 {
     selectedProfileNo: number;
-    isSelectedProfile: boolean;
+    currentProfileFlag: boolean;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -27,11 +28,13 @@ export class ProfileProviderComponent implements OnInit, OnDestroy
      */
     constructor(
         private _profileService: ProfileService,
+        private _fuseSidebarService: FuseSidebarService,
     )
     
         // Configure the layout
     { 
         this.selectedProfileNo = 0;
+        this.currentProfileFlag = false;
         this._unsubscribeAll = new Subject();
 
     }
@@ -49,6 +52,14 @@ export class ProfileProviderComponent implements OnInit, OnDestroy
         .pipe(takeUntil(this._unsubscribeAll))
         .subscribe(selectedProfileNo => {
             this.selectedProfileNo = selectedProfileNo;
+            console.log('SelectedProfileNo:', this.currentProfileFlag);
+        });
+
+         this._profileService.onCurrentProfileFlagChanged
+        .pipe(takeUntil(this._unsubscribeAll))
+        .subscribe(currentProfileFlag => {
+            this.currentProfileFlag = currentProfileFlag;
+            console.log('CurrentProfileFlag:', this.currentProfileFlag);
         });
   }
     /**
@@ -61,4 +72,8 @@ export class ProfileProviderComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
+    gotoList(): void
+    {
+        this._profileService.setCurrentProfileFlag(false);
+    }
 }

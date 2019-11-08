@@ -3,7 +3,7 @@
     <!-- CONTENT -->
     <div class="title">
         <p class="label">Add payment approver</p>
-        <button mat-icon-button class="close toggle-sidebar-folded" (click)="toggleApproverPanel();">
+        <button mat-icon-button class="close toggle-sidebar-folded" (click)="closePanel();">
             <mat-icon class="secondary-text s-20">close</mat-icon>
         </button>
     </div>
@@ -27,8 +27,8 @@
         </div>
 
         <div class="nextCancel">
-            <button mat-raised-button class="cancel" type="" (click)="toggleApproverPanel();">CANCEL</button>
-            <button mat-raised-button class="next" type="" (click)="toggleApproverPanel();">NEXT</button>
+            <button mat-raised-button class="cancel" type="" (click)="closePanel();">CANCEL</button>
+            <button mat-raised-button class="next" type="" (click)="closePanel();">NEXT</button>
         </div>
     </div>
     <!-- /CONTENT -->

@@ -24,7 +24,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
     tags: any[];
     searchInput: FormControl;
     currentProvider: Provider;
-
+    currentHorseFlag: boolean;
     // Private
     private _unsubscribeAll: Subject<any>;
 
@@ -35,7 +35,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      * @param {HorseProviderService} _providerService
      */
     constructor(
-        private _providerService: HorseProviderService,
+        private _horseProviderService: HorseProviderService,
 
     )
     {
@@ -44,6 +44,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
 
         // Set the private defaults
         this._unsubscribeAll = new Subject();
+        
         
     }
 
@@ -56,22 +57,18 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this._providerService.onSelectedProvidersChanged
+        this._horseProviderService.onSelectedProvidersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(selectedProviders => {
             });
 
-        this._providerService.onFiltersChanged
+        this._horseProviderService.onFiltersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(folders => {
-                this.filters = this._providerService.filters;
+                this.filters = this._horseProviderService.filters;
             });
 
-        this._providerService.onTagsChanged
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(tags => {
-                this.tags = this._providerService.tags;
-            });
+       
 
         this.searchInput.valueChanges
             .pipe(
@@ -80,10 +77,10 @@ export class HorseProviderComponent implements OnInit, OnDestroy
                 distinctUntilChanged()
             )
             .subscribe(searchText => {
-                this._providerService.onSearchTextChanged.next(searchText);
+                this._horseProviderService.onSearchTextChanged.next(searchText);
             });
 
-        this._providerService.onCurrentProviderChanged
+        this._horseProviderService.onCurrentProviderChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(currentProvider => {
                 if ( !currentProvider )
@@ -95,6 +92,14 @@ export class HorseProviderComponent implements OnInit, OnDestroy
                     this.currentProvider = currentProvider;
                 }
             });
+
+        this._horseProviderService.onCurrentHorseFlagChanged
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(currentHorseFlag => {
+                this.currentHorseFlag = currentHorseFlag;
+                console.log('CurrentHorseFlag:', this.currentHorseFlag);
+            });
+
     }
 
     /**
@@ -116,7 +121,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      */
     deselectCurrentProvider(): void
     {
-        this._providerService.onCurrentProviderChanged.next(null);
+        this._horseProviderService.onCurrentProviderChanged.next(null);
     }
 
     /**
@@ -124,7 +129,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      */
     toggleSelectAll(): void
     {
-        this._providerService.toggleSelectAll();
+        this._horseProviderService.toggleSelectAll();
     }
 
     /**
@@ -135,7 +140,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      */
     selectProviders(filterParameter?, filterValue?): void
     {
-        this._providerService.selectProviders(filterParameter, filterValue);
+        this._horseProviderService.selectProviders(filterParameter, filterValue);
     }
 
     /**
@@ -143,7 +148,7 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      */
     deselectProviders(): void
     {
-        this._providerService.deselectProviders();
+        this._horseProviderService.deselectProviders();
     }
 
     /**
@@ -153,7 +158,11 @@ export class HorseProviderComponent implements OnInit, OnDestroy
      */
     toggleTagOnSelectedProviders(tagId): void
     {
-        this._providerService.toggleTagOnSelectedProviders(tagId);
+        this._horseProviderService.toggleTagOnSelectedProviders(tagId);
+    }
+    gotoList():void
+    {
+        this._horseProviderService.setCurrentHorseFlag(false);
     }
 
 }

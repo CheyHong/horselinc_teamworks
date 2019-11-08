@@ -58,8 +58,8 @@ export class UserPaymentComponent implements OnInit {
             password: ['', Validators.required]
         });
     }
-    toggleInfoPanelOpen(): void
+    openPaymentInfo(): void
     {
-        this._fuseSidebarService.getSidebar('user-payment-info-panel').toggleOpen();
+        this._fuseSidebarService.getSidebar('user-payment-info').toggleOpen();
     }
 }

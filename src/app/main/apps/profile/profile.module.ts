@@ -37,31 +37,15 @@ import { ProfileManagerAddPaymentComponent } from './manager/dialogs/addpayment/
 import { ProfileProviderComponent } from 'app/main/apps/profile/provider/provider.component';
 import { ProfileProviderListComponent } from 'app/main/apps/profile/provider/list/list.component';
 import { ProfileProviderDetailsComponent } from 'app/main/apps/profile/provider/details/details.component';
-import { ProfileProviderApplogComponent } from 'app/main/apps/profile/provider/details/applog/applog.component';
-import { ProfileProviderProviderComponent } from 'app/main/apps/profile/provider/details/provider/provider.component';
-import { ProfileProviderPaymentComponent } from 'app/main/apps/profile/provider/details/payment/payment.component';
+import { ProfileProviderInvoiceComponent } from 'app/main/apps/profile/provider/details/invoice/invoice.component';
 import { ProfileProviderTermsComponent } from 'app/main/apps/profile/provider/details/terms/terms.component';
 import { ProfileProviderPrivacyComponent } from 'app/main/apps/profile/provider/details/privacy/privacy.component';
-import { ProfileProviderEditProfileComponent } from 'app/main/apps/profile/provider/dialogs/editprofile/editprofile.component';
+//import { ProfileProviderEditProfileComponent } from 'app/main/apps/profile/provider/dialogs/editprofile/editprofile.component';
 
 const routes: Routes = [
     {
         path  : 'manager',
         component: ProfileManagerComponent,
-        resolve  : {
-            provider: ProfileService
-        }
-    },
-    {
-        path  : 'manager/exportinvoice',
-        component: ProfileManagerExportInvoiceComponent,
-        resolve  : {
-            provider: ProfileService
-        }
-    },
-    {
-        path  : 'manager/addpayment',
-        component: ProfileManagerAddPaymentComponent,
         resolve  : {
             provider: ProfileService
         }
@@ -100,12 +84,11 @@ const routes: Routes = [
         ProfileProviderComponent,
         ProfileProviderListComponent,
         ProfileProviderDetailsComponent,
-        ProfileProviderApplogComponent,
-        ProfileProviderProviderComponent,
-        ProfileProviderPaymentComponent,
+
+        ProfileProviderInvoiceComponent,
         ProfileProviderTermsComponent,
         ProfileProviderPrivacyComponent,
-        ProfileProviderEditProfileComponent
+//        ProfileProviderEditProfileComponent
     ],
     imports        : [
         RouterModule.forChild(routes),

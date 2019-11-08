@@ -79,12 +79,7 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        this.searchInput.valueChanges.pipe(
-            takeUntil(this._unsubscribeAll),
-            debounceTime(300),
-            distinctUntilChanged(),
-        )
-        
+      
         this.foods = [
             {value: 'steak-0', viewValue: 'Steak'},
             {value: 'pizza-1', viewValue: 'Pizza'},

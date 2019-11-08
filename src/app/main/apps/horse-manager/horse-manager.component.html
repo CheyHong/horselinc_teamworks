@@ -2,10 +2,13 @@
  
      <div class="m-0 center">  
        
-         <div class="content-card" [ngClass]="{'current-horse-selected':currentHorseManager}">
-            
+         <div class="content-card" [ngClass]="{'current-horse-selected':currentHorseFlag != false}">
+            <div fxHide fxShow.xs  fxLayout="row" fxLayoutAlign="start center" *ngIf="currentHorseFlag != false" (click)="gotoList()"> 
+                    <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-back-red-ios-24-px.svg"/>
+                    <span class="text1 redcolor">Manager Horse</span>
+            </div>
             <div class="content" fxLayout="row">
-
+  
                 <horse-manager-list fusePerfectScrollbar fxFlex.gt-md="25"></horse-manager-list>
                 <horse-manager-details fusePerfectScrollbar fxFlex></horse-manager-details>
 
@@ -17,13 +20,13 @@
 
       </div>  
     
-    <fuse-sidebar name="horse-manager-profile-panel" class="horse-manager-profile-sidebar" position="right" [invisibleOverlay]="false">
+    <fuse-sidebar name="horse-manager-profile-panel" class="horse-manager-sidebar" position="right" [invisibleOverlay]="false">
         <horse-manager-profile></horse-manager-profile>
     </fuse-sidebar>
-     <fuse-sidebar  name="horse-manager-schedule-panel" class="horse-manager-profile-sidebar" position="right" [invisibleOverlay]="false">
+     <fuse-sidebar  name="horse-manager-schedule-panel" class="horse-manager-sidebar" position="right" [invisibleOverlay]="false">
         <horse-manager-schedule></horse-manager-schedule>
     </fuse-sidebar>
-     <fuse-sidebar  name="horse-manager-confirm-panel" class="horse-manager-profile-sidebar" position="right" [invisibleOverlay]="false">
+     <fuse-sidebar  name="horse-manager-confirm-panel" class="horse-manager-sidebar" position="right" [invisibleOverlay]="false">
         <horse-manager-confirm></horse-manager-confirm>
     </fuse-sidebar>
  </div> 

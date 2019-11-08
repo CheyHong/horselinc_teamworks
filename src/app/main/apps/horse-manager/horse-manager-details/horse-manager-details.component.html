@@ -9,13 +9,14 @@
 
     <div class="horse-header" fxFlex fxLayout="row" fxLayoutAlign="start center">
 
-            <div fxLayout = "column"  fxLayoutAlign="start start" >
-                <div fxLayout="row" fxFlexFill fxLayoutAlign="start start">
-                        <div fxFlex="30">
+            <div fxLayout = "column" fxLayoutAlign="start start" >
+                <div fxLayout="row" fxFill fxLayoutAlign="start start" >
+                       <div fxLayout="row" fxFlex="90">
+                        <div>
                             <img src="assets/images/avatars/Helen.jpg" class="avatar big"/>                         
                         </div>
 
-                        <div fxLayout="column" fxLayoutAlign="start start" fxFlex="55">
+                        <div fxLayout="column" fxLayoutAlign="start start">
                             <div class="name">
                                 {{horsemanager.from.name}}
                             </div>
@@ -25,6 +26,7 @@
                             <div class="text2" fxLayout="row">  
                                 <div>{{horsemanager.to[0].name}}</div>
                             </div>
+                        </div>
                         </div>
                         <div (click)="editHorseProfile()">
                             <img class="avatar small buttondiv" src="assets/icons/horselinc/ic-nav-create.svg">
@@ -68,11 +70,11 @@
     </div>
     <div class="horse-content" fxFlex="70">
 
-        <div class="info" fxLayout="column" fxLayoutAlign="space-between start">
+        <div class="info" fxLayout="column" fxLayoutAlign="start stretch">
 
-            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start start">
-                <div fxFlex fxLayout = "column" class="area">
-                    <span class="date" fxLayoutAlign="start center">{{horsemanager.time}}</span>
+            <div fxLayout="column" fxLayout.gt-md ="row">
+                <div fxLayout = "column" class="area">
+                    <span class="date"  fxLayoutAlign="start center">{{horsemanager.time}}</span>
                      <div fxLayout="column" class="p-0 card">
                         <div fxFlex = "75" fxLayout="column" class="card_content">
                          
@@ -113,11 +115,11 @@
                 </div>
             </div>
 
-            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" fxLayoutAlign="start start">
+            <div fxFlex fxLayout="column" fxLayout.gt-md ="row" >
 
-                <div fxFlex fxLayout = "column" class="area">
-                    <span class="date" fxLayoutAlign="start center">{{horsemanager.time}}</span>
-                    <div fxLayout="column" class="p-0 card">
+                <div fxLayout = "column" class="area">
+                    <span class="date"  fxLayoutAlign="start center">{{horsemanager.time}}</span>
+                     <div fxLayout="column" class="p-0 card">
                         <div fxFlex = "75" fxLayout="column" class="card_content">
                          
                             <span class="queen">Queenie prodoctions winter festival!!!</span>
@@ -131,9 +133,10 @@
                         </div>
 
                         <div fxFlex = "25" class="details3" fxLayoutAlign="start center">
-                               Accepted   
+                                Accepted
                         </div>
                     </div>
+                
                 </div>
 
                 <div fxFlex fxLayout = "column" class="area">
@@ -151,21 +154,20 @@
 
                         </div>
 
-                        <div fxFlex = "25" fxLayout = "row" class="details4" fxLayoutAlign="center center">
+                        <div fxFlex = "25" fxLayout = "row" class="details4">
                     
                             <button mat-raised-button fxFlex="50" class="tab_button1"> DECLIND </button>
                                                         
                             <button mat-raised-button fxFlex class="p-0 tab_button2">  Choose Service Provider</button>
                                 
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </div> 
+                     </div>
+                 </div>
             
-        </div>
+             </div>
 
+         </div>
     </div>
-
     <div fxLayout="row" fxLayoutAlign="end start">      
         <button mat-raised-button  fxHide fxShow.lt-md class="button small" (click)="ScheduleService()">
            <span class="text1 greencolor"> Date </span>

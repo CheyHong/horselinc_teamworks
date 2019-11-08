@@ -1,17 +1,32 @@
 @import "src/@fuse/scss/fuse";
-#profile {
+#profile-provider {
     width: 100%;
     .center {
 
         .content-card {
             .toolbar {
+                display: flex;
+                -webkit-box-pack: start;
+                justify-content: flex-start;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-flex: 1;
+                flex: 1 1 auto;
+                height: 32px;
+                min-height: 32px;
+                max-height: 32px;
+                color:#ec7185;
+                mat-icon{
+                    color:#ec7185;
+                }
                 .toolbar-separator {
                     height: 32px;
                     width: 1px;
                     margin: 0 12px;
                 }
             }
-            .content{
+    
+        // .content{
                 @include media-breakpoint(xs) {
                     apps-profile-provider-list {
                         border-right: none;
@@ -32,16 +47,16 @@
                                 display: none !important;
                             }
                         }
-                        // .content {
+                        .content {
                             apps-profile-provider-list {
                                 display: none !important;
                             }
                             apps-profile-provider-details {
                                 display: flex !important;
                             }
-                        // }
+                        }
                     }
-                }
+                //}
             }
         }
     }

@@ -3,11 +3,11 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
 @Component({
-  selector: 'apps-profile-manager-payment',
-  templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.scss']
+  selector: 'apps-profile-provider-invoice',
+  templateUrl: './invoice.component.html',
+  styleUrls: ['./invoice.component.scss']
 })
-export class ProfileManagerPaymentComponent implements OnInit {
+export class ProfileProviderInvoiceComponent implements OnInit {
 
   constructor(
     private _fuseSidebarService: FuseSidebarService,
@@ -33,10 +33,6 @@ export class ProfileManagerPaymentComponent implements OnInit {
     };
   }
 
-  ngOnInit() {
-  }
-
-  addPayment(): void{
-    this._fuseSidebarService.getSidebar('profile-manager-addpayment').open();
+  ngOnInit(): void {
   }
 }
