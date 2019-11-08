@@ -1,12 +1,30 @@
- <div id="profile" class="page-layout carded left-sidebar inner-scroll">
+ <div id="profile-provider" class="page-layout carded left-sidebar inner-scroll">
       <div class="m-0 center">  
-           <div class="content-card">          
-            <div class="content current-profile-selected" fxLayout="row">
+           <div class="content-card" [ngClass]="{'current-profile-selected':currentProfileFlag != false}">          
 
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar px-24 py-0" fxHide fxShow.xs *ngIf="currentProfileFlag != false" fxLayout="row" fxLayoutAlign="start center" (click)="gotoList()">
+                <mat-icon class="secondary-text">arrow_back</mat-icon>
+                <p>Manager Profile</p>
+            </div>
+
+            <!-- <div toolbar px-24 py-8 fxHide.gt-md class="mb-16" fxLayout="row" fxLayoutAlign="start center" *ngIf="currentProfileFlag != false" (click)="gotoList()"> 
+                <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-back-red-ios-24-px.svg"/>
+                <span class="text1 redcolor">Manager Profile</span>
+            </div> -->
+            <!-- / CONTENT TOOLBAR -->
+                
+            <!-- CONTENT -->
+            <div class="content" fxLayout="row">
                 <apps-profile-provider-list fusePerfectScrollbar fxFlex.gt-md="27"></apps-profile-provider-list>
                 <apps-profile-provider-details fusePerfectScrollbar fxFlex></apps-profile-provider-details>
-
             </div>
+            <!-- CONTENT -->
+
         </div> 
-      </div>  
+      </div>
+  
+      <fuse-sidebar name="profile-provider-editprofile" class="profile-provider-editprofile" position="right" [invisibleOverlay]="false">
+        <profile-provider-editprofile></profile-provider-editprofile>
+    </fuse-sidebar>
  </div> 

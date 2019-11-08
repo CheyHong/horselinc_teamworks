@@ -1,5 +1,5 @@
-<div class="filterModal" fxHide="{{toggle}}">
-    <div class="modal" fxLayout="column" fxLayoutAlign="start center">
+<div class="filterModal" fxLayout="column" fxLayoutAlign="center end">
+    <div fxFlex="90%" class="modal" fxLayout="column" fxLayoutAlign="start center" fxHide="{{toggle}}">
         <div class="rect">
             <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
                 <div class="Filters">Filters</div>
@@ -35,5 +35,5 @@
         </div>
         <div class="arrow-down"></div>
     </div>
+    <button fxFlex="10%" mat-raised-button class="button3" (click)="toggleFilter()">Filters</button>
 </div>
-<button mat-raised-button class="button" (click)="toggleFilter()">Filters</button>

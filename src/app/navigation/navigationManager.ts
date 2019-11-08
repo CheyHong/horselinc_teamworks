@@ -1,14 +1,14 @@
 import { FuseNavigation } from '@fuse/types';
 import { url } from 'inspector';
 
-export const navigation: FuseNavigation[] = [
+export const navigationManager: FuseNavigation[] = [
     {
-        id       : 'horses-provider',
+        id       : 'horses-manager',
         title    : 'Horses',
         translate: 'NAV.HORSES',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-manager-black.svg',
-        url      : '/apps/horse/provider',           
+        url      : '/apps/horse/manager',           
     },
     {
         id       : 'payment-manager',

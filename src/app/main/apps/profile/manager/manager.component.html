@@ -2,17 +2,25 @@
       <div class="m-0 center">  
            <div class="content-card" [ngClass]="{'current-profile-selected':currentProfileFlag != false}">          
 
-            <div fxHide fxShow.xs class="mb-16" fxLayout="row" fxLayoutAlign="start center" *ngIf="currentProfileFlag != false" (click)="gotoList()"> 
+            <!-- CONTENT TOOLBAR -->
+            <div class="toolbar px-24 py-0" fxHide fxShow.xs *ngIf="currentProfileFlag != false" fxLayout="row" fxLayoutAlign="start center" (click)="gotoList()">
+                <mat-icon class="secondary-text">arrow_back</mat-icon>
+                <p>Manager Profile</p>
+            </div>
+
+            <!-- <div toolbar px-24 py-8 fxHide.gt-md class="mb-16" fxLayout="row" fxLayoutAlign="start center" *ngIf="currentProfileFlag != false" (click)="gotoList()"> 
                 <img class="m-0 avatar mini" src="assets/icons/arrow-icons/arrow-back-red-ios-24-px.svg"/>
                 <span class="text1 redcolor">Manager Profile</span>
-            </div>
+            </div> -->
+            <!-- / CONTENT TOOLBAR -->
                 
+            <!-- CONTENT -->
             <div class="content" fxLayout="row">
-
                 <apps-profile-manager-list fusePerfectScrollbar fxFlex.gt-md="27"></apps-profile-manager-list>
                 <apps-profile-manager-details fusePerfectScrollbar fxFlex></apps-profile-manager-details>
-
             </div>
+            <!-- CONTENT -->
+
         </div> 
       </div>
 

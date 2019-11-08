@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { fuseAnimations } from '@fuse/animations';
+import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 import { ProfileService } from 'app/main/apps/profile/profile.service';
 
@@ -32,7 +33,8 @@ export class ProfileProviderListComponent implements OnInit, OnDestroy
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _profileService: ProfileService,
-        private _location: Location
+        private _location: Location,
+        private _fuseSidebarService: FuseSidebarService,
     )
     {
         this.selectedProfileNo = 0;
@@ -71,13 +73,16 @@ export class ProfileProviderListComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
     onSelectedProfile(profileNo: any): void
     {
-        console.log("profile-list-onSelectedProfile:", profileNo);
         this.selectedProfileNo = profileNo; 
         this._profileService.setSelectProfileNo(this.selectedProfileNo);
-//        this._location.go('apps/profile/navigation1' + '/' + itemUri);
+        this._profileService.setCurrentProfileFlag(true);
     }
     editProfile(): void
     {
-        console.log("EditProfile");
+        this._fuseSidebarService.getSidebar('profile-provider-editprofile').toggleOpen();
+    }
+    addServiceProvider(): void
+    {
+ //       this._fuseSidebarService.getSidebar('profile-manager-addprovider').toggleOpen();
     }
 }

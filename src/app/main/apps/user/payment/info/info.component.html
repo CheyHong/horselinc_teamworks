@@ -1,9 +1,9 @@
-<div id="user-payment-info" class="page-layout simple fullwidth">
+<div class="container" fxLayout="column" fxLayoutAlign="start">
     
     <!-- CONTENT -->
-    <div class="title">
-        <p class="label">Add payment information</p>
-        <button mat-icon-button class="close toggle-sidebar-folded" (click)="toggleInfoPanel();">
+    <div class="title" fxLayout="row" fxLayoutAlign="space-between center" >
+        <p class="label" style="text-align:left">Add payment Information</p>
+        <button mat-icon-button class="close toggle-sidebar-folded" (click)="closePanel();">
             <mat-icon class="secondary-text s-20">close</mat-icon>
         </button>
     </div>
@@ -59,7 +59,7 @@
             </table>
         </div>
         <div class="addApprover">
-            <p><a (click)="toggleApproverPanel();">Add payment approver</a></p>
+            <p><a (click)="openPaymentApprover();">Add payment approver</a></p>
         </div>
         <div class="authorized">
             <p class="authorized-title">Authorized to Approve Payments</p>
@@ -78,8 +78,8 @@
         </div>
         <button mat-raised-button class="requestAuthBtn" type="" routerLink="">Request Authorization</button>
         <div class="nextCancel">
-            <button mat-raised-button class="cancel" type="" (click)="toggleInfoPanel();">CANCEL</button>
-            <button mat-raised-button class="next" type="" (click)="toggleInfoPanel();">NEXT</button>
+            <button mat-raised-button class="cancel" type="" (click)="closePanel();">CANCEL</button>
+            <button mat-raised-button class="next" type="" (click)="closePanel();">NEXT</button>
         </div>
     </div>
     <!-- /CONTENT -->

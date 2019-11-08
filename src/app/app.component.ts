@@ -11,7 +11,9 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseSplashScreenService } from '@fuse/services/splash-screen.service';
 import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
 
-import { navigation } from 'app/navigation/navigation';
+import { navigationManager } from 'app/navigation/navigationManager';
+import { navigationProvider } from 'app/navigation/navigationProvider';
+
 import { locale as navigationEnglish } from 'app/navigation/i18n/en';
 import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 
@@ -23,7 +25,8 @@ import { locale as navigationTurkish } from 'app/navigation/i18n/tr';
 export class AppComponent implements OnInit, OnDestroy
 {
     fuseConfig: any;
-    navigation: any;
+    navigationManager: any;
+    navigationProvider: any;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -52,13 +55,15 @@ export class AppComponent implements OnInit, OnDestroy
     )
     {
         // Get default navigation
-        this.navigation = navigation;
+        this.navigationManager = navigationManager;
+        this.navigationProvider = navigationProvider;
 
         // Register the navigation to the service
-        this._fuseNavigationService.register('main', this.navigation);
+        this._fuseNavigationService.register('manager', this.navigationManager);
+        this._fuseNavigationService.register('provider', this.navigationProvider);
 
         // Set the main navigation as our current navigation
-        this._fuseNavigationService.setCurrentNavigation('main');
+        this._fuseNavigationService.setCurrentNavigation('provider');
 
         // Add languages
         this._translateService.addLangs(['en', 'tr']);

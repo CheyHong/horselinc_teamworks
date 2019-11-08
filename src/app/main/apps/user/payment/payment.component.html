@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="rowItem">
-                <button mat-raised-button color="warn" type="" (click)="toggleInfoPanelOpen()" >ADD PAYMENT INFORMATION</button>
+                <button mat-raised-button color="warn" type="" (click)="openPaymentInfo()" >ADD PAYMENT INFORMATION</button>
             </div>
             <div rowItem>
                 <p>
@@ -52,10 +52,10 @@
     </div>
     <!-- /CONTENT -->
 
-    <fuse-sidebar name="user-payment-info-panel" class="payment-info-sidebar" position="right" [invisibleOverlay]="false">
-        <apps-user-payment-info></apps-user-payment-info>
+    <fuse-sidebar name="user-payment-info" class="user-payment-info" position="right" [invisibleOverlay]="false">
+        <user-payment-info></user-payment-info>
     </fuse-sidebar>
-    <fuse-sidebar name="user-payment-approver-panel" class="payment-approver-sidebar" position="right" [invisibleOverlay]="false">
-        <apps-user-payment-approver></apps-user-payment-approver>
+    <fuse-sidebar name="user-payment-approver" class="user-payment-approver" position="right" [invisibleOverlay]="false">
+        <user-payment-approver></user-payment-approver>
     </fuse-sidebar>        
 </div>
