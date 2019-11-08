@@ -75,6 +75,5 @@ export class ProfileService implements Resolve<any>
     exportManagerPayment(): void
     {
         this.setSelectProfileNo(1);
-        //this._router.;
     }
 }
