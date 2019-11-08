@@ -29,7 +29,6 @@ import { ProfileManagerPrivacyComponent } from 'app/main/apps/profile/manager/de
 import { ProfileManagerEditProfileComponent } from 'app/main/apps/profile/manager/dialogs/editprofile/editprofile.component';
 import { ProfileManagerUpdateEmailComponent } from './manager/dialogs/updateemail/updateemail.component';
 import { ProfileManagerUpdatePasswordComponent } from './manager/dialogs/updatepassword/updatepassword.component';
-import { ProfileManagerExportInvoiceComponent } from './manager/dialogs/exportinvoice/exportinvoice.component';
 import { ProfileManagerAddProviderComponent } from './manager/dialogs/addprovider/addprovider.component';
 import { ProfileManagerSearchProviderComponent } from './manager/dialogs/searchprovider/searchprovider.component';
 import { ProfileManagerAddPaymentComponent } from './manager/dialogs/addpayment/addpayment.component';
@@ -76,7 +75,6 @@ const routes: Routes = [
         ProfileManagerEditProfileComponent,
         ProfileManagerUpdateEmailComponent,
         ProfileManagerUpdatePasswordComponent,
-        ProfileManagerExportInvoiceComponent,
         ProfileManagerAddProviderComponent,
         ProfileManagerSearchProviderComponent,
         ProfileManagerAddPaymentComponent,
@@ -84,7 +82,6 @@ const routes: Routes = [
         ProfileProviderComponent,
         ProfileProviderListComponent,
         ProfileProviderDetailsComponent,
-
         ProfileProviderInvoiceComponent,
         ProfileProviderTermsComponent,
         ProfileProviderPrivacyComponent,

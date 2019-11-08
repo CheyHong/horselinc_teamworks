@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
+import { MatDividerModule } from '@angular/material/divider';
 
 import {MatTabsModule} from '@angular/material/tabs';
 
@@ -21,6 +22,7 @@ import { PaymentManagerService } from 'app/main/apps/payment-manager/payment-man
 import { PaymentManagerDetailsComponent } from './payment-manager-details/payment-manager-details.component';
 import { PaymentManagerListComponent } from 'app/main/apps/payment-manager/payment-manager-list/payment-manager-list.component';
 import { PaymentManagerListItemComponent } from './payment-manager-list/payment-manager-list-item/payment-manager-list-item.component';
+import { ProfileManagerExportInvoiceComponent } from './exportinvoice/exportinvoice.component';
 
 const routes: Routes = [
     {
@@ -50,6 +52,7 @@ const routes: Routes = [
     MatMenuModule,
     MatRippleModule,
     MatSelectModule,
+    MatDividerModule,
 
     NgxDnDModule,
 
@@ -63,6 +66,7 @@ const routes: Routes = [
       PaymentManagerDetailsComponent,
       PaymentManagerListComponent,
       PaymentManagerListItemComponent,
+      ProfileManagerExportInvoiceComponent
   ],
   providers   : [
     PaymentManagerService
