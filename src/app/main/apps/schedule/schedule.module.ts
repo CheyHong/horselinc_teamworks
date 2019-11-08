@@ -18,6 +18,7 @@ import { ScheduleComponent } from './schedule.component';
 import {SchedulePastComponent} from './schedule-past/schedule-past.component';
 import {ScheduleCurrentComponent} from './schedule-current/schedule-current.component';
 import {ScheduleFilterDialogComponent} from './schedule-filter-dialog/schedule-filter-dialog.component';
+import {ScheduleCardComponent} from './schedule-card/schedule-card.component';
 
 
 const routes: Routes = [
@@ -52,7 +53,8 @@ const routes: Routes = [
       ScheduleComponent,
       SchedulePastComponent,
       ScheduleCurrentComponent,
-      ScheduleFilterDialogComponent
+      ScheduleFilterDialogComponent,
+      ScheduleCardComponent
     ]
 })
 export class ScheduleModule { }

@@ -1,27 +1,19 @@
-<div class="card-content">
+<div>
     <div class="date_s">
-        <div *ngIf="status"> {{status}} </div>
-        <div>{{date}}</div>
+        <!-- <div > {{status}} </div> -->
+        <div>Today</div>
     </div>
-    <mat-card class="card">
-        <mat-card-header>
-            <div mat-card-avatar class="header-image"></div>
-            <mat-card-title class="Testuser2Barn">Testuser2Barn</mat-card-title>
-            <mat-card-subtitle class="Testuser2">Testuser2</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-                <div class="The-greates-show">WINTER EQUESTRAIN FESTIVAL</div>
-                <div class="Make-a-horse-speed-u">Baby Green Hunter 3</div>
-                <div class="Mane---Hunter-Braid">Main - Hunter Brain</div>
-                <div class="Short-special-reques" *ngIf="desc">{{desc}}</div>
-                <div fxLayout="row" fxLayoutAlign="start center">
-                    <img src="assets/images/avatars/Reyna.jpg" />
-                    <div class="Testuser1-Testuser1">Testuser1 (Testuser1barn)</div>
-                </div>
-        </mat-card-content>
-        <div class="btn_action" fxLayout="row" fxLayoutAlign="start center">
-            <div fxFlex mat-button matRipple class="MarkJobComplete">Mark Job Complete</div>
-            <div fxFlex matRipple class="Accept" style="height: 100%; text-align: center;" *ngIf="Accept"> Accept Job </div>
-        </div>
-    </mat-card>
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <schedule-card [card]="card_today"></schedule-card>
+    </div>    
+</div>
+<div>
+    <div class="date_s">
+        <div > Upcoming </div>
+        <div>SUN, JANUARY 14, 2018</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <schedule-card [card]="card_sun"></schedule-card>
+        <schedule-card [card]="card_accepted"></schedule-card>
+    </div>
 </div>
