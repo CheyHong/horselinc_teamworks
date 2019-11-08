@@ -12,10 +12,8 @@
         position: relative;
         padding:15px 15px 0px 15px;
         width: 100%;
-        height: 100vh;
-        @include media-breakpoint('xs') {
-            height: auto;
-        }
+        height: 100%;
+
         font-family: Roboto;
         font-size: 14px;
         font-stretch: normal;
