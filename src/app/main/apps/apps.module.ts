@@ -5,12 +5,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-
 import { FuseSharedModule } from '@fuse/shared.module';
 import { 
     MatToolbarModule, MatSidenavModule, 
     MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
 } from '@angular/material';
+// import { CalendarModule } from './../components/calendar/calendar.module';
 
 import {WelcomeComponent } from './welcome/welcome.component';
 

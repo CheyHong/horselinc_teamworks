@@ -26,14 +26,14 @@ export const navigationManager: FuseNavigation[] = [
         iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
         url      : '/apps/profile/manager',          
     },
-    {
-        id       : 'schedule',
-        title    : 'Schedule',
-        translate: 'NAV.SCHEDULE',
-        type     : 'item',
-        iconsrc  : 'assets/icons/horselinc/ic-shedule-black.svg',
-        url      : '/apps/schedule',
-    },
+    // {
+    //     id       : 'schedule',
+    //     title    : 'Schedule',
+    //     translate: 'NAV.SCHEDULE',
+    //     type     : 'item',
+    //     iconsrc  : 'assets/icons/horselinc/ic-shedule-black.svg',
+    //     url      : '/apps/schedule',
+    // },
     {
         id       : 'notification',
         title    : 'notification',

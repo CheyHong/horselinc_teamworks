@@ -23,6 +23,7 @@ import { PaymentProviderListItemComponent } from './payment-provider-list/paymen
 import {CreateDialogComponent} from './provider-dialogs/create-dialog/create-dialog.component';
 import {EditDialogComponent} from './provider-dialogs/edit-dialog/edit-dialog.component';
 
+
 const routes: Routes = [
     {
         path     : 'list',
