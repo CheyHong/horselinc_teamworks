@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -27,10 +28,8 @@ import { HorseManagerConfirmComponent } from 'app/main/apps/horse-manager/horse-
 import { HorseManagerDialogComponent } from 'app/main/apps/horse-manager/horse-manager-dialog/horse-manager-dialog.component';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { CommonModule } from '@angular/common';
-
-import { CalendarComponent } from './../../components/calendar/calendar.component';
-import { CalendarModule } from '../../components/calendar/calendar.module';
+import { CalendarComponent } from './calendar/calendar.component';
+import { AddNewServiceComponent } from './add-new-service/add-new-service.component';
 
 const routes: Routes = [
     {
@@ -58,7 +57,8 @@ const routes: Routes = [
         HorseManagerScheduleComponent,
         HorseManagerConfirmComponent,
         HorseManagerDialogComponent,
-        CalendarComponent
+        CalendarComponent,
+        AddNewServiceComponent
     ],
     imports        : [
         RouterModule.forChild(routes),
@@ -85,7 +85,7 @@ const routes: Routes = [
         FuseSharedModule,
         FuseSidebarModule,
         CommonModule,
-        CalendarModule
+//       CalendarModule
        
     ],
     providers      : [

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -16,6 +18,7 @@ import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
         NavbarVerticalStyle1Component
     ],
     imports     : [
+        RouterModule,
         MatButtonModule,
         MatIconModule,
         MatMenuModule,
