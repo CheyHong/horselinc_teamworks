@@ -17,8 +17,8 @@
       </mat-card-content>
       <div class="btn_action" fxLayout="row" fxLayoutAlign="start center">
           <div class="btn_mark" fxFlex mat-button matRipple *ngIf="card.type=='today'">Mark Job Complete</div>
-          <div class="btn_accept" fxFlex matRipple style="height: 100%; text-align: center;" *ngIf="card.type=='sun'"> Accept </div>
-          <div class="btn_accept_blue" fxFlex matRipple style="height: 100%; text-align: center;" *ngIf="card.type=='sun'"> Accept </div>
+          <div class="btn_accept" fxFlex matRipple style="height: 100%; text-align: center;" *ngIf="card.type=='sun'"> Accept Job</div>
+          <div class="btn_accept_blue" fxFlex matRipple style="height: 100%; text-align: center;" *ngIf="card.type=='sun'"> Accept Job</div>
           <div class="btn_accepted" fxFlex mat-button matRipple *ngIf="card.type=='sun_accepted'">Accepted</div>
       </div>
   </mat-card>
