@@ -46,37 +46,11 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
     )
     
     {
- 
         this.searchInput = new FormControl('');
-
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-
-        this._fuseConfigService.config = {
-            layout: {
-                navbar   : {
-                    hidden: false
-                },
-                toolbar  : {
-                    hidden: false
-                },
-                footer   : {
-                    hidden: true
-                },
-                sidepanel: {
-                    hidden: true
-                }
-            }
-        };
+        this._unsubscribeAll = new Subject();   
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
+    
     ngOnInit(): void
     {
       
@@ -89,35 +63,13 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
         this.toggle = true;
 
     }
-    /**
-     * On destroy
-     */
+  
     ngOnDestroy(): void
     {
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
-
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Toggle select all
-     */
-    toggleSelectAll(): void
-    {
-         
-    }
-    /**
-     * Toggle the sidebar
-     *
-     * @param name
-     */
-    toggleSidebar(name): void
-    {
-         this._fuseSidebarService.getSidebar(name).toggleOpen();
-    }
+   
     ScheduleCancel():void
     {
         this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
@@ -129,4 +81,3 @@ export class HorseManagerScheduleComponent implements OnInit, OnDestroy
     }    
 }
 
- 

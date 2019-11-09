@@ -67,9 +67,15 @@ const routes = [
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
-
-        MatToolbarModule, MatSidenavModule, 
-        MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
+        MatToolbarModule, 
+        MatSidenavModule, 
+        MatListModule,
+        MatSelectModule,
+        MatRadioModule, 
+        MatGridListModule,
+        MatDatepickerModule, 
+        MatNativeDateModule,
+        MatCardModule
     ],
     declarations: [
         WelcomeComponent,

@@ -35,7 +35,6 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
 
     /**
      * Constructor
-     *
      * 
      * @param {FuseSidebarService} _fuseSidebarService
      * @param {FuseTranslationLoaderService} _fuseTranslationLoaderService
@@ -43,98 +42,36 @@ export class HorseManagerConfirmComponent implements OnInit, OnDestroy
     constructor(
      
         private _fuseSidebarService: FuseSidebarService,
-        private _fuseTranslationLoaderService: FuseTranslationLoaderService,
-        private _fuseConfigService: FuseConfigService,
-    )
-    
-        // Configure the layout
-        
+    )     
       
     {
-
-      
-        // Load the translations
-        // this._fuseTranslationLoaderService.loadTranslations(english, turkish);
-
-        // Set the defaults
         this.searchInput = new FormControl('');
 
         // Set the private defaults
-        this._unsubscribeAll = new Subject();
-
-        this._fuseConfigService.config = {
-            layout: {
-                navbar   : {
-                    hidden: false
-                },
-                toolbar  : {
-                    hidden: false
-                },
-                footer   : {
-                    hidden: true
-                },
-                sidepanel: {
-                    hidden: true
-                }
-            }
-        };
+        this._unsubscribeAll = new Subject();    
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
+ 
     ngOnInit(): void
     {
         this.searchInput.valueChanges.pipe(
             takeUntil(this._unsubscribeAll),
             debounceTime(300),
             distinctUntilChanged()
-        )
+        );
             
     }
 
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void
+    ngOnDestroy():void
     {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Public methods
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * Toggle select all
-     */
-    toggleSelectAll(): void
-    {
-         
-    }
-
-   
-    
-    /**
-     * Toggle the sidebar
-     *
-     * @param name
-     */
-    toggleSidebar(name): void
-    {
-         this._fuseSidebarService.getSidebar(name).toggleOpen();
-    }
     confirmCancel():void
     {
         this._fuseSidebarService.getSidebar('horse-manager-confirm-panel').toggleOpen();
         this._fuseSidebarService.getSidebar('horse-manager-schedule-panel').toggleOpen();
     }   
-   
 }
- 

@@ -38,8 +38,8 @@
                         <div style="width: 70%;">Sort by</div>
                         <div style="width: 30%;">
                             <mat-select>
-                                <mat-option *ngFor="let sortby of sortbys" [value]="sortby.value" style="color: #27c5c8;">
-                                {{sortby.viewValue}}
+                                <mat-option *ngFor="let data of datas" [value]="data.value" style="color: #27c5c8;">
+                                {{data.viewValue}}
                                 </mat-option>
                             </mat-select>
                         </div>
@@ -65,8 +65,11 @@
                 <div class="arrow-down mr-30"></div>
             </div>
         </div>
-
+  
+  <!--<horse-manager-dialog class="filter"></horse-manager-dialog>-->
     <div fxFlex fxLayout="row" fxLayoutAlign="end center" >
+    
+      
          <button mat-raised-button color="#ffffff" class="button small" (click)="HorseFilter()">
                 <span class="text1 greencolor"> Filter</span>
          </button>
