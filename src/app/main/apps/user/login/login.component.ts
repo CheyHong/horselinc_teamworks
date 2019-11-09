@@ -1,12 +1,12 @@
 import { filter } from 'rxjs/operators';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { FuseConfigService } from '@fuse/services/config.service';
-import { FuseNavigationService } from '@fuse/components/navigation/navigation.service';
 import { fuseAnimations } from '@fuse/animations';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { FuseConfigService } from '@fuse/services/config.service';
+import { FuseNavigationService } from '@fuse/components/navigation/navigation.service';
+import { UserService } from '../user.service';
 @Component({
   selector: 'apps-user-login',
   templateUrl: './login.component.html',
@@ -23,6 +23,7 @@ export class UserLoginComponent implements OnInit {
      * @param {FormBuilder} _formBuilder
      */
     constructor(
+        private _userService: UserService,
         private _fuseConfigService: FuseConfigService,
         private _fuseNavigationService: FuseNavigationService,
         private _formBuilder: FormBuilder,
@@ -68,13 +69,15 @@ export class UserLoginComponent implements OnInit {
 
     onSubmit(): void
     {
-        let loginType: string;
+        let userType: string;
         let loginUrl: string;
 
-        loginType = this.f.email.value === 'provider@gmail.com' ? 'provider' : 'manager';
-        loginUrl = '/apps/horse/' + loginType;
+        userType = this.f.email.value === 'provider@gmail.com' ? 'provider' : 'manager';
+        loginUrl = '/apps/horse/' + userType;
 
-        this._fuseNavigationService.setCurrentNavigation(loginType);
+        this._userService.setUserType(userType);
+        this._fuseNavigationService.setCurrentNavigation(userType);
+        
         console.log("onSubmit:", loginUrl);
         this._router.navigate([loginUrl]);
     }

@@ -8,6 +8,8 @@ import { FuseNavigationService } from '@fuse/components/navigation/navigation.se
 import { FusePerfectScrollbarDirective } from '@fuse/directives/fuse-perfect-scrollbar/fuse-perfect-scrollbar.directive';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
+import { UserService } from 'app/main/apps/user/user.service';
+
 
 @Component({
     selector     : 'navbar-vertical-style-1',
@@ -33,6 +35,7 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
      * @param {Router} _router
      */
     constructor(
+        private _userService: UserService,
         private _fuseConfigService: FuseConfigService,
         private _fuseNavigationService: FuseNavigationService,
         private _fuseSidebarService: FuseSidebarService,
@@ -158,7 +161,17 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
 
     onSwitchProfile(): void
     {
-        console.log("onSwitchProfile");
+        let userType: string;
+        let loginUrl: string;
+
+        userType = this._userService.getUserType();
+        userType = userType === 'manager' ? 'provider' : 'manager';
+        loginUrl = '/apps/horse/' + userType;
+
+        this._userService.setUserType(userType);
+        this._fuseNavigationService.setCurrentNavigation(userType);
+        
+        this._router.navigate([loginUrl]);
     }
     onLogOut(): void
     {

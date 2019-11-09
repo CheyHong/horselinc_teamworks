@@ -12,7 +12,7 @@ import {
 } from '@angular/material';
 // import { CalendarModule } from './../components/calendar/calendar.module';
 
-import {WelcomeComponent } from './welcome/welcome.component';
+import {WelcomeComponent } from 'app/main/apps/welcome/welcome.component';
 
 const routes = [
     {

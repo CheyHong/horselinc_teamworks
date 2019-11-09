@@ -10,7 +10,8 @@ export class AddNewServiceComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void
+  {
   }
 
 }
