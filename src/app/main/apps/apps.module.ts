@@ -10,7 +10,7 @@ import {
     MatToolbarModule, MatSidenavModule, 
     MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
 } from '@angular/material';
-import { CalendarModule } from './../components/calendar/calendar.module';
+// import { CalendarModule } from './../components/calendar/calendar.module';
 
 import {WelcomeComponent } from './welcome/welcome.component';
 
@@ -70,7 +70,7 @@ const routes = [
 
         MatToolbarModule, MatSidenavModule, 
         MatListModule, MatSelectModule, MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule,
-        CalendarModule
+        // CalendarModule
     ],
     declarations: [
         WelcomeComponent,
