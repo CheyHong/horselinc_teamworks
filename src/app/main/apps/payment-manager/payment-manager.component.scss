@@ -11,7 +11,7 @@ payment-manager {
 
             payment-manager-list,
             payment-manager-details {
-                flex: 0 0 30%;
+                flex: 0 0 28%;
                 border-right: #efefef 1px solid;
             }
             .Schedule-Service {
@@ -48,7 +48,7 @@ payment-manager {
 
             
 
-            @include media-breakpoint('lt-lg') {
+            @include media-breakpoint('xs') {
 
                 payment-manager-list{
                     border-right: 0;
