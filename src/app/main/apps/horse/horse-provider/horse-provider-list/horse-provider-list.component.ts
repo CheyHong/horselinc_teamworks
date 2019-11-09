@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
-import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
+import { HorseProviderService } from 'app/main/apps/horse/horse-provider/horse-provider.service';
 import { fuseAnimations } from '@fuse/animations';
 
 interface HorseNode {

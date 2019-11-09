@@ -3,8 +3,8 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
-import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
-import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
+import { HorseManager } from 'app/main/apps/horse/horse-manager/horse-manager.model';
+import { HorseManagerService } from 'app/main/apps/horse/horse-manager/horse-manager.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 @Component({

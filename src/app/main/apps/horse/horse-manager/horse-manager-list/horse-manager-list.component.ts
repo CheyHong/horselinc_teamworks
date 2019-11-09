@@ -8,8 +8,8 @@ import { takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
-import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
-import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
+import { HorseManager } from 'app/main/apps/horse/horse-manager/horse-manager.model';
+import { HorseManagerService } from 'app/main/apps/horse/horse-manager/horse-manager.service';
 
 interface Data {
     value: string;

@@ -69,19 +69,8 @@ export class HorseProviderInvoiceComponent implements OnInit, OnDestroy
     /**
      * Toggle select all
      */
-    toggleSelectAll(): void
-    {
-         
-    }
-    /**
-     * Toggle the sidebar
-     *
-     * @param name
-     */
-    toggleSidebar(name): void
-    {
-         this._fuseSidebarService.getSidebar(name).toggleOpen();
-    }
+  
+   
     InvoiceCancel():void
     {
         this._fuseSidebarService.getSidebar('horse-provider-invoice-panel').toggleOpen();
@@ -91,6 +80,10 @@ export class HorseProviderInvoiceComponent implements OnInit, OnDestroy
         this._fuseSidebarService.getSidebar('horse-provider-invoice-panel').toggleOpen();
         this._fuseSidebarService.getSidebar('horse-provider-confirm-panel').toggleOpen();
     }    
+    AddService():void
+    {
+        this.toggle = !this.toggle;
+        console.log(this.toggle);
+    }
 }
 
- 
