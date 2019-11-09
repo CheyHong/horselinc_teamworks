@@ -47,7 +47,6 @@ const routes = [
         path        : 'payment/provider',
         loadChildren: 'app/main/apps/payment-provider/payment-provider.module#PaymentProviderModule'
     },
-    
     {
         path        : 'schedule',
         loadChildren: 'app/main/apps/schedule/schedule.module#ScheduleModule'
@@ -78,11 +77,11 @@ const routes = [
         MatCardModule
     ],
     declarations: [
-        WelcomeComponent,
+        WelcomeComponent
     ],
 
     exports: [
-        WelcomeComponent,
+        WelcomeComponent
     ]
 })
 export class AppsModule

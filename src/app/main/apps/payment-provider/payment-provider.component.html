@@ -6,7 +6,7 @@
         <div class="content-card" [ngClass]="{'current-provider-selected':currentProvider}">
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar px-24 py-8" fxHide.gt-md>
+            <div class="toolbar px-24 py-8" fxHide fxShow.xs>
 
                 <div *ngIf="currentProvider">
                     <button mat-icon-button (click)="deselectCurrentProvider()">

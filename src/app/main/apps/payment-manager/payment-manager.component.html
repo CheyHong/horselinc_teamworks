@@ -6,7 +6,7 @@
         <div class="content-card" [ngClass]="{'current-payment-selected':currentPayment}">
 
             <!-- CONTENT TOOLBAR -->
-            <div class="toolbar px-24 py-8" fxHide.gt-md>
+            <div class="toolbar px-24 py-8" fxHide fxShow.xs>
 
                 <div *ngIf="currentPayment">
                     <button mat-icon-button (click)="deselectCurrentPayment()">

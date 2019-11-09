@@ -48,7 +48,7 @@ provider {
 
             
 
-            @include media-breakpoint('lt-lg') {
+            @include media-breakpoint('xs') {
 
                 payment-provider-list {
                     border-right: 0;
