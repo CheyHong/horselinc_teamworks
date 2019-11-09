@@ -156,5 +156,12 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
         this._fuseSidebarService.getSidebar(key).toggleOpen();
     }
 
+    onSwitchProfile(): void
+    {
+        console.log("onSwitchProfile");
+    }
+    onLogOut(): void
+    {
+        console.log("onLogOut");
+    }
 }
-  

@@ -27,7 +27,8 @@ import { HorseManagerConfirmComponent } from 'app/main/apps/horse-manager/horse-
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
-import { CalendarComponent } from './../../components/calendar/calendar.component';
+//import { CalendarComponent } from './../../components/calendar/calendar.component';
+import { CalendarModule } from '../../components/calendar/calendar.module';
 
 const routes: Routes = [
     {
@@ -54,7 +55,7 @@ const routes: Routes = [
         HorseManagerProfileComponent,
         HorseManagerScheduleComponent,
         HorseManagerConfirmComponent,
-        CalendarComponent
+//        CalendarComponent
     ],
     imports        : [
         RouterModule.forChild(routes),
@@ -81,7 +82,7 @@ const routes: Routes = [
         FuseSharedModule,
         FuseSidebarModule,
         CommonModule,
-//        CalendarModule
+        CalendarModule
        
     ],
     providers      : [
