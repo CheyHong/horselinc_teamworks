@@ -23,9 +23,30 @@ export class ScheduleComponent implements OnInit {
     currentSchedule: Schedule;
 
     
-    constructor() { }
+    constructor(
+        private _fuseSidebarService: FuseSidebarService,
+        private _fuseConfigService: FuseConfigService,
+    ) {
+            // Configure the layout
+            this._fuseConfigService.config = {
+                layout: {
+                    navbar   : {
+                        hidden: false
+                    },
+                    toolbar  : {          
+                        hidden: false
+                    },
+                    footer   : {
+                        hidden: true
+                    },
+                    sidepanel: {
+                        hidden: true
+                    }
+                }
+            };
+     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         
     }
 
