@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import { FuseUtils } from '@fuse/utils';
 
-import { PaymentManager } from 'app/main/apps/payment-manager/payment-manager.model';
+import { PaymentManager } from 'app/main/apps/payment/payment-manager/payment-manager.model';
 
 @Injectable()
 export class PaymentManagerService implements Resolve<any>

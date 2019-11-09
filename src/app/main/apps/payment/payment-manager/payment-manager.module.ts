@@ -18,9 +18,9 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
 import { PaymentManagerComponent } from './payment-manager.component';
-import { PaymentManagerService } from 'app/main/apps/payment-manager/payment-manager.service';
+import { PaymentManagerService } from 'app/main/apps/payment/payment-manager/payment-manager.service';
 import { PaymentManagerDetailsComponent } from './payment-manager-details/payment-manager-details.component';
-import { PaymentManagerListComponent } from 'app/main/apps/payment-manager/payment-manager-list/payment-manager-list.component';
+import { PaymentManagerListComponent } from 'app/main/apps/payment/payment-manager/payment-manager-list/payment-manager-list.component';
 import { PaymentManagerListItemComponent } from './payment-manager-list/payment-manager-list-item/payment-manager-list-item.component';
 import { ProfileManagerExportInvoiceComponent } from './exportinvoice/exportinvoice.component';
 

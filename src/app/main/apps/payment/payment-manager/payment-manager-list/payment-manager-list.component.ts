@@ -5,8 +5,8 @@ import { Subject } from 'rxjs';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { PaymentManager } from 'app/main/apps/payment-manager/payment-manager.model';
-import { PaymentManagerService } from 'app/main/apps/payment-manager/payment-manager.service';
+import { PaymentManager } from 'app/main/apps/payment/payment-manager/payment-manager.model';
+import { PaymentManagerService } from 'app/main/apps/payment/payment-manager/payment-manager.service';
 import { takeUntil } from 'rxjs/operators';
 
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';

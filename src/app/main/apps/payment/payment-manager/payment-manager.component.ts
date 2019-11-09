@@ -7,8 +7,8 @@ import { fuseAnimations } from '@fuse/animations';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseConfigService } from '@fuse/services/config.service';
 
-import { PaymentManager } from 'app/main/apps/payment-manager/payment-manager.model';
-import { PaymentManagerService } from 'app/main/apps/payment-manager/payment-manager.service';
+import { PaymentManager } from 'app/main/apps/payment/payment-manager/payment-manager.model';
+import { PaymentManagerService } from 'app/main/apps/payment/payment-manager/payment-manager.service';
 
 @Component({
     selector     : 'payment-manager',

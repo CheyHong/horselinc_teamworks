@@ -41,11 +41,11 @@ const routes = [
     },
     {
         path        : 'payment/manager',
-        loadChildren: 'app/main/apps/payment-manager/payment-manager.module#PaymentManagerModule'
+        loadChildren: 'app/main/apps/payment/payment-manager/payment-manager.module#PaymentManagerModule'
     },
     {
         path        : 'payment/provider',
-        loadChildren: 'app/main/apps/payment-provider/payment-provider.module#PaymentProviderModule'
+        loadChildren: 'app/main/apps/payment/payment-provider/payment-provider.module#PaymentProviderModule'
     },
     {
         path        : 'schedule',

@@ -6,8 +6,8 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { FuseUtils } from '@fuse/utils';
 import { fuseAnimations } from '@fuse/animations';
 
-import { PaymentManager } from 'app/main/apps/payment-manager/payment-manager.model';
-import { PaymentManagerService } from 'app/main/apps/payment-manager/payment-manager.service';
+import { PaymentManager } from 'app/main/apps/payment/payment-manager/payment-manager.model';
+import { PaymentManagerService } from 'app/main/apps/payment/payment-manager/payment-manager.service';
 
 @Component({
     selector     : 'payment-manager-details',

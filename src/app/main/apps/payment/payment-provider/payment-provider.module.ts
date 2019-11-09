@@ -14,7 +14,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import { PaymentProviderService } from 'app/main/apps/payment-provider/payment-provider.service';
+import { PaymentProviderService } from 'app/main/apps/payment/payment-provider/payment-provider.service';
 import { PaymentProviderComponent } from './payment-provider.component';
 import { PaymentProviderListComponent } from './payment-provider-list/payment-provider-list.component';
 import { PaymentProviderDetailsComponent } from './payment-provider-details/payment-provider-details.component';
