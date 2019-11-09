@@ -1,6 +1,6 @@
 @import "src/@fuse/scss/fuse";
-#horsemanagerschedule {
-    height: 100vh;
+horse-manager-schedule {
+    // height: 100vh;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -9,10 +9,9 @@
     width: 360;
     max-width: 360px;
     background-color: #ffffff;
-    position: relative;
     .cancelSave {
         position: absolute;
-        bottom: 10px;
+        bottom: 0;
         right: 10px;
     }
     @include media-breakpoint('xs') {

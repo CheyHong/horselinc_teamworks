@@ -1,0 +1,39 @@
+<div fxLayout="column" fxLayoutAlign="center end">
+    <div fxFlex="90%" class="modal" fxLayout="column" fxLayoutAlign="start center" fxHide="{{toggle}}">
+        <div class="rect">
+            <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="Filters">Filters</div>
+                <img src="assets/icons/horselinc/filled.svg" class="Filled" (click)="toggleFilter()" />
+            </div>
+            <div class="box">
+                <div style="width: 70%;">Sort by</div>
+                <div style="width: 30%;">
+                    <mat-select>
+                        <mat-option *ngFor="let sortby of sortbys" [value]="sortby.value" style="color: #27c5c8;">
+                        {{sortby.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </div>
+            </div>
+            <div class="flat">
+                <div class="Show-only">Show only</div>
+            </div>
+            <div class="box">
+                <div>Owner</div>
+            </div>
+            <div class="box">
+                <div>Trainer</div>
+            </div>
+            <div class="flat" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="service-scheduled" style="width: 90%;"> Services Scheduled </div>
+                <mat-slide-toggle style="width: 10%;"></mat-slide-toggle>
+            </div>
+            <div class="action" fxLayout="row" fxLayoutAlign="space-between center">
+                <button class="button1" mat-raised-button>CLEAR</button>
+                <button class="button2" mat-raised-button>APPLY</button>
+            </div>
+        </div>
+        <div class="arrow-down"></div>
+    </div>
+    <button fxFlex="10%" mat-raised-button class="button3" (click)="toggleFilter()">Filters</button>
+</div>
