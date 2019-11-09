@@ -6,8 +6,8 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { fuseAnimations } from '@fuse/animations';
 
 
-import { Provider } from 'app/main/apps/horse-provider/provider.model';
-import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
+import { Provider } from 'app/main/apps/horse/horse-provider/provider.model';
+import { HorseProviderService } from 'app/main/apps/horse/horse-provider/horse-provider.service';
 
 @Component({
     selector     : 'provider',

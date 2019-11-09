@@ -6,8 +6,8 @@ import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { FuseTranslationLoaderService } from '@fuse/services/translation-loader.service';
 
-import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
-import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
+import { HorseManager } from 'app/main/apps/horse/horse-manager/horse-manager.model';
+import { HorseManagerService } from 'app/main/apps/horse/horse-manager/horse-manager.service';
 
 import { FuseConfigService } from '@fuse/services/config.service';
 
