@@ -12,11 +12,6 @@
         width: 100%;
         max-width: 100%;
     }
-    .cancelSave {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-    }
     background-color: #ffffff;
     .matselect {
         padding: 16px;
@@ -30,7 +25,7 @@
     }
     .button {
         &.small {
-            margin: 16px 0 24px 0;
+            margin: 16px 0 0 0;
             width: 93px;
             height: 44px;
             border-radius: 100px;
@@ -54,7 +49,7 @@
             }
         }
         &.big {
-            margin: 16px 0 24px 0;
+            margin: 16px 0 0 0;
             width: 186.3px;
             height: 44px;
             border-radius: 100px;
@@ -67,7 +62,7 @@
             }
         }
         &.huge {
-            margin: 16px 0 24px 0;
+            margin: 16px 0 0 0;
             width: 328px;
             height: 44px;
             border-radius: 100px;

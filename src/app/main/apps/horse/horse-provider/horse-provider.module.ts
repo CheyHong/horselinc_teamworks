@@ -14,7 +14,7 @@ import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 import { MatSidenavModule, MatListModule,  MatRadioModule, MatGridListModule, MatDatepickerModule, MatNativeDateModule, MatCardModule} from '@angular/material';
 import { MatSelectModule } from '@angular/material/select';
-import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
+import { HorseProviderService } from 'app/main/apps/horse/horse-provider/horse-provider.service';
 import { HorseProviderComponent } from './horse-provider.component';
 import { HorseProviderListComponent } from './horse-provider-list/horse-provider-list.component';
 import { HorseProviderDetailsComponent } from './horse-provider-details/horse-provider-details.component';
@@ -22,7 +22,7 @@ import { HorseProviderListItemComponent } from './horse-provider-list/horse-prov
 import { HorseProviderPrivateComponent} from './horse-provider-private/horse-provider-private.component';
 import { HorseProviderInvoiceComponent } from './horse-provider-invoice/horse-provider-invoice.component';
 import { HorseProviderConfirmComponent } from './horse-provider-confirm/horse-provider-confirm.component';
-
+import { AddNewServiceComponent } from './add-new-service/add-new-service.component';
 const routes: Routes = [
     {
         path     : 'list',
@@ -68,7 +68,8 @@ const routes: Routes = [
     MatDatepickerModule, 
     MatNativeDateModule, 
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    
   ],
   declarations: [
       HorseProviderComponent,
@@ -78,6 +79,8 @@ const routes: Routes = [
       HorseProviderPrivateComponent,
       HorseProviderInvoiceComponent,
       HorseProviderConfirmComponent,
+      AddNewServiceComponent,
+  
   ],
   providers   : [
     HorseProviderService

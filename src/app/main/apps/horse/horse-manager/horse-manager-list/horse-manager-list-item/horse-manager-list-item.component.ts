@@ -2,8 +2,8 @@ import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } f
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
-import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
+import { HorseManager } from 'app/main/apps/horse/horse-manager/horse-manager.model';
+import { HorseManagerService } from 'app/main/apps/horse/horse-manager/horse-manager.service';
 
 @Component({
     selector     : 'horse-manager-list-item',

@@ -17,19 +17,19 @@ import {  MatSidenavModule, MatListModule,  MatRadioModule, MatGridListModule, M
 import { FuseSharedModule } from '@fuse/shared.module';
 import { FuseSidebarModule } from '@fuse/components';
 
-import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
-import { HorseManagerComponent } from 'app/main/apps/horse-manager/horse-manager.component';
-import { HorseManagerListComponent } from 'app/main/apps/horse-manager/horse-manager-list/horse-manager-list.component';
-import { HorseManagerListItemComponent } from 'app/main/apps/horse-manager/horse-manager-list/horse-manager-list-item/horse-manager-list-item.component';
-import { HorseManagerDetailsComponent } from 'app/main/apps/horse-manager/horse-manager-details/horse-manager-details.component';
-import { HorseManagerProfileComponent } from 'app/main/apps/horse-manager/horse-manager-profile/horse-manager-profile.component';
-import { HorseManagerScheduleComponent } from 'app/main/apps/horse-manager/horse-manager-schedule/horse-manager-schedule.component';
-import { HorseManagerConfirmComponent } from 'app/main/apps/horse-manager/horse-manager-confirm/horse-manager-confirm.component';
-import { HorseManagerDialogComponent } from 'app/main/apps/horse-manager/horse-manager-dialog/horse-manager-dialog.component';
+import { HorseManagerService } from 'app/main/apps/horse/horse-manager/horse-manager.service';
+import { HorseManagerComponent } from 'app/main/apps/horse/horse-manager/horse-manager.component';
+import { HorseManagerListComponent } from './horse-manager-list/horse-manager-list.component';
+import { HorseManagerListItemComponent } from './horse-manager-list/horse-manager-list-item/horse-manager-list-item.component';
+import { HorseManagerDetailsComponent } from './horse-manager-details/horse-manager-details.component';
+import { HorseManagerProfileComponent } from './horse-manager-profile/horse-manager-profile.component';
+import { HorseManagerScheduleComponent } from './horse-manager-schedule/horse-manager-schedule.component';
+import { HorseManagerConfirmComponent } from './horse-manager-confirm/horse-manager-confirm.component';
+import { HorseManagerDialogComponent } from './horse-manager-dialog/horse-manager-dialog.component';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CalendarComponent } from './calendar/calendar.component';
-import { AddNewServiceComponent } from './add-new-service/add-new-service.component';
+
 
 const routes: Routes = [
     {
@@ -58,7 +58,7 @@ const routes: Routes = [
         HorseManagerConfirmComponent,
         HorseManagerDialogComponent,
         CalendarComponent,
-        AddNewServiceComponent
+
     ],
     imports        : [
         RouterModule.forChild(routes),
@@ -85,7 +85,6 @@ const routes: Routes = [
         FuseSharedModule,
         FuseSidebarModule,
         CommonModule,
-//       CalendarModule
        
     ],
     providers      : [

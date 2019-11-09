@@ -51,9 +51,13 @@
              <span class="text1 blackgreencolor">
                 Add Custom Service
             </span>
+            <div (click)='AddService()'>
             <img  src="assets/icons/horselinc/add_circle-24px.svg" class="buttondiv avatar small"/>
+            </div>
         </div>
-     
+        <div fxHide={{toggle}}>
+        <add-new-service></add-new-service>
+        </div>    
         <div class="textbox2 mb-24" fxLayout="row" fxLayoutAlign="start center">
             <div>
                 <span class="text2 blackgreencolor">
@@ -71,13 +75,13 @@
         </div>
     </div>
     <div class="cancelSave">
-        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.xs="end center">
-            <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="InvoiceCancel()">
+        <div fxLayout="row" fxLayoutAlign="center end">
+            <button mat-raised-button class="m-8 button medium whitecolor" (click)="InvoiceCancel()">
                 <span class="text1 greencolor">
                     CANCEL
                 </span>
             </button>
-            <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="InvoiceSave()">
+            <button mat-raised-button class="m-8 button medium redcolor" (click)="InvoiceSave()">
                 <span class="text1 whitecolor">
                     SAVE
                 </span>

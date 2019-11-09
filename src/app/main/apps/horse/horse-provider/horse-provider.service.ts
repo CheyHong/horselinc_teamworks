@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import { FuseUtils } from '@fuse/utils';
 
-import { Provider } from 'app/main/apps/horse-provider/provider.model';
+import { Provider } from 'app/main/apps/horse/horse-provider/provider.model';
 
 @Injectable()
 export class HorseProviderService implements Resolve<any>{
@@ -340,7 +340,7 @@ export class HorseProviderService implements Resolve<any>{
 
         this.onCurrentProviderChanged.next(this.currentProvider);
         console.log(id);
-        this._location.go('apps/horse-provider/all/' + id);
+        this._location.go('apps/horse/horse-provider/all/' + id);
     }
 
     /**

@@ -1,8 +1,8 @@
 import { Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { Subject } from 'rxjs';
-import { Provider } from 'app/main/apps/horse-provider/provider.model';
-import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
+import { Provider } from 'app/main/apps/horse/horse-provider/provider.model';
+import { HorseProviderService } from 'app/main/apps/horse/horse-provider/horse-provider.service';
 
 
 @Component({

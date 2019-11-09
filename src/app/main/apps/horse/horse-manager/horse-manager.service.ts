@@ -5,7 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 import { FuseUtils } from '@fuse/utils';
 
-import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
+import { HorseManager } from 'app/main/apps/horse/horse-manager/horse-manager.model';
 
 @Injectable()
 export class HorseManagerService implements Resolve<any>
