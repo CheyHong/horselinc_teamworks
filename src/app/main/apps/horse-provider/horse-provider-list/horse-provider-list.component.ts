@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import { HorseProviderService } from 'app/main/apps/horse-provider/horse-provider.service';
-
+import { fuseAnimations } from '@fuse/animations';
 
 interface HorseNode {
     name: string;
@@ -39,7 +39,10 @@ interface ExampleFlatNode {
 @Component({
     selector: 'horse-provider-list',
     templateUrl: './horse-provider-list.component.html',
-    styleUrls: ['./horse-provider-list.component.scss']
+    styleUrls: ['./horse-provider-list.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    animations   : fuseAnimations
+
 })
 export class HorseProviderListComponent implements OnInit{
 

@@ -1,4 +1,17 @@
-<div>
+<div fxLayout="column">
+  <div class="textbox1" fxLayoutAlign="start center">
+        <div fxLayout="row" fxFlex>
+            <div class="buttondiv"  fxFlex="10">
+                <img src="assets/icons/horselinc/search.svg" class="avatar small"/>
+            </div>
+            <div  fxFlex="80">
+                <input class="text1 inputcolor" fxFlex placeholder="Search"/>  
+            </div>
+            <div  fxFlex="10">
+                <img src="assets/icons/horselinc/settings_voice-24px.svg" class="avatar small"/>
+            </div>
+        </div>
+    </div>   
     <div class="title_m"> Horse (by Manager) </div>
     <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
 

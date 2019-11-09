@@ -39,7 +39,7 @@ provider {
                     margin: 0 12px;
                 }
             }
-            @include media-breakpoint('lt-lg') {
+            @include media-breakpoint('xs') {
                 horse-provider-list {
                     border-right: 0;
                 }
