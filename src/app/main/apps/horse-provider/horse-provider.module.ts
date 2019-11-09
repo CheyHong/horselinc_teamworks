@@ -22,7 +22,7 @@ import { HorseProviderListItemComponent } from './horse-provider-list/horse-prov
 import { HorseProviderPrivateComponent} from './horse-provider-private/horse-provider-private.component';
 import { HorseProviderInvoiceComponent } from './horse-provider-invoice/horse-provider-invoice.component';
 import { HorseProviderConfirmComponent } from './horse-provider-confirm/horse-provider-confirm.component';
-
+import { AddNewServiceComponent } from '../../components/add-new-service/add-new-service.component';
 const routes: Routes = [
     {
         path     : 'list',
@@ -68,7 +68,8 @@ const routes: Routes = [
     MatDatepickerModule, 
     MatNativeDateModule, 
     MatCardModule,
-    MatSelectModule
+    MatSelectModule,
+    
   ],
   declarations: [
       HorseProviderComponent,
@@ -78,6 +79,7 @@ const routes: Routes = [
       HorseProviderPrivateComponent,
       HorseProviderInvoiceComponent,
       HorseProviderConfirmComponent,
+      AddNewServiceComponent,
   ],
   providers   : [
     HorseProviderService
