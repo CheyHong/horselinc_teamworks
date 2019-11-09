@@ -29,12 +29,12 @@
 
                 <mat-divider></mat-divider>
                 
-                <button mat-menu-item fxLayout="row" fxLayoutAlign="start center">
+                <button mat-menu-item fxLayout="row" fxLayoutAlign="start center" (click)="onSwitchProfile()">
                     <img class="small mr-12" src="assets/icons/horselinc/ic-side-freelancer.svg">
                     <span>Switch To Provider Profile</span>
                 </button>
 
-                <button mat-menu-item fxLayout="row" fxLayoutAlign="start center">
+                <button mat-menu-item fxLayout="row" fxLayoutAlign="start center" routerLink="/apps/user/login/">
                     <img class="small mr-12" src="assets/icons/horselinc/ic-side-exit.svg">
                     <span>Log out</span>
                 </button>

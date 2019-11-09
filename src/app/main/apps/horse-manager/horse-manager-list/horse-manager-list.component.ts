@@ -11,6 +11,11 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 import { HorseManager } from 'app/main/apps/horse-manager/horse-manager.model';
 import { HorseManagerService } from 'app/main/apps/horse-manager/horse-manager.service';
 
+interface Data {
+    value: string;
+    viewValue: string;
+  }
+  
 @Component({
     selector     : 'horse-manager-list',
     templateUrl  : './horse-manager-list.component.html',
@@ -23,7 +28,8 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
     horsemanagers: HorseManager[];
     currentHorseManager: HorseManager;
     toggle: boolean;
-    
+    datas: Data[];
+
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -57,6 +63,13 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
     {
         // Subscribe to update horses on changes
         this.toggle = true;
+
+        this.datas = [
+            {value: 'steak-0', viewValue: 'Steak'},
+            {value: 'pizza-1', viewValue: 'Pizza'},
+            {value: 'tacos-2', viewValue: 'Tacos'}
+          ];
+
         this._horseManagerService.onHorseManagersChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(horsemanagers => {
@@ -73,6 +86,8 @@ export class HorseManagerListComponent implements OnInit, OnDestroy
                     this.currentHorseManager = currentHorseManager;
                 }
             });
+
+         
     }
 
     /**

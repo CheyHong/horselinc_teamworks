@@ -1,5 +1,5 @@
 
-<div id="horsemanagerschedule" fxLayout="column">
+<div fxLayout="column">
     <div fxLayout="column">
         <div fxLayout="row">
             <div class="textbox6 title1 blackgreencolor pt-8 pb-20">
@@ -15,9 +15,10 @@
             <div fxLayout="row" class="textbox3" fxLayoutAlign="space-between center">
                 <span fxFlex="15" class="text2 blackcolor">
                     Data
-                </span>
-                <input fxFlex="70" class="inputcolor text2" matInput [matDatepicker]="picker1" placeholder="Date" [formControl]="date">
-                <div fxFlax="15">
+                </span>  
+                <input fxFlax="70" class="inputcolor text2" matInput [matDatepicker]="picker1" placeholder="Date" >
+                <!--[formControl]="date"-->
+                <div fxFlax="15">      
                     <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                     <mat-datepicker #picker1></mat-datepicker>
                 </div>
@@ -94,7 +95,7 @@
     </div>
     <div class="cancelSave" >
         <div>
-            <div fxLayout="row" fxLayoutAlign="end end">
+            <div fxLayout="row">
                 <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="ScheduleCancel()">
                     <span class="text1 greencolor">
                         CANCEL

@@ -1,5 +1,5 @@
 @import "src/@fuse/scss/fuse";
-#horsemanagerconfirm {
+horse-manager-confirm {
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -11,10 +11,9 @@
     @include media-breakpoint('xs') {
         padding: 8px;
     }
-    position: relative;
     .cancelSave {
         position: absolute;
-        bottom: 10px;
+        bottom: 0px;
         right: 10px;
     }
     .button {

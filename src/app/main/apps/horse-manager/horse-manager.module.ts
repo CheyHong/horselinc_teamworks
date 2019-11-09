@@ -24,10 +24,13 @@ import { HorseManagerDetailsComponent } from 'app/main/apps/horse-manager/horse-
 import { HorseManagerProfileComponent } from 'app/main/apps/horse-manager/horse-manager-profile/horse-manager-profile.component';
 import { HorseManagerScheduleComponent } from 'app/main/apps/horse-manager/horse-manager-schedule/horse-manager-schedule.component';
 import { HorseManagerConfirmComponent } from 'app/main/apps/horse-manager/horse-manager-confirm/horse-manager-confirm.component';
+import { HorseManagerDialogComponent } from 'app/main/apps/horse-manager/horse-manager-dialog/horse-manager-dialog.component';
+
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
 import { CalendarComponent } from './../../components/calendar/calendar.component';
+import { CalendarModule } from '../../components/calendar/calendar.module';
 
 const routes: Routes = [
     {
@@ -54,6 +57,7 @@ const routes: Routes = [
         HorseManagerProfileComponent,
         HorseManagerScheduleComponent,
         HorseManagerConfirmComponent,
+        HorseManagerDialogComponent,
         CalendarComponent
     ],
     imports        : [
@@ -81,7 +85,7 @@ const routes: Routes = [
         FuseSharedModule,
         FuseSidebarModule,
         CommonModule,
-//        CalendarModule
+        CalendarModule
        
     ],
     providers      : [
