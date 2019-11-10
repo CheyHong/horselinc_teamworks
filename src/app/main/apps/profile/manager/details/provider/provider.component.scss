@@ -166,13 +166,19 @@
         background-color: #fafafa;
     }
     .buttondiv {
-        &:hover {
-            border-radius: 13px;
-            box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
-        }
-        &:active {
-            border-radius: 13px;
-            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
+        width:24px;
+        height:24px;
+        img{
+            width:24px;
+            height:24px;
+            &:hover {
+                border-radius: 15px;
+                box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.12);
+            }
+            &:active {
+                border-radius: 15px;
+                box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.12);
+            }
         }
     }
 }
