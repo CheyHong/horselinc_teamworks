@@ -15,7 +15,7 @@ export class ProfileManagerExportInvoiceComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   closePanel(): void{

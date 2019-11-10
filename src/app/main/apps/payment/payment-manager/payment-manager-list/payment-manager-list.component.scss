@@ -6,6 +6,7 @@ payment-manager-list {
     padding: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    min-width: 330px;
 
     mat-tab-group.mat-primary .mat-ink-bar {background-color: #27c5c8 !important;}
 
@@ -40,6 +41,7 @@ mat-tab-group {
     height: 100%;
     .mat-tab-label {
         width: 50%;
+        font-weight: bold;
     }
     .mat-tab-body-wrapper {
         height: 100%;
