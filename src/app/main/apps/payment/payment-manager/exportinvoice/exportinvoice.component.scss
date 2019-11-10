@@ -1,7 +1,7 @@
 @import "src/@fuse/scss/fuse";
 .container {
     width: 360px;
-    height: 100vh;
+    height: 1024px;
      @include media-breakpoint('xs') {
          width:100%;
         height: calc(100vh-64px);
