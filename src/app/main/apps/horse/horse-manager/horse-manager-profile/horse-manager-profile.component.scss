@@ -6,7 +6,7 @@
     -webkit-overflow-scrolling: touch;
     background-color: #ffffff;
     .Edit-Horse-Profile {
-        padding: 24px 16px 16px 16px;
+        padding: 24px 16px 8px 16px;
     }
     .img {
         padding: 16px;
@@ -133,6 +133,12 @@
         min-height: 56px;
         box-shadow: 0 2px 15px 0 rgba(13, 62, 83, 0.24);
         background-color: #fafafa;
+    }
+    .textbox6 {
+        width: 520px;
+        @include media-breakpoint('xs') {
+            width: 100%;
+        }
     }
     .whitecolor {
         color: #ffffff;

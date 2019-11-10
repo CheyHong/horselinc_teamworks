@@ -1,9 +1,16 @@
 <div fxLayout="row"> 
 <div id="horsemanagerprofile" fxLayout="column">
     <div class="edithorseprofile" fxLayout="column">
-        <div class="title Edit-Horse-Profile">Edit Horse Profile</div>
+        <div fxLayout="row" class="Edit-Horse-Profile">
+            <div class="textbox6 title blackgreencolor" fxLayoutAlign="start center">
+                Edit Horse Profile
+            </div>
+            <div (click)="ProfileCancel()">
+                <img class="buttondiv" src="assets/icons/horselinc/filled.svg"/>
+            </div>
+        </div>
         <div class="img">
-            <img src="assets/images/avatars/Helen.jpg" class="avatar huge"/>   
+            <img src="assets/images/avatars/horse.jpg" class="avatar huge"/>   
         </div>
     </div>
     <div  fxLayout="column">

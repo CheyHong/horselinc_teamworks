@@ -131,7 +131,10 @@ export class HorseManagerProfileComponent implements OnInit, OnDestroy
     {
         this.stateMessage = "Save Button Click!";
     }
-
+    ProfileCancel():void
+    {
+        this._fuseSidebarService.getSidebar('horse-manager-profile-panel').toggleOpen();
+    }
 
 }
  
