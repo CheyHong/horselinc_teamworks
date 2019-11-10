@@ -29,7 +29,7 @@
             <payment-provider-list-item class="provider-list-item has-handle"
                 *ngFor="let provider of providers" [provider]="provider" (click)="readProvider(provider.id)"
                 [ngClass]="{'current-provider':provider?.id == currentProvider?.id}"
-                matRipple>
+            >
             </payment-provider-list-item>
         </div>
     </mat-tab>
