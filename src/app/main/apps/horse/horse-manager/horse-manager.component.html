@@ -1,27 +1,22 @@
  <div class="page-layout carded left-sidebar inner-scroll">
  
-     <div class="m-0 center">  
+    <div class="m-0 center">  
        
         <div class="content-card" [ngClass]="{'current-horse-selected':currentHorseFlag != false}">
 
            <div class="back" fxHide fxShow.xs  fxLayout="row" fxLayoutAlign="start center" *ngIf="currentHorseFlag != false" (click)="gotoList()"> 
            
-                    <mat-icon class="text1 redcolor">arrow_back</mat-icon>
+                    <mat-icon class="text1 redcolor">chevron_left</mat-icon>
                     <span class="text1 redcolor">Manager Horse</span>
             </div> 
-
             <div class="content" fxLayout="row">
   
                 <horse-manager-list fusePerfectScrollbar fxFlex.gt-md="30"></horse-manager-list>
                 <horse-manager-details fusePerfectScrollbar fxFlex></horse-manager-details>
 
             </div>
-          
-
         </div> 
-       
-
-      </div>  
+    </div>  
     
     <fuse-sidebar name="horse-manager-profile-panel" class="horse-manager-sidebar" position="right" [invisibleOverlay]="false">
         <horse-manager-profile></horse-manager-profile>

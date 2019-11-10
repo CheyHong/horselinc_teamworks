@@ -3,17 +3,15 @@
 </div>
 <div fxLayout = "column" fxFlexFill>
 
-    <div class="textbox1" fxLayoutAlign="start center">
+    <div class="textbox1 inputcolor" fxLayoutAlign="start center">
         <div fxLayout="row" fxFlex>
-            <div class="buttondiv"  fxFlex="10">
-                <img src="assets/icons/horselinc/search.svg" class="avatar small"/>
+            <div fxFlex="10">
+                <img src="assets/icons/horselinc/search.svg" class=" buttondiv avatar small"/>
             </div>
             <div  fxFlex="80">
                 <input class="text1 inputcolor" fxFlex placeholder="Search"/>  
             </div>
-            <div  fxFlex="10">
-                <img src="assets/icons/horselinc/settings_voice-24px.svg" class="avatar small"/>
-            </div>
+         
         </div>
     </div>   
 
@@ -67,16 +65,17 @@
         </div>
   
   <!--<horse-manager-dialog class="filter"></horse-manager-dialog>-->
-    <div fxFlex fxLayout="row" fxLayoutAlign="end center" >
+   
+    <div fxFlex fxLayout="row" fxLayoutAlign="end center" fxLayoutAlign.xs="center center" class='cancelSave'>
     
       
-         <button mat-raised-button color="#ffffff" class="button small" (click)="HorseFilter()">
+         <div mat-ripple color="#ffffff" class="button small" (click)="HorseFilter()" fxLayoutAlign="center center">
                 <span class="text1 greencolor"> Filter</span>
-         </button>
+         </div>
 
-        <button mat-raised-button class="button big " (click)="editHorseProfile()">
+        <div mat-ripple class="button big " (click)="editHorseProfile()" fxLayoutAlign="center center">
                 <span class="text1 whitecolor"> New Horse Profile </span>
-         </button>
+         </div>
     </div>
 </div>
 

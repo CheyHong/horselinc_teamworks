@@ -22,4 +22,8 @@ export class CreateDialogComponent implements OnInit {
         this._fuseSidebarService.getSidebar('payment-provider-edit-panel').toggleOpen();
     }
 
+    onColseDlg() {
+      this._fuseSidebarService.getSidebar('payment-provider-create-panel').close();
+    }
+
 }

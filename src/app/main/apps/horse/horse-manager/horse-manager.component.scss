@@ -1,6 +1,7 @@
 @import "src/@fuse/scss/fuse";
 horse-manager {
     width: 100%;
+    height: 100%;
     .center {
         .header {
             .search-wrapper {
@@ -57,7 +58,6 @@ horse-manager {
                         }
                     }
                     .back {
-                        // position: initial;
                         padding: 10px 0 0 10px;
                     }
                     .content {
@@ -86,7 +86,6 @@ horse-manager {
         min-width: 360px;
         max-width: 600px;
         z-index: 1000;
-        //        opacity: 0.0;
         box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.35);
         background-color: #4f748c;
         @include media-breakpoint('xs') {
