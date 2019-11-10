@@ -18,6 +18,7 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 })
 export class PaymentProviderListComponent implements OnInit, OnDestroy {
 
+    paid: boolean;
     providers: Provider[];
     currentProvider: Provider;
 
@@ -40,6 +41,7 @@ export class PaymentProviderListComponent implements OnInit, OnDestroy {
     ) {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
+        this.paid = true;
     }
 
     ngOnInit() {

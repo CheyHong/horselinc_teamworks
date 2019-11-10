@@ -10,7 +10,8 @@
             </div>
 
             <div class="tags">
-                <div class="money"> $236.75 </div>
+                <div class="money1" *ngIf="paid"> $236.75 </div>
+                <div class="money" *ngIf="!paid"> $236.75 </div>
                 <div fxLayout="row wrap" fxLayoutAlign="start center">
                     <img src="assets/images/avatars/Reyna.jpg" class="Oval" />
                     <div class="tag-label">HukeyLebery  </div>

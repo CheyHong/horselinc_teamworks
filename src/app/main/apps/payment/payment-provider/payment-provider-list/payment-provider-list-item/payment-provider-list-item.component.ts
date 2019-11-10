@@ -15,6 +15,7 @@ import { takeUntil } from 'rxjs/operators';
 export class PaymentProviderListItemComponent implements OnInit, OnDestroy
 {
 
+    @Input() paid: boolean;
     @Input()
     provider: Provider;
 

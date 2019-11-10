@@ -18,6 +18,8 @@ export class PaymentManagerListItemComponent implements OnInit, OnDestroy
     @Input()
     payment: PaymentManager;
 
+    @Input() completed1: boolean;
+
     @HostBinding('class.selected')
     selected: boolean;
 

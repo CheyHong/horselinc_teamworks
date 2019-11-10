@@ -20,6 +20,7 @@ import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 })
 export class PaymentManagerListComponent implements OnInit, OnDestroy {
 
+    completed: boolean;
     payments: PaymentManager[];
     currentPayment: PaymentManager;
 
@@ -42,6 +43,7 @@ export class PaymentManagerListComponent implements OnInit, OnDestroy {
     {
         // Set the private defaults
         this._unsubscribeAll = new Subject();
+        this.completed = true;
     }
 
     // -----------------------------------------------------------------------------------------------------
