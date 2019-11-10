@@ -348,7 +348,7 @@ export class PaymentProviderService implements Resolve<any>{
 
         this.onCurrentProviderChanged.next(this.currentProvider);
         console.log(id);
-        this._location.go('apps/payment-provider/all/' + id);
+        this._location.go('apps/payment/provider/all/' + id);
     }
 
     /**
