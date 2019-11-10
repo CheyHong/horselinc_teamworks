@@ -10,7 +10,7 @@ export class HorseManagerFakeDb
             },
             'to'            : [
                 {
-                    'name' : 'Chocollete Cover',
+                    'name' : '"Chocolate Covered Marchmallows"',
                     'email': 'johndoe@creapond.com'
                 }
             ],
