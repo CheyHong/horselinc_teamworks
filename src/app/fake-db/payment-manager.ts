@@ -1,10 +1,10 @@
-export class TodoFakeDb
+export class PaymentManagerFakeDb
 {
-    public static todos = [
+    public static managers = [
         {
             'id'       : '561551bd7fe2ff461101c192',
-            'title'    : 'Proident tempor est nulla irure ad est',
-            'notes'    : 'Id nulla nulla proident deserunt deserunt proident in quis. Cillum reprehenderit labore id anim laborum.',
+            'title'    : 'Debbie Mitchell',
+            'notes'    : '1 Service provided',
             'startDate': 'Wednesday, January 29, 2017 3:17 PM',
             'dueDate'  : null,
             'completed': false,
@@ -15,8 +15,8 @@ export class TodoFakeDb
         },
         {
             'id'       : '561551bd4ac1e7eb77a3a750',
-            'title'    : 'Magna quis irure quis ea pariatur laborum',
-            'notes'    : '',
+            'title'    : 'Kat Tretina',
+            'notes'    : '3 Service provided',
             'startDate': 'Sunday, February 1, 2018 1:30 PM',
             'dueDate'  : 'Friday, December 30, 2019 10:07 AM',
             'completed': false,

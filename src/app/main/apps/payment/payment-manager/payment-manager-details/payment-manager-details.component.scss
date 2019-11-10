@@ -62,7 +62,7 @@ payment-manager-details {
                 font-family: Roboto;
                 font-size: 12px;
                 line-height: 1.67;
-                color: var(--black-37);
+                color: rgba(0,0,0,0.37);
                 margin: 10px 0px;
               }
             
@@ -110,7 +110,7 @@ payment-manager-details {
                     font-family: Roboto;
                     font-size: 12px;
                     line-height: 1.67;
-                    color: var(--black-37);
+                    color: rgba(0,0,0,0.37);
                 }
     
                 .winter-equstrian-fes {
@@ -123,7 +123,7 @@ payment-manager-details {
                     font-style: normal;
                     line-height: 1.67;
                     letter-spacing: normal;
-                    color: var(--black-37);
+                    color: rgba(0,0,0,0.37);
                   }
             }
             .item2 {
@@ -131,7 +131,7 @@ payment-manager-details {
                 margin: 20px 0px;
                 .mane {
                     width: 90%;
-                    max-width: 500px;
+                    max-width: 350px;
                     height: 20px;
                     font-family: Roboto;
                     font-size: 14px;
@@ -145,7 +145,7 @@ payment-manager-details {
 
             .Subtotal {
                 width: 90%;
-                max-width: 500px;
+                max-width: 350px;
                 height: 25px;
                 font-family: Roboto;
                 font-size: 14px;
@@ -165,12 +165,18 @@ payment-manager-details {
             .inVal {
                 text-align: center;
                 width: 90%;
-                max-width: 500px;
+                max-width: 350px;
                 height: 60px;
+                font-family: Roboto;
+                font-size: 16px;
                 background-color: #ffffff;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+            }
+
+            .Add-Tip {
+                color: #ec7185;
             }
 
             .seperator {
@@ -180,7 +186,7 @@ payment-manager-details {
 
             .You-are-approving-a {
                 width: 90%;
-                max-width: 500px;
+                max-width: 350px;
                 height: 40px;
                 font-family: Roboto;
                 font-size: 14px;
@@ -192,13 +198,23 @@ payment-manager-details {
                 color: #27c5c8;
               }
               
-              .You-are-approving-a .text-style-1 {
-                font-weight: bold;
-              }
+            .You-are-approving-b {
+                width: 90%;
+                max-width: 350px;
+                height: 40px;
+                font-family: Roboto;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.43;
+                letter-spacing: normal;
+                color: #ec7185;
+            }
 
             .button1 {
                 width: 90%;
-                max-width: 500px;
+                max-width: 350px;
                 height: 80px;
                 padding-top: 20px;
 
@@ -216,7 +232,7 @@ payment-manager-details {
             
             .button2 {
                 width: 90%;
-                max-width: 500px;
+                max-width: 350px;
                 height: 80px;
                 padding-top: 20px;
 

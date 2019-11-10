@@ -52,13 +52,21 @@ schedule {
                 }
             }
 
-            @include media-breakpoint('lt-lg') {
+            // mat-tab-group {
+            //     width: 50%;
+            // }
+
+            @include media-breakpoint('xs') {
                 schedule-current, schedule-past{
                     width: 100%;
                 }
-                // schedule-filter-dialog {
-                    
-                // }
+
+                mat-tab-group {
+                    .mat-tab-label {
+                        width: 50%;
+                    }
+                }
+                
             }
 
             .fri-june-21-2019 {
@@ -75,7 +83,7 @@ schedule {
                 bottom: 20px;
                 right: 20px;
                 margin: 20px;
-                @include media-breakpoint('lt-lg') {
+                @include media-breakpoint('xs') {
                     position: relative;
                     width: 100%;
                     right: 0px;
