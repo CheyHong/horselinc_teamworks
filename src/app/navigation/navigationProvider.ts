@@ -36,7 +36,7 @@ export const navigationProvider: FuseNavigation[] = [
     },
     {
         id       : 'notification',
-        title    : 'notification',
+        title    : 'Notification',
         translate: 'NAV.NOTIFICATION',
         type     : 'item',
         icon     : 'notifications',

@@ -105,6 +105,16 @@
                             letter-spacing: 0.15px;
                         }
                     }
+                    .termCondition{
+                        font-size: 14px;
+                        line-height: 1.43;
+                    }
+                    .addPaymentBtn{
+                        -webkit-backdrop-filter: blur(10px);
+                        backdrop-filter: blur(10px);
+                        background-color: rgba(93, 189, 194, 0.2);
+                        color: #27c5c8;
+                    }
                 }
 
                 //affects all input placeholders across webkit browsers
@@ -125,6 +135,7 @@
                     caret-color:white;
                 }
                 button{
+                    border-radius:0px;
                     width:60%;
                     @include media-breakpoint('xs') {
                         width:80%;

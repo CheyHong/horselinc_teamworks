@@ -1,7 +1,7 @@
 <div id="user-login" class="page-layout simple fullwidth">
 
     <!-- HEADER -->
-    <div class="title mt-80">
+    <div class="title">
             <img src="assets/images/logos/horselinc.svg"/>
     </div>
     <!-- / HEADER -->
@@ -10,11 +10,11 @@
     <div class="content">
         <div class="login">
             <form id="loginForm" name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off" >
-                <input  matInput formControlName="email" type="email" placeholder="Enter email" autocomplete="off" value=""/>
-                <input matInput formControlName="password" type="password" placeholder="Password"  autocomplete="new-password" value=""/>
+                <input  matInput formControlName="email" type="email" placeholder="Enter your email" autocomplete="off" value=""/>
+                <input matInput formControlName="password" type="password" placeholder="Enter your password"  autocomplete="off" value=""/>
                 <button mat-raised-button color="warn" type="submit" [disabled]="loginForm.invalid" >LOG IN</button>
                 <!-- routerLink="/apps/horse/manager" -->
-                <p style="text-align:center; margin-bottom:40px"><a class="forget-password" routerLink="/apps/user/reset-password">Forget password?</a></p>
+                <p style="text-align:center; margin-top:40px; margin-bottom:26px"><a class="forget-password" routerLink="/apps/user/reset-password">Forgot password?</a></p>
                 <p style="text-align:center; margin-bottom:30px">Don't have an account? <a class="signup" routerLink="/apps/user/register">Sign Up</a></p>
     
             </form>
