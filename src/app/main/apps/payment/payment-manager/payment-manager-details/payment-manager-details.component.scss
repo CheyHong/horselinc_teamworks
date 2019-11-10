@@ -187,7 +187,7 @@ payment-manager-details {
             .You-are-approving-a {
                 width: 90%;
                 max-width: 350px;
-                height: 40px;
+                // height: 40px;
                 font-family: Roboto;
                 font-size: 14px;
                 font-weight: normal;
@@ -196,13 +196,13 @@ payment-manager-details {
                 line-height: 1.43;
                 letter-spacing: normal;
                 color: #27c5c8;
-                overflow: scroll;
+                // overflow: scroll;
               }
               
             .You-are-approving-b {
                 width: 90%;
                 max-width: 350px;
-                height: 40px;
+                // height: 40px;
                 font-family: Roboto;
                 font-size: 14px;
                 font-weight: normal;
@@ -211,7 +211,7 @@ payment-manager-details {
                 line-height: 1.43;
                 letter-spacing: normal;
                 color: #ec7185;
-                overflow: scroll;
+                // overflow: scroll;
             }
 
             .button1 {
@@ -237,6 +237,7 @@ payment-manager-details {
                 max-width: 350px;
                 height: 80px;
                 padding-top: 20px;
+                margin-top: 10px;
 
                 button {
                     width: 100%;
