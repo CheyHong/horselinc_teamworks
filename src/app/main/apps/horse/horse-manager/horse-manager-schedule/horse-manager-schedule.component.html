@@ -96,16 +96,16 @@
     <div class="cancelSave" >
         <div>
             <div fxLayout="row">
-                <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="ScheduleCancel()">
+                <div mat-ripple class="m-8 mb-16 button medium whitecolor" (click)="ScheduleCancel()" fxLayoutAlign="center center">
                     <span class="text1 greencolor">
                         CANCEL
                     </span>
-                </button>
-                <button mat-raised-button class="m-8 mb-16 button medium redcolor" (click)="ScheduleNext()">
+                </div>
+                <div mat-ripple class="m-8 mb-16 button medium redcolor" (click)="ScheduleNext()" fxLayoutAlign="center center">
                     <span class="text1 whitecolor">
                         NEXT
                     </span>
-                </button>
+                </div>
             </div>
         </div>
     </div>

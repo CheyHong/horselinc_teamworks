@@ -35,16 +35,16 @@
     </div>   
     <div class="cancelSave" >
         <div fxLayout="row">
-            <button mat-raised-button class="m-8 mb-16 button medium whitecolor" (click)="confirmCancel()">
+            <div mat-ripple class="m-8 mb-16 button medium whitecolor" (click)="confirmCancel()" fxLayoutAlign="center center">
                 <span class="text1 greencolor">
                     CANCEL
                 </span>
-            </button>
-            <button mat-raised-button class="m-8 mb-16 button medium redcolor">
+            </div>
+            <div mat-ripple class="m-8 mb-16 button medium redcolor" fxLayoutAlign="center center">
                 <span class="text1 whitecolor">
                     SAVE
                 </span>
-            </button>
+            </div>
         </div>
     </div>
 </div>

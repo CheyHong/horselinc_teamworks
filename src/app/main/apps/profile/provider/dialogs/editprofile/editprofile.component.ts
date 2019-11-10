@@ -11,8 +11,7 @@ export class ProfileProviderEditProfileComponent implements OnInit {
 
   constructor(
     private _fuseSidebarService: FuseSidebarService,
-  ) { 
-   }
+  ) { }
 
   ngOnInit(): void {
     this.addServiceDlg = false;
