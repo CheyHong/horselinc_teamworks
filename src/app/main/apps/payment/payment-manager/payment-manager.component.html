@@ -8,13 +8,16 @@
             <!-- CONTENT TOOLBAR -->
             <div class="toolbar px-24 py-8" fxHide fxShow.xs>
 
-                <div *ngIf="currentPayment">
+                <div *ngIf="currentPayment" class="detail_show" fxLayout="row" fxLayoutAlign="start center" >
                     <button mat-icon-button (click)="deselectCurrentPayment()">
-                        <mat-icon class="secondary-text">arrow_back</mat-icon>
+                        <mat-icon class="secondary-text" style="color: red;">chevron_left</mat-icon>
                     </button>
+                    <div class="Schedule-Service">
+                        Schedule Service
+                    </div>
                 </div>
 
-                <div class="Schedule-Service">
+                <div class="Schedule-Service" *ngIf="!currentPayment">
                         Schedule Service
                 </div>
 

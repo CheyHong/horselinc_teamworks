@@ -27,6 +27,17 @@ provider {
                 color: #4f748c;
             }
 
+            .detail_show{
+                .Schedule-Service {
+                    width: 108px;
+                    height: 20px;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    line-height: 1.43;
+                    color: #ec7185;
+                }
+            }
+
             .toolbar {
                 display: flex;
                 -webkit-box-pack: start;
