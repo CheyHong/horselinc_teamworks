@@ -19,6 +19,6 @@ export class ProfileManagerExportInvoiceComponent implements OnInit {
   }
 
   closePanel(): void{
-    this._fuseSidebarService.getSidebar('profile-manager-exportinvoice').close();
+    this._fuseSidebarService.getSidebar('payment-manager-export-invoice').close();
   }
 }
