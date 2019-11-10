@@ -13,8 +13,8 @@
         .title {
             text-align: center;
             justify-content: center;
-            padding-top: 10px;
-            padding-bottom: 10px;      
+            padding-top: 95px;
+            padding-bottom: 30px;      
         }
         .content {
             .cards {
@@ -48,7 +48,7 @@
                     margin: 50px 50px;
 
                     color: #ffffff;
-                    background: #335c77;
+                    background: #5389a0;
                     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 
                     @include media-breakpoint(xs) {

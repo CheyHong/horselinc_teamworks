@@ -13,8 +13,8 @@
         .title {
             text-align: center;
             justify-content: center;
-            padding-top: 10px;
-            padding-bottom: 10px;      
+            padding-top: 95px;
+            padding-bottom: 30px;      
         }
         .content {
             .cards {
@@ -98,6 +98,7 @@
                     margin-bottom: 30px;
                 }
                 .continue{
+                    border-radius:0px;
                     font-weight:300;
 
                     color:white;
@@ -106,7 +107,8 @@
                     height:44px;
                     margin:auto;
                     font-size: 18px;
-//                    text-align:center;
+                    line-height: 1.25;
+                    letter-spacing: 0.37px;
                 }
             }
         }
