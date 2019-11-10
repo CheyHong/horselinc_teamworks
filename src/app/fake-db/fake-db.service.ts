@@ -9,7 +9,8 @@ import { HorseManagerFakeDb } from 'app/fake-db/horse-manager';
 import { ChatFakeDb } from 'app/fake-db/chat';
 import { FileManagerFakeDb } from 'app/fake-db/file-manager';
 import { ContactsFakeDb } from 'app/fake-db/contacts';
-import { TodoFakeDb } from 'app/fake-db/todo';
+import { PaymentManagerFakeDb } from 'app/fake-db/payment-manager';
+import { PaymentProviderFakeDb } from 'app/fake-db/payment-provider';
 import { ScrumboardFakeDb } from 'app/fake-db/scrumboard';
 import { InvoiceFakeDb } from 'app/fake-db/invoice';
 import { ProfileFakeDb } from 'app/fake-db/profile';
@@ -62,14 +63,14 @@ export class FakeDbService implements InMemoryDbService
             'contacts-user'    : ContactsFakeDb.user,
 
             // Payment
-            'payment-payments'  : TodoFakeDb.todos,
-            'payment-filters': TodoFakeDb.filters,
-            'payment-tags'   : TodoFakeDb.tags,
+            'payment-payments'  : PaymentManagerFakeDb.managers,
+            'payment-filters': PaymentManagerFakeDb.filters,
+            'payment-tags'   : PaymentManagerFakeDb.tags,
 
             // Provider
-            'provider-providers'  : ProvidersFakeDb.providers,
-            'provider-filters': TodoFakeDb.filters,
-            'provider-tags'   : TodoFakeDb.tags,
+            'provider-providers'  : PaymentProviderFakeDb.providers,
+            'provider-filters': PaymentProviderFakeDb.filters,
+            'provider-tags'   : PaymentProviderFakeDb.tags,
 
             // Scrumboard
             'scrumboard-boards': ScrumboardFakeDb.boards,
