@@ -70,8 +70,14 @@
                 background-color: #27c5c8;
             }
             .cardNumber{
+                height:50px;
                 font-size: 17px;
                 letter-spacing: -0.41px;
+
+                display:flex;
+                flex-direction: row;
+                justify-content : space-between;
+                align-items: flex-end;    
             }
         }
         .cardList{
@@ -211,6 +217,7 @@
                 font-weight: 500;
             }
             .authorized-desc{
+                opacity: 0.7;
                 font-size: 14px;
                 line-height: 1.43;
             }
@@ -258,6 +265,7 @@
             align-content: flex-end;
 
             button{
+                border-radius:0px;
                 margin: 0px 10px;
                 width: 140.4px;
                 height: 40px;

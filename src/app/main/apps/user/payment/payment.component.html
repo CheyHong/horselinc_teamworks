@@ -28,7 +28,7 @@
                 <div class="space5"></div>
                 <div class="editItem">
                     <input  class="editContent" matInput type="lastName" placeholder="Search your location" autocomplete="off"/>
-                    <mat-icon class="editIcon s-20">search</mat-icon>
+                    <mat-icon class="editIcon s-24">search</mat-icon>
                 </div>
             </div>
             <div class="rowItem">
@@ -38,15 +38,15 @@
                 </div>
             </div>
             <div class="rowItem">
-                <button mat-raised-button color="warn" type="" (click)="openPaymentInfo()" >ADD PAYMENT INFORMATION</button>
+                <button style="margin-top:20px" class="addPaymentBtn" mat-raised-button color="warn" type="" (click)="openPaymentInfo()" >ADD PAYMENT INFORMATION</button>
             </div>
-            <div rowItem>
-                <p>
+            <div class="rowItem">
+                <p class="termCondition">
                     By creating an payment, you agree to the <a class="link" >Terms<br> & Conditions</a> and <a class="link" >Privacy Policy</a> of HorseLinc.
                 </p>
             </div>
             <div>
-                <button mat-raised-button color="warn" type="" routerLink="/apps/horse" >CREATE ACCOUNT</button>
+                <button mat-raised-button color="warn" type="" routerLink="/apps/horse/manager" >CREATE ACCOUNT</button>
             </div>
         </form>
     </div>
