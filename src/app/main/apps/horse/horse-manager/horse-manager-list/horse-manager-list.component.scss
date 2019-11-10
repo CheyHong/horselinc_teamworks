@@ -10,6 +10,11 @@ horse-manager-list {
     border-color: rgba(0, 0, 0, 0.12);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    .cancelSave {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
     .no-messages-text {
         font-size: 24px;
         font-weight: 300;
@@ -78,7 +83,7 @@ horse-manager-list {
         color: rgba(0, 0, 0, 0.3);
     }
     .inputcolor {
-        background-color: #ffffff 2%;
+        background-color: #efefef;
     }
     .title {
         font-family: Roboto;
