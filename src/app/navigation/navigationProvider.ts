@@ -39,7 +39,7 @@ export const navigationProvider: FuseNavigation[] = [
         title    : 'Notification',
         translate: 'NAV.NOTIFICATION',
         type     : 'item',
-        icon     : 'notifications',
+        iconsrc  : 'assets/icons/horselinc/ic-notification-black.svg',
         url      : '/apps/notification',
     }
 ];
