@@ -73,7 +73,7 @@ export class UserLoginComponent implements OnInit {
         let loginUrl: string;
 
         userType = this.f.email.value === 'provider@gmail.com' ? 'provider' : 'manager';
-        loginUrl = '/apps/horse/' + userType;
+        loginUrl = '/horse/' + userType;
 
         this._userService.setUserType(userType);
         this._fuseNavigationService.setCurrentNavigation(userType);

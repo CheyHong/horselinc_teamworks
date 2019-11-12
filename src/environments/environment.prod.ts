@@ -1,4 +1,9 @@
+// prod server
 export const environment = {
     production: true,
-    hmr       : false
+    hmr       : false,
+    staging   : false,
+    firebaseConfig: {
+
+    }
 };

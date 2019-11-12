@@ -65,15 +65,15 @@ export class PaymentProviderListComponent implements OnInit, OnDestroy {
 
                     if ( tagHandle )
                     {
-                        this._location.go('apps/payment/tag/' + tagHandle);
+                        this._location.go('payment/tag/' + tagHandle);
                     }
                     else if ( filterHandle )
                     {
-                        this._location.go('apps/payment/filter/' + filterHandle);
+                        this._location.go('payment/filter/' + filterHandle);
                     }
                     else
                     {
-                        this._location.go('apps/payment/all');
+                        this._location.go('payment/all');
                     }
                 }
                 else

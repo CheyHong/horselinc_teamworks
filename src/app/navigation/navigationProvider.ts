@@ -8,7 +8,7 @@ export const navigationProvider: FuseNavigation[] = [
         translate: 'NAV.HORSES',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-manager-black.svg',
-        url      : '/apps/horse/provider',           
+        url      : '/horse/provider',           
     },
     {
         id       : 'payment-provider',
@@ -16,7 +16,7 @@ export const navigationProvider: FuseNavigation[] = [
         translate: 'NAV.PAYMENT',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-payment-green.svg',   
-        url      : '/apps/payment/provider',          
+        url      : '/payment/provider',          
     },
     {
         id       : 'profile',
@@ -24,7 +24,7 @@ export const navigationProvider: FuseNavigation[] = [
         translate: 'NAV.PROFILE',
         type     : 'item',       
         iconsrc  : 'assets/icons/horselinc/ic-profile-green.svg',
-        url      : '/apps/profile/provider',          
+        url      : '/profile/provider',          
     },
     {
         id       : 'schedule',
@@ -32,7 +32,7 @@ export const navigationProvider: FuseNavigation[] = [
         translate: 'NAV.SCHEDULE',
         type     : 'item',
         iconsrc  : 'assets/icons/horselinc/ic-shedule-black.svg',
-        url      : '/apps/schedule',
+        url      : '/schedule',
     },
     {
         id       : 'notification',
@@ -40,6 +40,6 @@ export const navigationProvider: FuseNavigation[] = [
         translate: 'NAV.NOTIFICATION',
         type     : 'item',
         iconsrc  : 'assets/icons/horselinc/ic-notification-black.svg',
-        url      : '/apps/notification',
+        url      : '/notification',
     }
 ];

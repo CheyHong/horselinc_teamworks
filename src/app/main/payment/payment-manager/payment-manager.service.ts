@@ -357,15 +357,15 @@ export class PaymentManagerService implements Resolve<any>
 
         // if ( tagHandle )
         // {
-        //     this._location.go('apps/payment/tag/' + tagHandle + '/' + id);
+        //     this._location.go('payment/tag/' + tagHandle + '/' + id);
         // }
         // else if ( filterHandle )
         // {
-        //     this._location.go('apps/payment/filter/' + filterHandle + '/' + id);
+        //     this._location.go('payment/filter/' + filterHandle + '/' + id);
         // }
         // else
         // {
-        //     this._location.go('apps/payment/all/' + id);
+        //     this._location.go('payment/all/' + id);
         // }
     }
 

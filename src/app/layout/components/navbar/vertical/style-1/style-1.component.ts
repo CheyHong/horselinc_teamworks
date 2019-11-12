@@ -166,7 +166,7 @@ export class NavbarVerticalStyle1Component implements OnInit, OnDestroy
 
         userType = this._userService.getUserType();
         userType = userType === 'manager' ? 'provider' : 'manager';
-        loginUrl = '/apps/horse/' + userType;
+        loginUrl = '/horse/' + userType;
 
         this._userService.setUserType(userType);
         this._fuseNavigationService.setCurrentNavigation(userType);

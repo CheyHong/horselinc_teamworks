@@ -22,21 +22,62 @@ import { FakeDbService } from 'app/fake-db/fake-db.service';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 
-const appRoutes: Routes = [
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
+import { WelcomeComponent } from 'app/main/welcome/welcome.component';
+
+const appRoutes = [
     {
-        path        : 'apps',
-        loadChildren: './main/apps/apps.module#AppsModule'
+        path        : 'welcome',
+        component   :  WelcomeComponent,
     },
     {
-        path      : '**',
-        redirectTo: 'apps',
-        pathMatch: 'full'
+        path        : 'notification',
+        loadChildren: 'app/main/notification/notification.module#NotificationModule'
+    },
+    {
+        path        : 'user',
+        loadChildren: 'app/main/user/user.module#UserModule'
+    },
+    {
+        path        : 'profile',
+        loadChildren: 'app/main/profile/profile.module#ProfileModule'
+    },
+    {
+        path        : 'horse/provider',
+        loadChildren: 'app/main/horse/horse-provider/horse-provider.module#HorseProviderModule'
+    },
+    {
+        path        : 'horse/manager',
+        loadChildren: 'app/main/horse/horse-manager/horse-manager.module#HorseManagerModule'
+    },
+    {
+        path        : 'payment/manager',
+        loadChildren: 'app/main/payment/payment-manager/payment-manager.module#PaymentManagerModule'
+    },
+    {
+        path        : 'payment/provider',
+        loadChildren: 'app/main/payment/payment-provider/payment-provider.module#PaymentProviderModule'
+    },
+    {
+        path        : 'schedule',
+        loadChildren: 'app/main/schedule/schedule.module#ScheduleModule'
+    },
+    {
+        path        : '',
+        redirectTo  : 'welcome',
+        pathMatch   : 'full'
     }
 ];
 
 @NgModule({
     declarations: [
         AppComponent,
+        WelcomeComponent
     ],
     imports     : [
         CommonModule,
@@ -67,10 +108,20 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
+
+        //Firebase module
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule
     ],
     bootstrap   : [
         AppComponent
-    ]
+    ],
+    providers: [    
+        { provide: FirestoreSettingsToken, useValue: {} }
+    
+    ],
 })
 export class AppModule
 {

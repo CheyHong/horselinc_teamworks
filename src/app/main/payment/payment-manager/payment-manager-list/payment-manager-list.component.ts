@@ -76,15 +76,15 @@ export class PaymentManagerListComponent implements OnInit, OnDestroy {
 
                     if ( tagHandle )
                     {
-                        this._location.go('apps/payment-manager/tag/' + tagHandle);
+                        this._location.go('payment-manager/tag/' + tagHandle);
                     }
                     else if ( filterHandle )
                     {
-                        this._location.go('apps/payment-manager/filter/' + filterHandle);
+                        this._location.go('payment-manager/filter/' + filterHandle);
                     }
                     else
                     {
-                        this._location.go('apps/payment-manager/all');
+                        this._location.go('payment-manager/all');
                     }
                 }
                 else

@@ -340,7 +340,7 @@ export class HorseProviderService implements Resolve<any>{
 
         this.onCurrentProviderChanged.next(this.currentProvider);
         console.log(id);
-        this._location.go('apps/horse/horse-provider/all/' + id);
+        this._location.go('horse/horse-provider/all/' + id);
     }
 
     /**
